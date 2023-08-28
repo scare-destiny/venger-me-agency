@@ -5,7 +5,7 @@ import ToggleTheme from "~/components/common/ToggleTheme.astro";
 import ToggleMenu from "~/components/common/ToggleMenu.astro";
 
 import { getHomePermalink } from "~/utils/permalinks";
-import { trimSlash, getAsset } from "~/utils/permalinks";
+import {  getAsset } from "~/utils/permalinks";
 
 interface Link {
   text?: string;
@@ -37,7 +37,7 @@ export interface Props {
 
 const {
   id = "header",
-  links = [],
+  // links = [],
   actions = [],
   isSticky = false,
   isDark = false,
@@ -47,7 +47,7 @@ const {
   position = "center",
 } = Astro.props;
 
-const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`
+// const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`
 ---
 
 <header
@@ -60,7 +60,7 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`
   <div class="absolute inset-0"></div>
   <div
     class:list={[
-      "relative text-default py-3 px-3 md:px-6 mx-auto w-full md:flex md:justify-between",
+      "relative text-default py-3 px-3 md:px-6 mx-auto w-full md:flex md:justify-between md:align-middle",
       {
         "max-w-7xl": !isFullWidth,
       },
@@ -79,7 +79,7 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`
       class="items-center w-full md:w-auto hidden md:flex text-default overflow-y-auto overflow-x-hidden md:overflow-y-visible md:overflow-x-auto md:mx-5"
       aria-label="Main navigation"
     >
-      <ul
+      <!-- <ul
         class="flex flex-col md:flex-row md:self-center w-full md:w-auto text-xl md:text-[0.9375rem] tracking-[0.01rem] font-medium"
       >
         {
@@ -120,7 +120,7 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`
             </li>
           ))
         }
-      </ul>
+      </ul> -->
     </nav>
     <div
       class:list={[

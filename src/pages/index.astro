@@ -4,13 +4,14 @@ import Layout from '~/layouts/PageLayout.astro';
 import Hero from '~/components/widgets/Hero.astro';
 import Note from '~/components/widgets/Note.astro';
 import Features from '~/components/widgets/Features.astro';
-import Features2 from '~/components/widgets/Features2.astro';
-import Steps from '~/components/widgets/Steps.astro';
-import Content from '~/components/widgets/Content.astro';
-import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
-import FAQs from '~/components/widgets/FAQs.astro';
+// import Features2 from '~/components/widgets/Features2.astro';
+// import Steps from '~/components/widgets/Steps.astro';
+// import Content from '~/components/widgets/Content.astro';
+// import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
+// import FAQs from '~/components/widgets/FAQs.astro';
 import Stats from '~/components/widgets/Stats.astro';
-import CallToAction from '~/components/widgets/CallToAction.astro';
+// import CallToAction from '~/components/widgets/CallToAction.astro';
+import Testimonials from '~/components/widgets/Testimonials.astro';
 
 const metadata = {
   title: 'AstroWind — Free template for creating websites with Astro + Tailwind CSS',
@@ -22,23 +23,26 @@ const metadata = {
   <!-- Hero Widget ******************* -->
 
   <Hero
-    callToAction={{ text: 'Get template', href: 'https://github.com/onwidget/astrowind', icon: 'tabler:download' }}
-    callToAction2={{ text: 'Learn more', href: '#features' }}
+   
     image={{ src: '~/assets/images/hero.png', alt: 'AstroWind Hero Image' }}
   >
     <Fragment slot="title">
-      Free template for <span class="hidden xl:inline">creating websites with</span>
-      <span class="text-accent dark:text-white highlight"> Astro 2.0</span> + Tailwind CSS
+      Marketing funnels,  <span class="hidden xl:inline"> </span>
+      <span class="text-accent dark:text-white highlight"> automation  and reporting </span>   for your business
     </Fragment>
 
     <Fragment slot="subtitle">
       <span class="hidden sm:inline">
-        <span class="font-semibold">AstroWind</span> is a free, customizable and production-ready template for Astro 2.0
-        + Tailwind CSS.</span
+        <span class="font-semibold">We tackle</span> the complex marketing challenges that other marketers can't solve, all while fueling your consistent growth.
+        </span
       >
-      <span class="block mb-1 sm:hidden font-bold text-blue-600">AstroWind: Production-ready.</span>
-       Suitable for Startups, Small Business, SaaS websites, Professional Portfolios, Marketing websites, Landing Pages
-      & Blogs.
+      <span class="block mb-1 sm:hidden font-bold text-blue-600">Your catalyst for unstoppable growth.
+
+
+
+
+      </span>
+       
     </Fragment>
   </Hero>
 
@@ -50,44 +54,44 @@ const metadata = {
 
   <Features
     id="features"
-    tagline="Features"
-    title="What you get with AstroWind"
-    subtitle="One of the most professional and comprehensive templates currently on the market. Most starred & forked Astro theme in 2022."
+    tagline="Services"
+    title="What can you get from us"
+    subtitle="We at venger.me have a knack for technical marketing, a penchant for coding and a relentless desire to help our clients grow.  "
     items={[
       {
-        title: 'Astro + Tailwind CSS Integration',
+        title: 'Marketing automation',
         description:
-          'A seamless integration between two great frameworks that offer high productivity, performance and versatility.',
+          'From low-code hacks to full-fledged servers, we pinpoint the ultimate solutions to supercharge your ROI. One client slashed their bill by 90%—true story!',
         icon: 'tabler:brand-tailwind',
       },
       {
-        title: 'Ready-to-use Components',
+        title: 'Sales funnels',
         description:
-          'Widgets made with Tailwind CSS ready to be used in Marketing Websites, SaaS, Blogs, Personal Profiles, Small Business...',
+          'We bring you high-quality leads, craft irresistible landing pages, and scrutinize every pixel of user behavior. The result? A funnel so optimized it has an impressive conversion rates.',
         icon: 'tabler:components',
       },
       {
-        title: 'Best Practices',
+        title: 'Reporting automation',
         description:
-          'Creating secure, efficient, and user-friendly websites that deliver exceptional experiences and lasting value.',
+          'All your key metrics in one panoramic view. We funnel your data streams into a single powerhouse dashboard, putting the pulse of your business right at your fingertips.',
         icon: 'tabler:list-check',
       },
       {
-        title: 'Excellent Page Speed',
+        title: 'Conversion Rate Optimization',
         description:
-          'Having a good page speed impacts organic search ranking, improves user experience (UI/UX) and increase conversion rates.',
+          'We scrutinize customer behavior at every stage, enhancing the chances of conversion at each step.',
         icon: 'tabler:rocket',
       },
       {
-        title: 'Search Engine Optimization (SEO)',
+        title: 'Data audit and validation',
         description:
-          "SEO lies in its ability to enhance a website's visibility, driving organic traffic and enabling it to reach a wider audience.",
+          "Data forms the foundation of all we do, so its integrity is paramount. We employ diverse methods to scrutinize and validate incoming data, instilling a level of trust that empowers effective decision-making.",
         icon: 'tabler:arrows-right-left',
       },
       {
-        title: 'Open to new ideas and contributions',
+        title: 'A/B Tests And Experiments',
         description:
-          'Embracing a culture that is open to new ideas and contributions is integral fostering innovation, collaboration, and a dynamic user experience.',
+          'Embracing a culture that is open to new ideas and contributions is integral. We can help you embed this mindset into your organization.',
         icon: 'tabler:bulb',
       },
     ]}
@@ -95,7 +99,7 @@ const metadata = {
 
   <!-- Content Widget **************** -->
 
-  <Content
+  <!-- <Content
     isReversed
     tagline="Inside template"
     title="AstroWind's Blueprint: Fun Meets Functionality!"
@@ -129,11 +133,11 @@ const metadata = {
     <Fragment slot="bg">
       <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
     </Fragment>
-  </Content>
+  </Content> -->
 
   <!-- Content Widget **************** -->
 
-  <Content
+  <!-- <Content
     isAfterContent
     items={[
       {
@@ -166,10 +170,10 @@ const metadata = {
     <Fragment slot="bg">
       <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
     </Fragment>
-  </Content>
+  </Content> -->
 
   <!-- Content Widget **************** -->
-
+<!-- 
   <Content
     isReversed
     isAfterContent
@@ -204,11 +208,11 @@ const metadata = {
     <Fragment slot="bg">
       <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
     </Fragment>
-  </Content>
+  </Content> -->
 
   <!-- Steps Widget ****************** -->
 
-  <Steps
+  <!-- <Steps
     title="Get your dream website up and running in no time with AstroWind."
     items={[
       {
@@ -238,11 +242,11 @@ const metadata = {
       src: 'https://images.unsplash.com/photo-1616198814651-e71f960c3180?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80',
       alt: 'Steps image',
     }}
-  />
+  /> -->
 
   <!-- Features2 Widget ************** -->
 
-  <Features2
+  <!-- <Features2
     title="Most used widgets"
     subtitle="Provides frequently used components for building websites using Tailwind CSS"
     tagline="Components"
@@ -302,21 +306,21 @@ const metadata = {
     <Fragment slot="bg">
       <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
     </Fragment>
-  </Features2>
+  </Features2> -->
 
   <!-- HighlightedPosts Widget ******* -->
 
-  <BlogLatestPosts
+  <!-- <BlogLatestPosts
     title="Find out more content in our Blog"
     information={`The blog is used to display AstroWind documentation.
                         Each new article will be an important step that you will need to know to be an expert in creating a website using Astro + Tailwind CSS.
                         Astro is a very interesting technology. Thanks.
                 `}
-  />
+  /> -->
 
   <!-- FAQs Widget ******************* -->
 
-  <FAQs
+  <!-- <FAQs
     title="Frequently Asked Questions"
     subtitle="Dive into the following questions to gain insights into the powerful features that AstroWind offers and how it can elevate your web development journey."
     tagline="FAQs"
@@ -353,22 +357,57 @@ const metadata = {
           "This is not about revenge. This is about justice. A lot of things can change in twelve years, Admiral. Well, that's certainly good to know. About four years. I got tired of hearing how young I looked.",
       },
     ]}
-  />
+  /> -->
 
   <!-- Stats Widget ****************** -->
 
   <Stats
     stats={[
-      { title: 'Downloads', amount: '132K' },
-      { title: 'Stars', amount: '24.8K' },
-      { title: 'Forks', amount: '10.3K' },
-      { title: 'Users', amount: '48.4K' },
+      { title: 'Happy clients', amount: '50+' },
+      { title: 'Generated revenue', amount: '~$1.000.000' },
+      { title: 'Tasks automated', amount: '~10.573.346' },
+      { title: 'Cups of coffee consumed', amount: '5000+' },
     ]}
   />
 
+   <!-- Testimonials Widget *********** -->
+   <Testimonials
+   title="Words from real customers"
+   testimonials={[
+     {
+       testimonial: `Eugene was a HUGE asset to the team. Always responsive, professional and creative. He will be missed! Highly recommended and would hope to work together again in the future.`,
+       name: 'Jared',
+       job: 'Agency owner',
+      //  image: {
+      //    src: 'https://avataaars.io/?avatarStyle=Circle&topType=LongHairStraight&accessoriesType=Blank&hairColor=BrownDark&facialHairType=Blank&clotheType=BlazerShirt&eyeType=Default&eyebrowType=Default&mouthType=Default&skinColor=Light',
+      //    alt: 'Emily Kennedy Image',
+      //  },
+     },
+     {
+       testimonial: `Eugene is very knowledgable. We work on a project that was not easy or straightforward but he really took the time to find solutions. He is very enthusiastic and eager to do the job well. Great communication, flexibility and availability. We had some hiccups but he was really on the case and solved them very quickly. Very professional and has integrity. Thank you Eugene!`,
+       name: 'Ioana',
+       job: 'Business Owner and Consultant',
+      //  image: {
+      //    src: 'https://images.unsplash.com/photo-1561406636-b80293969660?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80',
+      //    alt: 'Sarah Hansen Image',
+      //  },
+     },
+     {
+       testimonial: `I recommend Eugene to anyone who wants to take their business to the next level of success and profitability. He has a keen eye for seeking out ways to increase profits and implementing a strategy to achieve that. Would definitely recommend him to others. Thank you!`,
+       name: 'Oleg',
+       job: 'Business owner',
+      //  image: {
+      //    src: 'https://images.unsplash.com/photo-1545167622-3a6ac756afa4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=824&q=80',
+      //    alt: 'Mark Wilkinson Image',
+      //  },
+     },
+   ]}
+  
+ />
+
   <!-- CallToAction Widget *********** -->
 
-  <CallToAction
+  <!-- <CallToAction
     callToAction={{
       text: 'Get template',
       href: 'https://github.com/onwidget/astrowind',
@@ -383,5 +422,5 @@ const metadata = {
       Be very surprised by these huge fake numbers you are seeing on this page. <br class="hidden md:inline" />Don't
       waste more time! :P
     </Fragment>
-  </CallToAction>
+  </CallToAction> -->
 </Layout>
