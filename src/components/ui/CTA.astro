@@ -2,7 +2,12 @@
 import { Icon } from "astro-icon/components";
 import type { CallToAction } from "~/types";
 
-const { callToAction } = Astro.props;
+
+interface Props {
+  callToAction: CallToAction;
+  onClick?: string;
+}
+const { callToAction, onClick = "" } = Astro.props as Props;
 
 const {
   targetBlank,
@@ -15,17 +20,12 @@ const {
 <div class="flex w-auto">
   {
     targetBlank ? (
-      <a
-        class="inline-flex items-center justify-center"
-        href={href}
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        {text}
-        {icon && (
-          <Icon name={icon} class="w-5 h-5 ml-1 -mr-1.5 rtl:mr-1 rtl:-ml-1.5" />
-        )}
-      </a>
+    <a class="inline-flex items-center justify-center" href={callToAction.href} onclick={onClick}>
+    {callToAction.text}
+    {callToAction.icon && (
+      <Icon name={callToAction.icon} class="w-5 h-5 ml-1 -mr-1.5 rtl:mr-1 rtl:-ml-1.5" />
+    )}
+  </a>
     ) : (
       <a class="inline-flex items-center justify-center" href={href}>
         {text}

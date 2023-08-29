@@ -12,11 +12,14 @@ import Features from '~/components/widgets/Features.astro';
 import Stats from '~/components/widgets/Stats.astro';
 // import CallToAction from '~/components/widgets/CallToAction.astro';
 import Testimonials from '~/components/widgets/Testimonials.astro';
+import SimpleCalendly from '~/components/widgets/SimpleCalendly.astro';
 
 const metadata = {
   title: 'AstroWind — Free template for creating websites with Astro + Tailwind CSS',
   ignoreTitleTemplate: true,
 };
+
+
 ---
 
 <Layout metadata={metadata}>
@@ -404,6 +407,14 @@ const metadata = {
    ]}
   
  />
+
+ <SimpleCalendly
+ title="Ready for a Virtual Coffee?"
+ subtitle="Let's chat about how we can help you grow."
+ calendlyUrl="https://calendly.com/eugene-venger"
+ id="calendlyWidget"
+ isDark={false}
+/>
 
   <!-- CallToAction Widget *********** -->
 
