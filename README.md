@@ -213,7 +213,7 @@ apps:
 analytics:
   vendors:
     googleAnalytics:
-      id: null # or "G-XXXXXXXXXX"
+      id: "G-41NQCQBWYJ" # or "G-XXXXXXXXXX"
 
 ui:
   theme: 'system' # Values: "system" | "light" | "dark" | "light:only" | "dark:only"
