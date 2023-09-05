@@ -3,8 +3,8 @@ import Headline from '~/components/ui/Headline.astro';
 import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
 import CTA from '~/components/ui/CTA.astro';
 import Image from '~/components/common/Image.astro';
+import { Icon } from 'astro-icon/components';
 import type { Testimonials } from '~/types';
-
 
 const {
   title = '',
@@ -26,7 +26,7 @@ const {
   <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
     {
       testimonials &&
-        testimonials.map(({ title, testimonial, name, job, image }) => (
+        testimonials.map(({ title, testimonial, name, job, image, businessURL }) => (
           <div class="flex h-auto">
             <div class="flex flex-col p-4 md:p-6 rounded-md shadow-xl dark:shadow-none dark:border dark:border-slate-600">
               {title && <h2 class="text-lg font-medium leading-6 pb-4">{title}</h2>}
@@ -56,9 +56,26 @@ const {
                   </div>
                 )}
 
-                <div class="grow ml-3 rtl:ml-0 rtl:mr-3">
-                  {name && <p class="text-base font-semibold">{name}</p>}
-                  {job && <p class="text-xs text-muted">{job}</p>}
+                <div class="grow  flex flex-row ml-3 rtl:ml-0 rtl:mr-3">
+                  <div class="flex flex-col">
+                    {name && <p class="text-base font-semibold">{name}</p>}
+                    {job && <p class="text-xs text-muted">{job}</p>}
+                  </div>
+                  {businessURL && (
+                    <div class="self-center ml-auto">
+                      <a
+                        href={businessURL}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="hover:text-blue-500 transition duration-300 ease-in-out"
+                      >
+                        <Icon
+                          name="tabler:social"
+                          class="w-5 h-5 text-gray-500 hover:text-blue-500 transition duration-300 ease-in-out"
+                        />
+                      </a>
+                    </div>
+                  )}
                 </div>
               </div>
             </div>

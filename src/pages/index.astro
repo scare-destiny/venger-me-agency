@@ -1,6 +1,5 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
-import LandingLayout from '~/layouts/LandingLayout.astro';
 
 import Hero from '~/components/widgets/Hero.astro';
 import Note from '~/components/widgets/Note.astro';
@@ -19,37 +18,25 @@ const metadata = {
   title: 'venger.me - Your catalyst for unstoppable growth',
   ignoreTitleTemplate: true,
 };
-
-
 ---
 
 <Layout metadata={metadata}>
   <!-- Hero Widget ******************* -->
 
-  <Hero
-   
-    image={{ src: '~/assets/images/hero.png', alt: 'AstroWind Hero Image' }}
-  >
+  <Hero image={{ src: '~/assets/images/hero.png', alt: 'AstroWind Hero Image' }}>
     <Fragment slot="title">
-      Marketing funnels,  <span class="hidden xl:inline"> </span>
-      <span class="text-accent dark:text-white highlight"> automation  and reporting </span>   for your business
+      Marketing funnels, <span class="hidden xl:inline"> </span>
+      <span class="text-accent dark:text-white highlight"> automation and reporting</span> for your business
     </Fragment>
 
     <Fragment slot="subtitle">
       <span class="hidden sm:inline">
-        <span class="font-semibold">We tackle</span> the complex marketing challenges that other marketers can't solve, all while fueling your consistent growth.
-        </span
-      >
-      <span class="block mb-1 sm:hidden font-bold text-blue-600">Your catalyst for unstoppable growth.
-
-
-
-
+        <span class="font-semibold">We tackle</span> the complex marketing challenges that other marketers can't solve,
+        all while fueling your consistent growth.
       </span>
-       
+      <span class="block mb-1 sm:hidden font-bold text-blue-600">Your catalyst for unstoppable growth.</span>
     </Fragment>
   </Hero>
-
 
   <!-- Note Widget ******************* -->
 
@@ -58,12 +45,12 @@ const metadata = {
   <!-- Features Widget *************** -->
 
   <SimpleCalendly
-  title="Geared Up to Elevate Your Success?"
-  subtitle="Book a free session, and let's conjure up some magic."
-  calendlyUrl="https://calendly.com/eugene-venger"
-  id="calendlyWidget"
-  isDark={false}
- />
+    title="Geared Up to Elevate Your Success?"
+    subtitle="Book a free session, and let's conjure up some magic."
+    calendlyUrl="https://calendly.com/eugene-venger"
+    id="calendlyWidget"
+    isDark={false}
+  />
 
   <Features
     id="features"
@@ -98,7 +85,7 @@ const metadata = {
       {
         title: 'Data audit and validation',
         description:
-          "Data forms the foundation of all we do, so its integrity is paramount. We employ diverse methods to scrutinize and validate incoming data, instilling a level of trust that empowers effective decision-making.",
+          'Data forms the foundation of all we do, so its integrity is paramount. We employ diverse methods to scrutinize and validate incoming data, instilling a level of trust that empowers effective decision-making.',
         icon: 'tabler:arrows-right-left',
       },
       {
@@ -186,7 +173,7 @@ const metadata = {
   </Content> -->
 
   <!-- Content Widget **************** -->
-<!-- 
+  <!-- 
   <Content
     isReversed
     isAfterContent
@@ -383,48 +370,50 @@ const metadata = {
     ]}
   />
 
-   <!-- Testimonials Widget *********** -->
-   <Testimonials
-   title="Words from real customers"
-   testimonials={[
-     {
-       testimonial: `Eugene was a HUGE asset to the team. Always responsive, professional and creative. He will be missed! Highly recommended and would hope to work together again in the future.`,
-       name: 'Jared Burke',
-       job: 'Agency owner',
-       image: {
-         src: 'https://media.licdn.com/dms/image/D4E03AQFebTG2tqWERA/profile-displayphoto-shrink_400_400/0/1668627316809?e=1698883200&v=beta&t=xH92LZYAPmGFmDURhG1wLr5bim3yXFkT9Vqha_u6qhU',
-         alt: 'Emily Kennedy Image',
-       },
-     },
-     {
-       testimonial: `Eugene is very knowledgable. We work on a project that was not easy or straightforward but he really took the time to find solutions. He is very enthusiastic and eager to do the job well. Great communication, flexibility and availability. We had some hiccups but he was really on the case and solved them very quickly. Very professional and has integrity. Thank you Eugene!`,
-       name: 'Ioana Hardy',
-       job: 'Business Owner and Consultant',
-       image: {
-         src: 'https://media.licdn.com/dms/image/C4E03AQFEJwmwAOfVkA/profile-displayphoto-shrink_800_800/0/1651175696826?e=2147483647&v=beta&t=NaYwUkN5ksu-KPimFL9oU402bX6BdaYhFvpt892lfUU',
-         alt: 'Ioana Hardy Image Image',
-       },
-     },
-     {
-       testimonial: `I recommend Eugene to anyone who wants to take their business to the next level of success and profitability. He has a keen eye for seeking out ways to increase profits and implementing a strategy to achieve that. Would definitely recommend him to others. Thank you!`,
-       name: 'Oleg Zaidiner',
-       job: 'Business owner',
-       image: {
-         src: 'https://media.licdn.com/dms/image/C4D03AQF3JKNI7eSt6g/profile-displayphoto-shrink_200_200/0/1555653272289?e=1697673600&v=beta&t=3so0ruqAfyJfuhknGum7sMlxpEOSWbUEsVVaWHOe1FE',
-         alt: 'Oleg Zaidiner Image',
-       },
-     },
-   ]}
-  
- />
+  <!-- Testimonials Widget *********** -->
+  <Testimonials
+    title="Words from real customers"
+    testimonials={[
+      {
+        testimonial: `Eugene was a HUGE asset to the team. Always responsive, professional and creative. He will be missed! Highly recommended and would hope to work together again in the future.`,
+        name: 'Jared Burke',
+        job: 'Founder & Director at Pyrashyut',
+        businessURL: 'https://www.linkedin.com/in/jared123/',
+        image: {
+          src: 'https://media.licdn.com/dms/image/D4E03AQFebTG2tqWERA/profile-displayphoto-shrink_400_400/0/1668627316809?e=1698883200&v=beta&t=xH92LZYAPmGFmDURhG1wLr5bim3yXFkT9Vqha_u6qhU',
+          alt: 'Jared Burke Image',
+        },
+      },
+      {
+        testimonial: `Eugene is very knowledgable. We work on a project that was not easy or straightforward but he really took the time to find solutions. He is very enthusiastic and eager to do the job well. Great communication, flexibility and availability. We had some hiccups but he was really on the case and solved them very quickly. Very professional and has integrity. Thank you Eugene!`,
+        name: 'Ioana Hardy',
+        job: 'Managing Director at Impacters Group',
+        businessURL: 'https://uk.linkedin.com/in/ioana-hardy',
+        image: {
+          src: 'https://media.licdn.com/dms/image/C4E03AQFEJwmwAOfVkA/profile-displayphoto-shrink_800_800/0/1651175696826?e=2147483647&v=beta&t=NaYwUkN5ksu-KPimFL9oU402bX6BdaYhFvpt892lfUU',
+          alt: 'Ioana Hardy Image Image',
+        },
+      },
+      {
+        testimonial: `I recommend Eugene to anyone who wants to take their business to the next level of success and profitability. He has a keen eye for seeking out ways to increase profits and implementing a strategy to achieve that. Would definitely recommend him to others. Thank you!`,
+        name: 'Oleg Zaidiner',
+        job: 'CEO & Co-Founder at aNavigator',
+        businessURL: 'https://www.linkedin.com/in/oleg-zaidiner',
+        image: {
+          src: 'https://media.licdn.com/dms/image/C4D03AQF3JKNI7eSt6g/profile-displayphoto-shrink_200_200/0/1555653272289?e=1697673600&v=beta&t=3so0ruqAfyJfuhknGum7sMlxpEOSWbUEsVVaWHOe1FE',
+          alt: 'Oleg Zaidiner Image',
+        },
+      },
+    ]}
+  />
 
- <SimpleCalendly
- title="Ready for a Virtual Coffee?"
- subtitle="Let's chat about how we can help you grow."
- calendlyUrl="https://calendly.com/eugene-venger"
- id="calendlyWidget"
- isDark={false}
-/>
+  <SimpleCalendly
+    title="Ready for a Virtual Coffee?"
+    subtitle="Let's chat about how we can help you grow."
+    calendlyUrl="https://calendly.com/eugene-venger"
+    id="calendlyWidget"
+    isDark={false}
+  />
 
   <!-- CallToAction Widget *********** -->
 
@@ -445,4 +434,3 @@ const metadata = {
     </Fragment>
   </CallToAction> -->
 </Layout>
-
