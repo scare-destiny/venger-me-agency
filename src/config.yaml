@@ -1,6 +1,6 @@
 site:
-  name: AstroWind
-  site: 'https://venger.me'
+  name: Boutique Agency - Venger.me
+  site: 'https://agency.venger.me'
   base: '/'
   trailingSlash: false
 
@@ -9,16 +9,16 @@ site:
 # Default SEO metadata
 metadata:
   title:
-    default: AstroWind
-    template: '%s — AstroWind'
-  description: "\U0001F680 Suitable for Startups, Small Business, Sass Websites, Professional Portfolios, Marketing Websites, Landing Pages & Blogs."
+    default: Venger.me
+    template: '%s — Venger.me'
+  description: "Marketing funnels, automation and reporting for your business"
   robots:
     index: true
     follow: true
   openGraph:
-    site_name: venger.me
+    site_name: agency.venger.me
     images:
-      - url: '~/assets/images/default.png'
+      - url: '~/assets/images/agency.venger.me.jpg'
         width: 1200
         height: 628
     type: website
