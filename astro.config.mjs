@@ -9,7 +9,7 @@ import mdx from '@astrojs/mdx';
 import partytown from '@astrojs/partytown';
 import compress from 'astro-compress';
 import icon from 'astro-icon';
-import tasks from "./src/utils/tasks";
+import tasks from './src/utils/tasks';
 
 import { readingTimeRemarkPlugin } from './src/utils/frontmatter.mjs';
 
@@ -78,9 +78,7 @@ export default defineConfig({
     remarkPlugins: [readingTimeRemarkPlugin],
   },
 
-  experimental:{
-    assets: true
-  },
+  assets: true,
 
   vite: {
     resolve: {
