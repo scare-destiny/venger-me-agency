@@ -13,7 +13,7 @@
     "lint:eslint": "eslint . --ext .js,.ts,.astro"
   },
   "devDependencies": {
-    "@astrojs/mdx": "^0.19.7",
+    "@astrojs/mdx": "^1.0.0",
     "@astrojs/partytown": "^1.2.3",
     "@astrojs/rss": "^2.4.4",
     "@astrojs/sitemap": "^2.0.2",
