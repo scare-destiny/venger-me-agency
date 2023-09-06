@@ -175,8 +175,15 @@ export const footerData = {
     { ariaLabel: 'Facebook', icon: 'tabler:brand-facebook', href: 'https://www.facebook.com/eugene.venger' },
     // { ariaLabel: 'RSS', icon: 'tabler:rss', href: getAsset('/rss.xml') },
     { ariaLabel: 'Github', icon: 'tabler:brand-github', href: 'https://github.com/scare-destiny/' },
+    { ariaLabel: 'Email', icon: 'tabler:brand-gmail', href: 'mailto:eugene@venger.me' },
   ],
   footNote: `
     Made by <a class="text-blue-600 hover:underline dark:text-gray-200" href="https://venger.me/" target="_blank"> Eugene Venger</a> · All rights reserved.
+    <p class="pt-2">
+    <a href="mailto:eugene@venger.me" class="text-current no-underline hover:underline">
+      eugene@venger.me
+    </a>
+  </p>
+  
   `,
 };
