@@ -3,7 +3,7 @@ import CallToAction from '~/components/widgets/CallToAction.astro';
 import Content from '~/components/widgets/Content.astro';
 import Features2 from '~/components/widgets/Features2.astro';
 import Hero from '~/components/widgets/Hero.astro';
-import Testimonials from '~/components/widgets/Testimonials.astro';
+// import Testimonials from '~/components/widgets/Testimonials.astro';
 import Layout from '~/layouts/PageLayout.astro';
 
 const metadata = {
@@ -16,9 +16,8 @@ const metadata = {
 
   <Hero
     tagline="Services"
-    title="Elevate your projects with our stunning templates"
-    subtitle="Explore our meticulously crafted templates tailored to various industries and purposes. From captivating presentations to functional website designs, we offer the tools you need to succeed."
-    callToAction={{ text: 'Start exploring', href: '/' }}
+    title="Automate, Optimize, and Scale Your Business With Tech-Savvy Solutions "
+    subtitle="From data-driven marketing automations to high-ROI sales funnels, we don't just supplement your strategy— we help you reach your most ambitious goals."
     image={{
       src: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80',
       alt: 'AstroWind Hero Image',
@@ -28,62 +27,60 @@ const metadata = {
   <!-- Features2 Widget ************** -->
 
   <Features2
-    title="Explore our diverse templates"
-    subtitle="Discover our selection below to streamline and elevate your projects."
+    title="Our Tailored Solutions    "
+    subtitle="Pioneering in multi-disciplinary tech solutions, we cater to various sectors—both niche and mainstream.    "
     columns={3}
     items={[
       {
-        title: 'Educational',
+        title: 'Marketing Automation',
         description:
-          'By harmonizing instructional design and visual appeal, templates streamline content creation for varied materials, expediting development and cultivating engaging educational spaces.',
-        icon: 'tabler:school',
+          'Combining strategy with data and code to create marketing automations that churn results, not just emails.',
+        icon: 'tabler:code',
       },
       {
-        title: 'Interior Design',
+        title: 'High-Impact Sales Funnels',
         description:
-          'Crafting functional, visually appealing spaces for residential and commercial use. Templates emphasize layout, colors, and furniture setups, offering a versatile toolkit for your design vision.',
-        icon: 'tabler:home-star',
+          "We map out your user's journey from awareness to conversion with laser precision to get stellar results.",
+        icon: 'tabler:filter',
       },
       {
-        title: 'Photography',
-        description: `Empowering photographers, our templates facilitate captivating storytelling. With a keen focus on layout, galleries, and typography, they cater to both professionals and enthusiasts.`,
-        icon: 'tabler:photo',
+        title: 'Strategic Tech Consultancy',
+        description: `We inject your business with robust tech strategies, ensuring long-term profitability and scalability.`,
+        icon: 'tabler:robot',
       },
       {
-        title: 'E-commerce',
+        title: 'A/B Testing & Conversion Optimization',
+        description: 'Why guess when you can know? Our A/B testing tactics redefine your ROI equations',
+        icon: 'tabler:hierarchy',
+      },
+      {
+        title: 'Data Analytics & Reporting',
         description:
-          'Developing engaging online stores, our E-commerce templates ensure a dynamic presence to effectively showcase products. Ideal for startups or revamps.',
-        icon: 'tabler:shopping-cart',
+          'Complete transparency through custom dashboards and in-depth analytics. Decision-making has never been this easy or precise.',
+        icon: 'tabler:chart-pie',
       },
       {
-        title: 'Blog',
-        description:
-          'With attention to typography, these templates empower effective content presentation for writers at any stage, ensuring visually engaging and user-friendly blogs.',
-        icon: 'tabler:article',
+        title: 'Site & App Performance Optimization',
+        description: 'Slow load times kill conversions. We ensure your tech runs as smooth as jazz, on all devices.',
+        icon: 'tabler:sparkles',
       },
-      {
-        title: 'Business',
-        description:
-          'Providing polished options for effective visual communication, these templates empower both startups and established companies for a professional brand presence.',
-        icon: 'tabler:building-store',
-      },
-      {
-        title: 'Branding',
-        description:
-          'Offering pre-designed elements for a consistent brand identity, including logos and marketing materials. Ideal for new ventures or revamps.',
-        icon: 'tabler:arrow-big-up-lines',
-      },
-      {
-        title: 'Medical',
-        description: `From presentations to patient forms, these tools enhance communication effectiveness for healthcare professionals. Ideal for medical practices and research pursuits.`,
-        icon: 'tabler:vaccine',
-      },
-      {
-        title: 'Fashion Design',
-        description:
-          'With attention to detail, customization, and contemporary design, they empower designers to showcase ideas cohesively. Ideal for all levels of designers.',
-        icon: 'tabler:tie',
-      },
+      // {
+      //   title: 'Branding',
+      //   description:
+      //     'Offering pre-designed elements for a consistent brand identity, including logos and marketing materials. Ideal for new ventures or revamps.',
+      //   icon: 'tabler:arrow-big-up-lines',
+      // },
+      // {
+      //   title: 'Medical',
+      //   description: `From presentations to patient forms, these tools enhance communication effectiveness for healthcare professionals. Ideal for medical practices and research pursuits.`,
+      //   icon: 'tabler:vaccine',
+      // },
+      // {
+      //   title: 'Fashion Design',
+      //   description:
+      //     'With attention to detail, customization, and contemporary design, they empower designers to showcase ideas cohesively. Ideal for all levels of designers.',
+      //   icon: 'tabler:tie',
+      // },
     ]}
   />
 
@@ -93,27 +90,27 @@ const metadata = {
     isReversed
     items={[
       {
-        title: 'High-Quality Designs',
+        title: 'Multidisciplinary Expertise',
         description:
-          'Our templates feature top-tier designs that ensure a professional and polished appearance for your projects.',
+          'We excel in translating tech jargon into marketing insights and vice versa. This ensures all stakeholders are on the same page, a critical advantage in a field often marred by miscommunication.',
         icon: 'tabler:wand',
       },
+      // {
+      //   title: 'Transparent Communications',
+      //   description:
+      //     'Tailor each template to your unique needs with user-friendly customization tools that let you personalize colors, fonts, and content.',
+      //   icon: 'tabler:settings',
+      // },
       {
-        title: 'Customization Tools',
+        title: 'Goal-Oriented Approach',
         description:
-          'Tailor each template to your unique needs with user-friendly customization tools that let you personalize colors, fonts, and content.',
-        icon: 'tabler:settings',
-      },
-      {
-        title: 'Pre-Designed Elements',
-        description:
-          'Save time and effort with our ready-to-use elements, including graphics, icons, and layouts that enhance the visual appeal of your creations.',
+          "We're not just tech-savvy; we're goal-savvy. Every line of code and pixel is aligned with your strategic objectives.",
         icon: 'tabler:presentation',
       },
       {
-        title: 'Preview and Mockup Views',
+        title: 'Data-Driven Results',
         description:
-          'Visualize the final outcome before making any changes using our preview and mockup views, ensuring your projects meet your expectations.',
+          'Unlock actionable insights and laser-focused strategies. Our analytics and attribution mastery transforms ambiguity into clear pathways for growth.',
         icon: 'tabler:carousel-horizontal',
       },
     ]}
@@ -133,28 +130,28 @@ const metadata = {
     isAfterContent
     items={[
       {
-        title: 'Time Savings',
+        title: 'Immediate Value',
         description:
-          'Streamline your workflow, enabling you to create stunning materials efficiently and allocate more time to your core tasks.',
+          'Immediate access to innovative solutions that drive results, because we believe your time is just as valuable as ours.',
         icon: 'tabler:clock',
       },
       {
-        title: 'Professional Appearance',
+        title: 'Targeted Expertise',
         description:
-          'Elevate your projects with the polished and sophisticated look that our templates provide, making a lasting impression on your audience.',
-        icon: 'tabler:school',
+          'Our specialized focus in Solar Industry B2B, SaaS, and other agencies makes us the ace up your sleeve.',
+        icon: 'tabler:terminal',
       },
       {
-        title: 'Cost-Efficiency',
+        title: 'Real-Time Dashboards',
         description:
-          'Benefit from cost savings by avoiding the need for custom design work, as our templates offer professional-grade designs at a fraction of the cost.',
-        icon: 'tabler:coin',
+          'Stay in the loop with custom dashboards and reporting tools, aimed at giving you a 360-degree view of your projects.',
+        icon: 'tabler:dashboard',
       },
       {
-        title: 'Instant Download',
+        title: 'Strategic Recruitment',
         description:
-          'Enjoy immediate access to your chosen templates upon purchase, enabling you to begin working on your projects without delay.',
-        icon: 'tabler:file-download',
+          'Save not just on operational costs but also on talent acquisition. Our expertise in vetting ensures that you only get the best on your team.',
+        icon: 'tabler:users',
       },
     ]}
     image={{
@@ -169,7 +166,7 @@ const metadata = {
 
   <!-- Testimonials Widget *********** -->
 
-  <Testimonials
+  <!-- <Testimonials
     title="Words from customers"
     testimonials={[
       {
@@ -206,16 +203,19 @@ const metadata = {
       href: 'https://github.com/onwidget/astrowind',
       icon: 'tabler:chevron-right',
     }}
-  />
+  /> -->
 
   <!-- CallToAction Widget *********** -->
 
   <CallToAction
     callToAction={{
-      text: 'Start exploring',
-      href: '/',
+      text: 'Reach Out Now',
+      href: '/contact',
+      icon: 'tabler:affiliate',
     }}
-    title="Dive into our template collection"
-    subtitle="Whether you're in business, design, or education, our templates are here to elevate your projects."
-  />
+  >
+    <Fragment slot="title">Ready to Supercharge Your Strategy? 🚀</Fragment>
+
+    <Fragment slot="subtitle">Transform your metrics, not just your mood. Time's ticking. ⏰</Fragment>
+  </CallToAction>
 </Layout>
