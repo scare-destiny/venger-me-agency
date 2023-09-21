@@ -2,7 +2,7 @@
 import Layout from '~/layouts/PageLayout.astro';
 import HeroText from '~/components/widgets/HeroText.astro';
 import ContactUs from '~/components/widgets/Contact.astro';
-import Features2 from '~/components/widgets/Features2.astro';
+// import Features2 from '~/components/widgets/Features2.astro';
 
 const metadata = {
   title: 'Contact',
@@ -10,16 +10,13 @@ const metadata = {
 ---
 
 <Layout metadata={metadata}>
-    <!-- HeroText Widget ******************* -->
+  <!-- HeroText Widget ******************* -->
 
-    <HeroText
-    tagline="Contact"
-    title="Let's Connect!"
-  />
+  <HeroText tagline="Contact" title="Let's Connect!" />
 
   <ContactUs
     title="Drop us a message today!"
-    subtitle="For quicker answers, explore our FAQs section. You may find the solution you're looking  for right there! If not, our support team is delighted to help you."
+    subtitle="Contact us today to find out how we can help you achieve your business goals."
     inputs={[
       {
         type: 'text',
@@ -44,7 +41,7 @@ const metadata = {
 
   <!-- Features2 Widget ************** -->
 
-  <Features2
+  <!-- <Features2
     title="We are here to help!"
     items={[
       {
@@ -68,7 +65,7 @@ const metadata = {
       },
       {
         title: 'Email',
-        description: 'contact@support.com',
+        description: 'eu',
         icon: 'tabler:mail',
       },
       {
@@ -77,5 +74,5 @@ const metadata = {
         icon: 'tabler:map-pin',
       },
     ]}
-  />
+  /> -->
 </Layout>

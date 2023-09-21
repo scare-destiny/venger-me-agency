@@ -1,9 +1,11 @@
 ---
-import Features2 from '~/components/widgets/Features2.astro';
+// import Features2 from '~/components/widgets/Features2.astro';
 import Features3 from '~/components/widgets/Features3.astro';
 import Hero from '~/components/widgets/Hero.astro';
 import Stats from '~/components/widgets/Stats.astro';
 import Steps2 from '~/components/widgets/Steps2.astro';
+// import CTA from '~/components/ui/CTA.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
 import Layout from '~/layouts/PageLayout.astro';
 
 const metadata = {
@@ -22,14 +24,14 @@ const metadata = {
     }}
   >
     <Fragment slot="title">
-      Elevate your online presence with our <br />
-      <span class="text-accent dark:text-white highlight"> Beautiful Website Templates</span>
+      Elevate Your Game: Tech-Savvy Marketing for <br />
+      <span class="text-accent dark:text-white highlight"> Serious ROI</span>
     </Fragment>
 
     <Fragment slot="subtitle">
-      Donec efficitur, ipsum quis congue luctus, mauris magna convallis mauris, eu auctor nisi lectus non augue. Donec
-      quis lorem non massa vulputate efficitur ac at turpis. Sed tincidunt ex a nunc convallis, et lobortis nisi tempus.
-      Suspendisse vitae nisi eget tortor luctus maximus sed non lectus.
+      Welcome to Venger.me, your one-stop-shop for marketing funnels, automation, and analytics that don't just aim to
+      impress but guarantee results. With a heady mix of coding prowess, technical marketing, and business acumen, we're
+      not just another agency; we're your growth partners.
     </Fragment>
   </Hero>
 
@@ -38,38 +40,37 @@ const metadata = {
   <Stats
     title="Statistics about us"
     stats={[
-      { title: 'Offices', amount: '4' },
-      { title: 'Employees', amount: '248' },
-      { title: 'Templates', amount: '12' },
-      { title: 'Awards', amount: '24' },
+      { title: 'Happy Clients', amount: '50+' },
+      { title: 'Generated Revenue', amount: '~$1,000,000' },
+      { title: 'Tasks Automated', amount: '~10,573,346' },
+      { title: 'Cups of Coffee Consumed', amount: '5000+' },
     ]}
   />
 
   <!-- Features3 Widget ************** -->
 
   <Features3
-    title="Our templates"
-    subtitle="Etiam scelerisque, enim eget vestibulum luctus, nibh mauris blandit nulla, nec vestibulum risus justo ut enim. Praesent lacinia diam et ante imperdiet euismod."
+    title="What sets us apart"
+    subtitle="We're like the Swiss Army knife of technical marketing—multifaceted, reliable, and innovative. From unearthing the diamonds in your data to cooking up high-performing sales funnels, we're your one-stop shop for digital dominance."
     columns={3}
     isBeforeContent={true}
     items={[
       {
-        title: 'Educational',
-        description:
-          'Morbi faucibus luctus quam, sit amet aliquet felis tempor id. Cras augue massa, ornare quis dignissim a, molestie vel nulla.',
-        icon: 'tabler:template',
+        title: 'Expertise',
+        description: "With over 50 happy clients, we've been around the block and know how to deliver.",
+        icon: 'tabler:activity',
       },
       {
-        title: 'Interior Design',
+        title: 'Data-Driven',
         description:
-          'Vivamus porttitor, tortor convallis aliquam pretium, turpis enim consectetur elit, vitae egestas purus erat ac nunc nulla.',
-        icon: 'tabler:template',
+          'Nearly 11 million tasks automated and counting. We play the numbers game better than anyone else.',
+        icon: 'tabler:chart-bar',
       },
       {
-        title: 'Photography',
+        title: 'Philosophy',
         description:
-          'Duis sed lectus in nisl vehicula porttitor eget quis odio. Aliquam erat volutpat. Nulla eleifend nulla id sem fermentum.',
-        icon: 'tabler:template',
+          'We believe in clear communication, cutting-edge technologies, and deep-rooted expertise. Your growth is our mission.',
+        icon: 'tabler:load-balancer',
       },
     ]}
   />
@@ -77,62 +78,57 @@ const metadata = {
   <!-- Features3 Widget ************** -->
 
   <Features3
+    title="Who we work with"
+    subtitle="Our range of services suits businesses across various sectors. From e-commerce hustles to software houses and B2B enterprises, we’ve got the expertise and the motivation to fuel your growth.    "
     columns={3}
-    isAfterContent={true}
     items={[
       {
         title: 'E-commerce',
         description:
-          'Rutrum non odio at vehicula. Proin ipsum justo, dignissim in vehicula sit amet, dignissim id quam. Sed ac tincidunt sapien.',
-        icon: 'tabler:template',
+          'Streamlining checkouts and skyrocketing cart values, we know what makes the e-commerce cash register sing.',
+        icon: 'tabler:credit-card',
       },
       {
-        title: 'Blog',
-        description:
-          'Nullam efficitur volutpat sem sed fringilla. Suspendisse et enim eu orci volutpat laoreet ac vitae libero.',
-        icon: 'tabler:template',
+        title: 'SaaS Companies',
+        description: 'From churn rate to MRR, we optimize each metric to make your SaaS enterprise profitable.',
+        icon: 'tabler:brand-cake',
       },
       {
-        title: 'Business',
+        title: 'Agencies',
         description:
-          'Morbi et elit finibus, facilisis justo ut, pharetra ipsum. Donec efficitur, ipsum quis congue luctus, mauris magna.',
-        icon: 'tabler:template',
+          'We offer the tech-savvy back-end support that lets marketing agencies focus on creativity and client relations.',
+        icon: 'tabler:clover',
       },
       {
-        title: 'Branding',
-        description:
-          'Suspendisse vitae nisi eget tortor luctus maximus sed non lectus. Cras malesuada pretium placerat. Nullam venenatis dolor a ante rhoncus.',
-        icon: 'tabler:template',
+        title: 'B2B Enterprises',
+        description: 'Data-driven solutions tailored to convert long sales cycles into loyal partnerships.',
+        icon: 'tabler:building-estate',
       },
       {
-        title: 'Medical',
+        title: 'Consulting Firms',
         description:
-          'Vestibulum malesuada lacus id nibh posuere feugiat. Nam volutpat nulla a felis ultrices, id suscipit mauris congue. In hac habitasse platea dictumst.',
-        icon: 'tabler:template',
+          'Navigating the nuanced challenges specific to consultancies, we make sure your insights don’t just impress, but convert.',
+        icon: 'tabler:comet',
       },
       {
-        title: 'Fashion Design',
+        title: 'Startups and Innovators',
         description:
-          'Maecenas eu tellus eget est scelerisque lacinia et a diam. Aliquam velit lorem, vehicula id fermentum et, rhoncus et purus.',
-        icon: 'tabler:template',
+          'Navigating the tightrope between scaling fast and staying lean? We provide the agility and technical prowess to elevate your startup from a fledgling to a phoenix.',
+        icon: 'tabler:jetpack',
       },
     ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80',
-      alt: 'Colorful Image',
-    }}
   />
 
   <!-- Steps2 Widget ****************** -->
 
   <Steps2
-    title="Our values"
+    title="Our core values"
     subtitle="Maecenas eu tellus eget est scelerisque lacinia et a diam. Aliquam velit lorem, vehicula id fermentum et, rhoncus et purus. Nulla facilisi. Vestibulum malesuada lacus."
     items={[
       {
-        title: 'Customer-centric approach',
+        title: 'Growth-Oriented Client Focus',
         description:
-          'Donec id nibh neque. Quisque et fermentum tortor. Fusce vitae dolor a mauris dignissim commodo. Ut eleifend luctus condimentum.',
+          "We don't just deliver services; we cultivate partnerships. Tailoring solutions to individual client needs is in our DNA.",
       },
       {
         title: 'Constant Improvement',
@@ -140,9 +136,9 @@ const metadata = {
           'Phasellus laoreet fermentum venenatis. Vivamus dapibus pulvinar arcu eget mattis. Fusce eget mauris leo.',
       },
       {
-        title: 'Ethical Practices',
+        title: 'Relentless Pursuit of Excellence',
         description:
-          'Vestibulum imperdiet libero et lectus molestie, et maximus augue porta. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+          "In a world of mediocrity, we're the obsessive type—in a good way. We're perpetually chasing perfection, whether we're debugging a line of code or finetuning your marketing strategy.",
       },
     ]}
   />
@@ -150,29 +146,30 @@ const metadata = {
   <!-- Steps2 Widget ****************** -->
 
   <Steps2
-    title="Achievements"
-    subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sagittis, quam nec venenatis lobortis, mi risus tempus nulla, sed porttitor est nibh at nulla."
+    title="Approach"
+    subtitle="In a digital world cluttered with jargon and gimmicks, we're the artisans who still believe in getting our hands dirty. Our approach is a blend of deep technical acumen, hands-on experience, and a relentless focus on your business outcomes. Forget about buzzwords; let's talk about real, measurable results that matter to you."
     isReversed={true}
     callToAction={{
-      text: 'See more',
-      href: '/',
+      text: 'Contact Us',
+      href: '/contact',
     }}
     items={[
       {
-        title: 'Global reach',
-        description: 'Nam malesuada urna in enim imperdiet tincidunt. Phasellus non tincidunt nisi, at elementum mi.',
+        title: 'Custom-Tailored Solutions',
+        description:
+          "We're not a one-size-fits-all operation; we're your personal tailors for digital success. Every strategy we develop is custom-cut to fit your business's unique needs. No templates, only artisanal solutions.",
         icon: 'tabler:globe',
       },
       {
-        title: 'Positive customer feedback and reviews',
+        title: 'Trusted Relationships',
         description:
-          'Cras semper nulla leo, eget laoreet erat cursus sed. Praesent faucibus massa in purus iaculis dictum.',
+          "We value intimacy and trust over scale. You're not just a client; you're a partner. We're committed to knowing your business inside out and delivering personalized, one-on-one consultations that make a world of difference.",
         icon: 'tabler:message-star',
       },
       {
-        title: 'Awards and recognition as industry experts',
+        title: 'Craftsmanship Over Volume',
         description:
-          'Phasellus lacinia cursus velit, eu malesuada magna pretium eu. Etiam aliquet tellus purus, blandit lobortis ex rhoncus vitae.',
+          "We don't aim to serve everyone; we aim to serve the best, and to be the best for them. We're artisans of our craft, focusing on a select clientèle that appreciates the finer points of technical marketing.",
         icon: 'tabler:award',
       },
     ]}
@@ -180,7 +177,7 @@ const metadata = {
 
   <!-- Features2 Widget ************** -->
 
-  <Features2
+  <!-- <Features2
     title="Our locations"
     tagline="Find us"
     columns={4}
@@ -202,11 +199,11 @@ const metadata = {
         description: '3456 Lorem Ipsum St, 34567, São Paulo',
       },
     ]}
-  />
+  /> -->
 
   <!-- Features2 Widget ************** -->
 
-  <Features2
+  <!-- <Features2
     title="Technical Support"
     tagline="Contact us"
     columns={2}
@@ -224,5 +221,17 @@ const metadata = {
         icon: 'tabler:headset',
       },
     ]}
-  />
+  /> -->
+
+  <CallToAction
+    callToAction={{
+      text: 'Reach Out Now',
+      href: '/contact',
+      icon: 'tabler:affiliate',
+    }}
+  >
+    <Fragment slot="title">Ready for Next-Level Growth? 🚀</Fragment>
+
+    <Fragment slot="subtitle">Transform your metrics, not just your mood. Time's ticking. ⏰</Fragment>
+  </CallToAction>
 </Layout>
