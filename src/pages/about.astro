@@ -1,6 +1,7 @@
 ---
 // import Features2 from '~/components/widgets/Features2.astro';
 import Features3 from '~/components/widgets/Features3.astro';
+import Header from '~/components/widgets/Header.astro';
 import Hero from '~/components/widgets/Hero.astro';
 import Stats from '~/components/widgets/Stats.astro';
 import Steps2 from '~/components/widgets/Steps2.astro';
@@ -14,170 +15,188 @@ const metadata = {
 ---
 
 <Layout metadata={metadata}>
-  <!-- Hero Widget ******************* -->
+  <Fragment slot="header">
+    <Header
+      links={[
+        { text: 'Home', href: '/' },
+        { text: 'About', href: '/about' },
+        { text: 'Services', href: '/services' },
+        { text: 'Contact', href: '/contact' },
+        // { text: 'Blog', href: '#blog' },
+        // { text: 'Github', href: '#' },
+      ]}
+      actions={[
+        {
+          text: 'Contact us',
+          href: '/contact',
+        },
+      ]}
+      showToggleTheme
+    />
+    <!-- Hero Widget ******************* -->
 
-  <Hero
-    tagline="About us"
-    image={{
-      src: 'https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-      alt: 'Caos Image',
-    }}
-  >
-    <Fragment slot="title">
-      Elevate Your Game: Tech-Savvy Marketing for <br />
-      <span class="text-accent dark:text-white highlight"> Serious ROI</span>
-    </Fragment>
+    <Hero
+      tagline="About us"
+      image={{
+        src: '~/assets/images/about-us.png',
+        alt: 'Venger.me About Image',
+      }}
+    >
+      <Fragment slot="title">
+        Elevate Your Game: Tech-Savvy Marketing for <br />
+        <span class="text-accent dark:text-white highlight"> Serious ROI</span>
+      </Fragment>
 
-    <Fragment slot="subtitle">
-      Welcome to Venger.me, your one-stop-shop for marketing funnels, automation, and analytics that don't just aim to
-      impress but guarantee results. With a heady mix of coding prowess, technical marketing, and business acumen, we're
-      not just another agency; we're your growth partners.
-    </Fragment>
-  </Hero>
+      <Fragment slot="subtitle">
+        Welcome to Venger.me, your one-stop-shop for marketing funnels, automation, and analytics that don't just aim to
+        impress but guarantee results. With a heady mix of coding prowess, technical marketing, and business acumen,
+        we're not just another agency; we're your growth partners.
+      </Fragment>
+    </Hero>
 
-  <!-- Stats Widget ****************** -->
+    <!-- Stats Widget ****************** -->
 
-  <Stats
-    title="Statistics about us"
-    stats={[
-      { title: 'Happy Clients', amount: '50+' },
-      { title: 'Generated Revenue', amount: '~$1,000,000' },
-      { title: 'Tasks Automated', amount: '~10,573,346' },
-      { title: 'Cups of Coffee Consumed', amount: '5000+' },
-    ]}
-  />
+    <Stats
+      title="Statistics about us"
+      stats={[
+        { title: 'Happy Clients', amount: '50+' },
+        { title: 'Generated Revenue', amount: '~$1,000,000' },
+        { title: 'Tasks Automated', amount: '~10,573,346' },
+        { title: 'Cups of Coffee Consumed', amount: '5000+' },
+      ]}
+    />
 
-  <!-- Features3 Widget ************** -->
+    <!-- Features3 Widget ************** -->
 
-  <Features3
-    title="What sets us apart"
-    subtitle="We're like the Swiss Army knife of technical marketing—multifaceted, reliable, and innovative. From unearthing the diamonds in your data to cooking up high-performing sales funnels, we're your one-stop shop for digital dominance."
-    columns={3}
-    isBeforeContent={true}
-    items={[
-      {
-        title: 'Expertise',
-        description: "With over 50 happy clients, we've been around the block and know how to deliver.",
-        icon: 'tabler:activity',
-      },
-      {
-        title: 'Data-Driven',
-        description:
-          'Nearly 11 million tasks automated and counting. We play the numbers game better than anyone else.',
-        icon: 'tabler:chart-bar',
-      },
-      {
-        title: 'Philosophy',
-        description:
-          'We believe in clear communication, cutting-edge technologies, and deep-rooted expertise. Your growth is our mission.',
-        icon: 'tabler:load-balancer',
-      },
-    ]}
-  />
+    <Features3
+      title="What sets us apart"
+      subtitle="We're like the Swiss Army knife of technical marketing—multifaceted, reliable, and innovative. From unearthing the diamonds in your data to cooking up high-performing sales funnels, we're your one-stop shop for digital dominance."
+      columns={3}
+      isBeforeContent={true}
+      items={[
+        {
+          title: 'Expertise',
+          description: "With over 50 happy clients, we've been around the block and know how to deliver.",
+          icon: 'tabler:activity',
+        },
+        {
+          title: 'Data-Driven',
+          description:
+            'Nearly 11 million tasks automated and counting. We play the numbers game better than anyone else.',
+          icon: 'tabler:chart-bar',
+        },
+        {
+          title: 'Philosophy',
+          description:
+            'We believe in clear communication, cutting-edge technologies, and deep-rooted expertise. Your growth is our mission.',
+          icon: 'tabler:load-balancer',
+        },
+      ]}
+    />
 
-  <!-- Features3 Widget ************** -->
+    <!-- Features3 Widget ************** -->
 
-  <Features3
-    title="Who we work with"
-    subtitle="Our range of services suits businesses across various sectors. From e-commerce hustles to software houses and B2B enterprises, we’ve got the expertise and the motivation to fuel your growth.    "
-    columns={3}
-    items={[
-      {
-        title: 'E-commerce',
-        description:
-          'Streamlining checkouts and skyrocketing cart values, we know what makes the e-commerce cash register sing.',
-        icon: 'tabler:credit-card',
-      },
-      {
-        title: 'SaaS Companies',
-        description: 'From churn rate to MRR, we optimize each metric to make your SaaS enterprise profitable.',
-        icon: 'tabler:brand-cake',
-      },
-      {
-        title: 'Agencies',
-        description:
-          'We offer the tech-savvy back-end support that lets marketing agencies focus on creativity and client relations.',
-        icon: 'tabler:clover',
-      },
-      {
-        title: 'B2B Enterprises',
-        description: 'Data-driven solutions tailored to convert long sales cycles into loyal partnerships.',
-        icon: 'tabler:building-estate',
-      },
-      {
-        title: 'Consulting Firms',
-        description:
-          'Navigating the nuanced challenges specific to consultancies, we make sure your insights don’t just impress, but convert.',
-        icon: 'tabler:comet',
-      },
-      {
-        title: 'Startups and Innovators',
-        description:
-          'Navigating the tightrope between scaling fast and staying lean? We provide the agility and technical prowess to elevate your startup from a fledgling to a phoenix.',
-        icon: 'tabler:jetpack',
-      },
-    ]}
-  />
+    <Features3
+      title="Who we work with"
+      subtitle="Our range of services suits businesses across various sectors. From e-commerce hustles to software houses and B2B enterprises, we’ve got the expertise and the motivation to fuel your growth.    "
+      columns={3}
+      items={[
+        {
+          title: 'E-commerce',
+          description:
+            'Streamlining checkouts and skyrocketing cart values, we know what makes the e-commerce cash register sing.',
+          icon: 'tabler:credit-card',
+        },
+        {
+          title: 'SaaS Companies',
+          description: 'From churn rate to MRR, we optimize each metric to make your SaaS enterprise profitable.',
+          icon: 'tabler:brand-cake',
+        },
+        {
+          title: 'Agencies',
+          description:
+            'We offer the tech-savvy back-end support that lets marketing agencies focus on creativity and client relations.',
+          icon: 'tabler:clover',
+        },
+        {
+          title: 'B2B Enterprises',
+          description: 'Data-driven solutions tailored to convert long sales cycles into loyal partnerships.',
+          icon: 'tabler:building-estate',
+        },
+        {
+          title: 'Consulting Firms',
+          description:
+            'Navigating the nuanced challenges specific to consultancies, we make sure your insights don’t just impress, but convert.',
+          icon: 'tabler:comet',
+        },
+        {
+          title: 'Startups and Innovators',
+          description:
+            'Navigating the tightrope between scaling fast and staying lean? We provide the agility and technical prowess to elevate your startup from a fledgling to a phoenix.',
+          icon: 'tabler:jetpack',
+        },
+      ]}
+    />
 
-  <!-- Steps2 Widget ****************** -->
+    <!-- Steps2 Widget ****************** -->
 
-  <Steps2
-    title="Our core values"
-    subtitle="Maecenas eu tellus eget est scelerisque lacinia et a diam. Aliquam velit lorem, vehicula id fermentum et, rhoncus et purus. Nulla facilisi. Vestibulum malesuada lacus."
-    items={[
-      {
-        title: 'Growth-Oriented Client Focus',
-        description:
-          "We don't just deliver services; we cultivate partnerships. Tailoring solutions to individual client needs is in our DNA.",
-      },
-      {
-        title: 'Constant Improvement',
-        description:
-          'Phasellus laoreet fermentum venenatis. Vivamus dapibus pulvinar arcu eget mattis. Fusce eget mauris leo.',
-      },
-      {
-        title: 'Relentless Pursuit of Excellence',
-        description:
-          "In a world of mediocrity, we're the obsessive type—in a good way. We're perpetually chasing perfection, whether we're debugging a line of code or finetuning your marketing strategy.",
-      },
-    ]}
-  />
+    <Steps2
+      title="Our core values"
+      subtitle="Maecenas eu tellus eget est scelerisque lacinia et a diam. Aliquam velit lorem, vehicula id fermentum et, rhoncus et purus. Nulla facilisi. Vestibulum malesuada lacus."
+      items={[
+        {
+          title: 'Growth-Oriented Client Focus',
+          description:
+            "We don't just deliver services; we cultivate partnerships. Tailoring solutions to individual client needs is in our DNA.",
+        },
+        {
+          title: 'Constant Improvement',
+          description:
+            'Phasellus laoreet fermentum venenatis. Vivamus dapibus pulvinar arcu eget mattis. Fusce eget mauris leo.',
+        },
+        {
+          title: 'Relentless Pursuit of Excellence',
+          description:
+            "In a world of mediocrity, we're the obsessive type—in a good way. We're perpetually chasing perfection, whether we're debugging a line of code or finetuning your marketing strategy.",
+        },
+      ]}
+    />
 
-  <!-- Steps2 Widget ****************** -->
+    <!-- Steps2 Widget ****************** -->
 
-  <Steps2
-    title="Approach"
-    subtitle="In a digital world cluttered with jargon and gimmicks, we're the artisans who still believe in getting our hands dirty. Our approach is a blend of deep technical acumen, hands-on experience, and a relentless focus on your business outcomes. Forget about buzzwords; let's talk about real, measurable results that matter to you."
-    isReversed={true}
-    callToAction={{
-      text: 'Contact Us',
-      href: '/contact',
-    }}
-    items={[
-      {
-        title: 'Custom-Tailored Solutions',
-        description:
-          "We're not a one-size-fits-all operation; we're your personal tailors for digital success. Every strategy we develop is custom-cut to fit your business's unique needs. No templates, only artisanal solutions.",
-        icon: 'tabler:globe',
-      },
-      {
-        title: 'Trusted Relationships',
-        description:
-          "We value intimacy and trust over scale. You're not just a client; you're a partner. We're committed to knowing your business inside out and delivering personalized, one-on-one consultations that make a world of difference.",
-        icon: 'tabler:message-star',
-      },
-      {
-        title: 'Craftsmanship Over Volume',
-        description:
-          "We don't aim to serve everyone; we aim to serve the best, and to be the best for them. We're artisans of our craft, focusing on a select clientèle that appreciates the finer points of technical marketing.",
-        icon: 'tabler:award',
-      },
-    ]}
-  />
+    <Steps2
+      title="Approach"
+      subtitle="In a digital world cluttered with jargon and gimmicks, we're the artisans who still believe in getting our hands dirty. Our approach is a blend of deep technical acumen, hands-on experience, and a relentless focus on your business outcomes. Forget about buzzwords; let's talk about real, measurable results that matter to you."
+      isReversed={true}
+      callToAction={{
+        text: 'Contact Us',
+        href: '/contact',
+      }}
+      items={[
+        {
+          title: 'Custom-Tailored Solutions',
+          description:
+            "We're not a one-size-fits-all operation; we're your personal tailors for digital success. Every strategy we develop is custom-cut to fit your business's unique needs. No templates, only artisanal solutions.",
+          icon: 'tabler:globe',
+        },
+        {
+          title: 'Trusted Relationships',
+          description:
+            "We value intimacy and trust over scale. You're not just a client; you're a partner. We're committed to knowing your business inside out and delivering personalized, one-on-one consultations that make a world of difference.",
+          icon: 'tabler:message-star',
+        },
+        {
+          title: 'Craftsmanship Over Volume',
+          description:
+            "We don't aim to serve everyone; we aim to serve the best, and to be the best for them. We're artisans of our craft, focusing on a select clientèle that appreciates the finer points of technical marketing.",
+          icon: 'tabler:award',
+        },
+      ]}
+    />
 
-  <!-- Features2 Widget ************** -->
+    <!-- Features2 Widget ************** -->
 
-  <!-- <Features2
+    <!-- <Features2
     title="Our locations"
     tagline="Find us"
     columns={4}
@@ -201,9 +220,9 @@ const metadata = {
     ]}
   /> -->
 
-  <!-- Features2 Widget ************** -->
+    <!-- Features2 Widget ************** -->
 
-  <!-- <Features2
+    <!-- <Features2
     title="Technical Support"
     tagline="Contact us"
     columns={2}
@@ -223,15 +242,16 @@ const metadata = {
     ]}
   /> -->
 
-  <CallToAction
-    callToAction={{
-      text: 'Reach Out Now',
-      href: '/contact',
-      icon: 'tabler:affiliate',
-    }}
-  >
-    <Fragment slot="title">Ready for Next-Level Growth? 🚀</Fragment>
+    <CallToAction
+      callToAction={{
+        text: 'Reach Out Now',
+        href: '/contact',
+        icon: 'tabler:affiliate',
+      }}
+    >
+      <Fragment slot="title">Ready for Next-Level Growth? 🚀</Fragment>
 
-    <Fragment slot="subtitle">Transform your metrics, not just your mood. Time's ticking. ⏰</Fragment>
-  </CallToAction>
+      <Fragment slot="subtitle">Transform your metrics, not just your mood. Time's ticking. ⏰</Fragment>
+    </CallToAction>
+  </Fragment>
 </Layout>

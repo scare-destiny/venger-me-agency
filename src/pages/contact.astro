@@ -1,5 +1,6 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
+import Header from '~/components/widgets/Header.astro';
 import HeroText from '~/components/widgets/HeroText.astro';
 import ContactUs from '~/components/widgets/Contact.astro';
 // import Features2 from '~/components/widgets/Features2.astro';
@@ -10,38 +11,56 @@ const metadata = {
 ---
 
 <Layout metadata={metadata}>
-  <!-- HeroText Widget ******************* -->
+  <Fragment slot="header">
+    <Header
+      links={[
+        { text: 'Home', href: '/' },
+        { text: 'About', href: '/about' },
+        { text: 'Services', href: '/services' },
+        { text: 'Contact', href: '/contact' },
+        // { text: 'Blog', href: '#blog' },
+        // { text: 'Github', href: '#' },
+      ]}
+      actions={[
+        {
+          text: 'Contact us',
+          href: '/contact',
+        },
+      ]}
+      showToggleTheme
+    />
+    <!-- HeroText Widget ******************* -->
 
-  <HeroText tagline="Contact" title="Let's Connect!" />
+    <HeroText tagline="Contact" title="Let's Connect!" />
 
-  <ContactUs
-    title="Drop us a message today!"
-    subtitle="Contact us today to find out how we can help you achieve your business goals."
-    inputs={[
-      {
-        type: 'text',
-        name: 'name',
-        label: 'Name',
-      },
-      {
-        type: 'email',
-        name: 'email',
-        label: 'Email',
-      },
-    ]}
-    textarea={{
-      label: 'Message',
-    }}
-    disclaimer={{
-      label:
-        'By submitting this contact form, you acknowledge and agree to the collection of your personal information.',
-    }}
-    description="Our support team typically responds within 24 business hours."
-  />
+    <ContactUs
+      title="Drop us a message today!"
+      subtitle="Contact us today to find out how we can help you achieve your business goals."
+      inputs={[
+        {
+          type: 'text',
+          name: 'name',
+          label: 'Name',
+        },
+        {
+          type: 'email',
+          name: 'email',
+          label: 'Email',
+        },
+      ]}
+      textarea={{
+        label: 'Message',
+      }}
+      disclaimer={{
+        label:
+          'By submitting this contact form, you acknowledge and agree to the collection of your personal information.',
+      }}
+      description="Our support team typically responds within 24 business hours."
+    />
 
-  <!-- Features2 Widget ************** -->
+    <!-- Features2 Widget ************** -->
 
-  <!-- <Features2
+    <!-- <Features2
     title="We are here to help!"
     items={[
       {
@@ -75,4 +94,5 @@ const metadata = {
       },
     ]}
   /> -->
+  </Fragment>
 </Layout>
