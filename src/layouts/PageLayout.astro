@@ -19,6 +19,7 @@ const { metadata } = Astro.props;
   <!-- <slot name="announcement">
     <Announcement />
   </slot> -->
+  <ViewTransitions />
   <slot name="header">
     <Header {...headerData} isSticky />
   </slot>
@@ -28,5 +29,4 @@ const { metadata } = Astro.props;
   <slot name="footer">
     <Footer {...footerData} />
   </slot>
-  <ViewTransitions />
 </Layout>
