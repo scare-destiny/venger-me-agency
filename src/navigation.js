@@ -176,6 +176,7 @@ export const footerData = {
     // { ariaLabel: 'RSS', icon: 'tabler:rss', href: getAsset('/rss.xml') },
     { ariaLabel: 'Github', icon: 'tabler:brand-github', href: 'https://github.com/scare-destiny/' },
     { ariaLabel: 'Email', icon: 'tabler:brand-gmail', href: 'mailto:eugene@venger.me' },
+    { ariaLabel: 'Telegram', icon: 'tabler:brand-telegram', href: 'https://t.me/scare_destiny' },
   ],
   footNote: `
     Made by <a class="text-blue-600 hover:underline dark:text-gray-200" href="https://venger.me/" target="_blank"> Eugene Venger</a> · All rights reserved.
