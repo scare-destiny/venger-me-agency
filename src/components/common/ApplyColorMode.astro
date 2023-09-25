@@ -20,6 +20,16 @@ import { UI_CONFIG } from "~/utils/config";
     }
   }
 
+  const setThemeOnSwap = () => {
+  const theme = localStorage.getItem("theme") || defaultTheme;
+  applyTheme(theme);
+};
+
+setThemeOnSwap()
+
+document.addEventListener('astro:after-swap', setThemeOnSwap);
+
+
   if ((defaultTheme && defaultTheme.endsWith(":only")) || (!localStorage.theme && defaultTheme !== "system")) {
     applyTheme(defaultTheme.replace(":only", ""));
   } else if (
