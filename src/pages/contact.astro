@@ -2,6 +2,7 @@
 import Layout from '~/layouts/PageLayout.astro';
 import Header from '~/components/widgets/Header.astro';
 import HeroText from '~/components/widgets/HeroText.astro';
+import { headerData } from '~/navigation';
 // import ContactUs from '~/components/widgets/Contact.astro';
 import SimpleCalendly from '~/components/widgets/SimpleCalendly.astro';
 // import Features2 from '~/components/widgets/Features2.astro';
@@ -14,20 +15,7 @@ const metadata = {
 <Layout metadata={metadata}>
   <Fragment slot="header">
     <Header
-      links={[
-        { text: 'Home', href: '/' },
-        { text: 'About', href: '/about' },
-        { text: 'Services', href: '/services' },
-        { text: 'Contact', href: '/contact' },
-        // { text: 'Blog', href: '#blog' },
-        // { text: 'Github', href: '#' },
-      ]}
-      actions={[
-        {
-          text: 'Contact us',
-          href: '/contact',
-        },
-      ]}
+     {...headerData}
       showToggleTheme
     />
     <!-- HeroText Widget ******************* -->

@@ -2,6 +2,7 @@
 // import Features2 from '~/components/widgets/Features2.astro';
 import Features3 from '~/components/widgets/Features3.astro';
 import Header from '~/components/widgets/Header.astro';
+import { headerData } from '~/navigation';
 import Hero from '~/components/widgets/Hero.astro';
 import Stats from '~/components/widgets/Stats.astro';
 import Steps2 from '~/components/widgets/Steps2.astro';
@@ -17,21 +18,8 @@ const metadata = {
 <Layout metadata={metadata}>
   <Fragment slot="header">
     <Header
-      links={[
-        { text: 'Home', href: '/' },
-        { text: 'About', href: '/about' },
-        { text: 'Services', href: '/services' },
-        { text: 'Contact', href: '/contact' },
-        // { text: 'Blog', href: '#blog' },
-        // { text: 'Github', href: '#' },
-      ]}
-      actions={[
-        {
-          text: 'Contact us',
-          href: '/contact',
-        },
-      ]}
       showToggleTheme
+    {...headerData}
     />
     <!-- Hero Widget ******************* -->
 

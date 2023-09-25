@@ -5,10 +5,11 @@ import Hero from '~/components/widgets/Hero.astro';
 import Header from '~/components/widgets/Header.astro';
 import Note from '~/components/widgets/Note.astro';
 import Features from '~/components/widgets/Features.astro';
+import { headerData } from '~/navigation';
 // import Features2 from '~/components/widgets/Features2.astro';
 // import Steps from '~/components/widgets/Steps.astro';
 // import Content from '~/components/widgets/Content.astro';
-// import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
+import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
 // import FAQs from '~/components/widgets/FAQs.astro';
 import Stats from '~/components/widgets/Stats.astro';
 // import CallToAction from '~/components/widgets/CallToAction.astro';
@@ -25,14 +26,7 @@ const metadata = {
   <!-- Hero Widget ******************* -->
   <Fragment slot="header">
     <Header
-      links={[
-        { text: 'Home', href: '/' },
-        { text: 'About', href: '/about' },
-        { text: 'Services', href: '/services' },
-        { text: 'Contact', href: '/contact' },
-        // { text: 'Blog', href: '#blog' },
-        // { text: 'Github', href: '#' },
-      ]}
+    {...headerData}
       actions={[
         {
           text: 'Contact us',
@@ -329,13 +323,13 @@ const metadata = {
 
     <!-- HighlightedPosts Widget ******* -->
 
-    <!-- <BlogLatestPosts
+    <BlogLatestPosts
     title="Find out more content in our Blog"
     information={`The blog is used to display AstroWind documentation.
                         Each new article will be an important step that you will need to know to be an expert in creating a website using Astro + Tailwind CSS.
                         Astro is a very interesting technology. Thanks.
                 `}
-  /> -->
+  />
 
     <!-- FAQs Widget ******************* -->
 
