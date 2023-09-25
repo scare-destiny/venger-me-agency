@@ -50,6 +50,7 @@
     "node": ">=16.12.0"
   },
   "dependencies": {
+    "@astrojs/vercel": "^5.0.1",
     "@fontsource-variable/inconsolata": "^5.0.8"
   }
 }
