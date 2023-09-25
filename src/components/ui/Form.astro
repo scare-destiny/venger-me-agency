@@ -1,14 +1,52 @@
 ---
 import { type Form } from '~/types';
-
 const { inputs, textarea, disclaimer, button = 'Contact us', description = '' } = Astro.props as Form;
+
+
+if (Astro.request.method === 'POST') {
+  try {
+    const data = await Astro.request.formData()
+    const name = data.get('name')
+    const email = data.get('email')
+    const message = data.get('textarea')
+
+    console.log(`important ${email}, ${name}, ${message}`)
+    
+
+    const payload = {
+      name, email,
+      message
+    }
+
+    const response = await fetch(import.meta.env.INTEGROMAT_WEBHOOK, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json', 
+      },
+      body: JSON.stringify(payload),
+    })
+
+    if (!response.ok) {
+      const errorData = await response.text();
+    console.error(`HTTP error ${response.status}: ${JSON.stringify(errorData)}`);
+    throw new Error(`HTTP error ${response.status}`);
+}
+  
+
+  }
+  catch (error) {
+    if (error instanceof Error) {
+      console.error(error.message);
+    }
+}
+}
 ---
 
-<form>
+<form method="post">
   {
     inputs &&
       inputs.map(
-        ({ type = 'text', name, label = '', autocomplete = 'on', placeholder = '' }) =>
+        ({ type = 'text', name, label = '', autocomplete = 'on', placeholder = '', required = true }) =>
           name && (
             <div class="mb-6">
               {label && (
@@ -23,6 +61,7 @@ const { inputs, textarea, disclaimer, button = 'Contact us', description = '' } 
                 autocomplete={autocomplete}
                 placeholder={placeholder}
                 class="py-3 px-4 block w-full text-md rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900"
+                required={required}
               />
             </div>
           )
@@ -55,6 +94,7 @@ const { inputs, textarea, disclaimer, button = 'Contact us', description = '' } 
             name="disclaimer"
             type="checkbox"
             class="cursor-pointer mt-1 py-3 px-4 block w-full text-md rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900"
+            required
           />
         </div>
         <div class="ml-3">

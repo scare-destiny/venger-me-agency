@@ -160,6 +160,7 @@ export interface Input {
   label?: string;
   autocomplete?: string;
   placeholder?: string;
+  required?: boolean
 }
 
 export interface Textarea {

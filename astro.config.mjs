@@ -29,7 +29,7 @@ export default defineConfig({
   base: SITE_CONFIG.base,
   trailingSlash: SITE_CONFIG.trailingSlash ? 'always' : 'never',
 
-  output: 'static',
+  output: 'server',
 
   integrations: [
     tailwind({
