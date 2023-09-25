@@ -5,7 +5,7 @@ import { defineConfig } from 'astro/config';
 
 import sitemap from '@astrojs/sitemap';
 import tailwind from '@astrojs/tailwind';
-import vercel from '@astrojs/vercel'
+import vercelServerless from '@astrojs/vercel/serverless';
 import mdx from '@astrojs/mdx';
 import partytown from '@astrojs/partytown';
 import compress from 'astro-compress';
@@ -31,7 +31,7 @@ export default defineConfig({
   trailingSlash: SITE_CONFIG.trailingSlash ? 'always' : 'never',
 
   output: 'server',
-  adapter: vercel(),
+  adapter: vercelServerless(),
 
   integrations: [
     tailwind({
