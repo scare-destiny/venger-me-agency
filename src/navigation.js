@@ -9,8 +9,8 @@ export const headerData = {
     { text: 'Home', href: '/' },
     { text: 'About', href: '/about' },
     { text: 'Services', href: '/services' },
-    { text: 'Contact', href: '/contact' },
     { text: 'Blog', href: '/blog' },
+    { text: 'Contact', href: '/contact' },
     
     // {
     //   text: 'Homes',
@@ -168,6 +168,7 @@ export const footerData = {
         { text: 'Main', href: '/' },
         { text: 'About', href: '/about' },
         { text: 'Services', href: '/services' },
+        { text: 'Blog', href: '/blog' },
         { text: 'Contact', href: '/contact' },
         // { text: 'Inclusion', href: '#' },
         // { text: 'Social Impact', href: '#' },
