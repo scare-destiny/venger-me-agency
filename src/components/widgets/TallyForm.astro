@@ -18,7 +18,21 @@ const {
   bg = await Astro.slots.render('bg'),
 } = Astro.props as Props;
 
+
 ---
+
+<script>
+  // Function to reload iframe
+  const reloadIframe = () => {
+    const iframe = document.querySelector('iframe[data-tally-src]');
+    if (iframe ) {
+      iframe.src = iframe.dataset.tallySrc;
+    }
+  };
+  // Runs on view transitions
+  document.addEventListener('astro:after-swap', reloadIframe);
+</script>
+
 
 <WidgetWrapper id={id} isDark={isDark} containerClass={`max-w-6xl mx-auto ${classes?.container ?? ''}`} bg={bg}>
   <div
