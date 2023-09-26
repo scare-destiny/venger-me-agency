@@ -1,5 +1,7 @@
 import path from 'path';
 import { fileURLToPath } from 'url';
+import vercel from '@astrojs/vercel/serverless';
+
 
 import { defineConfig } from 'astro/config';
 
@@ -29,7 +31,8 @@ export default defineConfig({
   base: SITE_CONFIG.base,
   trailingSlash: SITE_CONFIG.trailingSlash ? 'always' : 'never',
 
-  output: 'static',
+  output: 'hybrid',
+  adapter: vercel(),
 
   integrations: [
     tailwind({
