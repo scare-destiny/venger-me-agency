@@ -13,8 +13,7 @@ metadata:
 ---
 
 import Logo from '~/components/Logo.astro';
-import SimpleCalendly from '~/components/widgets/SimpleCalendly.astro';
-
+import CallToAction from '~/components/widgets/CallToAction.astro';
 
 ## Table of Contents
 1. [Why Use Facebook CAPI](#why-use-facebook-capi)
@@ -143,10 +142,18 @@ So if your company is growing, or you're planning for it to, GTM is the route to
 
 ---
 
-<SimpleCalendly 
-  title="Need help with setting up Facebook CAPI?" 
-  subtitle="Let's navigate it together and boost your ROI." 
-  calendlyUrl="https://calendly.com/eugene-venger" 
-  id="calendlyWidget" 
-  isDark={false} 
-/>
+
+
+
+
+    <CallToAction
+      callToAction={{
+        text: 'Reach Out Now',
+        href: '/contact',
+        icon: 'tabler:affiliate',
+      }}
+    >
+      <Fragment slot="title">Need help with setting up Facebook CAPI?</Fragment>
+
+      <Fragment slot="subtitle">Let's navigate it together and boost your ROI.</Fragment>
+    </CallToAction>

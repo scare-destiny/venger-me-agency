@@ -13,7 +13,8 @@ metadata:
 ---
 
 import Logo from '~/components/Logo.astro';
-import SimpleCalendly from '~/components/widgets/SimpleCalendly.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
 
 ## The Need for Marketing Attribution
 
@@ -504,10 +505,14 @@ With these methods, you'll not only track where your users come from but also un
 What do you think? Can this section add a missing puzzle piece to the analytics game?
 
 
-<SimpleCalendly 
-  title="Want to set up marketing attribution for your business?" 
-  subtitle="Let's chat about how we can help you implement it." 
-  calendlyUrl="https://calendly.com/eugene-venger" 
-  id="calendlyWidget" 
-  isDark={false} 
-/>
+    <CallToAction
+      callToAction={{
+        text: 'Reach Out Now',
+        href: '/contact',
+        icon: 'tabler:affiliate',
+      }}
+    >
+      <Fragment slot="title">Want to set up marketing attribution for your business? 🚀</Fragment>
+
+      <Fragment slot="subtitle">Let's chat about how we can help you implement it.</Fragment>
+    </CallToAction>

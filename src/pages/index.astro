@@ -14,7 +14,9 @@ import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
 import Stats from '~/components/widgets/Stats.astro';
 // import CallToAction from '~/components/widgets/CallToAction.astro';
 import Testimonials from '~/components/widgets/Testimonials.astro';
-import SimpleCalendly from '~/components/widgets/SimpleCalendly.astro';
+import TallyForm from '~/components/widgets/TallyForm.astro';
+// import SimpleCalendly from '~/components/widgets/SimpleCalendly.astro';
+
 
 const metadata = {
   title: 'venger.me - Your catalyst for unstoppable growth',
@@ -57,13 +59,8 @@ const metadata = {
 
     <!-- Features Widget *************** -->
 
-    <SimpleCalendly
-      title="Geared Up to Elevate Your Success?"
-      subtitle="Let's chat about how we can help you grow."
-      calendlyUrl="https://calendly.com/eugene-venger"
-      id="calendlyWidget"
-      isDark={false}
-    />
+    <TallyForm title="Geared Up to Elevate Your Success?" subtitle="Let's chat about how we can help you grow" />
+
 
     <Features
       id="features"
@@ -420,13 +417,9 @@ const metadata = {
       ]}
     />
 
-    <SimpleCalendly
-      title="Ready for a Virtual Coffee?"
-      subtitle="Let's chat about how we can help you grow."
-      calendlyUrl="https://calendly.com/eugene-venger"
-      id="calendlyWidget"
-      isDark={false}
-    />
+
+    <TallyForm title="Ready for a Virtual Coffee?" subtitle="Let's chat about how we can help you grow. Reach out now." />
+
 
     <!-- CallToAction Widget *********** -->
 

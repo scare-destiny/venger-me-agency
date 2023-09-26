@@ -3,8 +3,9 @@ import Layout from '~/layouts/PageLayout.astro';
 import Header from '~/components/widgets/Header.astro';
 import HeroText from '~/components/widgets/HeroText.astro';
 import { headerData } from '~/navigation';
-import ContactUs from '~/components/widgets/Contact.astro';
-import SimpleCalendly from '~/components/widgets/SimpleCalendly.astro';
+// import ContactUs from '~/components/widgets/Contact.astro';
+// import SimpleCalendly from '~/components/widgets/SimpleCalendly.astro';
+import TallyForm from '~/components/widgets/TallyForm.astro';
 // import Features2 from '~/components/widgets/Features2.astro';
 
 const metadata = {
@@ -47,7 +48,7 @@ const metadata = {
       }}
       description="Our support team typically responds within 24 business hours."
     /> 
-  -->
+ 
 
 
     <SimpleCalendly
@@ -56,7 +57,9 @@ const metadata = {
       calendlyUrl="https://calendly.com/eugene-venger"
       id="calendlyWidget"
       isDark={false}
-    />
+    /> -->
+
+    <TallyForm title="Get in touch" subtitle="Let's discuss how we can transform your digital presence. Reach out now." />
 
     <!-- Features2 Widget ************** -->
 
