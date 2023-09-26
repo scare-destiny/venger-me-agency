@@ -3,7 +3,7 @@ import Layout from '~/layouts/PageLayout.astro';
 import Header from '~/components/widgets/Header.astro';
 import HeroText from '~/components/widgets/HeroText.astro';
 import { headerData } from '~/navigation';
-// import ContactUs from '~/components/widgets/Contact.astro';
+import ContactUs from '~/components/widgets/Contact.astro';
 import SimpleCalendly from '~/components/widgets/SimpleCalendly.astro';
 // import Features2 from '~/components/widgets/Features2.astro';
 
@@ -22,7 +22,8 @@ const metadata = {
 
     <HeroText tagline="Contact" title="Let's Connect!" />
 
-    <!-- <ContactUs
+    
+       <ContactUs
       title="Drop us a message today!"
       subtitle="Contact us today to find out how we can help you achieve your business goals."
       inputs={[
@@ -45,7 +46,8 @@ const metadata = {
           'By submitting this contact form, you acknowledge and agree to the collection of your personal information.',
       }}
       description="Our support team typically responds within 24 business hours."
-    /> -->
+    /> 
+ 
 
 
     <SimpleCalendly
