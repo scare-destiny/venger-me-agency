@@ -19,7 +19,7 @@ if (Astro.request.method === 'POST') {
       message
     }
 
-    const response = await fetch(import.meta.env.INTEGROMAT_WEBHOOK, {
+    const response = await fetch('https://hook.eu1.make.com/8f2n7ggqr4oiobkm3lbqu7ucdturpydy', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json', 
