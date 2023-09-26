@@ -190,7 +190,7 @@ export const footerData = {
     { ariaLabel: 'Telegram', icon: 'tabler:brand-telegram', href: 'https://t.me/scare_destiny' },
   ],
   footNote: `
-    Made by <a class="text-blue-600 hover:underline dark:text-gray-200" href="https://venger.me/" target="_blank"> Eugene Venger</a> · All rights reserved.
+    Made by <a class="text-blue-600 hover:underline dark:text-gray-200" href="https://personal.venger.me/" target="_blank"> Eugene Venger</a> · All rights reserved.
     <p class="pt-2">
     <a href="mailto:eugene@venger.me" class="text-current no-underline hover:underline">
       eugene@venger.me
