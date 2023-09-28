@@ -1,0 +1,16 @@
+---
+export async function getAllAuthors() {
+  const authors = await Astro.glob('~/content/authors/*.md');  // Update the path as needed
+  return authors.map((author) => {
+    return {
+      id: author.frontmatter.id,
+      name: author.frontmatter.name,
+      bio: author.frontmatter.bio,
+    };
+  });
+}
+
+export function getAuthorById(id: string, authors: any[]) {
+  return authors.find(author => author.id === id);
+}
+---

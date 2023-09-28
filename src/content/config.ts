@@ -45,6 +45,16 @@ const metadataDefinition = () =>
     })
     .optional();
 
+const authorDefinition = z
+    .object({
+      name: z.string(),
+      bio: z.string().optional(),
+      twitterHandle: z.string().optional(),
+      image: z.string().optional(),
+    })
+    .optional();
+  
+
 const postCollection = defineCollection({
   schema: z.object({
     publishDate: z.date().optional(),
@@ -63,6 +73,15 @@ const postCollection = defineCollection({
   }),
 });
 
+const authorCollection = defineCollection({
+  schema: z.object({
+    id: z.string(),
+    metadata: authorDefinition,
+  }),
+});
+
+
 export const collections = {
   post: postCollection,
+  author: authorCollection
 };

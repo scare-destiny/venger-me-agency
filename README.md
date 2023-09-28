@@ -166,7 +166,7 @@ metadata:
     index: true
     follow: true
   openGraph:
-    site_name: 'Example'
+    site_name: 'Venger.me'
     images:
       - url: '~/assets/images/default.jpg'
         width: 1200
