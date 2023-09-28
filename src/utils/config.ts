@@ -78,12 +78,12 @@ const config = yaml.load(fs.readFileSync('src/config.yaml', 'utf8')) as {
   analytics?: unknown;
 };
 
-const DEFAULT_SITE_NAME = 'Website';
+const DEFAULT_SITE_NAME = 'https://venger.me';
 
 const getSite = () => {
   const _default = {
     name: DEFAULT_SITE_NAME,
-    site: undefined,
+    site: 'https://www.venger.me/',
     base: '/',
     trailingSlash: false,
 

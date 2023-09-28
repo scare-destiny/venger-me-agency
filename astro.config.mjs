@@ -27,7 +27,8 @@ const whenExternalScripts = (items = []) =>
     : [];
 
 export default defineConfig({
-  site: SITE_CONFIG.site,
+  // site: SITE_CONFIG.site,
+  site: 'https://www.venger.me/',
   base: SITE_CONFIG.base,
   trailingSlash: SITE_CONFIG.trailingSlash ? 'always' : 'never',
 
