@@ -59,7 +59,7 @@ const Content = post?.Content || null;
         post.image ? (
           <Image
             src={post.image}
-            class="max-w-full lg:max-w-[900px] mx-auto mb-6 sm:rounded-md bg-gray-400 dark:bg-slate-700"
+            class="max-w-full lg:max-w-[900px] mx-auto aspect-w-16 aspect-h-9 mb-6 sm:rounded-md bg-gray-400 dark:bg-slate-700"
             widths={[400, 900]}
             sizes="(max-width: 900px) 400px, 900px"
             alt={post?.excerpt || ''}
@@ -90,7 +90,7 @@ const Content = post?.Content || null;
 <section class="author-info bg-gray-100 dark:bg-gray-900 p-6 rounded-lg flex items-start shadow-lg">
   {author && (
     <>
-      <Image class="rounded-full border-4 border-primary mr-4" 
+      <Image class="object-fit rounded-full border-4 border-primary mr-4" 
             src={author.image} alt={author.name}
             widths={[150, 350]}
             sizes="(max-width: 350px) 150px, 350px"
