@@ -1,0 +1,9 @@
+<!-- AuthorCard.astro -->
+<div class="author-card">
+  <img src={Astro.props.author.image} alt={Astro.props.author.name} />
+  <div class="author-info">
+    <h4>{Astro.props.author.name}</h4>
+    <p>{Astro.props.author.bio}</p>
+    <a href={`https://www.linkedin.com/in/${Astro.props.author.linkedinHandle}`} target="_blank">LinkedIn</a>
+  </div>
+</div>
