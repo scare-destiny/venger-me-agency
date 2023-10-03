@@ -87,15 +87,12 @@ const Content = post?.Content || null;
         )
       }
 
-<section class="author-info bg-gray-100 dark:bg-gray-900 p-6 rounded-lg flex items-start shadow-lg">
+<section class="author-info  bg-gray-100 dark:bg-gray-900 p-6 rounded-lg flex items-start shadow-lg">
   {author && (
     <>
-      <Image class="object-cover rounded-full border-4 border-primary mr-4" 
+      <Image class="object-cover rounded-full border-4 border-primary mr-4 h-48 w-48 md:h-96 md:w-96	" 
             src={author.image} alt={author.name}
-            widths={[150, 300]}
-  sizes="(min-width: 300px) 150px, 100vw"
-  width={150}
-  height={150}
+            style="aspect-ratio: 1 / 1; object-fit: cover;"
             alt={post?.excerpt || ''}
 
             loading="eager"
