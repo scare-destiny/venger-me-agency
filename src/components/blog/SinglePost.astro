@@ -60,12 +60,12 @@ const Content = post?.Content || null;
           <Image
             src={post.image}
             class="max-w-full lg:max-w-[900px] mx-auto aspect-w-16 aspect-h-9 mb-6 sm:rounded-md bg-gray-400 dark:bg-slate-700"
-            widths={[400, 900]}
-            sizes="(max-width: 900px) 400px, 900px"
+            widths={[600, 1200]}
+          sizes="(min-width: 1200px) 1200px, 100vw"
             alt={post?.excerpt || ''}
             loading="eager"
-            width={900}
-            height={506}
+            width={1200}
+  height={675}
             loading="eager"
             decoding="async"
           />
@@ -92,11 +92,12 @@ const Content = post?.Content || null;
     <>
       <Image class="object-fit rounded-full border-4 border-primary mr-4" 
             src={author.image} alt={author.name}
-            widths={[150, 350]}
-            sizes="(max-width: 350px) 150px, 350px"
+            widths={[100, 200]}
+  sizes="(min-width: 640px) 200px, 100vw"
+  width={200}
+  height={200}
             alt={post?.excerpt || ''}
-            width={150}
-            height={150}
+
             loading="eager"
             decoding="async"
             
