@@ -90,11 +90,18 @@ const Content = post?.Content || null;
 <section class="author-info bg-gray-100 dark:bg-gray-900 p-6 rounded-lg flex items-start shadow-lg">
   {author && (
     <>
-      <Image class="rounded-full border-4 border-primary mr-4" src={author.image} alt={author.name}
+      <Image class="rounded-full border-4 border-primary mr-4" 
+            src={author.image} alt={author.name}
+            widths={[150, 350]}
+            sizes="(max-width: 350px) 150px, 350px"
+            alt={post?.excerpt || ''}
+            loading="eager"
             width={150}
             height={150}
             loading="eager"
-            decoding="async"/>
+            decoding="async"
+            
+            />
       <div>
         <h3 class="text-2xl font-bold text-primary">{author.name}</h3>
         <p class="text-muted">{author.bio}</p>
