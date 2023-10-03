@@ -49,7 +49,8 @@ const authorDefinition = z
     .object({
       name: z.string(),
       bio: z.string().optional(),
-      twitterHandle: z.string().optional(),
+      facebookHandle: z.string().optional(),
+      email: z.string().optional(),  
       image: z.string().optional(),
     })
     .optional();

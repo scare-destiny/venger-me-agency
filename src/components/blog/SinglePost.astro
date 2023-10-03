@@ -4,7 +4,8 @@ import { Icon } from 'astro-icon/components';
 import Image from '~/components/common/Image.astro';
 import PostTags from '~/components/blog/Tags.astro';
 import SocialShare from '~/components/common/SocialShare.astro';
-import Comments from '../widgets/Comments.astro';
+// import Comments from '../widgets/Comments.astro';
+import {getAuthorById, getAllAuthors} from '~/utils/author.astro'
 import { getPermalink } from '~/utils/permalinks';
 import { getFormattedDate } from '~/utils/utils';
 
@@ -15,7 +16,9 @@ export interface Props {
   url: string | URL;
 }
 
+const allAuthors = await getAllAuthors();
 const { post, url } = Astro.props;
+const author = getAuthorById(post.author, allAuthors);
 const Content = post?.Content || null;
 ---
 
@@ -39,6 +42,7 @@ const Content = post?.Content || null;
           }
           {post.readingTime && <> · {post.readingTime} min read</>}
         </p>
+        <span>By {author.name}</span>
       </div>
       <h1
         class="px-4 sm:px-6 max-w-3xl mx-auto text-4xl md:text-5xl font-bold leading-tighter tracking-tighter font-heading"
@@ -82,13 +86,28 @@ const Content = post?.Content || null;
           <Fragment set:html={post.content} />
         )
       }
+
+<section class="author-info bg-gray-100 dark:bg-gray-900 p-6 rounded-lg flex items-center shadow-lg">
+  {author && (
+    <>
+      <img class="w-24 h-24 rounded-full border-4 border-primary mr-4" src={author.image} alt={author.name} />
+      <div>
+        <h3 class="text-2xl font-bold text-primary">{author.name}</h3>
+        <p class="text-muted">{author.bio}</p>
+        <a href={`https://linkedin.com/in/${author.linkedinHandle}`} target="_blank" rel="noopener noreferrer" class="text-blue-500 hover:underline">
+          Connect via Linkedin <i class="fab fa-linkedin"></i>
+        </a>
+      </div>
+    </>
+  )}
+</section>
     </div>
     <div class="mx-auto px-6 sm:px-6 max-w-3xl mt-8 flex justify-between flex-col sm:flex-row">
       <PostTags tags={post.tags} class="mr-5 rtl:mr-0 rtl:ml-5" />
       <SocialShare url={url} text={post.title} class="mt-5 sm:mt-1 align-middle text-gray-500 dark:text-slate-600" />
     </div>
-    <div class="mx-auto px-6 sm:px-6 max-w-3xl prose prose-lg lg:prose-xl dark:prose-invert dark:prose-headings:text-slate-300 prose-md prose-headings:font-heading prose-headings:leading-tighter prose-headings:tracking-tighter prose-headings:font-bold prose-a:text-primary dark:prose-a:text-blue-400 prose-img:rounded-md prose-img:shadow-lg mt-8">
+    <!-- <div class="mx-auto px-6 sm:px-6 max-w-3xl prose prose-lg lg:prose-xl dark:prose-invert dark:prose-headings:text-slate-300 prose-md prose-headings:font-heading prose-headings:leading-tighter prose-headings:tracking-tighter prose-headings:font-bold prose-a:text-primary dark:prose-a:text-blue-400 prose-img:rounded-md prose-img:shadow-lg mt-8">
       <Comments id={post.slug} />
-    </div>
+    </div> -->
   </article>
 </section>
