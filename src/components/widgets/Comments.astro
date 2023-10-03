@@ -1,0 +1,53 @@
+<!-- Comments.astro -->
+
+---
+const { id } = Astro.props;
+---
+
+
+<form id="add-comment" class="space-y-4">
+	<input type="hidden" aria-hidden="true" name="id" value={id} />
+	
+	<label for="name-field-comment" class="block text-sm font-medium text-gray-600">Name</label>
+	<input type="text" name="name" id="name-field-comment" class="p-2 w-full border rounded-md" required />
+
+	<fieldset class="hidden" aria-hidden="true">
+		<label for="last-name-field">Last Name:</label>
+		<input type="text" id="last-name-field" name="last_name" autocomplete="off" tabindex="-1" />
+	</fieldset>
+	
+	<label for="comment-field" class="block text-sm font-medium text-gray-600">Comment</label>
+	<textarea rows="6" name="comment" id="comment-field" class="p-2 w-full border rounded-md" required></textarea>
+	
+	<div class="text-right">
+		<input type="submit" id="comment-submit-btn" class="btn btn-primary" value="Add Comment" />
+	</div>
+</form>
+
+
+<script>
+  const commentForm = document.getElementById("add-comment");
+commentForm.addEventListener("submit", async event => {
+	event.preventDefault();
+	const formData = Object.fromEntries(new FormData(commentForm));
+	const response = await fetch("/.netlify/functions/add-comment", {
+		method: "POST",
+		body: JSON.stringify({
+			name: formData.name,
+			comment: formData.comment,
+			last_name: formData.last_name,
+			blog_id: formData.id,
+			blog_url: window.location.href
+		})
+	}).then(result => result.json());
+	commentForm.reset();
+	if (response.status === 429) {
+		alert(
+			"Whoa there, slow down. Maximum of 2 comments every minute please! 🙏"
+		);
+	}
+	if (response.message !== "Honeypot triggered") {
+		getComments();
+	}
+});
+</script>
