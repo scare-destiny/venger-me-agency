@@ -27,6 +27,7 @@ const whenExternalScripts = (items = []) =>
     : [];
 
 export default defineConfig({
+  'process.env.NODE_ENV': `'${process.env.NODE_ENV}'`,
   // site: SITE_CONFIG.site,
   site: 'https://venger.me',
   base: SITE_CONFIG.base,
