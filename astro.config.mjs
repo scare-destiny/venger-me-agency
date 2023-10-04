@@ -2,7 +2,6 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import vercel from '@astrojs/vercel/serverless';
 
-
 import { defineConfig } from 'astro/config';
 
 import sitemap from '@astrojs/sitemap';
@@ -26,6 +25,13 @@ const whenExternalScripts = (items = []) =>
       : [items()]
     : [];
 
+const shikiResourcePaths = Object.keys(
+  import.meta.glob([
+    './node_modules/.pnpm/shiki@*/node_modules/shiki/languages/*.tmLanguage.json',
+    './node_modules/.pnpm/shiki@*/node_modules/shiki/themes/*.json',
+  ])
+);
+
 export default defineConfig({
   'process.env.NODE_ENV': `'${process.env.NODE_ENV}'`,
   // site: SITE_CONFIG.site,
@@ -34,7 +40,9 @@ export default defineConfig({
   trailingSlash: SITE_CONFIG.trailingSlash ? 'always' : 'never',
 
   output: 'hybrid',
-  adapter: vercel(),
+  adapter: vercel({
+    includeFiles: shikiResourcePaths,
+  }),
 
   integrations: [
     tailwind({
