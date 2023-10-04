@@ -1,6 +1,6 @@
 site:
   name: Boutique Digital Agency - Venger.me
-  site: 'https://agency.venger.me'
+  site: 'https://venger.me'
   base: '/'
   trailingSlash: false
 
@@ -16,7 +16,7 @@ metadata:
     index: true
     follow: true
   openGraph:
-    site_name: agency.venger.me
+    site_name: venger.me
     images:
       - url: '~/assets/images/agency.venger.me.jpg'
         width: 1200
