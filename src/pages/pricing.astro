@@ -16,9 +16,6 @@ export const prerender = false;
 const domain = 'pyrashyut.com';
 const response = await fetch(`https://www.venger.me/api/spf-check?domain=${domain}`);
 const result = await response.json();
-
-const response2 = await fetch(`https://www.venger.me/api/ssl-check?domain=${domain}`);
-const result2 = await response2.json();
 ---
 
 <Layout metadata={metadata}>
@@ -250,7 +247,4 @@ const result2 = await response2.json();
   <h1>SPF Record Check</h1>
   <p>Domain: {domain}</p>
   {result.spfRecord ? <p>SPF Record: {result.spfRecord}</p> : <p>{result.error}</p>}
-  <p>
-    {result2}
-  </p>
 </Layout>
