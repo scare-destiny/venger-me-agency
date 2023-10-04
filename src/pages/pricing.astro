@@ -12,10 +12,10 @@ const metadata = {
 };
 
 const domain = 'pyrashyut.com';
-const response = await fetch(`http://venger.me/api/spf-check?domain=${domain}`);
+const response = await fetch(`https://venger.me/api/spf-check?domain=${domain}`);
 const result = await response.json();
 
-const response2 = await fetch(`http://venger.me/api/ssl-check?domain=${domain}`);
+const response2 = await fetch(`https://venger.me/api/ssl-check?domain=${domain}`);
 const result2 = await response2.json();
 ---
 
