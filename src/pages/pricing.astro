@@ -10,6 +10,13 @@ import CallToAction from '~/components/widgets/CallToAction.astro';
 const metadata = {
   title: 'Pricing',
 };
+
+const domain = 'pyrashyut.com';
+const response = await fetch(`http://localhost:4321/api/spf-check?domain=${domain}`);
+const result = await response.json();
+
+const response2 = await fetch(`http://localhost:4321/api/ssl-check?domain=${domain}`);
+const result2 = await response2.json();
 ---
 
 <Layout metadata={metadata}>
@@ -238,4 +245,10 @@ const metadata = {
       href: '/',
     }}
   />
+  <h1>SPF Record Check</h1>
+  <p>Domain: {domain}</p>
+  {result.spfRecord ? <p>SPF Record: {result.spfRecord}</p> : <p>{result.error}</p>}
+  <p>
+    {result2}
+  </p>
 </Layout>

@@ -17,24 +17,24 @@ import Testimonials from '~/components/widgets/Testimonials.astro';
 import TallyForm from '~/components/widgets/TallyForm.astro';
 // import SimpleCalendly from '~/components/widgets/SimpleCalendly.astro';
 
-
 const metadata = {
   title: 'venger.me - Your catalyst for unstoppable growth',
   ignoreTitleTemplate: true,
 };
+
 ---
 
 <Layout metadata={metadata}>
   <!-- Hero Widget ******************* -->
   <Fragment slot="header">
     <Header
-    {...headerData}
-    actions={[
-      {
-        text: 'Contact us',
-        href: '/contact',
-      },
-    ]}
+      {...headerData}
+      actions={[
+        {
+          text: 'Contact us',
+          href: '/contact',
+        },
+      ]}
       showToggleTheme
     />
 
@@ -46,8 +46,8 @@ const metadata = {
 
       <Fragment slot="subtitle">
         <span class="hidden sm:inline">
-          <span class="font-semibold">We tackle</span> complex marketing challenges that other marketers can't
-          solve, all while fueling your consistent growth.
+          <span class="font-semibold">We tackle</span> complex marketing challenges that other marketers can't solve,
+          all while fueling your consistent growth.
         </span>
         <span class="block mb-1 sm:hidden font-bold text-blue-600">Your catalyst for unstoppable growth.</span>
       </Fragment>
@@ -60,7 +60,6 @@ const metadata = {
     <!-- Features Widget *************** -->
 
     <!-- <TallyForm title="Geared Up to Elevate Your Success?" subtitle="Let's chat about how we can help you grow" /> -->
-
 
     <Features
       id="features"
@@ -321,12 +320,11 @@ const metadata = {
     <!-- HighlightedPosts Widget ******* -->
 
     <BlogLatestPosts
-    title="Find out more content in our Blog"
-    information={`Our articles are packed with actionable insights to optimize your business using the latest web development and marketing tech. Don't miss the chance to transform your online presence!
+      title="Find out more content in our Blog"
+      information={`Our articles are packed with actionable insights to optimize your business using the latest web development and marketing tech. Don't miss the chance to transform your online presence!
 
                 `}
-              
-  />
+    />
 
     <!-- FAQs Widget ******************* -->
 
@@ -417,9 +415,10 @@ const metadata = {
       ]}
     />
 
-
-    <TallyForm title="Ready for a Virtual Coffee?" subtitle="Let's chat about how we can help you grow. Reach out now." />
-
+    <TallyForm
+      title="Ready for a Virtual Coffee?"
+      subtitle="Let's chat about how we can help you grow. Reach out now."
+    />
 
     <!-- CallToAction Widget *********** -->
 
