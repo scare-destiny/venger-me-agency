@@ -13,9 +13,9 @@ const metadata = {
 
 export const prerender = false;
 
-const domain = 'pyrashyut.com';
-const response = await fetch(`https://www.venger.me/api/spf-check?domain=${domain}`);
-const result = await response.json();
+// const domain = 'pyrashyut.com';
+// const response = await fetch(`https://www.venger.me/api/spf-check?domain=${domain}`);
+// const result = await response.json();
 ---
 
 <Layout metadata={metadata}>
@@ -244,7 +244,4 @@ const result = await response.json();
       href: '/',
     }}
   />
-  <h1>SPF Record Check</h1>
-  <p>Domain: {domain}</p>
-  {result.spfRecord ? <p>SPF Record: {result.spfRecord}</p> : <p>{result.error}</p>}
 </Layout>
