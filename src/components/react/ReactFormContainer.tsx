@@ -56,7 +56,7 @@ const ReactFormContainer: React.FC<FormProps> = ({
     const domain = formState['domain']; // Accessing domain value
 
     try {
-      const apiUrl = import.meta.env.API_BASE_URL || 'http://localhost:4321'; // Default to localhost if the env var is not set
+      const apiUrl = import.meta.env.PUBLIC_API_BASE_URL || 'http://localhost:4321'; // Default to localhost if the env var is not set
       const spfResponse = await fetch(`${apiUrl}/api/spf-check?domain=${domain}`);
       const spfResult = await spfResponse.json();
 
