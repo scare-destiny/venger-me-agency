@@ -1,0 +1,39 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Header from '~/components/widgets/Header.astro';
+
+import ContactUs from '~/components/widgets/Contact.astro';
+import { headerData } from '~/navigation';
+
+const metadata = {
+  title: 'Contact',
+};
+---
+
+<Layout metadata={metadata}>
+  <Fragment slot="header">
+    <Header {...headerData} showToggleTheme />
+    <ContactUs
+      title="Drop us a message today!"
+      subtitle="Contact us today to find out how we can help you achieve your business goals."
+      inputs={[
+        {
+          type: 'text',
+          name: 'name',
+          label: 'Name',
+        },
+        {
+          type: 'email',
+          name: 'email',
+          label: 'Your work email address',
+        },
+        {
+          type: 'text',
+          name: 'domain',
+          label: 'Enter the domain or subdomain',
+        },
+      ]}
+      button="Check My Domain"
+    />
+  </Fragment>
+</Layout>

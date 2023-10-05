@@ -1,4 +1,3 @@
-// src/pages/spf-check.ts
 import type { APIRoute } from 'astro';
 import dns from 'dns/promises';
 
@@ -8,22 +7,18 @@ export const GET: APIRoute = async ({ request }) => {
   const url = new URL(request.url);
   const domain = url.searchParams.get('domain');
 
-  console.log('Domain:', domain);
-
-  // console.log('Request:', request);
+  console.log(`Domain for MX is ${domain}`);
 
   try {
-    const txtRecords = await dns.resolveTxt(domain);
-    const spfRecord = txtRecords.flat().find((record) => record.startsWith('v=spf1'));
+    const mxRecords = await dns.resolveMx(domain);
 
-    if (spfRecord) {
-      console.log(spfRecord);
-      return new Response(JSON.stringify({ spfRecord }), {
+    if (mxRecords && mxRecords.length > 0) {
+      return new Response(JSON.stringify({ mxRecords }), {
         status: 200,
         headers: { 'Content-Type': 'application/json' },
       });
     } else {
-      return new Response(JSON.stringify({ error: 'No SPF record found' }), {
+      return new Response(JSON.stringify({ error: 'No MX records found' }), {
         status: 404,
         headers: { 'Content-Type': 'application/json' },
       });

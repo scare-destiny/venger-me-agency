@@ -1,6 +1,7 @@
 import path from 'path';
 import { fileURLToPath } from 'url';
 import vercel from '@astrojs/vercel/serverless';
+import react from '@astrojs/react';
 
 import { defineConfig } from 'astro/config';
 
@@ -45,6 +46,7 @@ export default defineConfig({
   }),
 
   integrations: [
+    react(),
     tailwind({
       applyBaseStyles: false,
     }),

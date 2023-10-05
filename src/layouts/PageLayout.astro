@@ -22,8 +22,8 @@ const { metadata } = Astro.props;
   <slot name="header">
     <Header {...headerData} isSticky />
   </slot>
-  <main >
-    <slot />
+  <main>
+    <slot name="main" />
   </main>
   <slot name="footer">
     <Footer {...footerData} />
