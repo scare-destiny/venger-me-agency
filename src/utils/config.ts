@@ -83,7 +83,7 @@ const DEFAULT_SITE_NAME = 'https://venger.me';
 const getSite = () => {
   const _default = {
     name: DEFAULT_SITE_NAME,
-    site: 'https://www.venger.me/',
+    site: 'https://venger.me/',
     base: '/',
     trailingSlash: false,
 
