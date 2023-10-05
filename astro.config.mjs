@@ -26,24 +26,14 @@ const whenExternalScripts = (items = []) =>
       : [items()]
     : [];
 
-const shikiResourcePaths = Object.keys(
-  import.meta.glob([
-    './node_modules/.pnpm/shiki@*/node_modules/shiki/languages/*.tmLanguage.json',
-    './node_modules/.pnpm/shiki@*/node_modules/shiki/themes/*.json',
-  ])
-);
-
 export default defineConfig({
   'process.env.NODE_ENV': `'${process.env.NODE_ENV}'`,
-  // site: SITE_CONFIG.site,
-  site: 'https://venger.me',
+  site: SITE_CONFIG.site,
   base: SITE_CONFIG.base,
   trailingSlash: SITE_CONFIG.trailingSlash ? 'always' : 'never',
 
   output: 'hybrid',
-  adapter: vercel({
-    includeFiles: shikiResourcePaths,
-  }),
+  adapter: vercel({}),
 
   integrations: [
     react(),

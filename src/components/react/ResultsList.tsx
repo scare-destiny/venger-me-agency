@@ -10,10 +10,10 @@ const ResultsList: React.FC<ResultsListProps> = ({ results }) => {
     <div>
       {results.map((result, index) => (
         <div key={index}>
-          <div>SPF Check: {result.spfResult ? `Available: ${result.spfResult}` : 'Not Available'}</div>
-          <div>SSL Check: {result.sslResult ? 'Available' : 'Not Available'}</div>
+          <div>SPF Check: {result.spfResult ? `Available ✅: ${result.spfResult}` : 'Not Available'}</div>
+          <div>SSL Check: {result.sslResult ? 'Available ✅' : 'Not Available '}</div>
           <div>
-            MX Check:
+            MX Records {result.mxResult ? `Available ✅:` : 'Not Available'}
             {result.mxResult && result.mxResult.mxRecords && result.mxResult.mxRecords.length > 0 ? (
               <ul>
                 {result.mxResult.mxRecords.map((mxRecord, mxIndex) => (
