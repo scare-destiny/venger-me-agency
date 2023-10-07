@@ -1,8 +1,8 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
 import Header from '~/components/widgets/Header.astro';
-
 import ContactUs from '~/components/widgets/Contact.astro';
+import Checklist from '~/components/react/Checklist/Checklist';
 import { headerData } from '~/navigation';
 
 const metadata = {
@@ -35,5 +35,7 @@ const metadata = {
       ]}
       button="Check My Domain"
     />
+
+    <Checklist  />
   </Fragment>
 </Layout>
