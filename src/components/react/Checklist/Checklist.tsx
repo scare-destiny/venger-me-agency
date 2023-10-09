@@ -11,14 +11,20 @@ const Checklist: React.FC = () => {
   }, []);
 
   return (
-    <div>
-      {checklistItems.map((item) => (
-        <CheckListItem item={item} key={item.id} onCheckboxToggle={handleCheckboxToggle} />
-      ))}
+    <div className="min-h-screen bg-gray-100 p-4 md:p-8">
+      <div className=" mx-auto bg-white rounded-xl shadow-md max-w-5xl ">
+        <div className="md:flex">
+          <div className="p-4">
+            {checklistItems.map((item) => (
+              <CheckListItem item={item} key={item.id} onCheckboxToggle={handleCheckboxToggle} />
+            ))}
+          </div>
+        </div>
+      </div>
       <CheckedCount
         count={checkedCount}
         totalCount={checklistItems.reduce((total, item) => total + item.tasks.length, 0)}
-        optionalText="Your progress"
+        className="fixed bottom-4 right-4"
       />
     </div>
   );

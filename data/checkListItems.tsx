@@ -48,16 +48,6 @@ const checklistItems: ChecklistItem[] = [
             type: 'text',
             data: 'An SPF record defines which IP addresses are allowed to send email from your domain. Answer the questions to generate an SPF record.',
           },
-          { type: 'disclaimer', data: 'Make sure to...' },
-          { type: 'list', data: [{ text: 'Item 1' }, { text: 'Item 2' }] },
-          {
-            type: 'subtask',
-            data: {
-              id: '1.1.1',
-              description: 'Subtask description',
-              content: [{ type: 'text', data: 'Nested content...' }],
-            },
-          },
           {
             type: 'table',
             data: {

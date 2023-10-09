@@ -160,7 +160,7 @@ export interface Input {
   label?: string;
   autocomplete?: string;
   placeholder?: string;
-  required?: boolean
+  required?: boolean;
 }
 
 export interface Textarea {
@@ -179,6 +179,8 @@ export interface CallToAction {
   text?: string;
   icon?: string;
   href?: string;
+  secondaryText?: string; // Optional second CTA text
+  secondaryHref?: string; // Optional second CTA link
   classes?: Record<string, string>;
 }
 
