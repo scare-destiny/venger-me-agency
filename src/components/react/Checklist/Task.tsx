@@ -5,22 +5,24 @@ import ContentRenderer from './Render/ContentRenderer';
 
 interface TaskItemProps {
   task: TaskType;
+  onCheckboxToggle: (isChecked: boolean) => void;
 }
 
-const Task: React.FC<TaskItemProps> = ({ task }) => {
+const Task: React.FC<TaskItemProps> = ({ task, onCheckboxToggle }) => {
   const [checked, setChecked] = React.useState(false);
 
   console.log(checked);
 
   const handleChange = (e) => {
+    const isChecked = e.target.checked;
     setChecked(e.target.checked);
+    onCheckboxToggle(isChecked);
     console.log(checked);
   };
   return (
     <div className="task m-4">
-      <label style={{ textDecoration: checked ? 'line-through' : 'none' }}>
-        <input type="checkbox" checked={checked} onChange={handleChange} />
-        {task.description}
+      <label style={{ textDecoration: checked ? 'line-through' : 'none' }} className="font-bold">
+        <input type="checkbox" checked={checked} onChange={handleChange} /> {task.description}
       </label>
       {task.content &&
         !checked &&

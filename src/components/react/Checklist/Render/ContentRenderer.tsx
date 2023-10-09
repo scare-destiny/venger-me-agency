@@ -6,7 +6,7 @@ const ContentRenderer = ({ content }: { content: ContentBlock }) => {
     case 'text':
       return <p className="pt-2">{content.data}</p>;
     case 'disclaimer':
-      return <div className="disclaimer">{content.data}</div>;
+      return <div className="disclaimer bg-yellow-300">{content.data}</div>;
     case 'list':
       return (
         <ul>
@@ -19,24 +19,18 @@ const ContentRenderer = ({ content }: { content: ContentBlock }) => {
       return <img src={content.data.src} alt={content.data.alt} />;
     case 'table':
       return (
-        <table>
-          <thead>
-            <tr>
-              {content.data.headers.map((header, index) => (
-                <th key={index}>{header}</th>
+        <div className="flex flex-col md:flex-row">
+          {content.data.headers.map((header, columnIndex) => (
+            <div key={columnIndex} className="flex flex-col border border-slate-400">
+              <div className="p-2 font-bold">{header}</div>
+              {content.data.rows.map((row, rowIndex) => (
+                <div key={rowIndex} className="p-2 border-t border-slate-400">
+                  {row[columnIndex]}
+                </div>
               ))}
-            </tr>
-          </thead>
-          <tbody>
-            {content.data.rows.map((row, rowIndex) => (
-              <tr key={rowIndex}>
-                {row.map((cell, cellIndex) => (
-                  <td key={cellIndex}>{cell}</td>
-                ))}
-              </tr>
-            ))}
-          </tbody>
-        </table>
+            </div>
+          ))}
+        </div>
       );
     case 'subtask':
       return (
@@ -46,6 +40,8 @@ const ContentRenderer = ({ content }: { content: ContentBlock }) => {
             content.data.content.map((subContent, index) => <ContentRenderer key={index} content={subContent} />)}
         </div>
       );
+    case 'html':
+      return <div className="html-content" dangerouslySetInnerHTML={{ __html: content.data }} />;
     default:
       return null;
   }
