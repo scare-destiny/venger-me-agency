@@ -23,6 +23,7 @@ const Task: React.FC<TaskItemProps> = ({ task }) => {
         {task.description}
       </label>
       {task.content &&
+        !checked &&
         task.content.map((contentBlock) => (
           <ContentRenderer content={contentBlock} key={contentBlock.type + contentBlock.data.toString()} />
         ))}

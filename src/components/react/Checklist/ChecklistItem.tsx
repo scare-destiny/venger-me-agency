@@ -1,5 +1,5 @@
 import React from 'react';
-import { ChecklistItem as ChecklistItemType } from 'data/checkListItems';
+import { type ChecklistItem as ChecklistItemType } from 'data/checkListItems';
 import Task from './Task';
 
 interface ChecklistItemProps {

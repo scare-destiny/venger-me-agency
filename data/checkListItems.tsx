@@ -145,12 +145,48 @@ const checklistItems: ChecklistItem[] = [
   },
   {
     id: '7',
-    title: 'Maintenance',
+    title: 'Maintain Your Reputation (4 tasks) 🔗',
     tasks: [
-      { id: '7.1', description: 'Keep your bounce rate below 5%' },
-      { id: '7.2', description: 'Keep your complaint rate below 0.1%' },
-      { id: '7.3', description: 'Send a consistent number of emails' },
-      { id: '7.4', description: 'Remove inactive subscribers from your list' },
+      {
+        id: '7.1',
+        description: 'Keep your bounce rate below 5%',
+        content: [
+          {
+            type: 'text',
+            data: 'Monitor your bounce rate closely and keep it below 5% to maintain your good sender reputation with email providers, and ensure your emails consistently land in your customers inbox.',
+          },
+        ],
+      },
+      {
+        id: '7.2',
+        description: 'Keep your complaint rate below 0.1%',
+        content: [
+          {
+            type: 'text',
+            data: 'Monitor your spam complaint rate closely and keep it below 0.1%. A spam complaint rate is the number of people who reported email as spam out of the total number of messages you have sent. The industry acceptable standard spam complaint rate is anything less than 0.1%, or 1 complaint for every 1,000 sent messages. Anything above this level is considered high.',
+          },
+        ],
+      },
+      {
+        id: '7.3',
+        description: 'Send a consistent number of emails',
+        content: [
+          {
+            type: 'text',
+            data: "Most email providers only store reputation data for 30 days, so you should not go 30 days or more without sending on any given IP address. If you do, you'll need to warm it up again, so make sure to be consistent with your sending rate.",
+          },
+        ],
+      },
+      {
+        id: '7.4',
+        description: 'Remove inactive subscribers from your list',
+        content: [
+          {
+            type: 'text',
+            data: "If some of your contacts haven't opened any of your emails after several months — it most likely means they've lost interest, or your emails are no longer relevant to their immediate needs. Purge these subscribers from your list to maintain high open rates and healthy sender reputation with email providers. Removing inactive subscibers means you're sending to fewer people but they're more likely to open your emails and engage with your campaigns, which will have a positive impact on your deliverability.",
+          },
+        ],
+      },
     ],
   },
   // ...other checklist items
