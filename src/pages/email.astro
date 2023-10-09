@@ -1,6 +1,7 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
 import Header from '~/components/widgets/Header.astro';
+import WidgetWrapper from '~/components/ui/WidgetWrapper.astro'; // Import WidgetWrapper
 import Hero from '~/components/widgets/Hero.astro';
 import ContactUs from '~/components/widgets/Contact.astro';
 import Checklist from '~/components/react/Checklist/Checklist';
@@ -68,7 +69,9 @@ const metadata = {
       button="Check My Domain"
     />
 
-    <Checklist client:load />
+    <WidgetWrapper isDark="">
+      <Checklist client:load />
+    </WidgetWrapper>
 
     <!-- Pricing Widget ******************* -->
 
