@@ -14,13 +14,14 @@ const Checklist: React.FC = () => {
   }, []);
 
   useEffect(() => {
+    console.log('test');
     const observer = new IntersectionObserver(
       ([entry]) => {
         setIsCheckListVisible(entry.isIntersecting);
-      },
-      {
-        threshold: 0.1, // Adjust the threshold to control when the callback fires
       }
+      // {
+      //   threshold: 0.1, // Adjust the threshold to control when the callback fires
+      // }
     );
 
     if (checklistRef.current) {
