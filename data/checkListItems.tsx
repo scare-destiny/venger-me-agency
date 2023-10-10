@@ -1,3 +1,4 @@
+// @ts-ignore
 interface Task {
   id: string;
   description: string;
