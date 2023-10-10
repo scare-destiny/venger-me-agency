@@ -93,7 +93,16 @@ const checklistItems: ChecklistItem[] = [
     tasks: [
       { id: '3.1', description: 'Check if your domain or IP is blacklisted' },
       { id: '3.2', description: 'Check your IP address reputation' },
-      { id: '3.3', description: 'Warm up your domain and IP address' },
+      {
+        id: '3.3',
+        description: 'Warm up your domain and IP address',
+        content: [
+          {
+            type: 'text',
+            data: "Gradually increase the send rate to warm up the sending IP addresses tied to your domain with the objective of building good IP & domain reputation with email providers. Start with low volume and increase the sending rate gradually over time. Here's a few common scenarious.      ",
+          },
+        ],
+      },
       // ...other tasks
     ],
   },
