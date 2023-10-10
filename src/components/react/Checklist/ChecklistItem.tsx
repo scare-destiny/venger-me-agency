@@ -10,7 +10,7 @@ interface ChecklistItemProps {
 const ChecklistItem: React.FC<ChecklistItemProps> = ({ item, onCheckboxToggle }) => {
   return (
     <div className="checklist-item">
-      <h2 className="font-bold text-violet-400">{item.title}</h2>
+      <h2 className="font-bold text-primary">{item.title}</h2>
       {item.tasks.map((task) => (
         <Task task={task} key={task.id} onCheckboxToggle={onCheckboxToggle} />
       ))}

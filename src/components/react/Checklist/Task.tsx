@@ -11,13 +11,10 @@ interface TaskItemProps {
 const Task: React.FC<TaskItemProps> = ({ task, onCheckboxToggle }) => {
   const [checked, setChecked] = React.useState(false);
 
-  console.log(checked);
-
   const handleChange = (e) => {
     const isChecked = e.target.checked;
     setChecked(e.target.checked);
     onCheckboxToggle(isChecked);
-    console.log(checked);
   };
   return (
     <div className="task m-4">

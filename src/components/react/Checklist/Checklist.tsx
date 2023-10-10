@@ -14,7 +14,6 @@ const Checklist: React.FC = () => {
   }, []);
 
   useEffect(() => {
-    console.log('test');
     const observer = new IntersectionObserver(
       ([entry]) => {
         setIsCheckListVisible(entry.isIntersecting);

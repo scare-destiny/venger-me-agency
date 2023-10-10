@@ -35,7 +35,7 @@ const ReactFormContainer: React.FC<FormProps> = ({
   disclaimer,
   button = 'Contact us',
   description = '',
-  onSubmit = (data) => console.log(data.domain),
+  onSubmit = (data) => console.log('success'),
 }) => {
   const [formState, setFormState] = useState({});
   const [results, setResults] = useState([]);
@@ -66,11 +66,23 @@ const ReactFormContainer: React.FC<FormProps> = ({
       const mxResponse = await fetch(`${apiUrl}/api/mx-check?domain=${domain}`);
       const mxResult = await mxResponse.json();
 
-      console.dir(mxResult);
+      const dkimResponse = await fetch(`${apiUrl}/api/dkim-check?domain=${domain}`);
+      const dkimResult = await dkimResponse.json();
+
+      const dmarcResponse = await fetch(`${apiUrl}/api/dmarc-check?domain=${domain}`);
+      const dmarcResult = await dmarcResponse.json();
+
+      console.dir(dmarcResult);
 
       setResults((prevResults) => [
         ...prevResults,
-        { spfResult: spfResult.spfRecord, sslResult: sslResult, mxResult: mxResult },
+        {
+          spfResult: spfResult.spfRecord,
+          sslResult: sslResult,
+          mxResult: mxResult,
+          dkimResult: dkimResult.dkimResults,
+          dmarcResult: dmarcResult.dmarcRecord, // Add this line
+        },
       ]); // Assuming spfResult has spf and ssl properties
     } catch (error) {
       setError('An error occurred while checking the records');

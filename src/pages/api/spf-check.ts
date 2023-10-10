@@ -8,16 +8,12 @@ export const GET: APIRoute = async ({ request }) => {
   const url = new URL(request.url);
   const domain = url.searchParams.get('domain');
 
-  console.log('Domain:', domain);
-
-  // console.log('Request:', request);
 
   try {
     const txtRecords = await dns.resolveTxt(domain);
     const spfRecord = txtRecords.flat().find((record) => record.startsWith('v=spf1'));
 
     if (spfRecord) {
-      console.log(spfRecord);
       return new Response(JSON.stringify({ spfRecord }), {
         status: 200,
         headers: { 'Content-Type': 'application/json' },

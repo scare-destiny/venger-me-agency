@@ -26,7 +26,7 @@ export const GET: APIRoute = async ({ request }) => {
 
     const req = https.request(options, (res) => {
       const certificate = res.socket.getPeerCertificate();
-      console.log(certificate);
+
 
       if (tls.checkServerIdentity(domain, certificate)) {
         resolve(

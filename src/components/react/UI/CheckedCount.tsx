@@ -10,7 +10,7 @@ interface CheckedCountProps {
 
 const CheckedCount: React.FC<CheckedCountProps> = ({ count, totalCount, optionalText, onMarkAllCompleted }) => {
   return (
-    <div className="fixed z-50 bottom-4 right-4 bg-indigo-600 text-white p-4 rounded-lg shadow-lg space-y-2">
+    <div className="fixed z-50 bottom-4 right-4 bg-primary text-white p-4 rounded-lg shadow-lg space-y-2">
       <div>
         <span className="text-xl font-bold">{count}</span> of <span className="text-xl font-bold">{totalCount}</span>{' '}
         completed
