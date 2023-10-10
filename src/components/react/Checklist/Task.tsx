@@ -1,5 +1,7 @@
 // src/components/TaskItem.tsx
 import React, { useState } from 'react';
+import { useStore } from '@nanostores/react';
+import { domainStorage } from '~/stores/domainStore';
 import { type Task as TaskType } from 'data/checkListItems';
 import ContentRenderer from './Render/ContentRenderer';
 
@@ -10,6 +12,9 @@ interface TaskItemProps {
 
 const Task: React.FC<TaskItemProps> = ({ task, onCheckboxToggle }) => {
   const [checked, setChecked] = React.useState(false);
+
+  const $domain = useStore(domainStorage);
+  console.log(`storage domain is ${$domain}`);
 
   const handleChange = (e) => {
     const isChecked = e.target.checked;
@@ -29,7 +34,7 @@ const Task: React.FC<TaskItemProps> = ({ task, onCheckboxToggle }) => {
       {task.description === 'Create an SPF record for your domain' && (
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore
-          magna aliqua.
+          magna aliqua. {$domain}
         </p>
       )}
     </div>

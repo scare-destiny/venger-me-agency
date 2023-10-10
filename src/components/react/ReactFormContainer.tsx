@@ -1,5 +1,6 @@
 import React, { FormEvent, useState } from 'react';
 import ResultsList from './ResultsList';
+import { domainStorage } from '~/stores/domainStore';
 
 interface Input {
   name: string;
@@ -54,6 +55,8 @@ const ReactFormContainer: React.FC<FormProps> = ({
     setResults([]);
 
     const domain = formState['domain']; // Accessing domain value
+    domainStorage.set(domain);
+    console.log(`domain storage is ${domainStorage}`);
 
     try {
       const apiUrl = import.meta.env.PUBLIC_API_BASE_URL || 'http://localhost:4321'; // Default to localhost if the env var is not set
