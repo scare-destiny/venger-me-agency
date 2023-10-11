@@ -40,12 +40,12 @@ const {
 
               <div class="flex items-center">
                 {image && (
-                  <div class="h-10 w-10 rounded-full border border-slate-200 dark:border-slate-600">
+                  <div class="h-10 w-10 aspect-square rounded-full border border-slate-200 dark:border-slate-600">
                     {typeof image === 'string' ? (
                       <Fragment set:html={image} />
                     ) : (
                       <Image
-                        class="h-10 w-10 rounded-full border border-slate-200 dark:border-slate-600"
+                        class="h-10 w-10  rounded-full border border-slate-200 dark:border-slate-600"
                         widths={[400, 768]}
                         layout="responsive"
                         {...(image as any)}
