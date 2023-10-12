@@ -26,16 +26,7 @@ const metadata = {
 <Layout metadata={metadata}>
   <!-- Hero Widget ******************* -->
   <Fragment slot="header">
-    <Header
-      {...headerData}
-      actions={[
-        {
-          text: 'Contact us',
-          href: '/contact',
-        },
-      ]}
-      showToggleTheme
-    />
+    <Header {...headerData} showToggleTheme />
 
     <Hero image={{ src: '~/assets/images/hero.png', alt: 'Astronaut floating in space' }}>
       <Fragment slot="title">
