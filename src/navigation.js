@@ -1,8 +1,7 @@
-import { getPermalink, 
+import {
+  getPermalink,
   // getBlogPermalink
- } 
-  
-  from './utils/permalinks';
+} from './utils/permalinks';
 
 export const headerData = {
   links: [
@@ -11,7 +10,7 @@ export const headerData = {
     { text: 'Services', href: '/services' },
     { text: 'Blog', href: '/blog' },
     { text: 'Contact', href: '/contact' },
-    
+
     // {
     //   text: 'Homes',
     //   links: [
@@ -125,7 +124,7 @@ export const headerData = {
     //   href: '#',
     // },
   ],
-  // actions: [{ type: 'button', text: 'Download', href: 'https://github.com/onwidget/astrowind' }],
+  actions: [{ type: 'button', text: 'Maximize Your Open Rates 🚀', href: '/email' }],
 };
 
 export const footerData = {
@@ -173,6 +172,7 @@ export const footerData = {
         // { text: 'Inclusion', href: '#' },
         // { text: 'Social Impact', href: '#' },
         // { text: 'Shop', href: '#' },
+        { text: 'Maximize Your Open Rates 🚀', href: '/' },
       ],
     },
   ],

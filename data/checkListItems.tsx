@@ -12,8 +12,8 @@ interface ChecklistItem {
 }
 
 interface ContentBlock {
-  type: 'text' | 'disclaimer' | 'list' | 'image' | 'table' | 'subtask' | 'html';
-  data: string | ListItem[] | ImageData | TableData | Subtask;
+  type: 'text' | 'disclaimer' | 'list' | 'image' | 'table' | 'subtask' | 'html' | 'playful';
+  data: string | ListItem[] | ImageData | TableData | Subtask | PlayfulData;
 }
 
 interface ListItem {
@@ -34,6 +34,12 @@ interface Subtask {
   id: string;
   description: string;
   content?: ContentBlock[];
+}
+
+interface PlayfulData {
+  title: string;
+  subtitle?: string;
+  emoji?: string; // or icon?: string; if you prefer icons
 }
 
 const checklistItems: ChecklistItem[] = [
@@ -69,19 +75,61 @@ const checklistItems: ChecklistItem[] = [
         content: [
           {
             type: 'text',
-            data: 'An SPF record defines which IP addresses are allowed to send email from your domain. Answer the questions to generate an SPF record.',
+            data: 'Email providers use DomainKeys Identified Mail (DKIM) to detect forged sender addresses in email (email spoofing), a technique often used in phishing and email spam. Emails that fail authentication are more likely to arrive in the spam or junkmail folder. Follow instructions below to obtain your DKIM Key and add a DKIM record to your DNS records.            ',
+          },
+          {
+            type: 'playful',
+            data: {
+              emoji: '🔨',
+              title: 'WIP',
+              subtitle: 'Stay tuned! Before long, this space will guide you on setting up your own DKIM records.',
+            },
           },
         ],
       },
-      { id: '1.3', description: 'Create a DMARC record for your domain' },
-      { id: '1.4', description: 'Send email via secure SSL/TLS connection' },
+      {
+        id: '1.3',
+        description: 'Create a DMARC record for your domain',
+        content: [
+          {
+            type: 'text',
+            data: "DMARC records allow senders to indicate their emails are protected by SPF and/or DKIM, and give instruction if neither of those authentication methods passes. Please be sure you have SPF and DKIM records setup before using DMARC. Becoming DMARC compliant involves more than just adding a TXT record to your DNS records. It's a process that can take several weeks to months, depending on your sending volume, email marketing platform or email delivery provider who send email on your behalf.          ",
+          },
+          {
+            type: 'playful',
+            data: {
+              emoji: '🔨',
+              title: 'WIP',
+              subtitle: "Hold tight! Soon, you'll find guidance here on crafting your own DMARC policy.",
+            },
+          },
+        ],
+      },
+      {
+        id: '1.4',
+        description: 'Send email via secure SSL/TLS connection',
+        content: [
+          {
+            type: 'text',
+            data: " An SSL certificate enables you to send emails via a secure SSL/TLS connection. It encrypts and secures the connection between your mail server and the receiving mail server, and is an important key metric in establishing your sender score and reputation with email providers. If you don't have an SSL certificate, contact your hosting provider, or signup for the CloudFlare Free Plan which includes a free SSL certificate.          ",
+          },
+        ],
+      },
       {
         id: '1.5',
         description: 'Create MX records for your domain',
         content: [
           {
             type: 'text',
-            data: "MX records tell email systems where to send messages. Without proper MX records, emails can get lost or bounce back, similar to sending a letter without the right address. Not having an MX record can also lead mailbox providers to think the sender isn't following email rules, leading to delivery problems or being labeled as spam. Select a mailbox provider from the dropdown for instructions to set up MX records.",
+            data: "MX records tell email systems where to send messages. Without proper MX records, emails can get lost or bounce back, similar to sending a letter without the right address. Not having an MX record can also lead mailbox providers to think the sender isn't following email rules, leading to delivery problems or being labeled as spam. Select a mailbox provider from the dropdown for instructions to set up MX records.            ",
+          },
+          {
+            type: 'playful',
+            data: {
+              emoji: '🔨',
+              title: 'WIP',
+              subtitle: "Soon you'll see more content here and will be able to set up your own MX record.",
+            },
           },
         ],
       },

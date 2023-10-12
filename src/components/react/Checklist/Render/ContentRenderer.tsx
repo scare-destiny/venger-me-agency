@@ -42,6 +42,15 @@ const ContentRenderer = ({ content }: { content: ContentBlock }) => {
       );
     case 'html':
       return <div className="html-content" dangerouslySetInnerHTML={{ __html: content.data }} />;
+    case 'playful':
+      const playfulData = content.data as PlayfulData;
+      return (
+        <div className="playful-block bg-blue-100 p-4 rounded-lg shadow-lg text-center">
+          {playfulData.emoji && <div className="emoji text-4xl mb-2">{playfulData.emoji}</div>}
+          <div className="title text-2xl font-bold  mb-1">{playfulData.title}</div>
+          {playfulData.subtitle && <div className="subtitle text-lg text-gray-700">{playfulData.subtitle}</div>}
+        </div>
+      );
     default:
       return null;
   }
