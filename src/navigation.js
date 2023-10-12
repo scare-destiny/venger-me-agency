@@ -172,7 +172,7 @@ export const footerData = {
         // { text: 'Inclusion', href: '#' },
         // { text: 'Social Impact', href: '#' },
         // { text: 'Shop', href: '#' },
-        { text: 'Maximize Your Open Rates 🚀', href: '/' },
+        { text: 'Maximize Your Open Rates 🚀', href: '/email' },
       ],
     },
   ],
