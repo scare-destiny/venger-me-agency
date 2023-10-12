@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useStore } from '@nanostores/react';
 import { domainStorage } from '~/stores/domainStore';
+import emailPlatforms from 'data/emailPlatforms';
 const SPFRecordGenerator = () => {
   const [serverEmail, setServerEmail] = useState('Yes');
   const [mailServerEmail, setMailServerEmail] = useState('Yes');
@@ -10,14 +11,16 @@ const SPFRecordGenerator = () => {
   const [emailHandling, setEmailHandling] = useState('Soft Fail');
   const [spfRecord, setSpfRecord] = useState('');
 
+
   const generateSPFRecord = () => {
     let record = 'v=spf1';
-    if (serverEmail === 'Yes') record += ' mx';
-    if (mailServerEmail === 'Yes') record += ' a';
+    if (serverEmail === 'Yes') record += ' a';
+    if (mailServerEmail === 'Yes') record += ' mx';
     if (ipv4Addresses) record += ` ip4:${ipv4Addresses}`;
     if (ipv6Addresses) record += ` ip6:${ipv6Addresses}`;
-    if (emailPlatform === 'Sendgrid') record += ' include:sendgrid.net';
-    // ... other platforms
+    if (emailPlatform && emailPlatforms[emailPlatform]) {
+      record += ` ${emailPlatforms[emailPlatform].include}`;
+    }
     record += emailHandling === 'Soft Fail' ? ' ~all' : emailHandling === 'Fail' ? ' -all' : ' ?all';
     setSpfRecord(record);
   };
@@ -104,10 +107,11 @@ const SPFRecordGenerator = () => {
           value={emailPlatform}
           className="py-3 px-4 block w-full text-md rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900"
         >
-          {/* Add more platforms as needed */}
-          <option value="Sendgrid">Sendgrid</option>
-          <option value="Shopify">Shopify</option>
-          <option value="Zendesk">Zendesk</option>
+          {Object.keys(emailPlatforms).map((platform) => (
+            <option key={platform} value={platform}>
+              {platform}
+            </option>
+          ))}
         </select>
       </div>
       <div className="mb-6">
