@@ -1,5 +1,6 @@
 import React, { FormEvent, useState } from 'react';
 import ResultsList from './ResultsList';
+import Loader from './UI/Loader';
 import { domainStorage } from '~/stores/domainStore';
 
 interface Input {
@@ -41,6 +42,7 @@ const ReactFormContainer: React.FC<FormProps> = ({
   const [formState, setFormState] = useState({});
   const [results, setResults] = useState([]);
   const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(false);
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = event.target;
@@ -52,6 +54,8 @@ const ReactFormContainer: React.FC<FormProps> = ({
 
   const handleSubmit = async (event: FormEvent) => {
     event.preventDefault();
+    setLoading(true); // Start loading
+
     setResults([]);
 
     const domain = formState['domain']; // Accessing domain value
@@ -89,6 +93,8 @@ const ReactFormContainer: React.FC<FormProps> = ({
       ]); // Assuming spfResult has spf and ssl properties
     } catch (error) {
       setError('An error occurred while checking the records');
+    } finally {
+      setLoading(false); // End loading
     }
 
     await onSubmit(formState);
@@ -158,9 +164,13 @@ const ReactFormContainer: React.FC<FormProps> = ({
         )}
         {button && (
           <div className="mt-10 grid">
-            <button type="submit" className="btn btn-primary cursor-pointer">
-              {button}
-            </button>
+            {loading ? (
+              <Loader />
+            ) : (
+              <button type="submit" className="btn btn-primary cursor-pointer">
+                {button}
+              </button>
+            )}
           </div>
         )}
         {description && (
