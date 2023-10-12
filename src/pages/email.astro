@@ -14,6 +14,18 @@ const metadata = {
 };
 ---
 
+<script type="module">
+  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      const hashVal = this.getAttribute('href');
+      const targetAnchor = document.querySelectorAll(hashVal)[0];
+      const contactPos = window.pageYOffset + targetAnchor.getBoundingClientRect().top;
+      window.scrollTo({ top: contactPos, behavior: 'smooth' });
+    });
+  });
+</script>
+
 <Layout metadata={metadata}>
   <Fragment slot="header">
     <Header {...headerData} showToggleTheme />
