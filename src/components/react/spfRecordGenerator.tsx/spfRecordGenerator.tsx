@@ -11,7 +11,6 @@ const SPFRecordGenerator = () => {
   const [emailHandling, setEmailHandling] = useState('Soft Fail');
   const [spfRecord, setSpfRecord] = useState('');
 
-
   const generateSPFRecord = () => {
     let record = 'v=spf1';
     if (serverEmail === 'Yes') record += ' a';
@@ -29,8 +28,9 @@ const SPFRecordGenerator = () => {
     generateSPFRecord();
   }, [serverEmail, mailServerEmail, ipv4Addresses, ipv6Addresses, emailPlatform, emailHandling]);
 
-  const copyToClipboard = () => {
-    navigator.clipboard.writeText(spfRecord);
+  const copyToClipboard = (event, text) => {
+    event.preventDefault();
+    navigator.clipboard.writeText(text);
   };
 
   const $domain = useStore(domainStorage);
@@ -132,26 +132,35 @@ const SPFRecordGenerator = () => {
           <option value="Neutral">Neutral (All emails are accepted)</option>
         </select>
       </div>
-
-      <div className="flex items-center">
-        <input
-          type="text"
-          readOnly
-          value={$domain}
-          className="py-3 px-4 block w-full text-md rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900"
-        />
-        <button onClick={copyToClipboard} className="ml-4 btn btn-primary cursor-pointer">
+      <div className="flex flex-row gap-5 items-center mb-6">
+        <div className="flex-1 sm:mb-0">
+          <input
+            type="text"
+            readOnly
+            value={$domain}
+            className="py-3 px-4 block w-full text-md rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900"
+          />
+        </div>
+        <button
+          onClick={(e) => copyToClipboard(e, $domain)}
+          className="btn btn-primary cursor-pointer w-24 py-2 rounded-lg"
+        >
           Copy
         </button>
       </div>
-      <div className="flex items-center">
-        <input
-          type="text"
-          readOnly
-          value={spfRecord}
-          className="py-3 px-4 block w-full text-md rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900"
-        />
-        <button onClick={copyToClipboard} className="ml-4 btn btn-primary cursor-pointer">
+      <div className="flex flex-row  gap-5 items-center mb-6">
+        <div className="flex-1  sm:mb-0">
+          <input
+            type="text"
+            readOnly
+            value={spfRecord}
+            className="py-3 px-4 block w-full text-md rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900"
+          />
+        </div>
+        <button
+          onClick={(e) => copyToClipboard(e, spfRecord)}
+          className="btn btn-primary cursor-pointer w-24 py-2 rounded-lg"
+        >
           Copy
         </button>
       </div>
