@@ -49,17 +49,17 @@ const checklistItems: ChecklistItem[] = [
             type: 'text',
             data: 'An SPF record defines which IP addresses are allowed to send email from your domain. Answer the questions to generate an SPF record.',
           },
-          {
-            type: 'table',
-            data: {
-              headers: ['Record Type', 'Host', 'Value', 'TTL'],
-              rows: [
-                ['A', '@', '192.0.2.1', '3600'],
-                ['CNAME', 'www', 'example.com.', '3600'],
-                // ... other rows
-              ],
-            },
-          },
+          // {
+          //   type: 'table',
+          //   data: {
+          //     headers: ['Record Type', 'Host', 'Value', 'TTL'],
+          //     rows: [
+          //       ['A', '@', '192.0.2.1', '3600'],
+          //       ['CNAME', 'www', 'example.com.', '3600'],
+          //       // ... other rows
+          //     ],
+          //   },
+          // },
           // ...other content blocks
         ],
       },
@@ -75,16 +75,178 @@ const checklistItems: ChecklistItem[] = [
       },
       { id: '1.3', description: 'Create a DMARC record for your domain' },
       { id: '1.4', description: 'Send email via secure SSL/TLS connection' },
-      { id: '1.5', description: 'Create MX records for your domain' },
+      {
+        id: '1.5',
+        description: 'Create MX records for your domain',
+        content: [
+          {
+            type: 'text',
+            data: "MX records tell email systems where to send messages. Without proper MX records, emails can get lost or bounce back, similar to sending a letter without the right address. Not having an MX record can also lead mailbox providers to think the sender isn't following email rules, leading to delivery problems or being labeled as spam. Select a mailbox provider from the dropdown for instructions to set up MX records.",
+          },
+        ],
+      },
     ],
   },
   {
     id: '2',
     title: 'Infrastructure',
     tasks: [
-      { id: '2.1', description: 'Use the correct tool to send email' },
-      { id: '2.2', description: 'Choose an email marketing platform with ability to schedule batch delivery' },
-      { id: '2.3', description: 'Choose the correct type of IP address' },
+      {
+        id: '2.1',
+        description: 'Use the correct tool to send email',
+        content: [
+          {
+            type: 'text',
+            data: "Email Marketing Platforms help their users send emails to their subscribers or sales prospects, and Email Delivery Providers help their users send transactional emails to their customers. Email Marketing Platforms can be subcategorized into Inbound and Outbound. It's important to use the correct tool as they cannot all be used for the same type of email, and could result in being banned if you misuse their services.          ",
+          },
+          {
+            type: 'table',
+            data: {
+              headers: [
+                'Transactional 	',
+                'Delivery Services',
+                'Inbound',
+                'Marketing Automation Software',
+                'Outbound',
+                'Sales Outreach Software',
+              ],
+              rows: [
+                [
+                  'Welcome message, sales receipt, comment notification or account verification	',
+                  'Amazon SES, Postmark, Mailgun, Mailjet, SendGrid',
+                  'Newsletters or emails where users requested information (filled out a single or double opt-in form)	',
+                  'ActiveCampaign, Sendinblue, Hubspot, Mailchimp, ConvertKit, Campaign Monitor, Klaviyo, Drip, Bento',
+                  'Sales or unsolicited emails (cold emails)	',
+                  'Lemlist, Reply.io, Outreach.io, MailShake, SmartReach                  ',
+                ],
+                // ... other rows
+              ],
+            },
+          },
+        ],
+      },
+      {
+        id: '2.2',
+        description: 'Choose an email marketing platform with ability to schedule batch delivery',
+        content: [
+          {
+            type: 'text',
+            data: "If you're sending marketing emails choose a platform with ability to send in batches. Depending on the number of contacts you have in your list, slowly drip out the emails over a duration of hours or days instead of sending them all at once.            ",
+          },
+        ],
+      },
+      {
+        id: '2.3',
+        description: 'Choose the correct type of IP address',
+        content: [
+          {
+            type: 'text',
+            data: "Decide whether to use a shared or dedicated IP address. A shared IP is used by multiple senders while a dedicated IP is reserved just for you. If you send less than 50,000/month then a shared IP will be fine, though many lower volume senders switch to a dedicated IP address to control their reputation. If you send more than 50,000/month you should get a dedicated IP or several, depending on your sending volume. Most email marketing platforms and email delivery providers offer dedicated IP addresses for an additional monthly fee. This is only relevant for newsletters or transactional emails. If you're sending cold email marketing campaigns — you'll simply use the IP address provided by your mail provider (Google Workspace, Office365, AWS WorkMail, Zoho, etc).",
+          },
+        ],
+      },
+      {
+        id: '2.4',
+        description: 'Use separate email address, subdomain and IP address for transactional and marketing emails',
+        content: [
+          {
+            type: 'text',
+            data: " The reputation of the IP address, domain, and email address all play a role in getting emails into your customer's inbox rather than the spam folder. Or, in the case of Google, in the Promotions tab. Email providers know customers want and expect transactional emails, but it's not always easy for them to tell what's transactional and what's better classified as marketing emails.",
+          },
+          {
+            type: 'text',
+            data: ' Using a separate email address, subdomain and IP address for each type of mail makes it much more likely that your important emails will get to your customers, and will prevent normal correspondance or transactional emails from being negatively impacted by marketing email campaigns that accidentally lead to a negative domain or IP reputation.            ',
+          },
+          {
+            type: 'table',
+            data: {
+              headers: ['Standard Emails 	', 'Transactional Emails', 'Marketing Emails'],
+              rows: [
+                ['	Your Server IP Address', 'Delivery Provider IP Address', 'Marketing Platform IP Address'],
+                // ... other rows
+              ],
+            },
+          },
+        ],
+      },
+      {
+        id: '2.5',
+        description: 'Subscribe to feedback loops',
+        content: [
+          {
+            type: 'text',
+            data: 'How do you know when a recipient has marked your email as spam? What can you do about it? If you set up feedback loops, email providers will notify you when a recipient has marked one of your emails as spam. Youll need to set up separate feedback loops for all the email providers you send to. Below are links to signup to feedback loops for the most popular email providers.        ',
+          },
+          {
+            type: 'table',
+            data: {
+              headers: [
+                'Postmaster Tools by Gmail 	',
+                'Microsoft Junk Mail Reporting Program',
+                'Yahoo Mail Complaint Feedback Loop',
+                'List of other Feedback Loops	',
+              ],
+              rows: [
+                [
+                  'https://www.gmail.com/postmaster/',
+                  '	https://postmaster.live.com/snds/JMRP.aspx (Only for dedicated IP address)',
+                  '	https://io.help.yahoo.com/contact/',
+                  '	https://glockapps.com/isp-feedback-loops/',
+                ],
+                // ... other rows
+              ],
+            },
+          },
+        ],
+      },
+      {
+        id: '2.6',
+        description: 'Create a custom tracking domain',
+        content: [
+          {
+            type: 'text',
+            data: "Custom tracking domains are important if you use an email marketing platform to send emails. Instead of using your email marketing platform's domain to track actions (opens, link clicks & unsubscribers), custom tracking domains use your domain to track actions and isolate your reputation from other users who use the same provider.",
+          },
+          {
+            type: 'text',
+            data: "For example, if a spammer uses MailChimp, and the spammer's emails contain the default MailChimp tracking domain, and this causes the default tracking domain to be listed by a domain-based spam blacklist, and if your emails contain the same tracking domain, the deliverability of your emails could be affected.            ",
+          },
+          {
+            type: 'text',
+            data: 'Creating a custom tracking domain involves adding a CNAME record to your DNS records. Most email marketing platforms will give you the ability to create a custom tracking domain and will provide step-by-step instructions.            ',
+          },
+        ],
+      },
+      {
+        id: '2.7',
+        description: 'Create postmaster and abuse role email accounts',
+        content: [
+          {
+            type: 'text',
+            data: 'Having these two role email accounts is good practice and a requirement by some email providers. They are used to receive abuse complaints so you should check them regularly and resolve all issues as soon as possible.            ',
+          },
+          {
+            type: 'table',
+            data: {
+              headers: ['Postmaster Email 	', 'Abuse Email'],
+              rows: [
+                ['postmaster@example.com', 'abuse@example.com'],
+                // ... other rows
+              ],
+            },
+          },
+        ],
+      },
+      {
+        id: '2.8',
+        description: 'Never use free email addresses',
+        content: [
+          {
+            type: 'text',
+            data: 'Never use a free webmail address as your "From" address. For example, email addresses from Yahoo, AOL, Outlook/Hotmail or Gmail. Instead, use an email address registered at your organization\'s own domain. When an email is sent through an email marketing platform, receiving email providers view free webmail "From" addresses as more suspicious than those from custom domains, increasing the chance emails from those addresses will be rejected.',
+          },
+        ],
+      },
       // ...other tasks
     ],
   },
@@ -92,8 +254,64 @@ const checklistItems: ChecklistItem[] = [
     id: '3',
     title: 'Reputation',
     tasks: [
-      { id: '3.1', description: 'Check if your domain or IP is blacklisted' },
-      { id: '3.2', description: 'Check your IP address reputation' },
+      {
+        id: '3.1',
+        description: 'Check if your domain or IP is blacklisted',
+        content: [
+          {
+            type: 'text',
+            data: "Check your domain and IP address against known spam blacklists to see if you've been blacklisted. If you are; request to be delisted. If you're using an email delivery provider be sure to check the outbound sending IP addresses assigned to your account.",
+          },
+          {
+            type: 'table',
+            data: {
+              headers: ['Spamhaus 	', 'Spamcop', 'SURBL', 'DNSBL.info', 'MX Toolbox'],
+              rows: [
+                [
+                  'https://check.spamhaus.org/',
+                  'https://www.spamcop.net/bl.shtml',
+                  'http://www.surbl.org/surbl-analysis',
+                  'https://www.dnsbl.info/dnsbl-list.php',
+                  'https://mxtoolbox.com/blacklists.aspx',
+                ],
+                // ... other rows
+              ],
+            },
+          },
+        ],
+      },
+      {
+        id: '3.2',
+        description: 'Check your IP address reputation',
+        content: [
+          {
+            type: 'text',
+            data: 'Talos Reputation Center generates a reputation score grouped into Good, Neutral and Poor. You should aim for an Email Reputation score of Neutral or Good.',
+          },
+          {
+            type: 'text',
+            data: 'Barracuda Central maintains a history of IP addresses for both known spammers as well as senders with good email practices.            .',
+          },
+          {
+            type: 'text',
+            data: "Sender Score is a free email reputation evaluation service from Validity. It provides an indication of the trustworthiness of an email sender's IP address.            ",
+          },
+          {
+            type: 'table',
+            data: {
+              headers: ['Talos Intelligence 	', 'Barracuda Central', 'Sender Score'],
+              rows: [
+                [
+                  'https://talosintelligence.com/reputation_center/',
+                  'https://www.barracudacentral.org/lookups/lookup-reputation',
+                  'https://senderscore.org/get-your-score/',
+                ],
+                // ... other rows
+              ],
+            },
+          },
+        ],
+      },
       {
         id: '3.3',
         description: 'Warm up your domain and IP address',

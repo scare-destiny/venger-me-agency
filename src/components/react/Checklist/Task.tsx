@@ -4,6 +4,7 @@ import { useStore } from '@nanostores/react';
 import { domainStorage } from '~/stores/domainStore';
 import { type Task as TaskType } from 'data/checkListItems';
 import ContentRenderer from './Render/ContentRenderer';
+import SPFRecordGenerator from '../spfRecordGenerator.tsx/spfRecordGenerator';
 
 interface TaskItemProps {
   task: TaskType;
@@ -31,12 +32,7 @@ const Task: React.FC<TaskItemProps> = ({ task, onCheckboxToggle }) => {
         task.content.map((contentBlock) => (
           <ContentRenderer content={contentBlock} key={contentBlock.type + contentBlock.data.toString()} />
         ))}
-      {task.description === 'Create an SPF record for your domain' && (
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore
-          magna aliqua. {$domain}
-        </p>
-      )}
+      {task.description === 'Create an SPF record for your domain' && !checked && <SPFRecordGenerator client:olny />}
     </div>
   );
 };

@@ -2,18 +2,20 @@
 import { Icon } from 'astro-icon/components';
 import WidgetWrapper from '../ui/WidgetWrapper.astro';
 import Headline from '../ui/Headline.astro';
-import type {  Widget } from '~/types';
+import type { Widget } from '~/types';
 
 interface Props extends Widget {
   title?: string;
   subtitle?: string;
+  buttonText?: string;
   calendlyUrl: string;
 }
 
 const {
   title = await Astro.slots.render('title'),
   subtitle = await Astro.slots.render('subtitle'),
-  calendlyUrl = "https://calendly.com/eugene-venger",
+  calendlyUrl = 'https://calendly.com/eugene-venger',
+  buttonText = ' Schedule Free Meeting!',
 
   id,
   isDark = false,
@@ -23,7 +25,8 @@ const {
 
 const onClick = `Calendly.initPopupWidget({url: '${calendlyUrl}'});return false;`;
 ---
-<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+
+<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
 <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
 
 <WidgetWrapper id={id} isDark={isDark} containerClass={`max-w-6xl mx-auto ${classes?.container ?? ''}`} bg={bg}>
@@ -42,7 +45,7 @@ const onClick = `Calendly.initPopupWidget({url: '${calendlyUrl}'});return false;
     <div class="mt-6 max-w-xs mx-auto">
       <a href="#" class="btn btn-primary w-full sm:w-auto" onclick={onClick}>
         <Icon name="tabler:rocket" class="w-5 h-5 mr-1 -ml-1.5 rtl:-mr-1.5 rtl:ml-1" />
-        Schedule Free Meeting!
+        {buttonText}
       </a>
     </div>
   </div>

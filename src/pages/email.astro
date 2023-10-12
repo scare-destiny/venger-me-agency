@@ -5,6 +5,7 @@ import WidgetWrapper from '~/components/ui/WidgetWrapper.astro'; // Import Widge
 import Hero from '~/components/widgets/Hero.astro';
 import ContactUs from '~/components/widgets/Contact.astro';
 import Checklist from '~/components/react/Checklist/Checklist';
+import SimpleCalendly from '~/components/widgets/SimpleCalendly.astro';
 import Prices from '~/components/widgets/Pricing.astro';
 import { headerData } from '~/navigation';
 
@@ -75,7 +76,7 @@ const metadata = {
 
     <!-- Pricing Widget ******************* -->
 
-    <Prices
+    <!-- <Prices
       title="Services"
       subtitle="For those who need help or don't want to DIY."
       prices={[
@@ -219,6 +220,13 @@ const metadata = {
           },
         },
       ]}
+    /> -->
+    <SimpleCalendly
+      calendlyUrl="https://calendly.com/eugene-venger/30min-1"
+      title="Need help or don't want to DIY?"
+      subtitle="We will help you boost your deliverability and fix all issues."
+      .
+      buttonText=" Book Free Consultation"
     />
   </Fragment>
 </Layout>
