@@ -15,15 +15,12 @@ const metadata = {
 
 <Layout metadata={metadata}>
   <Fragment slot="header">
-    <Header
-     {...headerData}
-      showToggleTheme
-    />
+    <Header {...headerData} showToggleTheme />
     <!-- HeroText Widget ******************* -->
 
     <HeroText tagline="Contact" title="Let's Connect!" />
 
-<!--     
+    <!--     
        <ContactUs
       title="Drop us a message today!"
       subtitle="Contact us today to find out how we can help you achieve your business goals."
@@ -59,7 +56,10 @@ const metadata = {
       isDark={false}
     /> -->
 
-    <TallyForm title="Get in touch" subtitle="Let's discuss how we can transform your digital presence. Reach out now." />
+    <TallyForm
+      title="Get in touch"
+      subtitle="Let's discuss how we can transform your digital presence. Reach out now."
+    />
 
     <!-- Features2 Widget ************** -->
 

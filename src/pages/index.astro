@@ -7,7 +7,7 @@ import Note from '~/components/widgets/Note.astro';
 import Features from '~/components/widgets/Features.astro';
 import { headerData } from '~/navigation';
 // import Features2 from '~/components/widgets/Features2.astro';
-// import Steps from '~/components/widgets/Steps.astro';
+// import Stepsp from '~/components/widgets/Steps.astro';
 // import Content from '~/components/widgets/Content.astro';
 import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
 // import FAQs from '~/components/widgets/FAQs.astro';
@@ -26,7 +26,7 @@ const metadata = {
 <Layout metadata={metadata}>
   <!-- Hero Widget ******************* -->
   <Fragment slot="header">
-    <Header {...headerData} showToggleTheme />
+    <Header transition:persist {...headerData} showToggleTheme />
 
     <Hero image={{ src: '~/assets/images/hero.png', alt: 'Astronaut floating in space' }}>
       <Fragment slot="title">
