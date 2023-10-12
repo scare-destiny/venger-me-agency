@@ -149,7 +149,7 @@ const currentPath = `${trimSlash(new URL(Astro.url).pathname)}`;
         </div>
         {
           actions?.length ? (
-            <span class="ml-4 rtl:ml-0 rtl:mr-4">
+            <span transition:persist class="ml-4 rtl:ml-0 rtl:mr-4">
               {actions.map(({ text, href, class: className }) => (
                 <a
                   class:list={['btn ml-2 py-2.5 px-5.5 md:px-6 font-semibold shadow-none text-sm', className]}
