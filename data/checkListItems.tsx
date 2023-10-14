@@ -49,86 +49,76 @@ const checklistItems: ChecklistItem[] = [
     tasks: [
       {
         id: '1.1',
-        description: 'Create an SPF record for your domain',
+        description: 'Set up an SPF record for your domain',
         content: [
           {
             type: 'text',
-            data: 'An SPF record defines which IP addresses are allowed to send email from your domain. Answer the questions to generate an SPF record.',
+            data: 'An SPF (Sender Policy Framework) record defines which IP addresses have the permission to transmit emails from your domain. Answer the questions to generate an SPF record.',
           },
-          // {
-          //   type: 'table',
-          //   data: {
-          //     headers: ['Record Type', 'Host', 'Value', 'TTL'],
-          //     rows: [
-          //       ['A', '@', '192.0.2.1', '3600'],
-          //       ['CNAME', 'www', 'example.com.', '3600'],
-          //       // ... other rows
-          //     ],
-          //   },
-          // },
-          // ...other content blocks
         ],
       },
       {
         id: '1.2',
-        description: 'Create a DKIM record for your domain',
+        description: 'Set up a DKIM record for your domain',
         content: [
           {
             type: 'text',
-            data: 'Email providers use DomainKeys Identified Mail (DKIM) to detect forged sender addresses in email (email spoofing), a technique often used in phishing and email spam. Emails that fail authentication are more likely to arrive in the spam or junkmail folder. Follow instructions below to obtain your DKIM Key and add a DKIM record to your DNS records.            ',
+            data: 'DomainKeys Identified Mail (DKIM) assists email providers in spotting forged sender addresses in emails, a common tactic in phishing and spam. Emails failing authentication are prone to being directed to the spam or junk mail folder. Adhere to the directions below to acquire your DKIM Key and insert a DKIM record to your DNS entries.',
           },
           {
             type: 'playful',
             data: {
               emoji: '🔨',
-              title: 'WIP',
-              subtitle: 'Stay tuned! Before long, this space will guide you on setting up your own DKIM records.',
+              title: 'In Progress',
+              subtitle:
+                'Keep an eye out! Before you know it, this section will navigate you through the DKIM record setup.',
             },
           },
         ],
       },
       {
         id: '1.3',
-        description: 'Create a DMARC record for your domain',
+        description: 'Set up a DMARC record for your domain',
         content: [
           {
             type: 'text',
-            data: "DMARC records allow senders to indicate their emails are protected by SPF and/or DKIM, and give instruction if neither of those authentication methods passes. Please be sure you have SPF and DKIM records setup before using DMARC. Becoming DMARC compliant involves more than just adding a TXT record to your DNS records. It's a process that can take several weeks to months, depending on your sending volume, email marketing platform or email delivery provider who send email on your behalf.          ",
+            data: "A DMARC (Domain-based Message Authentication, Reporting & Conformance) record allows senders to indicate that their emails are safeguarded by SPF and/or DKIM, and furnish instructions for scenarios where neither authentication methods are passed. Ensure your SPF and DKIM records are in place before employing DMARC. Transitioning to DMARC compliance is more than a mere addition of a TXT record to your DNS entries. It's an endeavor that might span several weeks to months, contingent on your email sending volume, and the email marketing platform or delivery provider you are using.",
           },
           {
             type: 'playful',
             data: {
               emoji: '🔨',
-              title: 'WIP',
-              subtitle: "Hold tight! Soon, you'll find guidance here on crafting your own DMARC policy.",
+              title: 'In Progress',
+              subtitle: "Hang in there! Shortly, you'll find instructions here on devising your DMARC policy.",
             },
           },
         ],
       },
       {
         id: '1.4',
-        description: 'Send email via secure SSL/TLS connection',
+        description: 'Send emails via a secure SSL/TLS connection',
         content: [
           {
             type: 'text',
-            data: " An SSL certificate enables you to send emails via a secure SSL/TLS connection. It encrypts and secures the connection between your mail server and the receiving mail server, and is an important key metric in establishing your sender score and reputation with email providers. If you don't have an SSL certificate, contact your hosting provider, or signup for the CloudFlare Free Plan which includes a free SSL certificate.          ",
+            data: "Possessing an SSL certificate facilitates the transmission of emails through a secure SSL/TLS connection. It encrypts and fortifies the connection between your mail server and the recipient's mail server, playing a crucial role in establishing your sender score and reputation with email service providers. If you don't have an SSL certificate, reach out to your hosting provider, or opt for the CloudFlare Free Plan encompassing a complimentary SSL certificate.",
           },
         ],
       },
       {
         id: '1.5',
-        description: 'Create MX records for your domain',
+        description: 'Set up MX records for your domain',
         content: [
           {
             type: 'text',
-            data: "MX records tell email systems where to send messages. Without proper MX records, emails can get lost or bounce back, similar to sending a letter without the right address. Not having an MX record can also lead mailbox providers to think the sender isn't following email rules, leading to delivery problems or being labeled as spam. Select a mailbox provider from the dropdown for instructions to set up MX records.            ",
+            data: 'MX (Mail Exchange) records guide email systems on where to deliver messages. Absence of precise MX records can result in emails being misplaced or bounced back, akin to sending a letter with an incorrect address. Lack of an MX record can also signal to mailbox providers a non-adherence to email norms by the sender, culminating in delivery hurdles or being tagged as spam. Choose a mailbox provider from the dropdown for step-by-step guidance on establishing MX records.',
           },
           {
             type: 'playful',
             data: {
               emoji: '🔨',
-              title: 'WIP',
-              subtitle: "Soon you'll see more content here and will be able to set up your own MX record.",
+              title: 'In Progress',
+              subtitle:
+                'In a short while, this space will be enriched with more content aiding you in setting up your MX record.',
             },
           },
         ],
@@ -141,17 +131,17 @@ const checklistItems: ChecklistItem[] = [
     tasks: [
       {
         id: '2.1',
-        description: 'Use the correct tool to send email',
+        description: ' Use the correct tool to send email',
         content: [
           {
             type: 'text',
-            data: "Email Marketing Platforms help their users send emails to their subscribers or sales prospects, and Email Delivery Providers help their users send transactional emails to their customers. Email Marketing Platforms can be subcategorized into Inbound and Outbound. It's important to use the correct tool as they cannot all be used for the same type of email, and could result in being banned if you misuse their services.          ",
+            data: "Email Marketing Platforms assist users in sending emails to subscribers or prospective customers, while Email Delivery Providers facilitate the sending of transactional emails to existing customers. There are further classifications within Email Marketing Platforms, namely Inbound and Outbound. It's crucial to choose the right tool as misusing them for incorrect types of email could lead to account suspension.",
           },
           {
             type: 'table',
             data: {
               headers: [
-                'Transactional 	',
+                'Transactional',
                 'Delivery Services',
                 'Inbound',
                 'Marketing Automation Software',
@@ -160,12 +150,12 @@ const checklistItems: ChecklistItem[] = [
               ],
               rows: [
                 [
-                  'Welcome message, sales receipt, comment notification or account verification	',
+                  'Welcome message, sales invoice, comment alerts or account confirmation',
                   'Amazon SES, Postmark, Mailgun, Mailjet, SendGrid',
-                  'Newsletters or emails where users requested information (filled out a single or double opt-in form)	',
+                  'Newsletters or information emails triggered by user request (via a single or double opt-in form)',
                   'ActiveCampaign, Sendinblue, Hubspot, Mailchimp, ConvertKit, Campaign Monitor, Klaviyo, Drip, Bento',
-                  'Sales or unsolicited emails (cold emails)	',
-                  'Lemlist, Reply.io, Outreach.io, MailShake, SmartReach                  ',
+                  'Sales pitches or cold emails',
+                  'Lemlist, Reply.io, Outreach.io, MailShake, SmartReach',
                 ],
                 // ... other rows
               ],
@@ -175,42 +165,42 @@ const checklistItems: ChecklistItem[] = [
       },
       {
         id: '2.2',
-        description: 'Choose an email marketing platform with ability to schedule batch delivery',
+        description: 'Choose an email marketing platform with batch delivery scheduling capability',
         content: [
           {
             type: 'text',
-            data: "If you're sending marketing emails choose a platform with ability to send in batches. Depending on the number of contacts you have in your list, slowly drip out the emails over a duration of hours or days instead of sending them all at once.            ",
+            data: "When sending marketing emails, it's advisable to select a platform that allows batch sending. Depending on your contact list size, gradually release the emails over a span of hours or days rather than a mass send-out, to avoid overwhelming recipients.",
           },
         ],
       },
       {
         id: '2.3',
-        description: 'Choose the correct type of IP address',
+        description: 'Determine the suitable type of IP address',
         content: [
           {
             type: 'text',
-            data: "Decide whether to use a shared or dedicated IP address. A shared IP is used by multiple senders while a dedicated IP is reserved just for you. If you send less than 50,000/month then a shared IP will be fine, though many lower volume senders switch to a dedicated IP address to control their reputation. If you send more than 50,000/month you should get a dedicated IP or several, depending on your sending volume. Most email marketing platforms and email delivery providers offer dedicated IP addresses for an additional monthly fee. This is only relevant for newsletters or transactional emails. If you're sending cold email marketing campaigns — you'll simply use the IP address provided by your mail provider (Google Workspace, Office365, AWS WorkMail, Zoho, etc).",
+            data: 'Choose between a shared or dedicated IP address. A shared IP is utilized by numerous senders whereas a dedicated IP is exclusively yours. For sending volumes less than 50,000 per month, a shared IP suffices, although some lower volume senders migrate to a dedicated IP for better control over their reputation. For volumes exceeding 50,000 per month, a dedicated IP or multiple is advisable. Many email marketing and delivery platforms provide dedicated IPs for an additional charge. This consideration is advisable for newsletters or transactional emails. For cold email campaigns, the IP address provided by your mail provider (e.g., Google Workspace, Office365, AWS WorkMail, Zoho) is adequate.',
           },
         ],
       },
       {
         id: '2.4',
-        description: 'Use separate email address, subdomain and IP address for transactional and marketing emails',
+        description: 'Separate email address, subdomain, and IP address for transactional and marketing emails',
         content: [
           {
             type: 'text',
-            data: " The reputation of the IP address, domain, and email address all play a role in getting emails into your customer's inbox rather than the spam folder. Or, in the case of Google, in the Promotions tab. Email providers know customers want and expect transactional emails, but it's not always easy for them to tell what's transactional and what's better classified as marketing emails.",
+            data: "The reputations of the IP address, domain, and email address significantly influence the delivery of emails into your customer's inbox rather than being flagged as spam or relegated to the Promotions tab by platforms like Google. Email providers prioritize transactional emails but distinguishing between transactional and marketing emails can be challenging.",
           },
           {
             type: 'text',
-            data: ' Using a separate email address, subdomain and IP address for each type of mail makes it much more likely that your important emails will get to your customers, and will prevent normal correspondance or transactional emails from being negatively impacted by marketing email campaigns that accidentally lead to a negative domain or IP reputation.            ',
+            data: 'Utilizing distinct email addresses, subdomains, and IP addresses for each email type increases the likelihood of your crucial emails reaching customers. It also safeguards your regular correspondence or transactional emails from any adverse effects caused by marketing campaigns that might tarnish the domain or IP reputation.',
           },
           {
             type: 'table',
             data: {
-              headers: ['Standard Emails 	', 'Transactional Emails', 'Marketing Emails'],
+              headers: ['Standard Emails', 'Transactional Emails', 'Marketing Emails'],
               rows: [
-                ['	Your Server IP Address', 'Delivery Provider IP Address', 'Marketing Platform IP Address'],
+                ['Your Server IP Address', 'Delivery Provider IP Address', 'Marketing Platform IP Address'],
                 // ... other rows
               ],
             },
@@ -223,23 +213,23 @@ const checklistItems: ChecklistItem[] = [
         content: [
           {
             type: 'text',
-            data: 'How do you know when a recipient has marked your email as spam? What can you do about it? If you set up feedback loops, email providers will notify you when a recipient has marked one of your emails as spam. Youll need to set up separate feedback loops for all the email providers you send to. Below are links to signup to feedback loops for the most popular email providers.        ',
+            data: "How can you ascertain when an email has been flagged as spam by a recipient, and what measures can be taken? By enrolling in feedback loops, email providers will alert you when an email has been marked as spam by a recipient. It's necessary to set up individual feedback loops for each email provider you're sending to. Below are the links to sign up for feedback loops with popular email providers.",
           },
           {
             type: 'table',
             data: {
               headers: [
-                'Postmaster Tools by Gmail 	',
+                'Postmaster Tools by Gmail',
                 'Microsoft Junk Mail Reporting Program',
                 'Yahoo Mail Complaint Feedback Loop',
-                'List of other Feedback Loops	',
+                'Other Feedback Loop Listings',
               ],
               rows: [
                 [
                   'https://www.gmail.com/postmaster/',
-                  '	https://postmaster.live.com/snds/JMRP.aspx (Only for dedicated IP address)',
-                  '	https://io.help.yahoo.com/contact/',
-                  '	https://glockapps.com/isp-feedback-loops/',
+                  'https://postmaster.live.com/snds/JMRP.aspx (Only for dedicated IP address)',
+                  'https://io.help.yahoo.com/contact/',
+                  'https://glockapps.com/isp-feedback-loops/',
                 ],
                 // ... other rows
               ],
@@ -249,34 +239,34 @@ const checklistItems: ChecklistItem[] = [
       },
       {
         id: '2.6',
-        description: 'Create a custom tracking domain',
+        description: 'Set up a custom tracking domain',
         content: [
           {
             type: 'text',
-            data: "Custom tracking domains are important if you use an email marketing platform to send emails. Instead of using your email marketing platform's domain to track actions (opens, link clicks & unsubscribers), custom tracking domains use your domain to track actions and isolate your reputation from other users who use the same provider.",
+            data: 'Setting up custom tracking domains is paramount when using an email marketing platform for sending. Unlike the default tracking domain of the platform, custom tracking domains employ your domain for action tracking (like opens, link clicks, and unsubscribes), thus insulating your reputation from other users on the same platform.',
           },
           {
             type: 'text',
-            data: "For example, if a spammer uses MailChimp, and the spammer's emails contain the default MailChimp tracking domain, and this causes the default tracking domain to be listed by a domain-based spam blacklist, and if your emails contain the same tracking domain, the deliverability of your emails could be affected.            ",
+            data: 'For instance, if a spammer utilizes MailChimp and the spam emails carry the default MailChimp tracking domain, a domain-based spam blacklist may list it, and if your emails share this tracking domain, your email deliverability could be compromised.',
           },
           {
             type: 'text',
-            data: 'Creating a custom tracking domain involves adding a CNAME record to your DNS records. Most email marketing platforms will give you the ability to create a custom tracking domain and will provide step-by-step instructions.            ',
+            data: 'The process to create a custom tracking domain includes adding a CNAME record to your DNS entries. Most email marketing platforms facilitate the creation of custom tracking domains and provide detailed instructions.',
           },
         ],
       },
       {
         id: '2.7',
-        description: 'Create postmaster and abuse role email accounts',
+        description: 'Set up postmaster and abuse role email accounts',
         content: [
           {
             type: 'text',
-            data: 'Having these two role email accounts is good practice and a requirement by some email providers. They are used to receive abuse complaints so you should check them regularly and resolve all issues as soon as possible.            ',
+            data: "It's a sound practice, and sometimes a requisite by certain email providers, to have designated role email accounts like postmaster and abuse. These accounts serve to receive abuse complaints, necessitating regular monitoring and prompt resolution of all reported issues.",
           },
           {
             type: 'table',
             data: {
-              headers: ['Postmaster Email 	', 'Abuse Email'],
+              headers: ['Postmaster Email', 'Abuse Email'],
               rows: [
                 ['postmaster@example.com', 'abuse@example.com'],
                 // ... other rows
@@ -287,11 +277,11 @@ const checklistItems: ChecklistItem[] = [
       },
       {
         id: '2.8',
-        description: 'Never use free email addresses',
+        description: 'Avoid using free email addresses',
         content: [
           {
             type: 'text',
-            data: 'Never use a free webmail address as your "From" address. For example, email addresses from Yahoo, AOL, Outlook/Hotmail or Gmail. Instead, use an email address registered at your organization\'s own domain. When an email is sent through an email marketing platform, receiving email providers view free webmail "From" addresses as more suspicious than those from custom domains, increasing the chance emails from those addresses will be rejected.',
+            data: 'It\'s not advisable to use a free webmail address as your "From" address. This includes email addresses from Yahoo, AOL, Outlook/Hotmail or Gmail. It\'s better to use an email address that\'s registered at your organization\'s own domain. When you send an email through an email marketing platform, email providers often see free webmail "From" addresses as more suspicious compared to those from custom domains. This perception can increase the likelihood of emails from those addresses being rejected.',
           },
         ],
       },
@@ -304,16 +294,16 @@ const checklistItems: ChecklistItem[] = [
     tasks: [
       {
         id: '3.1',
-        description: 'Check if your domain or IP is blacklisted',
+        description: 'Inspect if your domain or IP is on a blacklist',
         content: [
           {
             type: 'text',
-            data: "Check your domain and IP address against known spam blacklists to see if you've been blacklisted. If you are; request to be delisted. If you're using an email delivery provider be sure to check the outbound sending IP addresses assigned to your account.",
+            data: "Examine your domain and IP address on known spam blacklists to verify if you've been blacklisted. If that's the case, request to be removed from the list. If you're utilizing an email delivery provider, make sure to inspect the outbound sending IP addresses linked to your account.",
           },
           {
             type: 'table',
             data: {
-              headers: ['Spamhaus 	', 'Spamcop', 'SURBL', 'DNSBL.info', 'MX Toolbox'],
+              headers: ['Spamhaus', 'Spamcop', 'SURBL', 'DNSBL.info', 'MX Toolbox'],
               rows: [
                 [
                   'https://check.spamhaus.org/',
@@ -330,24 +320,24 @@ const checklistItems: ChecklistItem[] = [
       },
       {
         id: '3.2',
-        description: 'Check your IP address reputation',
+        description: 'Evaluate your IP address reputation',
         content: [
           {
             type: 'text',
-            data: 'Talos Reputation Center generates a reputation score grouped into Good, Neutral and Poor. You should aim for an Email Reputation score of Neutral or Good.',
+            data: 'The Talos Reputation Center gives a reputation score categorized into Good, Neutral, and Poor. Aim for an Email Reputation score of Neutral or Good.',
           },
           {
             type: 'text',
-            data: 'Barracuda Central maintains a history of IP addresses for both known spammers as well as senders with good email practices.            .',
+            data: 'Barracuda Central keeps a track record of IP addresses for both known spammers and senders with proper email practices.',
           },
           {
             type: 'text',
-            data: "Sender Score is a free email reputation evaluation service from Validity. It provides an indication of the trustworthiness of an email sender's IP address.            ",
+            data: "Sender Score offers a free email reputation assessment service from Validity. It showcases the trustworthiness of an email sender's IP address.",
           },
           {
             type: 'table',
             data: {
-              headers: ['Talos Intelligence 	', 'Barracuda Central', 'Sender Score'],
+              headers: ['Talos Intelligence', 'Barracuda Central', 'Sender Score'],
               rows: [
                 [
                   'https://talosintelligence.com/reputation_center/',
@@ -366,7 +356,7 @@ const checklistItems: ChecklistItem[] = [
         content: [
           {
             type: 'text',
-            data: "Gradually increase the send rate to warm up the sending IP addresses tied to your domain with the objective of building good IP & domain reputation with email providers. Start with low volume and increase the sending rate gradually over time. Here's a few common scenarious.      ",
+            data: 'Begin by sending a low volume of emails, gradually increasing the send rate to warm up the sending IP addresses associated with your domain. The goal is to establish a good IP and domain reputation with email providers. Here are a few common scenarios.',
           },
         ],
       },
@@ -384,38 +374,38 @@ const checklistItems: ChecklistItem[] = [
           {
             type: 'html',
             data: `
-           <p class='py-2'> Sending emails to address that bounce will harm your sender score and reputation with email providers, which is why it's important to verify your contact's email addresses.  </p>
-            
-            If you acquired contacts through a double opt-in method you don't need to validate as they have already been verified through the double opt-in confirmation process (double opt-in is when a user has to confirm their email address after filling out a form or subscribing to your newsletter). 
-            
-            <p class='py-2'> An email validation service will filter out fake, disposable, catch-all and spam trap email addresses. You can do a quick Google search for 
-          <a class='text-blue-600 '  href="https://en.wikipedia.org/wiki/Base64" target="_blank" rel="noopener noreferrer">
-          email list validation 
-        </a>to find companies offering this service. Some email marketing platforms will do this for you automatically when you import your list, or offer this service for an additional fee.
-            
-          `,
+    <p class='py-2'>Sending emails to addresses that bounce will negatively affect your sender score and reputation with email providers, hence it's crucial to confirm your contacts' email addresses.</p>
+    
+
+            If your contacts were obtained via a double opt-in method, there's no need to validate as they have already been confirmed through the double opt-in process (double opt-in is when a user confirms their email address after filling out a form or subscribing to your newsletter).
+             
+            <p class='py-2'>An email validation service helps filter out fake, disposable, catch-all, and spam trap email addresses. A simple Google search for 
+            <a class='text-blue-600' href="https://en.wikipedia.org/wiki/Base64" target="_blank" rel="noopener noreferrer">
+            email list validation
+            </a> will reveal companies offering this service. Some email marketing platforms provide this service automatically when you import your list or offer it for an additional fee.</p>
+            `,
           },
         ],
       },
       {
         id: '4.2',
-        description: 'Always send emails to personal or business addresses of individuals',
+        description: 'Direct emails to personal or business addresses',
         content: [
           {
             type: 'text',
-            data: "Don't send marketing emails to role or general email addresses, instead send to personal or business email addresses of individuals.",
+            data: 'Avoid sending marketing emails to generic or role-based email addresses, instead, aim for personal or business email addresses of individuals.',
           },
           {
             type: 'table',
             data: {
               headers: [
-                'Sales Department 	',
+                'Sales Department',
                 'Chief Executive Officer',
                 'John Doe, CEO Company Email',
                 'John Doe Personal Email',
               ],
               rows: [
-                ['	sales@example.com	 ❌', 'ceo@example.com	❌', '	john.doe@example.com	✔️', 'john.doe@gmail.com	✔️'],
+                ['sales@example.com ❌', 'ceo@example.com ❌', 'john.doe@example.com ✔️', 'john.doe@gmail.com ✔️'],
                 // ... other rows
               ],
             },
@@ -428,16 +418,16 @@ const checklistItems: ChecklistItem[] = [
         content: [
           {
             type: 'text',
-            data: "Spam traps are email addresses used by email providers and blocklist operators to identify senders who aren't following email best practices. There are two types of spam traps:",
+            data: 'Spam traps are email addresses utilized by email providers and blocklist operators to catch senders who disregard email best practices. They come in two varieties:',
           },
           {
             type: 'table',
             data: {
-              headers: ['Pristine	', 'Recycled'],
+              headers: ['Pristine', 'Recycled'],
               rows: [
                 [
-                  "	These spam traps are email addresses that have never been valid and couldn't even opt into receiving email. They are available on public websites but hidden within the site's code. The purpose of pristine traps is to identify email marketers who use poor list building practices such as scraping sites for emails or purchasing contact lists. ",
-                  "These spam traps were once valid email addresses but have since been repurposed by their provider. Someone could have used this address to opt in at one time, but the address has since been abandoned. Recycled spam traps might be on your sending list if: 1) Your list is more than one year old. 2) You don't email your list frequently or 3) There are mistyped or invalid addresses on your list.",
+                  "Pristine spam traps are email addresses that have never been legitimate and could not have opted into receiving email. They are placed on public websites but hidden in the site's code. They aim to catch email marketers with poor list building practices like scraping sites for emails or buying contact lists.",
+                  "Recycled spam traps were valid email addresses at one point but have since been repurposed by their provider. This type of spam trap might end up on your sending list if: 1) Your list is over a year old. 2) You don't email your list frequently or 3) There are mistyped or invalid addresses on your list.",
                 ],
                 // ... other rows
               ],
@@ -445,17 +435,17 @@ const checklistItems: ChecklistItem[] = [
           },
           {
             type: 'text',
-            data: "The impact of spam traps varies depending on the type. Hitting a pristine spam trap is more severe than hitting a recycled trap. If you've emailed a pristine spam trap, your domain or sending IP address could be immediately blocklisted. If you send email to recycled spam traps regularly, you could start to see your emails being routed to the junk folder. To avoid spam traps, regularly clean up your contact lists.",
+            data: "The consequences of hitting spam traps differ based on the type. Landing on a pristine spam trap is more detrimental than a recycled trap. If you've emailed a pristine spam trap, your domain or sending IP address could be blocklisted instantly. Regular hits on recycled spam traps could lead to your emails being directed to the junk folder. To keep away from spam traps, clean your contact lists routinely.",
           },
         ],
       },
       {
         id: '4.4',
-        description: 'Remove fake & bounced email addresses',
+        description: 'Discard fake & bounced email addresses',
         content: [
           {
             type: 'text',
-            data: "Too many bounced emails have the same effect as spam complaints: they hurt your reputation which affects email deliverability. If you send an email to a fake email address it will be returned with a hard-bounce message. If you remove fake and bounced email addresses when you clean your email list, the number and percentage of bounces will go down the next time you send. There are two types of bounced email: Hard and Soft. Hard bounces happen because the domain name doesn’t exist, the email address doesn’t exist or delivery is blocked by the email server. Most email marketing platforms will automatically clean hard-bounced email addresses from your list but they will keep soft-bounces. Soft-bounces usually happen because the recipient reached the maximum storage quota for their email account. It's worth noting that if soft bounces happen regularly, then they'll eventually become hard bounces.",
+            data: "A high number of bounced emails, similar to spam complaints, tarnish your reputation which in turn affects email deliverability. When you send an email to a fake address, it comes back with a hard-bounce message. By removing fake and bounced email addresses during your list cleaning, the count and percentage of bounces will decrease in your future sends. Bounced emails come in two varieties: Hard and Soft. Hard bounces occur because the domain name is non-existent, the email address is invalid, or the delivery is blocked by the email server. Most email marketing platforms will automatically clean out hard-bounced email addresses from your list but retain soft-bounces. Soft-bounces generally occur because the recipient's email account has reached its storage limit. It's worth noting that if soft bounces happen consistently, they'll eventually turn into hard bounces.",
           },
         ],
       },
@@ -467,19 +457,19 @@ const checklistItems: ChecklistItem[] = [
     tasks: [
       {
         id: '5.1',
-        description: "Don't use complex HTML",
+        description: 'Avoid Complex HTML',
         content: [
           {
             type: 'text',
-            data: "The majority of email providers don't support every type of HTML content you see on the web. Web browsers are able to display scripts, animations, and complex navigation menus, while your typical email inbox isn't built to handle this type of content. If you're sending outbound email marketing campaigns (cold emails) we recommend creating very simple email content with links only. If you're sending inbound marketing campaigns (newsletters) you can get a little more creative, but don't use complex HTML.",
+            data: "Most email providers don't support all HTML content types found on the web. Unlike web browsers that can display scripts, animations, and complex navigation menus, typical email inboxes aren't designed to handle such content. For outbound email marketing campaigns (cold emails), it's advisable to craft simple email content with links only. For inbound marketing campaigns (newsletters), you can be a bit more creative but should steer clear of complex HTML.",
           },
           {
             type: 'table',
             data: {
-              headers: ['Safe to use ✔️', 'Do not use ❌'],
+              headers: ['Safe to use ✔️', 'Avoid ❌'],
               rows: [
                 [
-                  '	Static or table-based layouts, HTML tables & nested tables, template width of 600px-800px or simple, inline CSS',
+                  'Static or table-based layouts, HTML tables & nested tables, template width of 600px-800px or simple, inline CSS',
                   'JavaScript, iframe, Flash, embedded audio, embedded video, forms or div layering',
                 ],
                 // ... other rows
@@ -490,18 +480,18 @@ const checklistItems: ChecklistItem[] = [
       },
       {
         id: '5.2',
-        description: 'Only use secure HTTPS links',
+        description: 'Utilize Secure HTTPS Links Only',
         content: [
           {
             type: 'text',
-            data: 'When including links to images or sites in your email body, only use secure HTTPS links. If you link to images or sites without secure links, emails could be considered insecure by email providers and blocked or sent to the junkmail folder.',
+            data: 'Ensure to use secure HTTPS links when linking to images or websites in your email body. Unsecured links can cause emails to be flagged as insecure by email providers, potentially leading to them being blocked or relegated to the junkmail folder.',
           },
           {
             type: 'table',
             data: {
-              headers: ['http://www.yourdomain.com	', 'https://www.yourdomain.com	'],
+              headers: ['http://www.yourdomain.com', 'https://www.yourdomain.com'],
               rows: [
-                ['	Not secure 	❌', 'Secure ✔️'],
+                ['Not secure ❌', 'Secure ✔️'],
                 // ... other rows
               ],
             },
@@ -510,151 +500,152 @@ const checklistItems: ChecklistItem[] = [
       },
       {
         id: '5.3',
-        description: "Don't use fancy signatures",
+        description: 'Keep Signatures Simple',
         content: [
           {
             type: 'text',
-            data: "Signatures featuring your logo and links to social media is fine for regular correspondance but not for transactional email or marketing email campaigns. Keep it simple with a few lines inluding your name, position title, company and link to your website. You want to keep the number of links in your email body to a minimum. In order to comply with anti-spam laws, you'll also need to include a opt-out or unsubscribe link beneath your signature or at the bottom of your emails, as well as your physical or mailing address.",
+            data: "Although having signatures with your logo and social media links is fine for regular correspondence, it's not ideal for transactional or marketing email campaigns. A simpler signature with your name, job title, company, and website link is preferable. The aim is to minimize the number of links in your email body. Additionally, ensure to include an opt-out or unsubscribe link below your signature or at the email's end, along with your physical or mailing address, to comply with anti-spam laws.",
           },
         ],
       },
       {
         id: '5.4',
-        description: "Don't include attachments in your emails",
+        description: 'Avoid Email Attachments',
         content: [
           {
             type: 'text',
-            data: "While it's common practice to include attachments in emails to people you communicate with on a regular basis, doing so in bulk will trigger spam filters. That's because actual spam emails typically contain harmful attachments. In turn, spam filters are designed to detect and remove emails with attachments. Attachments also increase the size of your email – making them longer to load. The information you need to include should be in the body of the email. To include additional material, use a secure link to another page rather than an attachment.",
+            data: "Though attaching files in emails to known contacts is common, doing so in bulk email sends can activate spam filters. This is because malicious emails often contain harmful attachments, and spam filters are engineered to flag such emails. Besides, attachments increase your email size, delaying their load time. It's better to incorporate necessary information within the email body and provide secure links for additional materials instead of attachments.",
           },
         ],
       },
       {
         id: '5.5',
-        description: "Don't use spam trigger words",
+        description: 'Avoid Spam Trigger Words',
         content: [
           {
             type: 'text',
-            data: 'Never use spammy words in any portion of your emails. Below is a list of words in either your subject line or body that will trigger spam filters. If any of your emails require the usage of any of these terms (like when running a promotion), try to use synonyms. Spam filters have become much more sophisticated in recent years and using one or two phrases won’t hurt you so long as you use email marketing best practices and use spam trigger words within context.',
+            data: "Avoid using spammy words in your emails as they can trigger spam filters. Below is an image listing words that, if used in your subject line or body, could activate spam filters. If an email needs to contain any of these terms (like in a promotion), try to find synonyms. Modern spam filters are quite advanced, and using a phrase or two won't be detrimental as long as you adhere to email marketing best practices and use these terms in the right context.",
           },
           {
             type: 'image',
             data: {
               src: 'src/assets/images/email-spam-trigger-words.png',
-              alt: 'Description of Image',
+              alt: 'Image depicting spam trigger words',
             },
           },
         ],
       },
+
       {
         id: '5.6',
-        description: "Don't use ALL CAPS IN YOUR SUBJECT LINE",
+        description: 'Avoid ALL CAPS IN THE SUBJECT LINE',
         content: [
           {
             type: 'text',
-            data: 'This is a common practice by spammers and is sure to trigger spam filters and land your emails in the junkmail folder. Write simple, easy to read subject lines in lowercase letters.',
+            data: 'Using all caps in the subject line is a known spammer tactic and will likely trigger spam filters, landing your emails in the junk folder. Opt for simple, readable subject lines in lowercase letters.',
           },
           {
             type: 'table',
             data: {
               headers: ['Spammy subject line', 'Good subject line'],
-              rows: [
-                ['CELEBRATE MOTHERS DAY WITH FREE FLOWERS!', 'Joe, celebrate mothers day with these beautiful flowers'],
-              ],
+              rows: [['UNBELIEVABLE DISCOUNTS INSIDE!', 'Enjoy exclusive discounts on your next purchase']],
             },
           },
         ],
       },
       {
         id: '5.7',
-        description: 'Personalize the subject line and email body',
+        description: 'Personalize Subject Line and Email Body',
         content: [
           {
             type: 'text',
-            data: "Personalization is vital to reach high open rates by including the recipients first name in the subject line. If recipients see emails are addressed to them personally, with a compelling subject line that's relevant to them, they're more likely to open and read your emails. Open rates are also an important engagement signal for email providers. If they see recipients opening and replying to your emails, they're more likley to send your emails directly to the inbox and increase your sender score and reputation.",
+            data: "Personalization helps boost open rates. Including the recipient's first name in the subject line can make emails feel more tailored to them. If emails are seen as relevant and personalized, recipients are more likely to open and read them. Good open rates signal to email providers that your emails are valued, improving your sender score and reputation.",
           },
         ],
       },
       {
         id: '5.8',
-        description: 'Include an opt-out or unsubscribe link',
+        description: 'Add an Opt-out or Unsubscribe Link',
         content: [
           {
             type: 'text',
-            data: "If you send in bulk, email providers will expect you to include an opt-out or unsubscribe link. Otherwise, your emails can land in the spam folder and you can eventually be blacklisted. They're also important to avoid having your emails marked as spam as they give recipients the opportunity to opt-out of receiving your emails and ensures you're only sending to people who want to hear from you. Unsubscribe links are also required in order to comply with anti-spam laws which gives email recipients the right to unsubscribe.",
+            data: "Bulk emails should have an opt-out or unsubscribe link. This practice prevents your emails from landing in spam folders, and helps avoid blacklisting. These links provide recipients a choice to opt-out, ensuring you're reaching those interested in your content. Additionally, it complies with anti-spam laws granting recipients the right to unsubscribe.",
           },
         ],
       },
       {
         id: '5.9',
-        description: 'Never use base64 code in your emails',
+        description: 'Avoid Base64 Code in Emails',
         content: [
           {
             type: 'html',
             data: `
-            If you don't know what
-            <a class='text-blue-600 '  href="https://en.wikipedia.org/wiki/Base64" target="_blank" rel="noopener noreferrer">
-            base64 code 
-          </a> is, you're probably not using it. If you are – stop! Spammers use base64 to hide email content from spam filters. Using base64 code will land your emails in the spam folder.
-              
-            `,
+        Spammers often use
+        <a class='text-blue-600 '  href="https://en.wikipedia.org/wiki/Base64" target="_blank" rel="noopener noreferrer">
+        base64 code
+        </a> to mask email content from spam filters. Using base64 code will get your emails flagged as spam.
+        
+                `,
           },
         ],
       },
       {
         id: '5.10',
-        description: "Don't use URL shorteners",
+        description: "Don't Use  URL Shorteners",
         content: [
           {
             type: 'text',
-            data: "Spammers use shared domain url shorteners to hide the domain names they use for scams and viruses from spam filters. Because of this some email providers filter our emails containing URL shortners. As an alternative try using the original URL link to a website or file and linking it to text that describes exactly where it's taking the reader. This puts the link in the background HTML, which both looks better and can help with potential filtering problems.",
+            data: 'Avoid using shared domain URL shorteners as spammers use them to disguise malicious links, leading to filtering by some email providers. Instead, use the original URL linked to descriptive text, which looks better and can alleviate potential filtering issues.',
           },
         ],
       },
       {
         id: '5.11',
-        description: 'Avoid the no-reply address',
+        description: 'Avoid No-reply Address',
         content: [
           {
             type: 'text',
-            data: 'Sending from a no-reply address comes across as uncaring to subscribers. It can also be frustrating if they need to reach you about something, and it may even be bad news for delivery rates in the long-term. The way a user engages with your email — including replying — can help determine where you end up in the inbox. If people respond to your email campaigns, via reply email, this is seen as a good signal and helps improve your reputation with some email providers.',
+            data: 'Using a no-reply address can seem inattentive and frustrate recipients needing to contact you. This practice could also negatively affect delivery rates over time as user engagement, including replies, helps determine inbox placement. Having people respond to your email campaigns improves your reputation with some email providers.',
           },
         ],
       },
       {
         id: '5.12',
-        description: "Match your 'From' address to your 'From' name",
+        description: "Ensure 'From' Address and 'From' Name Match",
         content: [
           {
             type: 'text',
-            data: 'To assist with subscriber trust, it\'s a good idea for your "From" name to be similar to your "From" email address. For example, if a subscriber receives an email from ABC Widgets Support, they would expect it to be linked with an email address similar to support@abcwidgets.com.',
+            data: 'For subscriber trust, the "From" name should resemble the "From" email address. For instance, an email from BBC Support should come from an address like support@bbc.com.',
           },
         ],
       },
       {
         id: '5.13',
-        description: "Personalize the 'From' address for the purpose",
+        description: "Tailor the 'From' Address to Your Goals",
         content: [
           {
             type: 'text',
-            data: 'If you send both marketing and transactional emails, give recipients an idea of what you\'re sending them by fitting the "From" email address to the purpose. For example: newsletters@, support@ or billing@. This splitting of function also allows subscribers to manage your emails using their own client filters however they see fit. It also ensures that if they, for example, write a rule that deletes all emails from newsletters@, they will still receive emails from invoices@ or support@. If you\'re worried about managing too many email addresses, you can use a different reply-to address when sending a campaign to redirect replies.',
+            data: 'Distinguish between marketing and transactional emails by customizing the "From" address, like newsletters@, support@, or billing@. This allows recipients to manage your emails using client filters and ensures important emails aren’t missed if they filter out marketing emails.',
           },
         ],
       },
       {
         id: '5.14',
-        description: 'Set a custom reply-to address',
+        description: 'Set a Custom Reply-to Address',
         content: [
           {
             type: 'text',
-            data: 'While it\'s good for deliverability reasons to use a "From" address that invites recipients to contact you, you may want responses to go to a different address. If you have a large subscriber list you could end up receiving tens of thousands of out-of-office emails that you\'d prefer to go somewhere other than your main email address. Most email marketing platforms will give you the ability to set a different email address for replies when sending a campaign.',
+            data: 'Use a different reply-to address to handle responses, especially useful if managing a large subscriber list to avoid a flood of out-of-office emails to your main address. Most email marketing platforms allow setting a different reply address for campaigns.',
           },
           {
             type: 'table',
             data: {
               headers: ['From Name', 'From Email', 'Reply-to Email'],
               rows: [
-                ['ABC Widgets', 'newsletter@newsletter.abcwidgets.com', 'replies@newsletter.abcwidgets.com'],
-                // ... other rows
+                ['Gadget Galaxy', 'newsletter@gadgetgalaxy.com', 'replies@gadgetgalaxy.com'],
+                // ['Style Street', 'promotions@stylestreet.com', 'support@stylestreet.com'],
+                // ['TechTalk Updates', 'updates@techtalk.com', 'feedback@techtalk.com'],
+                // ['WellnessWave News', 'news@wellnesswave.com', 'membersupport@wellnesswave.com'],
               ],
             },
           },
@@ -662,11 +653,11 @@ const checklistItems: ChecklistItem[] = [
       },
       {
         id: '5.15',
-        description: 'Add alt tags to your images',
+        description: 'Include Alt Tags for Images',
         content: [
           {
             type: 'text',
-            data: "Using alt tags for images included in your emails is important for accessbility, user experience and getting your emails past the spam filter. They provide a textual alternative to your images, and a useful fallback for people who are blind, visually impaired or when your images cannot be displayed. Here's an example alt tag being used in an image.",
+            data: "Alt tags provide a text alternative for images, aiding accessibility, user experience, and spam filter bypass. They're essential for visually impaired individuals or when images can't be displayed.",
           },
         ],
       },
@@ -682,11 +673,11 @@ const checklistItems: ChecklistItem[] = [
         content: [
           {
             type: 'text',
-            data: "First, test the quality or spammyness of your emails. Navigate to Mail-Tester.com and send an email to the address generated for you (the email body should contain the content you want to send your contacts). Then, wait a few seconds and check your score.Your goal is to get a perfect (10/10) score. If you get less than a perfect score, go back and fix what's missing, then test again until you achieve a perfect (10/10) score. Second, find out exactly where your emails will land. Navigate to GlockApps Inbox Email Tester and send an email to the address generated for you (again, the email body should contain the content you want to send your contacts). Then, wait a few seconds and click to see the results. GlockApps has a free plan which allows you to perform up to 3 tests per day. Your goal is to get a Good score of 80/100 or more. If you get less than 80/100, go back and fix what's missing, then test again.",
+            data: "First off, ensure your emails aren't spammy. Head over to Mail-Tester.com, send an email to the provided address (filled with your intended content), wait a bit, and check your score. Aim for a full 10/10. Anything less? Revisit, adjust, and re-test until you nail that perfect score. Secondly, see where your emails will land using GlockApps Inbox Email Tester. Send another email, wait for a bit, then check the results. Strive for a 'Good' score of 80/100 or more. Falling short? Revise and re-test until you hit or surpass 80/100.",
           },
           {
             type: 'disclaimer',
-            data: 'You should perform these tests each time you send an email campaign.',
+            data: 'Carry out these tests each time you whip up an email campaign.',
           },
         ],
       },
@@ -702,7 +693,7 @@ const checklistItems: ChecklistItem[] = [
         content: [
           {
             type: 'text',
-            data: 'Monitor your bounce rate closely and keep it below 5% to maintain your good sender reputation with email providers, and ensure your emails consistently land in your customers inbox.',
+            data: 'Keep an eye on your bounce rate —stay below 5% to keep your sender reputation shiny and ensure your emails find their way to your customers’ inbox without a hitch.',
           },
         ],
       },
@@ -712,7 +703,7 @@ const checklistItems: ChecklistItem[] = [
         content: [
           {
             type: 'text',
-            data: 'Monitor your spam complaint rate closely and keep it below 0.1%. A spam complaint rate is the number of people who reported email as spam out of the total number of messages you have sent. The industry acceptable standard spam complaint rate is anything less than 0.1%, or 1 complaint for every 1,000 sent messages. Anything above this level is considered high.',
+            data: 'Watch your spam complaint rate and keep it under 0.1%. This rate represents the number of spam reports over the total emails sent. Stay below 1 complaint per 1,000 emails sent, as anything more is considered a red flag.',
           },
         ],
       },
@@ -722,7 +713,7 @@ const checklistItems: ChecklistItem[] = [
         content: [
           {
             type: 'text',
-            data: "Most email providers only store reputation data for 30 days, so you should not go 30 days or more without sending on any given IP address. If you do, you'll need to warm it up again, so make sure to be consistent with your sending rate.",
+            data: "Most email providers only store reputation data for 30 days, so don’t let 30 days pass without sending an email from any IP address. If you do, you'll need to warm up the address again. Stick to a consistent sending rhythm to keep your reputation intact.",
           },
         ],
       },
@@ -732,7 +723,7 @@ const checklistItems: ChecklistItem[] = [
         content: [
           {
             type: 'text',
-            data: "If some of your contacts haven't opened any of your emails after several months — it most likely means they've lost interest, or your emails are no longer relevant to their immediate needs. Purge these subscribers from your list to maintain high open rates and healthy sender reputation with email providers. Removing inactive subscibers means you're sending to fewer people but they're more likely to open your emails and engage with your campaigns, which will have a positive impact on your deliverability.",
+            data: "Got subscribers who've ghosted you for months? It's time to bid them goodbye. Keeping your list clean from inactive subscribers will safeguard your open rates and sender reputation. Though your list might shrink, the remaining subscribers are more likely to engage, boosting your email deliverability.",
           },
         ],
       },

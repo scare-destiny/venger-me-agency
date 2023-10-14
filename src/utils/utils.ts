@@ -58,3 +58,14 @@ export const toUiAmount = (amount: number) => {
 
   return value;
 };
+
+
+export const copyToClipboard = (text) => {
+  navigator.clipboard.writeText(text)
+    .then(() => {
+      console.log('Link copied to clipboard');
+    })
+    .catch(err => {
+      console.error('Error in copying text: ', err);
+    });
+};
