@@ -389,7 +389,7 @@ const checklistItems: ChecklistItem[] = [
       },
       {
         id: '4.2',
-        description: 'Direct emails to personal or business addresses',
+        description: 'Send emails to personal or business addresses',
         content: [
           {
             type: 'text',
