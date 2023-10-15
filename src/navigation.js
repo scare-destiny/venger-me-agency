@@ -124,7 +124,7 @@ export const headerData = {
     //   href: '#',
     // },
   ],
-  actions: [{ type: 'button', text: 'Maximize Your Open Rates 🚀', href: '/email' }],
+  actions: [{ type: 'button', text: 'Maximize Your Open Rates 🚀', href: '/email-marketing-checklist' }],
 };
 
 export const footerData = {
@@ -172,7 +172,7 @@ export const footerData = {
         // { text: 'Inclusion', href: '#' },
         // { text: 'Social Impact', href: '#' },
         // { text: 'Shop', href: '#' },
-        { text: 'Maximize Your Open Rates 🚀', href: '/email' },
+        { text: 'Maximize Your Open Rates 🚀', href: '/email-marketing-checklist' },
       ],
     },
   ],
