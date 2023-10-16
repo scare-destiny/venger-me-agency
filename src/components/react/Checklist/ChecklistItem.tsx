@@ -23,7 +23,7 @@ const ChecklistItem: React.FC<ChecklistItemProps> = ({ item, onCheckboxToggle })
   return (
     <div className="checklist-item" id={`${itemSlug}`}>
       <h2 className="font-bold text-primary">
-        <a href={itemUrl}>{item.title}</a>
+        <a href={itemUrl}>{item.title} 🔗</a>
       </h2>
       <span className="text-normal">({item.tasks.length} tasks)</span>
       {item.tasks.map((task) => (
