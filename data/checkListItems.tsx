@@ -685,7 +685,7 @@ const checklistItems: ChecklistItem[] = [
   },
   {
     id: '7',
-    title: 'Maintain Your Reputation (4 tasks) 🔗',
+    title: 'Maintain Your Reputation',
     tasks: [
       {
         id: '7.1',
