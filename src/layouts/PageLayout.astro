@@ -20,7 +20,7 @@ const { metadata } = Astro.props;
   </slot> -->
 
   <slot name="header">
-    <Header transition:persist {...headerData} isSticky />
+    <Header transition:animate="none" {...headerData} isSticky />
   </slot>
   <main>
     <slot />
