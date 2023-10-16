@@ -36,7 +36,7 @@ const SPFRecordGenerator = () => {
   const $domain = useStore(domainStorage);
 
   return (
-    <form>
+    <form p-4>
       {/* ...form fields for each question... */}
       <div className="mb-6">
         <label htmlFor="serverEmail" className="block text-sm font-medium">

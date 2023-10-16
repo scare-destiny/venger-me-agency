@@ -22,6 +22,16 @@ const ResultsList: React.FC<ResultsListProps> = ({ results }) => {
     console.log(result);
   });
 
+  const allRecordsAvailable = results.every(
+    (result) =>
+      result.spfResult !== null &&
+      result.sslResult?.certificateExists &&
+      result.dmarcResult !== null &&
+      result.mxResult &&
+      result.mxResult.mxRecords.length > 0 &&
+      isAnyDkimAvailable(result.dkimResult)
+  );
+
   return (
     <div>
       {results.map((result, index) => (
@@ -30,28 +40,30 @@ const ResultsList: React.FC<ResultsListProps> = ({ results }) => {
             title="SPF Check"
             result={result.spfResult ? `Available ✅: ${result.spfResult}` : 'Not Available ❌'}
           />
-          <ResultItem
+          {/* <ResultItem
             title="SSL Check"
             result={result.sslResult?.certificateExists ? 'Available ✅' : 'Not Available ❌'}
-          />
+          /> */}
           <ResultItem
             title="DMARC Check"
             result={result.dmarcResult ? `Available ✅: ${result.dmarcResult}` : 'Not Available ❌'}
           />
           <ResultItem
-            title="MX Records"
+            title={
+              result.mxResult.mxRecords && result.mxResult.mxRecords.length > 0
+                ? 'MX Record Available ✅'
+                : 'MX Record Not Available ❌'
+            }
             result={
               result.mxResult && result.mxResult.mxRecords
                 ? result.mxResult.mxRecords.length > 0
-                  ? result.mxResult.mxRecords
-                      .map((mxRecord) => `${mxRecord.exchange} (Priority: ${mxRecord.priority})`)
-                      .join(', ')
+                  ? result.mxResult.mxRecords.map((mxRecord) => `${mxRecord.exchange}`).join(', ')
                   : 'Not Available ❌'
                 : 'Not Available ❌'
             }
           />
           <ResultItem
-            title="DKIM Checks"
+            title={isAnyDkimAvailable(result.dkimResult) && 'DKIM Record Available ✅'}
             result={
               isAnyDkimAvailable(result.dkimResult)
                 ? Object.entries(result.dkimResult)
@@ -61,6 +73,16 @@ const ResultsList: React.FC<ResultsListProps> = ({ results }) => {
                 : 'No DKIM records available ❌'
             }
           />
+          {allRecordsAvailable ? (
+            <div className="notification-success pt-4">
+              All records are set up. You are ready to send emails. Complete all items in the checklist below to get
+              65-80% open rate!{' '}
+            </div>
+          ) : (
+            <div className="notification-error pt-4">
+              Some records are not set up. You are not ready to send emails.
+            </div>
+          )}
         </div>
       ))}
     </div>

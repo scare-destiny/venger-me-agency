@@ -32,7 +32,7 @@ const Task: React.FC<TaskItemProps> = ({ task, onCheckboxToggle }) => {
         task.content.map((contentBlock) => (
           <ContentRenderer content={contentBlock} key={contentBlock.type + contentBlock.data.toString()} />
         ))}
-      {task.description === 'Create an SPF record for your domain' && !checked && <SPFRecordGenerator client:olny />}
+      {task.id === '1.1' && !checked && <SPFRecordGenerator client:only />}
     </div>
   );
 };
