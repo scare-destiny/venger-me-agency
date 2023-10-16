@@ -80,7 +80,8 @@ const ResultsList: React.FC<ResultsListProps> = ({ results }) => {
             </div>
           ) : (
             <div className="notification-error pt-4">
-              Some records are not set up. You are not ready to send emails.
+              Some records are not set up. You are not ready to send emails. Complete all items in the checklist below
+              to get 65-80% open rate!{' '}
             </div>
           )}
         </div>
