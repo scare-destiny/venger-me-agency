@@ -21,7 +21,7 @@ const {
 
 {
   !(UI_CONFIG.theme && UI_CONFIG.theme.endsWith(':only')) && (
-    <button type="button" class={className} aria-label={label} data-aw-toggle-color-scheme>
+    <button transition:persist type="button" class={className} aria-label={label} data-aw-toggle-color-scheme>
       <Icon name={iconName} class={iconClass} />
     </button>
   )

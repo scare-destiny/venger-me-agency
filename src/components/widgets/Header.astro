@@ -132,7 +132,7 @@ const currentPath = `${trimSlash(new URL(Astro.url).pathname)}`;
     >
       <div class="items-center flex justify-between w-full md:w-auto">
         <div class="flex">
-          {showToggleTheme && <ToggleTheme transition:persist iconClass="w-6 h-6 md:w-5 md:h-5 md:inline-block" />}
+          {showToggleTheme && <ToggleTheme iconClass="w-6 h-6 md:w-5 md:h-5 md:inline-block" />}
           {
             showRssFeed && (
               <a
@@ -154,7 +154,7 @@ const currentPath = `${trimSlash(new URL(Astro.url).pathname)}`;
                   class:list={['btn ml-2 py-2.5 px-5.5 md:px-6 font-semibold shadow-none text-sm', className]}
                   href={href}
                 >
-                  <Fragment set:html={text} />
+                  <Fragment transition:persist set:html={text} />
                 </a>
               ))}
             </span>
