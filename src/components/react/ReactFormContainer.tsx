@@ -63,6 +63,17 @@ const ReactFormContainer: React.FC<FormProps> = ({
     console.log(`domain storage is ${domainStorage}`);
 
     try {
+      const webhookUrl = 'https://hook.eu1.make.com/gaq3bvpvynajg42k76rs5opele48aut7';
+      const response = await fetch(webhookUrl, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formState),
+      });
+
+      console.log(formState);
+
       const apiUrl = import.meta.env.PUBLIC_API_BASE_URL || 'http://localhost:4321'; // Default to localhost if the env var is not set
       const spfResponse = await fetch(`${apiUrl}/api/spf-check?domain=${domain}`);
       const spfResult = await spfResponse.json();
