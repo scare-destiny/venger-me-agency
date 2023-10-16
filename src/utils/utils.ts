@@ -59,13 +59,10 @@ export const toUiAmount = (amount: number) => {
   return value;
 };
 
-
-export const copyToClipboard = (text) => {
-  navigator.clipboard.writeText(text)
-    .then(() => {
-      console.log('Link copied to clipboard');
-    })
-    .catch(err => {
-      console.error('Error in copying text: ', err);
-    });
+export const generateSlug = (str) => {
+  return str
+    .toLowerCase()
+    .replace(/[^a-z0-9 -]/g, '') // remove invalid chars
+    .replace(/\s+/g, '-') // collapse whitespace and replace by -
+    .replace(/-+/g, '-'); // collapse dashes
 };
