@@ -185,15 +185,6 @@ const checklistItems: ChecklistItem[] = [
             type: 'text',
             data: 'MX (Mail Exchange) records guide email systems on where to deliver messages. Absence of precise MX records can result in emails being misplaced or bounced back, akin to sending a letter with an incorrect address. Lack of an MX record can also signal to mailbox providers a non-adherence to email norms by the sender, culminating in delivery hurdles or being tagged as spam. Choose a mailbox provider from the dropdown for step-by-step guidance on establishing MX records.',
           },
-          {
-            type: 'playful',
-            data: {
-              emoji: '🔨',
-              title: 'In Progress',
-              subtitle:
-                'In a short while, this space will be enriched with more content aiding you in setting up your MX record.',
-            },
-          },
         ],
       },
     ],

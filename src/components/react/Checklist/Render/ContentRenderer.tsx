@@ -19,7 +19,7 @@ const ContentRenderer = ({ content }: { content: ContentBlock }) => {
       return <img src={content.data.src} alt={content.data.alt} />;
     case 'table':
       return (
-        <div className="flex flex-col ">
+        <div className="flex flex-col break-words">
           {content.data.headers.map((header, columnIndex) => (
             <div key={columnIndex} className="flex flex-col border border-slate-400">
               <div className="p-2 font-bold">{header}</div>

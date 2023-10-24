@@ -10,6 +10,7 @@ import CreateDKIMRecord from '../dkimRecord/CreateDKIMRecord';
 import SetupDKIMForESPs from '../dkimRecord/SetupDKIMForESPs';
 import DMARCgenerator from '../dmarcRecord/DmarcGenerator';
 import AddDMARC from '../dmarcRecord/AddDMARC';
+import CreateMxRecord from '../dkimRecord/CreateMxRecord';
 
 interface TaskItemProps {
   task: TaskType;
@@ -77,6 +78,11 @@ const Task: React.FC<TaskItemProps> = ({ task, onCheckboxToggle }) => {
         <>
           <DMARCgenerator />
           <AddDMARC />
+        </>
+      )}
+      {task.id === '1.5' && !checked && (
+        <>
+          <CreateMxRecord />
         </>
       )}
     </div>
