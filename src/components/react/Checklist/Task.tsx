@@ -32,7 +32,35 @@ const Task: React.FC<TaskItemProps> = ({ task, onCheckboxToggle }) => {
         task.content.map((contentBlock) => (
           <ContentRenderer content={contentBlock} key={contentBlock.type + contentBlock.data.toString()} />
         ))}
-      {task.id === '1.1' && !checked && <SPFRecordGenerator client:only />}
+      {task.id === '1.1' && !checked && (
+        <>
+          <SPFRecordGenerator client:only />
+          {/* Add your additional content here */}
+          <div pt-2>
+            <p>
+              Now let's setup your SPF record by creating a TXT record for your domain. Below are general step-by-step
+              instructions on how to add a TXT record. The process will be similar for most domain registrar companies
+              and hosting providers with some small differences.
+            </p>
+            <ol className="list-decimal ml-4 md:ml-10 pt-2">
+              <li>Log into your Account</li>
+              <li>Navigate to the Domains page</li>
+              <li>You should see a list of all your domains; click on the domain</li>
+              <li>Click on DNS or Edit DNS</li>
+              <li>Then click on Host Records or Edit Host Records</li>
+              <li>Now you will have the option to create a new record</li>
+              <li>For the record Type select TXT</li>
+              <li>For the Host/Name field enter the @ character or your domain (example.com), both are acceptable</li>
+              <li>For the Content/Value field copy and paste the SPF record we generated for you</li>
+              <li>For the TTL field leave it as-is to use the default value</li>
+              <li>
+                Click Save to complete your updates (allow up to 48 hours for your DNS changes to take full effect
+                globally)
+              </li>
+            </ol>
+          </div>
+        </>
+      )}
     </div>
   );
 };
