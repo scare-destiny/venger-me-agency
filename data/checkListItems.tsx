@@ -65,15 +65,15 @@ const checklistItems: ChecklistItem[] = [
             type: 'text',
             data: 'DomainKeys Identified Mail (DKIM) assists email providers in spotting forged sender addresses in emails, a common tactic in phishing and spam. Emails failing authentication are prone to being directed to the spam or junk mail folder. Adhere to the directions below to acquire your DKIM Key and insert a DKIM record to your DNS entries.',
           },
-          {
-            type: 'playful',
-            data: {
-              emoji: '🔨',
-              title: 'In Progress',
-              subtitle:
-                'Keep an eye out! Before you know it, this section will navigate you through the DKIM record setup.',
-            },
-          },
+          // {
+          //   type: 'playful',
+          //   data: {
+          //     emoji: '🔨',
+          //     title: 'In Progress',
+          //     subtitle:
+          //       'Keep an eye out! Before you know it, this section will navigate you through the DKIM record setup.',
+          //   },
+          // },
         ],
       },
       {

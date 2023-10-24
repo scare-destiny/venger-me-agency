@@ -5,6 +5,9 @@ import { domainStorage } from '~/stores/domainStore';
 import { type Task as TaskType } from 'data/checkListItems';
 import ContentRenderer from './Render/ContentRenderer';
 import SPFRecordGenerator from '../spfRecordGenerator.tsx/spfRecordGenerator';
+import ObtainDKIMKey from '../dkimRecord/ObtainDKIMKey';
+import CreateDKIMRecord from '../dkimRecord/CreateDKIMRecord';
+import SetupDKIMForESPs from '../dkimRecord/SetupDKIMForESPs';
 
 interface TaskItemProps {
   task: TaskType;
@@ -59,6 +62,14 @@ const Task: React.FC<TaskItemProps> = ({ task, onCheckboxToggle }) => {
               </li>
             </ol>
           </div>
+        </>
+      )}
+      {task.id === '1.2' && !checked && (
+        <>
+          <ObtainDKIMKey client:only />
+          <CreateDKIMRecord client:only />
+          <SetupDKIMForESPs client:only />
+          <div pt-2></div>
         </>
       )}
     </div>
