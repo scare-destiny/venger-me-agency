@@ -39,7 +39,10 @@ const Checklist: React.FC = () => {
     <>
       {' '}
       <div className="">
-        <div ref={checklistRef} className=" ">
+        <div
+          ref={checklistRef}
+          className=" flex flex-col max-w-2xl mx-auto rounded-lg backdrop-blur border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900 shadow w-full"
+        >
           <div className="">
             <div className="p-4">
               {checklistItems.map((item) => (

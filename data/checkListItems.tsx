@@ -87,9 +87,82 @@ const checklistItems: ChecklistItem[] = [
           {
             type: 'playful',
             data: {
-              emoji: '🔨',
-              title: 'In Progress',
-              subtitle: "Hang in there! Shortly, you'll find instructions here on devising your DMARC policy.",
+              // emoji: '🔨',
+              // title: 'In Progress',
+              subtitle:
+                "If you're setting up DMARC for the first time, we recommend setting a policy of p=none and collecting aggregate data with a DMARC monitoring service. You can then monitor reports and slowly bring your domain into compliance over time.",
+            },
+          },
+          {
+            type: 'text',
+            data: 'DMARC compliance will prevent malicious actors from abusing your domain reputation which can in turn impact your deliverability. This is what a typical DMARC compliance process looks like:            ',
+          },
+          {
+            type: 'list',
+            data: [
+              {
+                text: 'Add a DMARC record to your domain host records with a policy of **p=none**',
+              },
+              {
+                text: 'Collect data from DMARC reports using a monitoring service for several weeks or months depending on your organization',
+              },
+              {
+                text: 'Perform an audit and adjust your SPF & DKIM records if necessary to bring your domain into alignment',
+              },
+              {
+                text: 'Collect more data from DMARC reports for several weeks or months depending on your organization',
+              },
+              {
+                text: 'Perform an audit, adjust your SPF & DKIM records if necessary and enforce a stricter DMARC policy of **p=quarantine**',
+              },
+              {
+                text: 'Continue collecting data from DMARC reports for several weeks or months depending on your organization',
+              },
+              {
+                text: 'Perform a final audit, adjust your SPF & DKIM records if necessary and enforce the strictest DMARC policy of **p=reject**',
+              },
+              {
+                text: 'Continue collecting DMARC reports and monitoring your sending habits',
+              },
+            ],
+          },
+          {
+            type: 'text',
+            data: "  The goal of becoming DMARC complaint is to eventually enforce a policy of p=reject. Setting a reject policy will ensure that all malicious email is stopped. The recipient of the intended malicious email will never become aware of the email in the first place, as it will never get sent to a spam or quarantine folder. Since it's completely blocked, emails are never delivered and end-users cannot be tricked into clicking on a malicious link or opening a dangerous attachment.            ",
+          },
+          {
+            type: 'text',
+            data: "  The downside is if legitimate emails are failing authentication and emails get rejected, the receiver will never know they are not receiving the intended email. For organizations not actively using a reporting system to monitor authentication, it could take months to discover that legitimate email is not being delivered, potentially hurting marketing programs or other opportunities to engage with prospects, customers and partners. This is why it's important to take DMARC compliance step-by-step, use a monitoring service and incrementally enforce a stricter DMARC policy.            ",
+          },
+          {
+            type: 'subtask',
+            data: {
+              id: '2',
+              description: 'Choose a DMARC monitoring service              ',
+            },
+          },
+          {
+            type: 'text',
+            data: ' Before creating your DMARC record start by choosing a monitoring service to process reports and monitor DMARC compliance.            ',
+          },
+          {
+            type: 'table',
+            data: {
+              headers: [
+                'Postmark	(Free or $10/month)	',
+                'Dmarcian	(Free up to 2 domains or $24/m)',
+                'Dmarcly	(Basic plan $17.99/month)',
+                'Powerdmarc	(Free or $8/month)',
+              ],
+              rows: [
+                [
+                  '	https://dmarc.postmarkapp.com/',
+                  'https://dmarcian.com/pricing/',
+                  '	https://dmarcly.com/pricing',
+                  'https://powerdmarc.com/power-dmarc-pricing-policy/',
+                ],
+                // ... other rows
+              ],
             },
           },
         ],

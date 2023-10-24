@@ -9,7 +9,7 @@ const ContentRenderer = ({ content }: { content: ContentBlock }) => {
       return <div className="disclaimer bg-yellow-300">{content.data}</div>;
     case 'list':
       return (
-        <ul>
+        <ul className="list-decimal pt-2 ml-4">
           {content.data.map((item, index) => (
             <li key={index}>{item.text}</li>
           ))}
@@ -19,7 +19,7 @@ const ContentRenderer = ({ content }: { content: ContentBlock }) => {
       return <img src={content.data.src} alt={content.data.alt} />;
     case 'table':
       return (
-        <div className="flex flex-col md:flex-row">
+        <div className="flex flex-col ">
           {content.data.headers.map((header, columnIndex) => (
             <div key={columnIndex} className="flex flex-col border border-slate-400">
               <div className="p-2 font-bold">{header}</div>
@@ -34,8 +34,8 @@ const ContentRenderer = ({ content }: { content: ContentBlock }) => {
       );
     case 'subtask':
       return (
-        <div className="subtask">
-          <h3>{content.data.description}</h3>
+        <div className="subtask pt-4">
+          <h3 className="text-md font-bold  underline">{content.data.description}</h3>
           {content.data.content &&
             content.data.content.map((subContent, index) => <ContentRenderer key={index} content={subContent} />)}
         </div>
