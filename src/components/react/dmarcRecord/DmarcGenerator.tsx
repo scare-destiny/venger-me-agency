@@ -42,7 +42,11 @@ const DMARCGenerator = () => {
       <form className="p-4 ">
         <div className="mb-4">
           <label>DMARC Policy</label>
-          <select value={policy} onChange={handlePolicyChange} className="block w-full rounded border py-2 px-3">
+          <select
+            value={policy}
+            onChange={handlePolicyChange}
+            className="block w-full rounded border py-2 px-3 dark:bg-slate-900 dark:border-gray-700"
+          >
             <option value="none">
               None, just collect data (recommended if you're setting up DMARC for the first time)
             </option>
@@ -58,7 +62,7 @@ const DMARCGenerator = () => {
               type="number"
               value={pct}
               onChange={(e) => setPct(e.target.value)}
-              className="block w-full rounded border py-2 px-3"
+              className="block w-full rounded border py-2 px-3 dark:bg-slate-900 dark:border-gray-700"
             />
             <p className="text-sm text-gray-500 mt-1">
               {' '}
@@ -76,7 +80,7 @@ const DMARCGenerator = () => {
             type="email"
             value={aggregateEmail}
             onChange={(e) => setAggregateEmail(e.target.value)}
-            className="block w-full rounded border py-2 px-3"
+            className="block w-full rounded border py-2 px-3 dark:bg-slate-900 dark:border-gray-700"
           />
           <p className="text-sm text-gray-500 mt-1">
             {' '}
@@ -88,7 +92,7 @@ const DMARCGenerator = () => {
         <div className="mb-4">
           <label>
             <input
-              className="mr-"
+              className="dark:bg-slate-900 dark:border-gray-700"
               type="checkbox"
               checked={forensicReports}
               onChange={(e) => setForensicReports(e.target.checked)}
@@ -104,12 +108,12 @@ const DMARCGenerator = () => {
           {forensicReports && (
             <>
               <div className="mt-2">
-                <label>Forensic report email</label>
+                <label>Email address to receive forensic reports</label>
                 <input
                   type="email"
                   value={forensicEmail}
                   onChange={(e) => setForensicEmail(e.target.value)}
-                  className="block w-full rounded border py-2 px-3"
+                  className="block w-full rounded border py-2 px-3 dark:bg-slate-900 dark:border-gray-700"
                 />
               </div>
 
@@ -118,7 +122,7 @@ const DMARCGenerator = () => {
                 <select
                   value={forensicFilter}
                   onChange={(e) => setForensicFilter(e.target.value)}
-                  className="block w-full rounded border py-2 px-3"
+                  className="block w-full rounded border py-2 px-3 dark:bg-slate-900 dark:border-gray-700"
                 >
                   <option value="fo=0">When both SPF and DKIM fail</option>
                   <option value="fo=1">When either SPF or DKIM fails</option>
@@ -133,7 +137,11 @@ const DMARCGenerator = () => {
         <div className="mt-4 overflow-x-scroll">
           <label>DMARC Record Host or Name</label>
           <div className="overflow-x-scroll">
-            <input readOnly value={host} className="block w-full rounded border py-2 px-3 bg-gray-200 " />
+            <input
+              readOnly
+              value={host}
+              className="py-3 px-4 block w-full text-md rounded-lg border border-gray-200 dark:border-gray-300 bg-white dark:bg-slate-900 overflow-x-scroll"
+            />
           </div>
         </div>
 
@@ -142,7 +150,7 @@ const DMARCGenerator = () => {
           <input
             readOnly
             value={value}
-            className="block w-full rounded border py-2 px-3 bg-gray-200 overflow-x-scroll"
+            className="py-3 px-4 block w-full text-md rounded-lg border border-gray-200 dark:border-gray-300 bg-white dark:bg-slate-900 overflow-x-scroll"
           />
         </div>
       </form>
