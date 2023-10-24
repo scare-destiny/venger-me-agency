@@ -132,12 +132,20 @@ const DMARCGenerator = () => {
 
         <div className="mt-4">
           <label>DMARC Record Host or Name</label>
-          <input readOnly value={host} className="block w-full rounded border py-2 px-3 bg-gray-200" />
+          <input
+            readOnly
+            value={host}
+            className="block w-full rounded border py-2 px-3 bg-gray-200 overflow-x-scroll"
+          />
         </div>
 
         <div className="mt-2">
           <label>DMARC Record Content or Value</label>
-          <input readOnly value={value} className="block w-full rounded border py-2 px-3 bg-gray-200" />
+          <input
+            readOnly
+            value={value}
+            className="block w-full rounded border py-2 px-3 bg-gray-200 overflow-x-scroll"
+          />
         </div>
       </form>
     </div>

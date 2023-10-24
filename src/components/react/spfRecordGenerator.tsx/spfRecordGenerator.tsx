@@ -141,7 +141,7 @@ const SPFRecordGenerator = () => {
               type="text"
               readOnly
               value={$domain}
-              className="py-3 px-4 block w-full text-md rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900"
+              className="py-3 px-4 block w-full text-md rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900 overflow-x-scroll"
             />
           </div>
           <button
@@ -157,7 +157,7 @@ const SPFRecordGenerator = () => {
               type="text"
               readOnly
               value={spfRecord}
-              className="py-3 px-4 block w-full text-md rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900"
+              className="py-3 px-4 block w-full text-md rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900 overflow-x-scroll"
             />
           </div>
           <button
