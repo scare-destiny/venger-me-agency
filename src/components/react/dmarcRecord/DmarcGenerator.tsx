@@ -39,7 +39,7 @@ const DMARCGenerator = () => {
     <div className="pt-4">
       <h3 className="text-md font-bold  underline">Create your DMARC record</h3>
       <p className="mb-2 text-md">Answer the questions below to generate a DMARC record for your domain.</p>
-      <form className="p-4">
+      <form className="p-4 ">
         <div className="mb-4">
           <label>DMARC Policy</label>
           <select value={policy} onChange={handlePolicyChange} className="block w-full rounded border py-2 px-3">
@@ -130,16 +130,14 @@ const DMARCGenerator = () => {
           )}
         </div>
 
-        <div className="mt-4">
+        <div className="mt-4 overflow-x-scroll">
           <label>DMARC Record Host or Name</label>
-          <input
-            readOnly
-            value={host}
-            className="block w-full rounded border py-2 px-3 bg-gray-200 overflow-x-scroll"
-          />
+          <div className="overflow-x-scroll">
+            <input readOnly value={host} className="block w-full rounded border py-2 px-3 bg-gray-200 " />
+          </div>
         </div>
 
-        <div className="mt-2">
+        <div className="mt-2 overflow-x-scroll">
           <label>DMARC Record Content or Value</label>
           <input
             readOnly
