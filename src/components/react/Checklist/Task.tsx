@@ -8,6 +8,8 @@ import SPFRecordGenerator from '../spfRecordGenerator.tsx/spfRecordGenerator';
 import ObtainDKIMKey from '../dkimRecord/ObtainDKIMKey';
 import CreateDKIMRecord from '../dkimRecord/CreateDKIMRecord';
 import SetupDKIMForESPs from '../dkimRecord/SetupDKIMForESPs';
+import DMARCgenerator from '../dmarcRecord/DmarcGenerator';
+import AddDMARC from '../dmarcRecord/AddDMARC';
 
 interface TaskItemProps {
   task: TaskType;
@@ -69,7 +71,12 @@ const Task: React.FC<TaskItemProps> = ({ task, onCheckboxToggle }) => {
           <ObtainDKIMKey client:only />
           <CreateDKIMRecord client:only />
           <SetupDKIMForESPs client:only />
-          <div pt-2></div>
+        </>
+      )}
+      {task.id === '1.3' && !checked && (
+        <>
+          <DMARCgenerator />
+          <AddDMARC />
         </>
       )}
     </div>

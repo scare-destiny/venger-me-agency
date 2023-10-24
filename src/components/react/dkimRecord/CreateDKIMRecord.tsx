@@ -7,7 +7,7 @@ const CreateDKIMRecord: React.FC = () => {
     'v=DKIM1; k=rsa; p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAoVtFsczFBT40TYMfEZRy6f+CP+gmxBxx9E1qQlKh3ictboYXfeebQy7Z42kjkOaCxF/Qy7v+TdnF9eY1P1MYPvzp24sRtg9dh6R4mYo+7niG87gMRvpynloB6U1Ho5M0Akj90Oi6EWK1pjGRzLLOmoNy2+0qzgnqSLEfclq4mlPoOACJz/zuc5lPbroT1UWNJVATyGVsRWxpNEXBMhY//NrGcvvwM75uJgavf+nYr1klby7t9lO+AXen/cCequWUEuJ6pZMbpjE5fReHfDbzl3ou1e64aHadbs+W+11MnoV7pfqfgMxwpey98Sa6S+076IZ/m1tgBpr3NG03yUNOiQIDAQAB;';
 
   return (
-    <div className="p-4">
+    <div className="">
       <h3 className="text-md font-bold  underline">Create your DKIM record</h3>
       <p className="mb-2 text-md">
         Similar to SPF records, DKIM records are created by adding a TXT record to your DNS records. Since you now have

@@ -144,7 +144,7 @@ const SetupDKIMForESPs: React.FC = () => {
   };
 
   return (
-    <div className="p-4">
+    <div className="">
       <h3 className="text-md font-bold underline">Setup DKIM for Email Service Providers</h3>
       <p className="mb-2 text-md">
         If you send email through an email marketing platform or email delivery provider; you need to setup DKIM records

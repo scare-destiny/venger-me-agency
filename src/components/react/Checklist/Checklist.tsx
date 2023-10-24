@@ -56,6 +56,7 @@ const Checklist: React.FC = () => {
             count={checkedCount}
             totalCount={checklistItems.reduce((total, item) => total + item.tasks.length, 0)}
             className="fixed bottom-4 right-4"
+            client:only
           />
         )}
       </div>

@@ -1,7 +1,7 @@
-// src/components/ObtainDKIMKey.tsx
+// src/components/AddDMARC.tsx
 import React, { useState } from 'react';
 
-const ObtainDKIMKey: React.FC = () => {
+const AddDMARC: React.FC = () => {
   const [hostingProvider, setHostingProvider] = useState('');
 
   const handleHostingProviderChange = (event) => {
@@ -92,29 +92,62 @@ const ObtainDKIMKey: React.FC = () => {
 
   return (
     <div className="">
-      <h3 className="text-md font-bold  underline">Obtain your DKIM Key</h3>
+      <h3 className="text-md font-bold  underline">Add your DMARC record</h3>
       <p className="mb-2 text-md">
-        Your DKIM Key can be obtained through your hosting control panel. Locating it depends on the type of control
-        panel used by your hosting provider. Select the control panel type below for instructions.
+        Similar to SPF and DKIM, DMARC records are created by adding a TXT record to your DNS records. Since you now
+        have experience adding a TXT record you should already know what to do. Below is an example DMARC record to
+        guide you.
       </p>
-      <label className="block text-sm font-medium" htmlFor="hostingProvider">
-        Hosting Provider:
-      </label>
-      <select
-        className="py-3 px-4 block w-full text-md rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900 mb-6"
-        id="hostingProvider"
-        value={hostingProvider}
-        onChange={handleHostingProviderChange}
-      >
-        <option value="">Select your hosting provider</option>
-        <option value="cPanel">cPanel</option>
-        <option value="DirectAdmin">DirectAdmin</option>
-        <option value="Plesk">Plesk</option>
-        {/* ... other hosting providers */}
-      </select>
-      {renderInstructions()}
+      <div className="mb-6">
+        <label className="block text-sm font-medium" htmlFor="recordType">
+          Type:
+        </label>
+        <input
+          type="text"
+          id="recordType"
+          value="TXT"
+          readOnly
+          className="py-3 px-4 block w-full text-md rounded-lg border border-gray-200 dark:border-gray-700 bg-gray-200 dark:bg-slate-900 mt-2"
+        />
+      </div>
+      <div className="mb-6">
+        <label className="block text-sm font-medium" htmlFor="hostName">
+          Host or Name:
+        </label>
+        <input
+          type="text"
+          id="hostName"
+          value="_dmarc.example.com"
+          readOnly
+          className="py-3 px-4 block w-full text-md rounded-lg border border-gray-200 dark:border-gray-700 bg-gray-200 dark:bg-slate-900 mt-2"
+        />
+      </div>
+      <div className="mb-6">
+        <label className="block text-sm font-medium" htmlFor="ttl">
+          TTL:
+        </label>
+        <input
+          type="text"
+          id="ttl"
+          value="Auto"
+          readOnly
+          className="py-3 px-4 block w-full text-md rounded-lg border border-gray-200 dark:border-gray-700 bg-gray-200 dark:bg-slate-900 mt-2"
+        />
+      </div>
+      <div className="mb-6">
+        <label className="block text-sm font-medium" htmlFor="dkimRecord">
+          Content or Value:
+        </label>
+        <input
+          type="text"
+          id="dkimRecord"
+          value="v=DMARC1; p=none;"
+          readOnly
+          className="py-3 px-4 block w-full text-md rounded-lg border border-gray-200 dark:border-gray-700 bg-gray-200 dark:bg-slate-900 mt-2"
+        />
+      </div>
     </div>
   );
 };
 
-export default ObtainDKIMKey;
+export default AddDMARC;
