@@ -31,7 +31,7 @@ const {
               </div>
             )}
             {amount && (
-              <FadeInSection client:only>
+              <FadeInSection client:only direction="left" threshold={0}>
                 <div class="font-heading text-primary text-[2.6rem] font-bold dark:text-white lg:text-4xl">
                   {amount}
                 </div>

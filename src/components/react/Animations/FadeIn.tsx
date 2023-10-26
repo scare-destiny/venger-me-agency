@@ -44,7 +44,7 @@ export default function FadeInSection({ children, direction = 'left', threshold 
         y: isVisible ? endAnim.y : startAnim.y,
       }}
       // @ts-ignore
-      duration={1200}
+      duration={1500}
     >
       {({ opacity, x, y }) => (
         <div
@@ -52,7 +52,7 @@ export default function FadeInSection({ children, direction = 'left', threshold 
           style={{
             opacity,
             transform: `translate3d(${x || 0}%, ${y || 0}%, 0)`,
-            transition: 'opacity 500ms, transform 500ms',
+            transition: 'opacity 750ms, transform 750ms',
           }}
         >
           {children}
