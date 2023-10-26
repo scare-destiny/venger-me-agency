@@ -3,6 +3,7 @@ import { type Stats } from '~/types';
 import WidgetWrapper from '../ui/WidgetWrapper.astro';
 import Headline from '../ui/Headline.astro';
 import { Icon } from 'astro-icon/components';
+import FadeInSection from '~/components/react/Animations/FadeIn';
 
 const {
   title = await Astro.slots.render('title'),
@@ -30,7 +31,11 @@ const {
               </div>
             )}
             {amount && (
-              <div class="font-heading text-primary text-[2.6rem] font-bold dark:text-white lg:text-4xl">{amount}</div>
+              <FadeInSection client:only>
+                <div class="font-heading text-primary text-[2.6rem] font-bold dark:text-white lg:text-4xl">
+                  {amount}
+                </div>
+              </FadeInSection>
             )}
             {title && (
               <div class="text-sm font-medium uppercase tracking-widest text-gray-800 dark:text-slate-400 lg:text-base">

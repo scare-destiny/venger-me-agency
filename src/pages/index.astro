@@ -3,6 +3,7 @@ import Layout from '~/layouts/PageLayout.astro';
 
 import Hero from '~/components/widgets/Hero.astro';
 import Header from '~/components/widgets/Header.astro';
+import FadeInSection from '~/components/react/Animations/FadeIn';
 import Note from '~/components/widgets/Note.astro';
 import Features from '~/components/widgets/Features.astro';
 import { headerData } from '~/navigation';
@@ -35,10 +36,12 @@ const metadata = {
       </Fragment>
 
       <Fragment slot="subtitle">
-        <span class="hidden sm:inline">
-          <span class="font-semibold">We tackle</span> complex marketing challenges that other marketers can't solve,
-          all while fueling your consistent growth.
-        </span>
+        <FadeInSection client:only>
+          <span class="hidden sm:inline">
+            <span class="font-semibold">We tackle</span> complex marketing challenges that other marketers can't solve,
+            all while fueling your consistent growth.
+          </span>
+        </FadeInSection>
         <span class="block mb-1 sm:hidden font-bold text-blue-600">Your catalyst for unstoppable growth.</span>
       </Fragment>
     </Hero>

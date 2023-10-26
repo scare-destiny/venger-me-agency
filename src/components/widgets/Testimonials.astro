@@ -3,6 +3,7 @@ import Headline from '~/components/ui/Headline.astro';
 import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
 import CTA from '~/components/ui/CTA.astro';
 import Image from '~/components/common/Image.astro';
+import FadeInSection from '~/components/react/Animations/FadeIn';
 import { Icon } from 'astro-icon/components';
 import type { Testimonials } from '~/types';
 
@@ -55,10 +56,12 @@ const {
                 )}
 
                 <div class="grow  flex flex-row ml-3 rtl:ml-0 rtl:mr-3">
-                  <div class="flex flex-col">
-                    {name && <p class="text-base font-semibold">{name}</p>}
-                    {job && <p class="text-xs text-muted">{job}</p>}
-                  </div>
+                  <FadeInSection client:only>
+                    <div class="flex flex-col">
+                      {name && <p class="text-base font-semibold">{name}</p>}
+                      {job && <p class="text-xs text-muted">{job}</p>}
+                    </div>
+                  </FadeInSection>
                   {businessURL && (
                     <div class="self-center ml-auto">
                       <a
