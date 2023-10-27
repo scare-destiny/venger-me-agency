@@ -2,12 +2,14 @@
 import Layout from '~/layouts/PageLayout.astro';
 import Header from '~/components/widgets/Header.astro';
 import WidgetWrapper from '~/components/ui/WidgetWrapper.astro'; // Import WidgetWrapper
-import Hero from '~/components/widgets/Hero.astro';
+// import Hero from '~/components/widgets/Hero.astro';
+import EmailHero from '~/components/react/Tailwind/Hero';
 import ContactUs from '~/components/widgets/Contact.astro';
 import Checklist from '~/components/react/Checklist/Checklist';
 import SimpleCalendly from '~/components/widgets/SimpleCalendly.astro';
-import Prices from '~/components/widgets/Pricing.astro';
-import { FadeIn } from '~/components/react/Animations/FadeIn';
+import GridTestimonials from '~/components/react/Tailwind/Testimonials';
+// import Prices from '~/components/widgets/Pricing.astro';
+// import { FadeIn } from '~/components/react/Animations/FadeIn';
 import { headerData } from '~/navigation';
 
 const metadata = {
@@ -29,222 +31,45 @@ const metadata = {
     });
   });
 </script>
-<Layout metadata={metadata}>
-  <Fragment slot="header">
-    <Header {...headerData} showToggleTheme />
-    <Hero
-      actions={[
-        {
-          variant: 'primary',
-          text: 'Get template',
-          href: 'https://github.com/onwidget/astrowind',
-          target: '_blank',
-          icon: 'tabler:download',
-        },
-        // { text: 'Learn more', href: '#features' },
-      ]}
-      image={{ src: '~/assets/images/spam-inbox.png', alt: 'AstroWind Hero Image' }}
-    >
-      <Fragment slot="title">
-        Low open rates or landing in spam?
-        <!-- <span class="hidden xl:inline">creating websites with</span>
-        <span class="text-accent dark:text-white highlight"> Astro 3.0</span> + Tailwind CSS -->
-      </Fragment>
-      <Fragment slot="subtitle">
-        <!-- <span class="hidden sm:inline">
-          <span class="font-semibold">AstroWind</span> is a free, customizable and production-ready template for Astro
-          3.0 + Tailwind CSS.</span
-        > -->
-        <span class="block mb-1 font-bold text-blue-600">It's likely a deliverability issue.</span>
+<div class="bg-white">
+  <Layout class="bg-page-white" metadata={metadata}>
+    <Fragment slot="header">
+      <!-- <Header class="bg-white" {...headerData} showToggleTheme /> -->
+      <EmailHero />
 
-         Solve it — follow our checklist to ensure your emails hit the inbox every time and get an impressive 65-80% open
-        rate or beyond.
-      </Fragment>
-      <Fragment slot="secondary">
-        <p class="">
-          Do it yourself or <a href="#simple-calendly" class="text-primary underline">let us help.</a>
-        </p>
-      </Fragment>
-    </Hero>
-  </Fragment>
-  <ContactUs
-    inputs={[
-      {
-        type: 'text',
-        name: 'name',
-        label: 'Name',
-      },
-      {
-        type: 'email',
-        name: 'email',
-        label: 'Your work email address',
-      },
-      {
-        type: 'text',
-        name: 'domain',
-        label: 'Enter the domain or subdomain',
-      },
-    ]}
-    button="Check My Domain"
-  />
-
-  <WidgetWrapper isDark="">
-    <Checklist client:load />
-  </WidgetWrapper>
-
-  <!-- Pricing Widget ******************* -->
-
-  <!-- <Prices
-      title="Services"
-      subtitle="For those who need help or don't want to DIY."
-      prices={[
-        {
-          title: 'Consultation',
-          subtitle: 'Guidance to maximize deliverability & open rates and profit from your email campaigns.',
-          price: 100,
-          period: 'One-time fee, in USD',
-          items: [
-            {
-              description: '1hr Zoom / Google Meet meetings',
-            },
-            {
-              description: 'List of recommendations',
-            },
-            {
-              description: 'Step-by-step instructions',
-            },
-            {
-              description: 'Answers to your questions',
-            },
-            {
-              description: '14-days priority chat support',
-            },
-          ],
-          callToAction: {
-            targetBlank: true,
-            text: 'Get started',
-            href: '#',
+      <ContactUs
+        id="checklist"
+        inputs={[
+          {
+            type: 'text',
+            name: 'name',
+            label: 'Name',
           },
-        },
-        {
-          title: 'Authentication Setup',
-          subtitle: 'We setup your domain authentication to land in the inbox & protect your reputation.',
-          price: 130,
-          period: 'One-time fee per domain or subdomain',
-          items: [
-            {
-              description: 'Create & setup SPF, DKIM & DMARC',
-            },
-            {
-              description: 'Setup DKIM ',
-            },
-            {
-              description: 'Check reverse DNS & SSL',
-            },
-            {
-              description: 'Setup DMARC monitoring',
-            },
-            {
-              description: 'Perform email spam test',
-            },
-          ],
-          callToAction: {
-            targetBlank: true,
-            text: 'Get started',
-            href: '#',
+          {
+            type: 'email',
+            name: 'email',
+            label: 'Your work email address',
           },
-          // hasRibbon: true,
-          // ribbonTitle: 'popular',
-        },
-        {
-          title: 'Infrastructure Setup',
-          subtitle: 'We setup your authentication & infrastructure for cold outreach or newsletter campaigns.',
-          price: 400,
-          period: 'One-time fee per setup, in USD',
-          items: [
-            {
-              description: '30min intro Zoom meeting (optional)',
-            },
-            {
-              description: 'Create & setup SPF, DKIM & DMARC',
-            },
-            {
-              description: 'Check reverse DNS & SSL',
-            },
-            {
-              description: 'Create and setup email accounts with ESP',
-            },
-            {
-              description: 'Plan and setup warmup process',
-            },
-            {
-              description: 'Validate email addresses (extra costs apply)',
-            },
-            {
-              description: 'Perform email spam & inbox placement tests',
-            },
-            {
-              description: 'Create, configure & schedule 1st campaign',
-            },
-            {
-              description: '30-days priority support',
-            },
-          ],
-          callToAction: {
-            targetBlank: true,
-            text: 'Get started',
-            href: '#',
+          {
+            type: 'text',
+            name: 'domain',
+            label: 'Enter the domain or subdomain',
           },
-        },
-        {
-          title: 'Deliverability Audit',
-          subtitle:
-            'We perform an in-depth audit of your sending infrastructure, identify issues and fix them for you.',
-          price: 800,
-          period: "Includes 2 domains or subdomains and 2 ESP's",
-          items: [
-            {
-              description: 'Check all authentication records',
-            },
-            {
-              description: 'Set up DMARC monitoring',
-            },
-            {
-              description: 'Perform inbox placement tests',
-            },
-            {
-              description: 'Perform email spam tests',
-            },
-            {
-              description: 'A/B test subject lines and email copy',
-            },
-            {
-              description: 'Fix all deliverability issues',
-            },
-            {
-              description: 'Provide recommendations and tools',
-            },
-            {
-              description: 'Written report upon completion',
-            },
-            {
-              description: '30-days priority support',
-            },
-          ],
-          callToAction: {
-            targetBlank: true,
-            text: 'Get started',
-            href: '#',
-          },
-        },
-      ]}
-    /> -->
-  <SimpleCalendly
-    calendlyUrl="https://calendly.com/eugene-venger/30min-1"
-    title="Don't want to do it all by yourself?"
-    subtitle="        We're here to ramp up your deliverability and iron out all kinks."
-    .
-    buttonText=" Book Free Consultation"
-    id="simple-calendly"
-  />
-</Layout>
+        ]}
+        button="Check My Domain"
+      />
+      <WidgetWrapper>
+        <Checklist client:load />
+      </WidgetWrapper>
+      <SimpleCalendly
+        calendlyUrl="https://calendly.com/eugene-venger/30min-1"
+        title="Don't want to do it all by yourself?"
+        subtitle="        We're here to ramp up your deliverability and iron out all kinks."
+        .
+        buttonText=" Book Free Consultation"
+        id="simple-calendly"
+      />
+      <GridTestimonials />
+    </Fragment>
+  </Layout>
+</div>
