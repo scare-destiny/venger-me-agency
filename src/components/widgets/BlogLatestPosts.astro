@@ -6,7 +6,7 @@ import Grid from '~/components/blog/Grid.astro';
 import { getBlogPermalink } from '~/utils/permalinks';
 import { findLatestPosts } from '~/utils/blog';
 import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
-import FadeInSection from '~/components/react/Animations/FadeIn';
+import { FadeIn } from '~/components/react/Animations/FadeIn';
 import type { Widget } from '~/types';
 
 export interface Props extends Widget {
@@ -55,9 +55,9 @@ const posts = APP_BLOG_CONFIG.isEnabled ? await findLatestPosts({ count }) : [];
         )}
 
         {information && (
-          <FadeInSection client:only direction="up">
+          <FadeIn client:only direction="up">
             <p class="text-muted dark:text-slate-400 lg:text-sm lg:max-w-md" set:html={information} />
-          </FadeInSection>
+          </FadeIn>
         )}
       </div>
 

@@ -1,63 +1,46 @@
-// FadeIn.tsx
-import React from 'react';
-import { useRef } from 'react';
-import { Animate } from 'react-move';
-import useIntersectionObserver from './useIntersectionObserver';
+import React, { createContext, useContext } from 'react';
+import { motion, useReducedMotion } from 'framer-motion';
 
-interface FadeInSectionProps {
-  children: React.ReactNode;
-  direction?: 'left' | 'right' | 'up' | 'down';
-  threshold?: number;
-}
+const FadeInStaggerContext = createContext(false);
 
-export default function FadeInSection({ children, direction = 'left', threshold = 0.3 }: FadeInSectionProps) {
-  const ref = useRef<HTMLDivElement>(null);
-  const isVisible = useIntersectionObserver(ref, { threshold });
+const viewport = { once: true, margin: '0px 0px -200px' };
 
-  let startAnim, endAnim;
-
-  switch (direction) {
-    case 'right':
-      startAnim = { opacity: 0, x: 100 };
-      endAnim = { opacity: 1, x: 0 };
-      break;
-    case 'up':
-      startAnim = { opacity: 0, y: 100 };
-      endAnim = { opacity: 1, y: 0 };
-      break;
-    case 'down':
-      startAnim = { opacity: 0, y: -100 };
-      endAnim = { opacity: 1, y: 0 };
-      break;
-    default: // 'left'
-      startAnim = { opacity: 0, x: -100 };
-      endAnim = { opacity: 1, x: 0 };
-      break;
-  }
+export function FadeIn(props: React.ComponentPropsWithoutRef<typeof motion.div>) {
+  let shouldReduceMotion = useReducedMotion();
+  let isInStaggerGroup = useContext(FadeInStaggerContext);
 
   return (
-    <Animate
-      start={startAnim}
-      update={{
-        opacity: isVisible ? endAnim.opacity : startAnim.opacity,
-        x: isVisible ? endAnim.x : startAnim.x,
-        y: isVisible ? endAnim.y : startAnim.y,
+    <motion.div
+      variants={{
+        hidden: { opacity: 0, y: shouldReduceMotion ? 0 : 24 },
+        visible: { opacity: 1, y: 0 },
       }}
-      // @ts-ignore
-      duration={1500}
-    >
-      {({ opacity, x, y }) => (
-        <div
-          ref={ref}
-          style={{
-            opacity,
-            transform: `translate3d(${x || 0}%, ${y || 0}%, 0)`,
-            transition: 'opacity 750ms, transform 750ms',
-          }}
-        >
-          {children}
-        </div>
-      )}
-    </Animate>
+      transition={{ duration: 0.5 }}
+      {...(isInStaggerGroup
+        ? {}
+        : {
+            initial: 'hidden',
+            whileInView: 'visible',
+            viewport,
+          })}
+      {...props}
+    />
+  );
+}
+
+export function FadeInStagger({
+  faster = false,
+  ...props
+}: React.ComponentPropsWithoutRef<typeof motion.div> & { faster?: boolean }) {
+  return (
+    <FadeInStaggerContext.Provider value={true}>
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={viewport}
+        transition={{ staggerChildren: faster ? 0.12 : 0.2 }}
+        {...props}
+      />
+    </FadeInStaggerContext.Provider>
   );
 }
