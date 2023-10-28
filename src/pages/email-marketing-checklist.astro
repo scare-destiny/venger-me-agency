@@ -35,7 +35,7 @@ const metadata = {
   <Layout class="bg-page-white" metadata={metadata}>
     <Fragment slot="header">
       <Header class="bg-white" showToggleTheme {...headerData} />
-      <EmailHero client:only />
+      <EmailHero client:load />
 
       <ContactUs
         id="checklist"
@@ -59,7 +59,7 @@ const metadata = {
         button="Check My Domain"
       />
       <WidgetWrapper>
-        <Checklist client:load />
+        <Checklist client:idle />
       </WidgetWrapper>
       <SimpleCalendly
         calendlyUrl="https://calendly.com/eugene-venger/30min-1"
