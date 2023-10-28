@@ -1,11 +1,5 @@
 import React, { useState } from 'react';
-
-const navigation = [
-  { name: 'Product', href: '#' },
-  { name: 'Features', href: '#' },
-  { name: 'Marketplace', href: '#' },
-  { name: 'Company', href: '#' },
-];
+import { FadeIn } from '~/components/react/Animations/FadeIn';
 
 export default function EmailHero() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -36,13 +30,17 @@ export default function EmailHero() {
             </div>
           </div>
           <div className="text-center">
-            <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
-              Low open rates or landing in spam?
-            </h1>
-            <p className="mt-6 text-lg leading-8 text-gray-600">
-              It's likely a deliverability issue. Solve it — follow our checklist to ensure your emails hit the inbox
-              every time and get an impressive 65-80% open rate and beyond.
-            </p>
+            <FadeIn>
+              <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
+                Low open rates or landing in spam?
+              </h1>
+            </FadeIn>
+            <FadeIn>
+              <p className="mt-6 text-lg leading-8 text-gray-600">
+                It's likely a deliverability issue. Solve it — follow our checklist to ensure your emails hit the inbox
+                every time and get an impressive 65-80% open rate and beyond.
+              </p>
+            </FadeIn>
             <div className="mt-10 flex items-center justify-center gap-x-6">
               <a
                 href="#checklist"
