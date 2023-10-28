@@ -75,7 +75,7 @@ const testimonials = [
       {
         body: 'Eugene is very supportive and a great communicator. Highly recommended!',
         author: {
-          name: 'Sayuri Nishio',
+          name: 'Katie Dillon',
           handle: 'Founder at KXD Media ',
           imageUrl:
             'https://media.licdn.com/dms/image/D4E03AQF0gnJ3TMtWMA/profile-displayphoto-shrink_400_400/0/1671116343397?e=1703721600&v=beta&t=PINkezhC8kHGrangI1_qLYXHdyWvtZLyrDb27OCqISk',
