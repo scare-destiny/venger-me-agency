@@ -422,6 +422,27 @@ const checklistItems: ChecklistItem[] = [
             type: 'text',
             data: 'Begin by sending a low volume of emails, gradually increasing the send rate to warm up the sending IP addresses associated with your domain. The goal is to establish a good IP and domain reputation with email providers. Here are a few common scenarios.',
           },
+          {
+            type: 'table',
+            data: {
+              headers: [
+                'Scenario 1: Suddenly, your regular emails are taking a detour to the junk folder, according to the recipients.',
+                'Scenario 2: You got yourself a fresh domain or crafted a subdomain for cold outreach campaigns.',
+                'Scenario 3: Either a shiny new dedicated IP or a switch to a novel email marketing platform is your play for newsletter campaigns.',
+                'Scenario 4: Newsletters from your prime domain are getting the cold shoulder with an open rate below 20%.',
+              ],
+              rows: [
+                [
+                  "Solution: Get SPF, DKIM, and DMARC on board. Pair up with an email warmup service. In 2-3 weeks, you'll find 95% of your emails cozying up in the inbox.",
+                  'Solution: Arm it with SPF, DKIM, DMARC, and a custom tracking domain. Engage an email warmup service. Give it a 2-3 week stretch until your inbox placement rate hits the sweet 95% or above. Kick off with 50 emails daily, then play the long game, upping the send rate steadily, all while keeping an eagle eye on your open and complaint rates.',
+                  "Solution: Refresh your SPF and DKIM records. Day one, drop 3000 emails (that’s 125 hourly), and then jazz up the daily send rate by 15% over a four-week gig. Peep the image below for a warmup strategy that's hotter than July.",
+                  'ActiveCampaign, Sendinblue, Hubspot, Mailchimp, ConvertKit, Campaign Monitor, Klaviyo, Drip, Bento',
+                  'Solution: Carve out a subdomain to shield your reputation. Set the trio—SPF, DKIM, and DMARC—in motion. Craft an email address for the subdomain. For 2-3 weeks, send only to the folks who’ve peeked at your newsletters in the past half-year, as per the warmup timetable below. Or, groove with an email warmup service that serves you a seedlist and jams along with your newsletter campaigns for a 2-3 week spell.',
+                ],
+                // ... other rows
+              ],
+            },
+          },
         ],
       },
       // ...other tasks
