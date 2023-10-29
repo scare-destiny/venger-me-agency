@@ -18,7 +18,7 @@ const {
 } = Astro.props as Stats;
 ---
 
-<WidgetWrapper id={id} isDark={isDark} containerClass={`max-w-6xl mx-auto ${classes?.container ?? ''}`} bg={bg}>
+<WidgetWrapper id={id} isDark={isDark} containerClass={`max-w-5xl mx-auto ${classes?.container ?? ''}`} bg={bg}>
   <Headline title={title} subtitle={subtitle} tagline={tagline} />
   <FadeInStagger faster>
     <div class="flex flex-wrap justify-center -m-4 text-center">

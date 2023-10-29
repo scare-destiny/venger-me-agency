@@ -7,7 +7,7 @@ export const headerData = {
   links: [
     { text: 'Home', href: '/' },
     { text: 'About', href: '/about' },
-    { text: 'Services', href: '/services' },
+    // { text: 'Services', href: '/services' },
     { text: 'Blog', href: '/blog' },
     { text: 'Contact', href: '/contact' },
     { text: 'Maximize Your Open Rates 🚀', href: '/email-marketing-checklist' },
@@ -167,7 +167,7 @@ export const footerData = {
       links: [
         { text: 'Main', href: '/' },
         { text: 'About', href: '/about' },
-        { text: 'Services', href: '/services' },
+        // { text: 'Services', href: '/services' },
         { text: 'Blog', href: '/blog' },
         { text: 'Contact', href: '/contact' },
         // { text: 'Inclusion', href: '#' },

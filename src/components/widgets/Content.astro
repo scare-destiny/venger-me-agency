@@ -25,7 +25,7 @@ const {
 <WidgetWrapper
   id={id}
   isDark={isDark}
-  containerClass={`max-w-7xl mx-auto ${isAfterContent ? 'pt-0 md:pt-0 lg:pt-0' : ''} ${classes?.container ?? ''}`}
+  containerClass={`max-w-5xl mx-auto ${isAfterContent ? 'pt-0 md:pt-0 lg:pt-0' : ''} ${classes?.container ?? ''}`}
   bg={bg}
 >
   <Headline
@@ -38,7 +38,7 @@ const {
       subtitle: 'max-w-3xl mx-auto sm:text-center text-xl text-muted dark:text-slate-400',
     }}
   />
-  <div class="mx-auto max-w-7xl p-4 md:px-8">
+  <div class="mx-auto max-w-5xl p-4 md:px-8">
     <div class={`md:flex ${isReversed ? 'md:flex-row-reverse' : ''} md:gap-16`}>
       <div class="md:basis-1/2 self-center">
         {content && <div class="mb-12 text-lg dark:text-slate-400" set:html={content} />}

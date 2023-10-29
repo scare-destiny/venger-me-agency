@@ -19,7 +19,7 @@ const {
 } = Astro.props as Steps;
 ---
 
-<WidgetWrapper id={id} isDark={isDark} containerClass={`max-w-6xl mx-auto ${classes?.container ?? ''}`} bg={bg}>
+<WidgetWrapper id={id} isDark={isDark} containerClass={`max-w-5xl mx-auto ${classes?.container ?? ''}`} bg={bg}>
   <div class={`flex flex-col gap-8 md:gap-12 md:flex-row ${isReversed ? 'md:flex-row-reverse' : ''}`}>
     <div class={`w-full lg:w-1/2 gap-8 md:gap-12 ${isReversed ? 'lg:ml-16 md:ml-8 ml-0' : 'lg:mr-16 md:mr-8 mr-0'}`}>
       <Headline
@@ -43,7 +43,9 @@ const {
             callToAction.text &&
             callToAction.href && (
               <a class="btn btn-primary mb-12" href={callToAction.href} target="_blank" rel="noopener">
-                {callToAction.icon && <Icon name={callToAction.icon} class="w-5 h-5 mr-1 -ml-1.5  rtl:-mr-1.5 rtl:ml-1" />}
+                {callToAction.icon && (
+                  <Icon name={callToAction.icon} class="w-5 h-5 mr-1 -ml-1.5  rtl:-mr-1.5 rtl:ml-1" />
+                )}
                 {callToAction.text}
               </a>
             )

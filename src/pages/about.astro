@@ -5,9 +5,7 @@ import About from '~/components/react/Tailwind/About';
 import Features3 from '~/components/widgets/Features3.astro';
 import Header from '~/components/widgets/Header.astro';
 import { headerData } from '~/navigation';
-import Hero from '~/components/widgets/Hero.astro';
-import Stats from '~/components/widgets/Stats.astro';
-import Steps2 from '~/components/widgets/Steps2.astro';
+import { FadeIn, FadeInStagger } from '~/components/react/Animations/FadeIn';
 // import CTA from '~/components/ui/CTA.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 import Layout from '~/layouts/PageLayout.astro';
@@ -61,19 +59,25 @@ const metadata = {
             </div>
           </div>
           <div class="relative mx-auto max-w-2xl lg:mx-0">
-            <img class="h-12 w-auto" src="https://tailwindui.com/img/logos/workcation-logo-white.svg" alt="" />
+            <img
+              class="h-12 w-auto"
+              src="https://static.wixstatic.com/media/ebb11a_7ce61b0de1ca4d38968da401454be682~mv2.png/v1/fill/w_392,h_50,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/LOGO.png"
+              alt=""
+            />
             <figure>
               <blockquote class="mt-6 text-lg font-semibold text-white sm:text-xl sm:leading-8">
-                <p>
-                  “Eugene is very knowledgable. We work on a project that was not easy or straightforward but he really
-                  took the time to find solutions. He is very enthusiastic and eager to do the job well. Great
-                  communication, flexibility and availability.”
-                </p>
+                <FadeIn client:only>
+                  <p>
+                    “Eugene is very knowledgable. We work on a project that was not easy or straightforward but he
+                    really took the time to find solutions. He is very enthusiastic and eager to do the job well. Great
+                    communication, flexibility and availability.”
+                  </p>
+                </FadeIn>
+                <figcaption class="mt-6 text-base text-white">
+                  <div class="font-semibold">Ioana Hardy</div>
+                  <div class="mt-1">Managing Director at Impacters Group</div>
+                </figcaption>
               </blockquote>
-              <figcaption class="mt-6 text-base text-white">
-                <div class="font-semibold">Ioana Hardy</div>
-                <div class="mt-1">Managing Director at Impacters Group</div>
-              </figcaption>
             </figure>
           </div>
         </div>

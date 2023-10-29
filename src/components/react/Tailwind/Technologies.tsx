@@ -7,7 +7,7 @@ import image from '../../../assets/images/hero.png';
 const services = [
   [
     'Marketing Automation',
-    'Optimized and performant pipelines that can cut your costs 10X. From Integromat to AWS Lambda',
+    'Optimized and performant pipelines that can cut your costs 10X. From Integromat to AWS Lambda.',
   ],
   ['Sales Funnels', 'Complex Sales Funnels with sleek and fast landing pages, lead generation, and optimization.'],
   ['Strategic Tech Consultancy', 'Current trends, low-hanging fruits, and best strategies.'],
@@ -26,7 +26,7 @@ const services = [
 
 export default function Technoloiges() {
   return (
-    <div className="mx-auto max-w-2xl lg:max-w-none">
+    <div className="mx-auto max-w-4xl lg:max-w-none">
       <FadeIn className="flex items-center md:gap-x-8">
         <h2 className="text-center font-display text-sm font-bold tracking-wider  sm:text-center">
           Here's a rundown of the key areas I specialize in, listed in no particular order.
@@ -38,7 +38,7 @@ export default function Technoloiges() {
           {services.map((service, index) => (
             <li key={index}>
               <FadeIn>
-                <div className="service-item md:h-56 p-6   border rounded-lg relative bg-white text-black transform transition-transform duration-2000 hover:scale-105 hover:shadow-lg">
+                <div className="service-item md:h-60 p-6   border rounded-lg relative bg-white text-black transform transition-transform duration-2000 hover:scale-105 hover:shadow-lg">
                   <div className="font-bold text-xl mb-2">{service[0]}</div>
                   <div className="underline w-full h-1 bg-gradient-to-r from-primary to-accent absolute bottom-0 left-0"></div>
 
