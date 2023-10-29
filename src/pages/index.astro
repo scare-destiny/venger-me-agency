@@ -1,6 +1,6 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
-
+import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
 import Hero from '~/components/widgets/Hero.astro';
 import Header from '~/components/widgets/Header.astro';
 import { FadeIn } from '~/components/react/Animations/FadeIn';
@@ -14,7 +14,7 @@ import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
 // import FAQs from '~/components/widgets/FAQs.astro';
 import Stats from '~/components/widgets/Stats.astro';
 // import CallToAction from '~/components/widgets/CallToAction.astro';
-import Testimonials from '~/components/widgets/Testimonials.astro';
+import Technoloiges from '~/components/react/Tailwind/Technologies';
 import TailwindTestimonials from '~/components/react/Tailwind/Testimonials';
 import TallyForm from '~/components/widgets/TallyForm.astro';
 // import SimpleCalendly from '~/components/widgets/SimpleCalendly.astro';
@@ -48,10 +48,13 @@ const metadata = {
         </FadeIn>
       </Fragment>
     </Hero>
-
     <!-- Note Widget ******************* -->
 
     <Note />
+
+    <WidgetWrapper containerClass={`relative mx-auto max-w-7xl px-4 md:px-6 py-12 md:py-16 lg:py-12 text-default  `}>
+      <Technoloiges client:visible />
+    </WidgetWrapper>
 
     <!-- Features Widget *************** -->
 

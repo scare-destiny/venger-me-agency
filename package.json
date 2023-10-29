@@ -57,6 +57,7 @@
     "framer-motion": "^10.16.4",
     "nanostores": "^0.9.3",
     "react-hot-toast": "^2.4.1",
-    "react-move": "^6.5.0"
+    "react-move": "^6.5.0",
+    "tailwindcss-border-gradients": "^2.0.3"
   }
 }
