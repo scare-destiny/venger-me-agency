@@ -53,6 +53,7 @@
     "@astrojs/react": "^3.0.2",
     "@astrojs/vercel": "^5.0.1",
     "@fontsource-variable/inconsolata": "^5.0.8",
+    "@heroicons/react": "^2.0.18",
     "@nanostores/react": "^0.7.1",
     "framer-motion": "^10.16.4",
     "nanostores": "^0.9.3",

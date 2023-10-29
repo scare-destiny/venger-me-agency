@@ -15,6 +15,7 @@ import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
 import Stats from '~/components/widgets/Stats.astro';
 // import CallToAction from '~/components/widgets/CallToAction.astro';
 import Technoloiges from '~/components/react/Tailwind/Technologies';
+import Content from '~/components/react/Tailwind/Content';
 import TailwindTestimonials from '~/components/react/Tailwind/Testimonials';
 import TallyForm from '~/components/widgets/TallyForm.astro';
 // import SimpleCalendly from '~/components/widgets/SimpleCalendly.astro';
@@ -59,6 +60,8 @@ const metadata = {
     <!-- Features Widget *************** -->
 
     <!-- <TallyForm title="Geared Up to Elevate Your Success?" subtitle="Let's chat about how we can help you grow" /> -->
+
+    <Content client:load />
 
     <Features
       id="features"
