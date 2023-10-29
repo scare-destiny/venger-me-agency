@@ -26,12 +26,7 @@ export default function About() {
             I began my journey in 2019 at a SaaS company, AmazeOwl, as a Growth Marketer. This role marked my initiation
             into the realms of digital marketing and remote work.
           </p>
-          <p>During my tenure, our team escalated revenue by 300% and pioneered three additional income streams.</p>
-          <p>
-            One of the company founders, with his tech-savvy nature and programming background, sparked my interest in
-            coding. His example and the endless possibilities of coding inspired me to learn to code, all while
-            nurturing my career in digital marketing.
-          </p>
+          <p>During my tenure, our team increased revenue by 300% and pioneered three additional income streams.</p>
           <p>
             Fast forward to now, I wield my dual expertise in marketing and coding to craft tailored solutions for small
             and medium businesses. For instance, in one project, we slashed the customer bill 10x by transitioning from
@@ -48,9 +43,8 @@ export default function About() {
             marketers worldwide.
           </p>
           <p>
-            Clients laud my technical proficiency, business-centric approach, and my knack for harmonizing the best of
-            both realms. I thrive on acquiring new skills and surmounting challenges, so if you're on the lookout for an
-            adept professional to propel you towards your ambitious targets, you've navigated to the right harbor!
+            I thrive on acquiring new skills and surmounting challenges, so if you're on the lookout for an adept
+            professional to propel you towards your ambitious targets, you've navigated to the right harbor!
           </p>
           <p>
             In my leisure, I indulge in reading, cooking, and constructing tools that augment my hobbies. For instance,

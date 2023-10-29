@@ -2,10 +2,11 @@
 // import Features2 from '~/components/widgets/Features2.astro';
 import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
 import About from '~/components/react/Tailwind/About';
-import Features3 from '~/components/widgets/Features3.astro';
+import SimpleCalendly from '~/components/widgets/SimpleCalendly.astro';
 import Header from '~/components/widgets/Header.astro';
 import { headerData } from '~/navigation';
-import { FadeIn, FadeInStagger } from '~/components/react/Animations/FadeIn';
+import { FadeIn } from '~/components/react/Animations/FadeIn';
+import Stats from '~/components/widgets/Stats.astro';
 // import CTA from '~/components/ui/CTA.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 import Layout from '~/layouts/PageLayout.astro';
@@ -23,7 +24,15 @@ const metadata = {
     <WidgetWrapper containerClass={`max-w-5xl `}>
       <About client:visible />
     </WidgetWrapper>
-
+    <Stats
+      title="Some numbers"
+      stats={[
+        { title: 'Happy clients', amount: '50+' },
+        { title: 'Generated revenue', amount: '~$1.000.000' },
+        { title: 'Tasks automated', amount: '120.000+' },
+        { title: 'Cups of coffee consumed', amount: '5000+' },
+      ]}
+    />
     <WidgetWrapper containerClass={`max-w-5xl `}>
       <div class="">
         <div
@@ -84,18 +93,11 @@ const metadata = {
       </div>
     </WidgetWrapper>
 
-    <CallToAction
-      callToAction={{
-        text: 'Reach Out Now',
-        href: '/contact',
-        icon: 'tabler:affiliate',
-      }}
-    >
-      <Fragment slot="title">Ready for Next-Level Growth? 🚀</Fragment>
-
-      <Fragment slot="subtitle">
-        Embark on a journey of tangible transformation with a seasoned ally. Book your free consultation with me today.
-      </Fragment>
-    </CallToAction>
+    <SimpleCalendly
+      title="Ready for Next-Level Growth? 🚀"
+      subtitle="  Embark on a journey of tangible transformation with a seasoned ally. Book your free consultation with me today."
+      buttonText="Schedule Meeting"
+      calendlyUrl="https://calendly.com/eugene-venger"
+    />
   </Fragment>
 </Layout>

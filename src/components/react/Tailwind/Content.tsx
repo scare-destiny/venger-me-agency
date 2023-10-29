@@ -16,13 +16,13 @@ export default function Example() {
           }}
         />
       </div>
-      <div className="mx-auto max-w-5xl px-6 lg:px-8">
+      <div className="mx-auto max-w-6xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl lg:mx-0">
           <p className="text-lg font-semibold leading-8 tracking-tight text-primary">Things I'm proud of</p>
           <h1 className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Projects</h1>
           <p className="mt-6 text-xl leading-8 text-gray-700">
             As a growth marketer with a dual skill set in software development, I have a knack for technical marketing,
-            a penchant for coding and a relentless desire to help our clients grow.
+            a penchant for coding and a relentless desire to help my clients grow.
           </p>
         </div>
         <div className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 lg:mx-0 lg:mt-10 lg:max-w-none lg:grid-cols-12">
@@ -116,7 +116,12 @@ export default function Example() {
               </ul>
             </FadeInStagger>
             <p className="mt-8">
-              Shortly, I plan to write blog posts and case studies to showcase each of those in more detail.
+              Shortly, I plan to write blog posts and case studies to showcase each of those in more detail. You can
+              read more about me{' '}
+              <a className="text-primary" href="/about" target="_blank">
+                {' '}
+                here.
+              </a>
             </p>
             {/* <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">No server? No problem.</h2>
             <p className="mt-6">
