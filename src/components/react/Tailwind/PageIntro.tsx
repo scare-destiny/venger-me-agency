@@ -16,7 +16,7 @@ export function PageIntro({
   centered?: boolean;
 }) {
   return (
-    <Container className={clsx('mt-24 sm:mt-32 lg:mt-40', centered && 'text-center')}>
+    <Container className={clsx('mt-24 sm:mt-32 lg:mt-40 max-w-6xl', centered && 'text-center')}>
       <FadeIn>
         <h1>
           <span className="block font-display text-base font-semibold text-neutral-950">{eyebrow}</span>

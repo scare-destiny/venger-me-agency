@@ -38,9 +38,7 @@ function Section({
               className="font-display text-base font-semibold before:text-neutral-300 before:content-['/_'] after: after:content-[counter(section,decimal-leading-zero)]"
               aria-hidden="true"
             />
-            <h2 className="mt-2 font-display text-3xl font-medium tracking-tight  sm:text-4xl">
-              {title}
-            </h2>
+            <h2 className="mt-2 font-display text-3xl font-medium tracking-tight  sm:text-4xl">{title}</h2>
             <div className="mt-6">{children}</div>
           </FadeIn>
         </div>
@@ -59,7 +57,7 @@ function Consultation() {
           goals and ambitions into reality. Together, we’ll explore the potential of creating something great.
         </p>
       </div>
-      <h3 className="mt-12 font-display text-base font-semibold ">Included in this phase</h3>
+      <h3 className="mt-12 font-display text-base font-semibold text-primary font-semibold ">Included in this phase</h3>
       <TagList className="mt-4">
         <TagListItem>Understand your needs</TagListItem>
         <TagListItem>Quick Business Overview</TagListItem>
@@ -88,15 +86,7 @@ function Discovery() {
         </ul>
       </div>
 
-      <Blockquote
-        author={{ name: 'Andreas Lange', role: 'Online Marketing Manager / Iberosattel Reitsport GmbH' }}
-        className="mt-12"
-      >
-        We have been working successfully with Eugene for many years. He always finds a quick and suitable solution for
-        all problems.
-      </Blockquote>
-
-      <h3 className="mt-12 font-display text-base font-semibold ">Included in this phase</h3>
+      <h3 className="mt-12 font-display text-base font-semibold text-primary font-semibold">Included in this phase</h3>
       <TagList className="mt-4">
         <TagListItem>Identify Goals, Envision Growth</TagListItem>
         <TagListItem>Come Up With Detailed Action Plan</TagListItem>
@@ -120,7 +110,7 @@ function Analysis() {
         </p>
       </div>
 
-      <h3 className="mt-12 font-display text-base font-semibold ">Included in this phase</h3>
+      <h3 className="mt-12 font-display text-base font-semibold text-primary font-semibold ">Included in this phase</h3>
       <List className="mt-8">
         <ListItem title="Priority Identification">Understanding what matters most to you and your business.</ListItem>
         <ListItem title="Analysis">
@@ -145,7 +135,15 @@ function Execute() {
         </p>
       </div>
 
-      <h3 className="mt-12 font-display text-base font-semibold ">Included in this phase</h3>
+      <Blockquote
+        author={{ name: 'Andreas Lange', role: 'Online Marketing Manager / Iberosattel Reitsport GmbH' }}
+        className="mt-12"
+      >
+        We have been working successfully with Eugene for many years. He always finds a quick and suitable solution for
+        all problems.
+      </Blockquote>
+
+      <h3 className="mt-12 font-display text-base font-semibold text-primary font-semibold">Included in this phase</h3>
       <TagList className="mt-4">
         <TagListItem>Clear Deadline And Milestones</TagListItem>
         <TagListItem>Launch And Monitoring</TagListItem>
