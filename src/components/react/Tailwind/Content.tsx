@@ -46,12 +46,11 @@ export default function Example() {
             <figure className="border-l border-primary pl-8">
               <blockquote className="text-xl font-semibold leading-8 tracking-tight text-gray-900">
                 <p>
-                  “We have been working successfully with Eugene for many years. He always finds a quick and suitable
-                  solution for all problems. We appreciate his good communication, availability, flexibility and
-                  professional work. Eugene has become a very important part of our team.”
+                  I don't provide quick, one-off solutions and focus on quality over being fast or cheap. Each project
+                  is analyzed and executed uniquely. Also, all projects come with a money-back guarantee.
                 </p>
               </blockquote>
-              <figcaption className="mt-8 flex gap-x-4">
+              {/* <figcaption className="mt-8 flex gap-x-4">
                 <img
                   src="https://media.licdn.com/dms/image/C4E03AQGsUtMSlQm88A/profile-displayphoto-shrink_200_200/0/1517079041148?e=1702512000&v=beta&t=m4STBLixXLrCpoYfX5in6r3N98hGC_jIeBopgG8CWwI"
                   alt=""
@@ -61,7 +60,7 @@ export default function Example() {
                   <div className="font-semibold text-gray-900">Andreas Lange</div>
                   <div className="text-gray-600">Online Marketing Manager / Iberosattel Reitsport GmbH</div>
                 </div>
-              </figcaption>
+              </figcaption> */}
             </figure>
           </div>
           <div className="max-w-xl text-base leading-7 text-gray-700 lg:col-span-7">
@@ -109,7 +108,7 @@ export default function Example() {
                     <span>
                       <strong className="font-semibold text-gray-900">Lead Management for Paid Channels.</strong>{' '}
                       Created a cost-effective pipeline to transfer leads from Google Ads to ActiveCampaign using
-                      Integromat, reducing costs by 10x. It resulted in 10x cost reduction for lead management.
+                      Integromat, reducing costs by 10x.
                     </span>
                   </li>
                 </FadeIn>
