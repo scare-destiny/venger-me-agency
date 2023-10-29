@@ -1,6 +1,7 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
 import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
+import Process from '~/components/react/Tailwind/Process';
 // import Hero from '~/components/widgets/Hero.astro';
 import { FadeIn } from '~/components/react/Animations/FadeIn';
 import Header from '~/components/widgets/Header.astro';
@@ -106,6 +107,8 @@ const metadata = {
     <!-- Note Widget ******************* -->
 
     <!-- <Note /> -->
+
+    <Process client:load />
 
     <div id="projects">
       <Content client:load />
