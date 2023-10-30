@@ -126,7 +126,7 @@ const SPFRecordGenerator = () => {
             name="emailHandling"
             onChange={(e) => setEmailHandling(e.target.value)}
             value={emailHandling}
-            className="py-3 px-4 block w-full text-md rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900"
+            className="py-3 px-4 block w-full text-md rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900 overflow-auto"
           >
             <option value="Soft Fail">
               Soft Fail (Non-compliant email will be accepted but marked as non-compliant) - RECOMMENDED

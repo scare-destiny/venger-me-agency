@@ -76,15 +76,11 @@ const Task: React.FC<TaskItemProps> = ({ task, onCheckboxToggle }) => {
       )}
       {task.id === '1.3' && !checked && (
         <>
-          <DMARCgenerator />
-          <AddDMARC />
+          {/* <DMARCgenerator />
+          <AddDMARC /> */}
         </>
       )}
-      {task.id === '1.5' && !checked && (
-        <>
-          <CreateMxRecord />
-        </>
-      )}
+      {task.id === '1.5' && !checked && <>{/* <CreateMxRecord /> */}</>}
     </div>
   );
 };
