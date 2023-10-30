@@ -67,7 +67,7 @@ const metadata = {
                   class="rounded-md bg-primary px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
                   >Get in touch</a
                 >
-                <a href="#projects" class="text-sm font-semibold leading-6 text-gray-900"
+                <a href="#process" class="text-sm font-semibold leading-6 text-gray-900"
                   >Read more <span aria-hidden="true">→</span></a
                 >
               </div>
@@ -107,7 +107,16 @@ const metadata = {
 
     <!-- <Note /> -->
 
-    <Process client:load />
+    <div id="process">
+      <Process client:load />
+    </div>
+
+    <SimpleCalendly
+      title="Excited By The Process?"
+      subtitle="Let's delve deeper into your business's potential together"
+      calendlyUrl="https://calendly.com/eugene-venger"
+      buttonText="Schedule Your Discovery Call"
+    />
 
     <div id="projects">
       <Content client:load />
@@ -122,13 +131,6 @@ const metadata = {
     />
 
     <TailwindTestimonials />
-
-    <SimpleCalendly
-      title="Ready for a Virtual Coffee?"
-      subtitle="Let's chat about how I can help you grow. Reach out now."
-      calendlyUrl="https://calendly.com/eugene-venger"
-      buttonText="Book Free Consultation"
-    />
 
     <WidgetWrapper containerClass={`relative mx-auto max-w-5xl px-4 md:px-6 py-12 md:py-16 lg:py-12 text-default  `}>
       <Technoloiges client:visible />
@@ -192,10 +194,11 @@ const metadata = {
       ]}
     /> -->
 
-    <TallyForm
-      title="Ready for a Virtual Coffee?"
-      subtitle="Let's chat about how I can help you grow. Reach out now."
-      id="form"
+    <SimpleCalendly
+      title="Scrolled all the way here?"
+      subtitle="Let's delve deeper into your business's potential together."
+      calendlyUrl="https://calendly.com/eugene-venger"
+      buttonText="Book Discovery Call"
     />
 
     <!-- CallToAction Widget *********** -->

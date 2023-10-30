@@ -49,15 +49,24 @@ function Section({
 
 function Consultation() {
   return (
-    <Section title="30-minutes consultation" image={{ src: imageWhiteboard.src }}>
+    <Section title="Discovery Phase" image={{ src: imageWhiteboard.src }}>
       <div className="space-y-6 text-base text-neutral-600 ">
         <p>
-          Let's hop on a call to understand your
+          Let's hop on a quick call to understand your
           <strong> goals</strong> and see how I can help. It’s all about discovering if we're the right fit to turn your
           goals and ambitions into reality. Together, we’ll explore the potential of creating something great.
         </p>
+        <p>
+          During this phase, we talk about <strong>your business</strong> in more detail. We'll look at where you are
+          now, and where you want to go. This call will help us see how we can work together to get you more clients and
+          make your business seen.
+        </p>
+        <p>
+          We'll discuss the challenges you face in attracting new clients and being seen, along with the goals you aim
+          to achieve
+        </p>
       </div>
-      <h3 className="mt-12 font-display text-base font-semibold text-primary font-semibold ">Included in this phase</h3>
+      <h3 className="mt-12 font-display text-base font-semibold text-primary  ">Included in this phase</h3>
       <TagList className="mt-4">
         <TagListItem>Understand your needs</TagListItem>
         <TagListItem>Quick Business Overview</TagListItem>
@@ -170,7 +179,7 @@ export default function Process() {
 
       <div className="mt-24 space-y-24 [counter-reset:section] sm:mt-32 sm:space-y-32 lg:mt-40 lg:space-y-40">
         <Consultation />
-        <Discovery />
+        {/* <Discovery /> */}
         <Analysis />
         <Execute />
       </div>
