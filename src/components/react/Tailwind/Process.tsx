@@ -24,7 +24,7 @@ function Section({
     <Container className="group/section [counter-increment:section]">
       <div className="lg:flex lg:items-center lg:justify-end lg:gap-x-8 lg:group-even/section:justify-start xl:gap-x-20">
         <div className="flex justify-center">
-          <FadeIn className="w-[33.75rem] flex-none lg:w-[45rem]">
+          <FadeIn className="w-[25.75rem] flex-none lg:w-[40rem]">
             <StylizedImage
               {...image}
               sizes="(min-width: 1024px) 41rem, 31rem"
@@ -72,7 +72,7 @@ function Discovery() {
     <Section title="Discovery Call" image={{ src: imageLaptop.src, shape: 1 }}>
       <div className="space-y-6 text-base text-neutral-600">
         <p>
-          In the Discovery Call, we talk about your business over the phone. We'll look at where you are now, and where
+          In the Discovery Call, we talk about your business in more detail. We'll look at where you are now, and where
           you want to go. This call will help us see how we can work together to get you more clients and make your
           business seen.
         </p>
