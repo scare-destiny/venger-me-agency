@@ -14,7 +14,7 @@ interface Props extends Widget {
 const {
   title = await Astro.slots.render('title'),
   subtitle = await Astro.slots.render('subtitle'),
-  calendlyUrl = 'https://calendly.com/eugene-venger',
+  // calendlyUrl = 'https://calendly.com/eugene-venger',
   buttonText = ' Schedule Free Meeting!',
 
   id,
@@ -23,7 +23,7 @@ const {
   bg = await Astro.slots.render('bg'),
 } = Astro.props as Props;
 
-const onClick = `Calendly.initPopupWidget({url: '${calendlyUrl}'});return false;`;
+const onClick = `Calendly.initPopupWidget({url: 'https://calendly.com/eugene-venger'});return false;`;
 ---
 
 <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
