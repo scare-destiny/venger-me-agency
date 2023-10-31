@@ -26,16 +26,19 @@ const {
 const onClick = `Calendly.initPopupWidget({url: '${calendlyUrl}'});return false;`;
 ---
 
-<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
-<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+<script>
+  document.addEventListener('astro:page-load', () => {
+    const calendlyScript = document.createElement('script');
+    calendlyScript.src = 'https://assets.calendly.com/assets/external/widget.js';
+    calendlyScript.type = 'text/javascript';
+    calendlyScript.async = true;
+    document.head.appendChild(calendlyScript);
+  });
+</script>
 
-<WidgetWrapper
-  id={id}
-  client:load
-  isDark={isDark}
-  containerClass={`max-w-5xl mx-auto ${classes?.container ?? ''}`}
-  bg={bg}
->
+<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
+
+<WidgetWrapper id={id} isDark={isDark} containerClass={`max-w-5xl mx-auto ${classes?.container ?? ''}`} bg={bg}>
   <div
     class="max-w-3xl mx-auto text-center p-6 rounded-md shadow-xl dark:shadow-none dark:border dark:border-slate-600"
   >
