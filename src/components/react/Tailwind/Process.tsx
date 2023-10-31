@@ -110,7 +110,7 @@ function Analysis() {
     <Section title="Analysis Phase: Mapping Your Path to Growth" image={{ src: imageMeeting.src, shape: 2 }}>
       <div className="space-y-6 text-base text-neutral-600">
         <p>
-          Following our Discovery Call, we transition into the Analysis Phase. This is where we dig deeper to understand
+          Following our Discovery Call, we transition into the Analysis Phase. This is where I dig deeper to understand
           your <strong>priorities</strong> and devise a clear, actionable plan to achieve them.
         </p>
         <p>
