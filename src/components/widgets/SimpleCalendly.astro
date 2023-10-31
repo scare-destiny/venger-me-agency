@@ -27,7 +27,22 @@ const onClick = `Calendly.initPopupWidget({url: 'https://calendly.com/eugene-ven
 ---
 
 <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
-<script is:inline src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+<script>
+  document.addEventListener('astro:page-load', () => {
+    function loadCalendly() {
+      const calendlyScript = document.createElement('script');
+      calendlyScript.src = 'https://assets.calendly.com/assets/external/widget.js';
+      calendlyScript.type = 'text/javascript';
+      calendlyScript.async = true;
+      document.head.appendChild(calendlyScript);
+
+      calendlyScript.onload = () => {
+        Calendly.initPopupWidget({ url: 'https://calendly.com/eugene-venger' });
+      };
+    }
+    window.loadCalendly = loadCalendly; // Assign the function to the global scope so it's accessible in the onClick handler.
+  });
+</script>
 
 <WidgetWrapper id={id} isDark={isDark} containerClass={`max-w-5xl mx-auto ${classes?.container ?? ''}`} bg={bg}>
   <div
@@ -43,7 +58,7 @@ const onClick = `Calendly.initPopupWidget({url: 'https://calendly.com/eugene-ven
       }}
     />
     <div class="mt-6 max-w-xs mx-auto">
-      <a href="#" class="btn btn-primary w-full sm:w-auto" onclick={onClick}>
+      <a href="#" class="btn btn-primary w-full sm:w-auto" onclick="loadCalendly()">
         <Icon name="tabler:rocket" class="w-5 h-5 mr-1 -ml-1.5 rtl:-mr-1.5 rtl:ml-1" />
         {buttonText}
       </a>
