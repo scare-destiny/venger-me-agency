@@ -11,6 +11,7 @@ import GridTestimonials from '~/components/react/Tailwind/Testimonials';
 // import Prices from '~/components/widgets/Pricing.astro';
 // import { FadeIn } from '~/components/react/Animations/FadeIn';
 import { headerData } from '~/navigation';
+import TallyForm from '~/components/widgets/TallyForm.astro';
 
 const metadata = {
   title: 'Boost Email Deliverability | Hit Inbox Every Time | Venger.me',
@@ -61,13 +62,10 @@ const metadata = {
       <WidgetWrapper>
         <Checklist client:visible />
       </WidgetWrapper>
-      <SimpleCalendly
-        calendlyUrl="https://calendly.com/eugene-venger/30min-1"
+      <TallyForm
         title="Don't want to do it all by yourself?"
-        subtitle="        We're here to ramp up your deliverability and iron out all kinks."
-        .
-        buttonText=" Book Free Consultation"
-        id="simple-calendly"
+        subtitle="I'm here to ramp up your deliverability and iron out all kinks. Let's connect!"
+        id="form"
       />
       <GridTestimonials />
     </Fragment>

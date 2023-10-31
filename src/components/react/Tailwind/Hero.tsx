@@ -48,7 +48,7 @@ export default function EmailHero() {
               >
                 Do it yourself
               </a>
-              <a href="#simple-calendly">
+              <a href="#form">
                 Hire us <span aria-hidden="true">→</span>
               </a>
             </div>
