@@ -27,23 +27,6 @@ const onClick = `Calendly.initPopupWidget({url: '${calendlyUrl}'});return false;
 ---
 
 <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
-<script>
-  function loadCalendly() {
-
-    const calendlyScript = document.createElement('script');
-    calendlyScript.id = 'calendlyScript';
-    calendlyScript.src = 'https://assets.calendly.com/assets/external/widget.js';
-    calendlyScript.type = 'text/javascript';
-    calendlyScript.async = true;
-    document.head.appendChild(calendlyScript);
-  }
-
-  // Load on initial navigation
-  loadCalendly();
-
-  // Reload on view transitions
-  document.addEventListener('astro:after-swap', loadCalendly);
-</script>
 
 <WidgetWrapper id={id} isDark={isDark} containerClass={`max-w-5xl mx-auto ${classes?.container ?? ''}`} bg={bg}>
   <div
@@ -66,3 +49,20 @@ const onClick = `Calendly.initPopupWidget({url: '${calendlyUrl}'});return false;
     </div>
   </div>
 </WidgetWrapper>
+
+<script>
+  function loadCalendly() {
+    const calendlyScript = document.createElement('script');
+    calendlyScript.id = 'calendlyScript';
+    calendlyScript.src = 'https://assets.calendly.com/assets/external/widget.js';
+    calendlyScript.type = 'text/javascript';
+    calendlyScript.async = true;
+    document.head.appendChild(calendlyScript);
+  }
+
+  // Load on initial navigation
+  loadCalendly();
+
+  // Reload on view transitions
+  document.addEventListener('astro:after-swap', loadCalendly);
+</script>
