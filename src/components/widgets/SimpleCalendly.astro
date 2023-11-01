@@ -29,9 +29,6 @@ const onClick = `Calendly.initPopupWidget({url: '${calendlyUrl}'});return false;
 <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
 <script>
   function loadCalendly() {
-    const existingScript = document.querySelector('#calendlyScript');
-    if (existingScript) existingScript.remove();
-
     const calendlyScript = document.createElement('script');
     calendlyScript.id = 'calendlyScript';
     calendlyScript.src = 'https://assets.calendly.com/assets/external/widget.js';
