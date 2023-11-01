@@ -60,9 +60,13 @@ const onClick = `Calendly.initPopupWidget({url: '${calendlyUrl}'});return false;
     document.head.appendChild(calendlyScript);
   }
 
-  // Load on initial navigation
-  loadCalendly();
-
-  // Reload on view transitions
-  document.addEventListener('astro:after-swap', loadCalendly);
+  document.addEventListener(
+    'astro:page-load',
+    () => {
+      // This only runs once.
+      loadCalendly();
+      console.log('test');
+    },
+    { once: false }
+  );
 </script>
