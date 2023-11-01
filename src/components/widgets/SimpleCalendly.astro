@@ -14,7 +14,7 @@ interface Props extends Widget {
 const {
   title = await Astro.slots.render('title'),
   subtitle = await Astro.slots.render('subtitle'),
-  // calendlyUrl = 'https://calendly.com/eugene-venger',
+  calendlyUrl = 'https://calendly.com/eugene-venger',
   buttonText = ' Schedule Free Meeting!',
 
   id,
@@ -23,25 +23,28 @@ const {
   bg = await Astro.slots.render('bg'),
 } = Astro.props as Props;
 
-const onClick = `Calendly.initPopupWidget({url: 'https://calendly.com/eugene-venger'});return false;`;
+const onClick = `Calendly.initPopupWidget({url: '${calendlyUrl}'});return false;`;
 ---
 
 <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
 <script>
-  document.addEventListener('astro:page-load', () => {
-    function loadCalendly() {
-      const calendlyScript = document.createElement('script');
-      calendlyScript.src = 'https://assets.calendly.com/assets/external/widget.js';
-      calendlyScript.type = 'text/javascript';
-      calendlyScript.async = true;
-      document.head.appendChild(calendlyScript);
+  function loadCalendly() {
+    const existingScript = document.querySelector('#calendlyScript');
+    if (existingScript) existingScript.remove();
 
-      calendlyScript.onload = () => {
-        Calendly.initPopupWidget({ url: 'https://calendly.com/eugene-venger' });
-      };
-    }
-    window.loadCalendly = loadCalendly; // Assign the function to the global scope so it's accessible in the onClick handler.
-  });
+    const calendlyScript = document.createElement('script');
+    calendlyScript.id = 'calendlyScript';
+    calendlyScript.src = 'https://assets.calendly.com/assets/external/widget.js';
+    calendlyScript.type = 'text/javascript';
+    calendlyScript.async = true;
+    document.head.appendChild(calendlyScript);
+  }
+
+  // Load on initial navigation
+  loadCalendly();
+
+  // Reload on view transitions
+  document.addEventListener('astro:after-swap', loadCalendly);
 </script>
 
 <WidgetWrapper id={id} isDark={isDark} containerClass={`max-w-5xl mx-auto ${classes?.container ?? ''}`} bg={bg}>
@@ -58,7 +61,7 @@ const onClick = `Calendly.initPopupWidget({url: 'https://calendly.com/eugene-ven
       }}
     />
     <div class="mt-6 max-w-xs mx-auto">
-      <a href="#" class="btn btn-primary w-full sm:w-auto" onclick="loadCalendly()">
+      <a href="#" class="btn btn-primary w-full sm:w-auto" onclick={onClick}>
         <Icon name="tabler:rocket" class="w-5 h-5 mr-1 -ml-1.5 rtl:-mr-1.5 rtl:ml-1" />
         {buttonText}
       </a>
