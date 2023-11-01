@@ -37,31 +37,6 @@ const metadata = {
     <Fragment slot="header">
       <Header class="bg-white" showToggleTheme {...headerData} />
       <EmailHero client:load />
-
-      <ContactUs
-        id="checklist"
-        inputs={[
-          {
-            type: 'text',
-            name: 'name',
-            label: 'Name',
-          },
-          {
-            type: 'email',
-            name: 'email',
-            label: 'Your work email address',
-          },
-          {
-            type: 'text',
-            name: 'domain',
-            label: 'Enter the domain or subdomain',
-          },
-        ]}
-        button="Check My Domain"
-      />
-      <WidgetWrapper>
-        <Checklist client:visible />
-      </WidgetWrapper>
       <section class="isolate overflow-hidden bg-white px-6 lg:px-8">
         <div class="relative mx-auto max-w-2xl py-24 sm:py-32 lg:max-w-4xl">
           <div
@@ -103,11 +78,36 @@ const metadata = {
             </div>
             <figcaption class="text-base lg:col-start-1 lg:row-start-3">
               <div class="font-semibold text-gray-900">Andres Ocampo</div>
-              <div class="mt-1 text-gray-500">CEO of Workcation</div>
+              <div class="mt-1 text-gray-500">CEO of BLOSSOM ECOM</div>
             </figcaption>
           </figure>
         </div>
       </section>
+
+      <ContactUs
+        id="checklist"
+        inputs={[
+          {
+            type: 'text',
+            name: 'name',
+            label: 'Name',
+          },
+          {
+            type: 'email',
+            name: 'email',
+            label: 'Your work email address',
+          },
+          {
+            type: 'text',
+            name: 'domain',
+            label: 'Enter the domain or subdomain',
+          },
+        ]}
+        button="Check My Domain"
+      />
+      <WidgetWrapper>
+        <Checklist client:visible />
+      </WidgetWrapper>
 
       <TallyForm
         title="Don't want to do it all by yourself?"
