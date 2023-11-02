@@ -46,15 +46,14 @@ const metadataDefinition = () =>
     .optional();
 
 const authorDefinition = z
-    .object({
-      name: z.string(),
-      bio: z.string().optional(),
-      facebookHandle: z.string().optional(),
-      email: z.string().optional(),  
-      image: z.string().optional(),
-    })
-    .optional();
-  
+  .object({
+    name: z.string(),
+    bio: z.string().optional(),
+    facebookHandle: z.string().optional(),
+    email: z.string().optional(),
+    image: z.string().optional(),
+  })
+  .optional();
 
 const postCollection = defineCollection({
   schema: z.object({
@@ -81,8 +80,29 @@ const authorCollection = defineCollection({
   }),
 });
 
+const caseStudyCollection = defineCollection({
+  type: 'content',
+  schema: z.object({
+    client: z.string(),
+    title: z.string(),
+    description: z.string(),
+    summary: z.array(z.string()),
+    image: z.string().optional(),
+    logo: z.string().optional(),
+    service: z.string(),
+    testimonial: z
+      .object({
+        author: z.object({
+          name: z.string(),
+          role: z.string(),
+        }),
+        content: z.string(),
+      })
+      .optional(), // added this block
+  }),
+});
 
 export const collections = {
   post: postCollection,
-  author: authorCollection
+  author: authorCollection,
 };
