@@ -6,10 +6,10 @@ import { List, ListItem } from '~/components/react/Tailwind/List';
 import { PageIntro } from '~/components/react/Tailwind/PageIntro';
 import { StylizedImage } from '~/components/react/Tailwind/StylizedImage';
 import { TagList, TagListItem } from '~/components/react/Tailwind/TagList';
-import imageLaptop from '../../../assets/images/laptop.jpg';
-import imageMeeting from '~/assets/images/meeting.jpg';
-import imageWhiteboard from '~/assets/images/whiteboard.jpg';
-import imageRocket from '~/assets/images/rocket.jpg';
+import imageLaptop from '../../../assets/images/laptop.webp';
+import imageMeeting from '~/assets/images/meeting.webp';
+import imageWhiteboard from '~/assets/images/whiteboard.webp';
+import imageRocket from '~/assets/images/rocket.webp';
 
 function Section({
   title,
