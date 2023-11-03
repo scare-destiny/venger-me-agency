@@ -7,7 +7,7 @@ const featuredTestimonial = {
     name: 'Jared Burke',
     handle: 'Founder & Director at Pyrashyut',
     imageUrl:
-      'https://media.licdn.com/dms/image/D4E03AQFebTG2tqWERA/profile-displayphoto-shrink_400_400/0/1668627316809?e=1698883200&v=beta&t=xH92LZYAPmGFmDURhG1wLr5bim3yXFkT9Vqha_u6qhU',
+      'https://media.licdn.com/dms/image/D4E03AQFebTG2tqWERA/profile-displayphoto-shrink_400_400/0/1668627316809?e=1704326400&v=beta&t=J2kqpJXRyVLx5OGuL-Je88nAd1DKUMD9oac45ODyGjo',
     // logoUrl: 'https://tailwindui.com/img/logos/savvycal-logo-gray-900.svg',
   },
 };
