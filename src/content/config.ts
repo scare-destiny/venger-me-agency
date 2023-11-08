@@ -105,4 +105,5 @@ const caseStudyCollection = defineCollection({
 export const collections = {
   post: postCollection,
   author: authorCollection,
+  cases: caseStudyCollection,
 };

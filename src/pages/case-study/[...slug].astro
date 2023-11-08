@@ -1,0 +1,34 @@
+---
+// Import necessary utilities
+// import { Astro.glob } from 'astro';
+import { getCollection } from 'astro:content';
+
+// Fetch all case studies
+export async function getStaticPaths() {
+  const caseStudies = await getCollection('cases');
+
+  return caseStudies.map((entry) => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }));
+}
+const { entry } = Astro.props;
+console.log(`teest ${entry}`);
+---
+
+<html>
+  <head>
+    <!-- <title>{caseStudy.frontmatter.title}</title> -->
+  </head>
+  <body>
+    <article>
+      <h1>{entry.data.title}</h1>
+      <!-- Render the rest of your case study content -->
+      <!-- <div innerHTML={caseStudy.content}></div>
+    </article>
+  </body>
+</html>
+-->
+    </article></body
+  >
+</html>
