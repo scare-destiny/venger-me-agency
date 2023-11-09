@@ -1,13 +1,14 @@
 ---
 // Import necessary utilities
 // import { Astro.glob } from 'astro';
-import { getCollection, getEntry } from 'astro:content';
-// import { FadeIn } from '~/components/react/Animations/FadeIn';
+import { getCollection, getEntries } from 'astro:content';
+import { FadeIn } from '~/components/react/Animations/FadeIn';
 import Layout from '~/layouts/CaseLayout.astro';
 import { Container } from '~/components/react/Tailwind/Container';
 import { GrayscaleTransitionImage } from '~/components/react/Tailwind/GrayscaleTransitionImage';
 import { PageIntro } from '~/components/react/Tailwind/PageIntro';
 import { MDXComponents } from '~/components/react/Tailwind/MDXComponents.tsx';
+import { PageLinks } from '~/components/react/Tailwind/PageLinks';
 import '~/styles/workTypography.css';
 // Fetch all case studies
 export async function getStaticPaths() {
@@ -21,7 +22,16 @@ export async function getStaticPaths() {
   return paths;
 }
 
+export async function getMoreCaseStudies(currentSlug) {
+  // Fetch all case studies excluding the one with the current slug
+  const moreCaseStudies = await getCollection('cases', ({ slug }) => slug !== currentSlug);
+
+  // Slice to get only two or however many you want to show
+  return moreCaseStudies.slice(0, 2);
+}
+
 const { caseStudy } = Astro.props;
+
 const { Content } = await caseStudy.render();
 
 const metadata = {
@@ -29,6 +39,10 @@ const metadata = {
   ignoreTitleTemplate: true,
   description: caseStudy.data.description,
 };
+
+const moreCaseStudies = await getMoreCaseStudies(caseStudy.slug);
+
+console.log(moreCaseStudies[1].data);
 ---
 
 <Layout metadata={metadata}>
@@ -38,56 +52,55 @@ const metadata = {
         <p>{caseStudy.data.description}</p>
       </PageIntro>
 
-      <!-- <FadeIn client:load> -->
-      <div class="mt-24 border-t border-neutral-200 bg-white/50 sm:mt-32 lg:mt-40">
-        <Container>
-          <div class="mx-auto max-w-5xl">
-            <dl class="-mx-6 grid grid-cols-1 text-sm text-neutral-950 sm:mx-0 sm:grid-cols-3">
-              <div class="border-t border-neutral-200 px-6 py-4 first:border-t-0 sm:border-l sm:border-t-0">
-                <dt class="font-semibold">Client</dt>
-                <dd>{caseStudy.data.client}</dd>
-              </div>
-              <div class="border-t border-neutral-200 px-6 py-4 first:border-t-0 sm:border-l sm:border-t-0">
-                <dt class="font-semibold">Year</dt>
-              </div>
-              <div class="border-t border-neutral-200 px-6 py-4 first:border-t-0 sm:border-l sm:border-t-0">
-                <dt class="font-semibold">Service</dt>
-                <dd>{caseStudy.data.service}</dd>
-              </div>
-            </dl>
-          </div>
-        </Container>
-      </div>
-
-      <div class="border-y border-neutral-200 bg-neutral-100">
-        <div class="-my-px mx-auto max-w-[76rem] bg-neutral-200">
-          <GrayscaleTransitionImage
-            client:load
-            image={caseStudy.data.image}
-            quality={90}
-            class="w-full"
-            sizes="(min-width: 1216px) 76rem, 100vw"
-            priority
-            class="group isolate my-10 overflow-hidden rounded-4xl bg-neutral-100 max-sm:-mx-6"
-          />
+      <FadeIn client:load>
+        <div class="mt-24 border-t border-neutral-200 bg-white/50 sm:mt-32 lg:mt-40">
+          <Container>
+            <div class="mx-auto max-w-5xl">
+              <dl class="-mx-6 grid grid-cols-1 text-sm text-neutral-950 sm:mx-0 sm:grid-cols-3">
+                <div class="border-t border-neutral-200 px-6 py-4 first:border-t-0 sm:border-l sm:border-t-0">
+                  <dt class="font-semibold">Client</dt>
+                  <dd>{caseStudy.data.client}</dd>
+                </div>
+                <div class="border-t border-neutral-200 px-6 py-4 first:border-t-0 sm:border-l sm:border-t-0">
+                  <dt class="font-semibold">Year</dt>
+                </div>
+                <div class="border-t border-neutral-200 px-6 py-4 first:border-t-0 sm:border-l sm:border-t-0">
+                  <dt class="font-semibold">Service</dt>
+                  <dd>{caseStudy.data.service}</dd>
+                </div>
+              </dl>
+            </div>
+          </Container>
         </div>
-      </div>
-      <!-- </FadeIn> -->
+
+        <div class="border-y border-neutral-200 bg-neutral-100">
+          <div class="-my-px mx-auto max-w-[76rem] bg-neutral-200">
+            <GrayscaleTransitionImage
+              client:load
+              image={caseStudy.data.image}
+              quality={90}
+              class="w-full"
+              sizes="(min-width: 1216px) 76rem, 100vw"
+              priority
+              class="group isolate my-10 overflow-hidden rounded-4xl bg-neutral-100 max-sm:-mx-6"
+            />
+          </div>
+        </div>
+      </FadeIn>
     </header>
 
-    <Container className="mt-24 sm:mt-32 lg:mt-40">
-      <MDXComponents.wrapper>
-        {Content ? <Content /> : <Fragment set:html={caseStudy.data.description} />}
-      </MDXComponents.wrapper>
+    <Container className="mt-24 sm:mt-32 lg:mt-40 pt-24 sm:pt-32 lg:pt-40">
+      <FadeIn client:load>
+        <MDXComponents.wrapper>
+          {Content ? <Content /> : <Fragment set:html={caseStudy.data.description} />}
+        </MDXComponents.wrapper>
+      </FadeIn>
     </Container>
   </article>
 
-  <!-- 
-  {
+  <!-- {
     moreCaseStudies.length > 0 && (
-      <PageLinks class="mt-24 sm:mt-32 lg:mt-40" title="More case studies" pages={moreCaseStudies} />
+      <PageLinks className="mt-24 sm:mt-32 lg:mt-40" title="More case studies" pages={moreCaseStudies.data} />
     )
   } -->
-
-  <!-- <ContactSection /> -->
 </Layout>
