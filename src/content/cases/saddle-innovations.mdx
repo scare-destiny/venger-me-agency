@@ -1,18 +1,19 @@
 ---
-client: 'Unseal'
+client: 'J. v. G. Saddle Innovations UG'
 title: 'Get a hodl of your health'
 description: 'Unseal is the first NFT platform where users can mint and trade NFTs of their own personal health records, allowing them to take control of their data'
 summary:
   - 'Unseal is the first NFT platform where users can mint and trade NFTs of their own personal health records, allowing them to take control of their data.'
   - 'We built out the blockchain infrastructure that supports Unseal. Unfortunately, we took a massive loss on this project when Unseal’s cryptocurrency, PlaceboCoin, went to zero.'
-image: 'http://localhost:3000/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fhero.814cd572.jpg&w=2048&q=90'
+image: 'https://www.westernsattel.de/wp-content/uploads/2022/09/horse-419738_1920.webp'
 date: '2023-01'
-service: 'Blockchain development'
+service: 'Landing Page, Sales Funnel'
 testimonial:
   author:
-    name: 'Emily Selman'
-    role: 'CEO of FamilyFund'
-  content: 'Working with Studio, we felt more like a partner than a customer. They really resonated with our mission to change the way people convince their parents to cash out their pensions.'
+    name: 'Andreas Lange'
+    role: 'Online Marketing Manager'
+  content: 'We have been working successfully with Eugene for many years. He always finds a quick and suitable solution for all problems. We appreciate his good communication, availability, flexibility and professional work. Eugene has become a very important part of our team. Much appreciated, Eugene.'
+logo: https://www.westernsattel.de/wp-content/uploads/2022/09/Logo-JvG-Saddle-Innovations-gross_klein.webp
 ---
 import { TagList, TagListItem } from '~/components/react/Tailwind/TagList';
 import { Blockquote } from '~/components/react/Tailwind/Blockquote';
@@ -28,19 +29,21 @@ After reaching a high of $12k, PlaceboCoin went to zero in a matter of hours. Be
 
 ## What we did
 
-<TagList className='pl-0'>
-  <TagListItem>Blockchain development</TagListItem>
-  <TagListItem>Backend (Solidity)</TagListItem>
-  <TagListItem>Smart contracts</TagListItem>
+## Stack
+<TagList>
+  <TagListItem className='pl-0'>Frontend (Next.js)</TagListItem>
+  <TagListItem>Custom CMS</TagListItem>
+  <TagListItem>SEO</TagListItem>
+  <TagListItem>Infrastructure</TagListItem>
 </TagList>
+
 
 <Blockquote
 className='my-32'
-  author={{ name: 'Emily Selman', role: 'Head of Engineering at Unseal' }}
-  image={{ src: 'https://studio.tailwindui.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Femily-selman.8e8b8ede.jpg&w=384&q=75' }}
+  author={{ name: frontmatter.testimonial.author.name, role: frontmatter.testimonial.author.role}}
+  image={{ src: 'https://media.licdn.com/dms/image/C4E03AQGsUtMSlQm88A/profile-displayphoto-shrink_200_200/0/1517079041148?e=1702512000&v=beta&t=m4STBLixXLrCpoYfX5in6r3N98hGC_jIeBopgG8CWwI' }}
 >
-  Studio did an amazing job building out our core blockchain infrastructure and
-  I’m sure once PlaceboCoin rallies they’ll be able to finish the project.
+  {frontmatter.testimonial.content}
 </Blockquote>
 
 

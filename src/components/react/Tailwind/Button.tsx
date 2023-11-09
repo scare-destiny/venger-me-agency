@@ -12,14 +12,14 @@ export function Button({ invert = false, className, children, ...props }) {
 
   if (typeof props.href === 'undefined') {
     return (
-      <button className={className} {...props}>
+      <button  className={className} {...props}>
         {inner}
       </button>
     );
   }
 
   return (
-    <a className={className} {...props}>
+    <a  className={className} {...props}>
       {inner}
     </a>
   );
