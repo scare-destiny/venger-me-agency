@@ -39,6 +39,12 @@ export default defineConfig({
     react(),
     tailwind({
       applyBaseStyles: false,
+      plugins: {
+        'postcss-import': {},
+        'tailwindcss/nesting': {},
+        tailwindcss: {},
+        autoprefixer: {},
+      },
     }),
     sitemap(),
     mdx(),

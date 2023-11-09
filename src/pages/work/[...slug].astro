@@ -1,0 +1,93 @@
+---
+// Import necessary utilities
+// import { Astro.glob } from 'astro';
+import { getCollection, getEntry } from 'astro:content';
+// import { FadeIn } from '~/components/react/Animations/FadeIn';
+import Layout from '~/layouts/CaseLayout.astro';
+import { Container } from '~/components/react/Tailwind/Container';
+import { GrayscaleTransitionImage } from '~/components/react/Tailwind/GrayscaleTransitionImage';
+import { PageIntro } from '~/components/react/Tailwind/PageIntro';
+import { MDXComponents } from '~/components/react/Tailwind/MDXComponents.tsx';
+import '~/styles/workTypography.css';
+// Fetch all case studies
+export async function getStaticPaths() {
+  const caseStudies = await getCollection('cases');
+
+  const paths = caseStudies.map((caseStudy) => ({
+    params: { slug: caseStudy.slug },
+    props: { caseStudy },
+  }));
+
+  return paths;
+}
+
+const { caseStudy } = Astro.props;
+const { Content } = await caseStudy.render();
+
+const metadata = {
+  title: caseStudy.data.title,
+  ignoreTitleTemplate: true,
+  description: caseStudy.data.description,
+};
+---
+
+<Layout metadata={metadata}>
+  <article class="typography mt-24 sm:mt-32 lg:mt-40">
+    <header>
+      <PageIntro client:load eyebrow="Case Study" title={caseStudy.data.title} centered>
+        <p>{caseStudy.data.description}</p>
+      </PageIntro>
+
+      <!-- <FadeIn client:load> -->
+      <div class="mt-24 border-t border-neutral-200 bg-white/50 sm:mt-32 lg:mt-40">
+        <Container>
+          <div class="mx-auto max-w-5xl">
+            <dl class="-mx-6 grid grid-cols-1 text-sm text-neutral-950 sm:mx-0 sm:grid-cols-3">
+              <div class="border-t border-neutral-200 px-6 py-4 first:border-t-0 sm:border-l sm:border-t-0">
+                <dt class="font-semibold">Client</dt>
+                <dd>{caseStudy.data.client}</dd>
+              </div>
+              <div class="border-t border-neutral-200 px-6 py-4 first:border-t-0 sm:border-l sm:border-t-0">
+                <dt class="font-semibold">Year</dt>
+              </div>
+              <div class="border-t border-neutral-200 px-6 py-4 first:border-t-0 sm:border-l sm:border-t-0">
+                <dt class="font-semibold">Service</dt>
+                <dd>{caseStudy.data.service}</dd>
+              </div>
+            </dl>
+          </div>
+        </Container>
+      </div>
+
+      <div class="border-y border-neutral-200 bg-neutral-100">
+        <div class="-my-px mx-auto max-w-[76rem] bg-neutral-200">
+          <GrayscaleTransitionImage
+            client:load
+            image={caseStudy.data.image}
+            quality={90}
+            class="w-full"
+            sizes="(min-width: 1216px) 76rem, 100vw"
+            priority
+            class="group isolate my-10 overflow-hidden rounded-4xl bg-neutral-100 max-sm:-mx-6"
+          />
+        </div>
+      </div>
+      <!-- </FadeIn> -->
+    </header>
+
+    <Container className="mt-24 sm:mt-32 lg:mt-40">
+      <MDXComponents.wrapper>
+        {Content ? <Content /> : <Fragment set:html={caseStudy.data.description} />}
+      </MDXComponents.wrapper>
+    </Container>
+  </article>
+
+  <!-- 
+  {
+    moreCaseStudies.length > 0 && (
+      <PageLinks class="mt-24 sm:mt-32 lg:mt-40" title="More case studies" pages={moreCaseStudies} />
+    )
+  } -->
+
+  <!-- <ContactSection /> -->
+</Layout>
