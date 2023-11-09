@@ -2,13 +2,18 @@
 // Import necessary utilities
 // import { Astro.glob } from 'astro';
 import { getCollection, getEntries } from 'astro:content';
-import { FadeIn } from '~/components/react/Animations/FadeIn';
+import { FadeIn, FadeInStagger } from '~/components/react/Animations/FadeIn';
 import Layout from '~/layouts/CaseLayout.astro';
 import { Container } from '~/components/react/Tailwind/Container';
 import { GrayscaleTransitionImage } from '~/components/react/Tailwind/GrayscaleTransitionImage';
 import { PageIntro } from '~/components/react/Tailwind/PageIntro';
 import { MDXComponents } from '~/components/react/Tailwind/MDXComponents.tsx';
 import { PageLinks } from '~/components/react/Tailwind/PageLinks';
+import { GridPattern } from '~/components/react/Tailwind/GridPattern';
+import { SectionIntro } from '~/components/react/Tailwind/SectionIntro';
+import { Border } from '~/components/react/Tailwind/Border';
+import { ArrowIcon } from '~/components/react/Tailwind/ArrowIcon';
+
 import '~/styles/workTypography.css';
 // Fetch all case studies
 export async function getStaticPaths() {
@@ -51,6 +56,11 @@ console.log(moreCaseStudies[1].data);
       <PageIntro client:load eyebrow="Case Study" title={caseStudy.data.title} centered>
         <p>{caseStudy.data.description}</p>
       </PageIntro>
+
+      <GridPattern
+        className="absolute inset-0 h-full w-full fill-neutral-100 stroke-neutral-950/5 [mask-image:linear-gradient(to_bottom_left,white_40%,transparent_50%)]"
+        yOffset={-270}
+      />
 
       <FadeIn client:load>
         <div class="mt-24 border-t border-neutral-200 bg-white/50 sm:mt-32 lg:mt-40">
@@ -103,4 +113,48 @@ console.log(moreCaseStudies[1].data);
       <PageLinks className="mt-24 sm:mt-32 lg:mt-40" title="More case studies" pages={moreCaseStudies.data} />
     )
   } -->
+
+  <div class="relative py-24 sm:pt-32 lg:pt-40">
+    <div
+      class="absolute inset-x-0 top-0 -z-10 h-[884px] overflow-hidden rounded-t-4xl bg-gradient-to-b from-neutral-50"
+    >
+      <GridPattern
+        className="absolute inset-0 h-full w-full fill-neutral-100 stroke-neutral-950/5 [mask-image:linear-gradient(to_bottom_left,white_40%,transparent_50%)]"
+        yOffset={-270}
+      />
+    </div>
+
+    <SectionIntro client:load title="More case studies" smaller>
+      <!-- {intro && <p>{intro}</p>} -->
+    </SectionIntro>
+
+    <Container className="mt-24">
+      <FadeInStagger className="grid grid-cols-1 gap-x-8 gap-y-16 lg:grid-cols-2">
+        {
+          moreCaseStudies.map((caseStudy) => (
+            <FadeIn client:load key={caseStudy.slug}>
+              <article>
+                <Border position="left" className="relative flex flex-col items-start pl-8">
+                  <h3 class="mt-6 text-base font-semibold text-neutral-950">{caseStudy.data.title}</h3>
+                  {/* <time dateTime={caseStudy.date} className="order-first text-sm text-neutral-600">
+          {formatDate(caseStudy.date)}
+        </time> */}
+                  <p class="mt-2.5 text-base text-neutral-600">{caseStudy.data.description}</p>
+                  <a
+                    href={caseStudy.slug}
+                    class="mt-6 flex gap-x-3 text-base font-semibold text-neutral-950 transition hover:text-neutral-700"
+                    aria-label={`Read more: ${caseStudy.data.title}`}
+                  >
+                    Read more
+                    <ArrowIcon className="w-6 flex-none fill-current" />
+                    <span class="absolute inset-0" />
+                  </a>
+                </Border>
+              </article>
+            </FadeIn>
+          ))
+        }
+      </FadeInStagger>
+    </Container>
+  </div>
 </Layout>
