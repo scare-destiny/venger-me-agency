@@ -5,19 +5,24 @@ import { Testimonial } from '~/components/react/Tailwind/Testimonial';
 import { Clients } from '~/components/react/Tailwind/Clients';
 import { CaseStudies } from '~/components/react/Tailwind/CaseStudies';
 import Layout from '~/layouts/CaseLayout.astro';
+import amazeowlImage from '~/assets/images/logos/amazeowl.png';
+import impactersGroupImage from '~/assets/images/logos/impacters-group.webp';
+import interwebsLogo from '~/assets/images/logos/interwebs.png';
+import masterfulImage from '~/assets/images/logos/masterful.png';
+import jvgtechnologyImage from '~/assets/images/logos/jvgtechnology.png';
+import pyrashyutImage from '~/assets/images/logos/pyrashyut.png';
+import blossomecomImage from '~/assets/images/logos/blossomecom.png';
+import bluelamaImage from '~/assets/images/logos/bluelama.png';
 
 const clients = [
-  [
-    'Westernsattel',
-    'https://www.westernsattel.de/wp-content/uploads/2022/09/Logo-JvG-Saddle-Innovations-gross_klein.webp',
-  ],
-  ['Family Fund', 'https://studio.tailwindui.com/_next/static/media/logo-dark.353d4760.svg'],
-  ['Unseal', 'https://studio.tailwindui.com/_next/static/media/logo-dark.353d4760.svg'],
-  ['Mail Smirk', 'https://studio.tailwindui.com/_next/static/media/logo-dark.353d4760.svg'],
-  ['Home Work', 'https://studio.tailwindui.com/_next/static/media/logo-dark.353d4760.svg'],
-  ['Green Life', 'https://studio.tailwindui.com/_next/static/media/logo-dark.353d4760.svg'],
-  ['Bright Path', 'https://studio.tailwindui.com/_next/static/media/logo-dark.353d4760.svg'],
-  ['Interwebs', 'https://www.interwebs.ltd/wp-content/uploads/2023/03/Logo_Main-1536x541.png'],
+  ['Pyrashyut', pyrashyutImage.src],
+  ['Westernsattel', jvgtechnologyImage.src],
+  ['Impacters Group', impactersGroupImage.src],
+  ['Masterful', masterfulImage.src],
+  ['Interwebs', interwebsLogo.src],
+  ['Iberosattel', blossomecomImage.src],
+  ['Blue Lama', bluelamaImage.src],
+  ['Amazeowl', amazeowlImage.src],
 ];
 
 const caseStudies = await getCollection('cases');
