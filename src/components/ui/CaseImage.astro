@@ -1,0 +1,11 @@
+---
+// Import the Image component from your Astro components directory
+import Image from '~/components/common/Image.astro';
+
+// Define the props for the component
+const { image } = Astro.props;
+---
+
+<div class="my-8">
+  <Image src={image} alt="" class="w-full max-w-md rounded-2xl object-contain lg:mt-0 lg:max-w-none" />
+</div>

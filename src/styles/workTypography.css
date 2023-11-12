@@ -186,3 +186,14 @@
     margin-bottom: 0 !important;
   }
 }
+
+img.blog-image {
+  max-width: 100%;
+ /* makes the image responsive */
+  height: auto;
+  border-radius: 8px; /* gives a rounded corner */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* adds a subtle shadow */
+  margin: 20px 0; /* adds space above and below the image */
+ opacity: 0.7
+}
+

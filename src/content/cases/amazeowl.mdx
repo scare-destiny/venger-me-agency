@@ -1,13 +1,14 @@
 ---
 client: 'AmazeOwl'
 title: 'Sales Funnel And Lead Generation For AmazeOwl'
-description: 'FamilyFund is a crowdfunding platform for friends and family. Allowing users to take personal loans from their network without a traditional financial institution.'
+description: 'For AmazeOwl, a company helping people sell on Amazon, I created a plan that brought in 8,300 marketing qualified leads and tripled their Montly Recurring Revenue. This big win came from a special quiz on their website, a smart way to onboard new customers and upsell them with extra services.'
 summary:
-  - 'FamilyFund is a crowdfunding platform for friends and family. Allowing users to take personal loans from their network without a traditional financial institution.'
-  - 'We developed a custom CMS to power their blog with and optimised their site to rank higher for the keywords “Gary Vee” and “Tony Robbins”.'
+  - 'In a project for AmazeOwl, a SaaS provider for aspiring Amazon sellers, I implemented a strategic overhaul of their lead generation, onboarding and customer conversion processes.'
+  - 'By developing an engaging lead magnet on a custom landing page, we captured 8,300 marketing-qualified leads.'
+  - "This, coupled with targeted upselling strategies, led to a tripling of monthly recurring revenue and an additional $30,000 in upsell revenue within five months. The project scaled AmazeOwl's customer base and also diversified their income sources."
 image: 'https://images.unsplash.com/photo-1653454958861-0d65d5617f55?q=80&w=2832&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
 date: '2023-01'
-service: 'Sales Funnel, Lead Generation'
+service: 'Sales Funnel'
 testimonial:
   author:
     name: 'Oleg Zaidiner'
@@ -18,25 +19,44 @@ logo: data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAA6lBM
 import { TagList, TagListItem } from '~/components/react/Tailwind/TagList';
 import { Blockquote } from '~/components/react/Tailwind/Blockquote';
 import { StatList, StatListItem } from '~/components/react/Tailwind/StatList';
+import CaseImage from '~/components/ui/CaseImage.astro'
+import amazeowlFunnel from '~/assets/images/amazeowl-funnel.png'
+import Image from '~/components/common/Image.astro';
 
 
-## What we did
+## Project Overview
 
-Having written one of the most shared posts on medium.com (“How to cash out your Dad’s 401K without him knowing”) FamilyFund approached us looking to build out their own blog.
+AmazeOwl, a company that helps people start selling on Amazon, needed more leads and a way to turn these leads into buyers. I came in to help with this.
 
-The blog would help drive new traffic to their site and serve as a resource-hub for users already trying to exploit their network for money. Because it was so important that they own their own content, we decided that an on-prem solution would be best.
 
-We installed 24 Mac Minis bought from craigslist in the storage cupboard of their office. One machine would be used for the web server and another one for the build server. The other 22 were for redundancy, and to DDOS squarespace.com every few months to keep them on their toes.
+We created a fun and engaging quiz using Typeform and put it on a landing page. This quiz was really good at getting the attention of people who want to sell on Amazon. It worked great, bringing in 8,300 people interested in what AmazeOwl offers.
 
-To optimise their search traffic we used an innovative technique. Every post has a shadow post only visible to web crawlers that is some variation of “Gary Vee is looking to invest in new founders”. Like bees to honey.
+The next step was to turn these interested people into paying customers. Using a tool called Autopilot, we sorted those leads into different groups and gave each group a special experience based on what they like and need. This made sure everyone got the right kind of attention.
+
+
+The main goal was to get these people subscribe to one of the AmazeOwl's paid plans. For that, we created an intricate sales funnel (see the snapshot of the funnel below).
+
+<CaseImage image={amazeowlFunnel}/>
+
+Further on, we strategically introduced additional offerings, such as courses and extra services, designed to align with our customers' intentions and the authority our product holds in their minds. 
+
+These offerings weren't just about increasing revenue. They were valuable tools that helped them excel in their Amazon selling journey. 
+
+We partnered with expert content creators, ensuring the material was top-notch and genuinely useful. Additionally, we ran special partnership deals, offering our customers exclusive access to services and products that could further enhance their success on Amazon.
+
+
+
+
+
 
 
 ## Stack
 <TagList>
-  <TagListItem className='pl-0'>Frontend (Next.js)</TagListItem>
-  <TagListItem>Custom CMS</TagListItem>
-  <TagListItem>SEO</TagListItem>
-  <TagListItem>Infrastructure</TagListItem>
+  <TagListItem className='pl-0'>Custom Landing Page</TagListItem>
+  <TagListItem>Autopilot</TagListItem>
+  <TagListItem>Typeform</TagListItem>
+  <TagListItem>Stripe</TagListItem>
+  <TagListItem>Trustpilot</TagListItem>
 </TagList>
 
 
@@ -50,8 +70,8 @@ className='my-32'
 
 
 <StatList className='my-32 !max-w-none' client:load>
-  <StatListItem client:load value="25%" label="Less traffic" />
-  <StatListItem  client:load value="10x" label="Page load times" />
-  <StatListItem client:load value="15%" label="Higher infra costs" />
-  <StatListItem client:load value="$1.2M" label="Legal fees" />
+  <StatListItem client:load value="8,300" label="Marketing-qualified leads generated" />
+  <StatListItem  client:load value="3x" label=" Increase in Monthly Recurring Revenue" />
+  <StatListItem client:load value="$30.000" label="Additional upsell revenue generated in 5 months " />
+  <StatListItem client:load value="3" label="Additional income sources" />
 </StatList>
