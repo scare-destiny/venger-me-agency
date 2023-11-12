@@ -25,26 +25,23 @@ const clients = [
   ['Amazeowl', amazeowlImage.src],
 ];
 
-const caseStudies = await getCollection('cases');
+const loadCaseStudies = await getCollection('cases');
 ---
 
 <Layout>
-  <PageIntro client:load eyebrow="Our work" title="Proven solutions for real-world problems.">
-    <p>
-      We believe in efficiency and maximizing our resources to provide the best value to our clients. The primary way we
-      do that is by re-using the same five projects we’ve been developing for the past decade.
-    </p>
+  <PageIntro client:load eyebrow="My work" title="Proven solutions for real-world problems.">
+    <p>Check out my projects. See how I solved different problems and helped companies grow online.</p>
   </PageIntro>
 
-  <CaseStudies client:load caseStudies={caseStudies} />
+  <CaseStudies client:load caseStudies={loadCaseStudies} />
 
   <Testimonial
     client:load
     className="mt-24 sm:mt-32 lg:mt-40"
-    client={{ name: 'Mail Smirk', logo: 'https://studio.tailwindui.com/_next/static/media/logo-dark.353d4760.svg' }}
+    client={{ name: 'Mail Smirk', logo: pyrashyutImage.src }}
   >
-    We approached <em>Studio</em> because we loved their past work. They delivered something remarkably similar in
-    record time.
+    Eugene was a <em>HUGE</em> asset to the team. Always responsive, professional and creative. He will be missed!
+    Highly recommended and would hope to work together again in the future.
   </Testimonial>
 
   <Clients client:load clients={clients} />
