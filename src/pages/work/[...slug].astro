@@ -9,6 +9,7 @@ import { GrayscaleTransitionImage } from '~/components/react/Tailwind/GrayscaleT
 import { PageIntro } from '~/components/react/Tailwind/PageIntro';
 import { MDXComponents } from '~/components/react/Tailwind/MDXComponents.tsx';
 import { PageLinks } from '~/components/react/Tailwind/PageLinks';
+import { fade } from 'astro:transitions';
 import { GridPattern } from '~/components/react/Tailwind/GridPattern';
 import { SectionIntro } from '~/components/react/Tailwind/SectionIntro';
 import { Border } from '~/components/react/Tailwind/Border';
@@ -54,7 +55,7 @@ console.log(moreCaseStudies[1].data);
   <article class="typography mt-24 sm:mt-32 lg:mt-40">
     <header>
       <PageIntro client:load eyebrow="Case Study" title={caseStudy.data.title} centered>
-        <p>{caseStudy.data.description}</p>
+        <p transition:animate={fade({ duration: '2s' })}>{caseStudy.data.description}</p>
       </PageIntro>
 
       <GridPattern
