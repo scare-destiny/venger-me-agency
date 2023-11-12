@@ -6,8 +6,8 @@ import {
 export const headerData = {
   links: [
     { text: 'Home', href: '/' },
+    { text: 'Work', href: '/work' },
     { text: 'About', href: '/about' },
-    // { text: 'Services', href: '/services' },
     { text: 'Blog', href: '/blog' },
     { text: 'Contact', href: '/contact' },
     { text: 'Maximize Your Open Rates 🚀', href: '/email-marketing-checklist' },
@@ -166,8 +166,8 @@ export const footerData = {
       // title: 'Company',
       links: [
         { text: 'Main', href: '/' },
+        { text: 'Work', href: '/work' },
         { text: 'About', href: '/about' },
-        // { text: 'Services', href: '/services' },
         { text: 'Blog', href: '/blog' },
         { text: 'Contact', href: '/contact' },
         // { text: 'Inclusion', href: '#' },

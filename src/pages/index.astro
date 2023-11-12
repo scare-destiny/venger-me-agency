@@ -3,25 +3,29 @@ import Layout from '~/layouts/PageLayout.astro';
 import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
 import Process from '~/components/react/Tailwind/Process';
 // import Hero from '~/components/widgets/Hero.astro';
-import { FadeIn } from '~/components/react/Animations/FadeIn';
+import { FadeIn, FadeInStagger } from '~/components/react/Animations/FadeIn';
 import Header from '~/components/widgets/Header.astro';
 import Image from '~/components/common/Image.astro';
 import { headerData } from '~/navigation';
 import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
 import Stats from '~/components/widgets/Stats.astro';
 import { StatList, StatListItem } from '~/components/react/Tailwind/StatList';
+import { getCollection } from 'astro:content';
 // import CallToAction from '~/components/widgets/CallToAction.astro';
 import Technoloiges from '~/components/react/Tailwind/Technologies';
 import Content from '~/components/react/Tailwind/Content';
 import TailwindTestimonials from '~/components/react/Tailwind/Testimonials';
 import TallyForm from '~/components/widgets/TallyForm.astro';
 import SimpleCalendly from '~/components/widgets/SimpleCalendly.astro';
-import { GrayscaleTransitionImage } from '~/components/react/Tailwind/GrayscaleTransitionImage';
+import { SectionIntro } from '~/components/react/Tailwind/SectionIntro';
+import { Container } from '~/components/react/Tailwind/Container';
 
 const metadata = {
   title: 'venger.me - Your catalyst for unstoppable growth',
   ignoreTitleTemplate: true,
 };
+
+const loadCaseStudies = await getCollection('cases');
 ---
 
 <script type="module">
@@ -110,6 +114,38 @@ const metadata = {
 
     <!-- <Note /> -->
 
+    <>
+      <SectionIntro client:load title="Case Studies" className="mt-24 sm:mt-32 lg:mt-40">
+        <p>Projects I've been happy to work with. You can read about each project in detail.</p>
+      </SectionIntro>
+      <Container className="mt-16">
+        <FadeInStagger client:load className="grid grid-cols-1 gap-8 lg:grid-cols-3">
+          {
+            loadCaseStudies.map((caseStudy) => (
+              <FadeIn client:load key={caseStudy.slug} className="flex">
+                <article class="relative flex w-full flex-col rounded-3xl p-6 ring-1 ring-neutral-950/5 transition hover:bg-neutral-50 sm:p-8">
+                  <h3>
+                    <a href={`/work/${caseStudy.slug}`}>
+                      <span class="absolute inset-0 rounded-3xl" />
+                      <img src={caseStudy.data.logo} alt={caseStudy.data.client} class="h-16 w-16" />
+                    </a>
+                  </h3>
+                  <p class="mt-6 flex gap-x-2 text-sm text-neutral-950">
+                    <span class="text-neutral-300" aria-hidden="true">
+                      /
+                    </span>
+                    <span>Case study</span>
+                  </p>
+                  <p class="mt-6 font-display text-2xl font-semibold text-neutral-950">{caseStudy.data.title}</p>
+                  <p class="mt-4 text-base text-neutral-600">{caseStudy.data.description}</p>
+                </article>
+              </FadeIn>
+            ))
+          }
+        </FadeInStagger>
+      </Container>
+    </>
+
     <div id="process">
       <Process client:load />
     </div>
@@ -134,9 +170,9 @@ const metadata = {
 
     <TailwindTestimonials />
 
-    <WidgetWrapper containerClass={`relative mx-auto max-w-5xl px-4 md:px-6 py-12 md:py-16 lg:py-12 text-default  `}>
+    <!-- <WidgetWrapper containerClass={`relative mx-auto max-w-5xl px-4 md:px-6 py-12 md:py-16 lg:py-12 text-default  `}>
       <Technoloiges client:visible />
-    </WidgetWrapper>
+    </WidgetWrapper> -->
 
     <!-- Features Widget *************** -->
 
