@@ -26,9 +26,15 @@ const clients = [
 ];
 
 const loadCaseStudies = await getCollection('cases');
+
+const metadata = {
+  title: 'venger.me - All Case Studies',
+  description: 'Check out my projects. See how I solved different problems and helped companies grow online.',
+  ignoreTitleTemplate: true,
+};
 ---
 
-<Layout>
+<Layout metadata={metadata}>
   <PageIntro client:load eyebrow="My work" title="Proven solutions for real-world problems.">
     <p>Check out my projects. See how I solved different problems and helped companies grow online.</p>
   </PageIntro>
