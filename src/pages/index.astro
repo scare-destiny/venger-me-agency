@@ -11,6 +11,7 @@ import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
 import Stats from '~/components/widgets/Stats.astro';
 import { StatList, StatListItem } from '~/components/react/Tailwind/StatList';
 import { getCollection } from 'astro:content';
+import ContentAstro from '~/components/widgets/Content.astro';
 // import CallToAction from '~/components/widgets/CallToAction.astro';
 import Technoloiges from '~/components/react/Tailwind/Technologies';
 import Content from '~/components/react/Tailwind/Content';
@@ -18,7 +19,9 @@ import TailwindTestimonials from '~/components/react/Tailwind/Testimonials';
 import TallyForm from '~/components/widgets/TallyForm.astro';
 import SimpleCalendly from '~/components/widgets/SimpleCalendly.astro';
 import { SectionIntro } from '~/components/react/Tailwind/SectionIntro';
+import { Clients } from '~/components/react/Tailwind/Clients';
 import { Container } from '~/components/react/Tailwind/Container';
+import { Icon } from 'astro-icon/components';
 
 const metadata = {
   title: 'venger.me - Your catalyst for unstoppable growth',
@@ -26,6 +29,15 @@ const metadata = {
 };
 
 const loadCaseStudies = await getCollection('cases');
+
+const painpoints = [
+  'Struggling to get high-quality leads?',
+  'Too busy managing and growing your business?',
+  'Finding it hard to generate enough leads for growth?',
+  'Unsure how to increase revenue with your services?',
+  'Unclear about what drives traffic to your site?',
+  'Need help converting website visitors into paying customers?',
+];
 ---
 
 <script type="module">
@@ -51,7 +63,7 @@ const loadCaseStudies = await getCollection('cases');
           aria-hidden="true"
         >
         </div>
-        <div class="mx-auto sm:py-40 lg:px-8 relative max-w-6xl px-4 md:px-6 py-12 md:py-16 lg:py-12 text-default">
+        <div class="mx-auto sm:py-40 lg:px-8 relative max-w-7xl px-4 md:px-6 py-12 md:py-16 lg:py-12 text-default">
           <div
             class="mx-auto max-w-2xl lg:mx-0 lg:grid lg:max-w-none lg:grid-cols-2 lg:gap-x-16 lg:gap-y-6 xl:grid-cols-1 xl:grid-rows-1 xl:gap-x-8"
           >
@@ -59,19 +71,20 @@ const loadCaseStudies = await getCollection('cases');
               <h1
                 class="max-w-2xl text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl lg:col-span-2 xl:col-auto"
               >
-                Marketing funnels, automation and reporting for your business
+                Unlock Continuous Growth: Turn Your Business Into 24/7 Lead Generation Machine.
               </h1>
             </FadeIn>
             <div class="mt-6 max-w-xl lg:mt-0 xl:col-end-1 xl:row-start-1">
               <p class="text-lg leading-8 text-gray-600">
-                I tackle complex marketing challenges other marketers can't solve. Proved by more than 50 satisfied
-                clients. Read about what I do or let's get in touch right away.
+                Get qualified leads, convert them into paying customers, and then boost your revenue with upselling. I
+                specialize in building high-converting sales funnels for SaaS and Energy businesses. Simple, effective,
+                and tailored to your needs.
               </p>
               <div class="mt-10 flex items-center gap-x-6">
                 <a
                   href="#contact"
                   class="rounded-md bg-primary px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-                  >Get in touch</a
+                  >Free Consultation</a
                 >
                 <a href="#process" class="text-sm font-semibold leading-6 text-gray-900"
                   >Read more <span aria-hidden="true">→</span></a
@@ -79,9 +92,9 @@ const loadCaseStudies = await getCollection('cases');
               </div>
             </div>
             <Image
-              src="~/assets/images/venger.jpeg"
+              src="~/assets/images/hero.png"
               alt=""
-              class="mt-10 aspect-[6/5] w-full max-w-lg rounded-2xl xl:rounded-full object-cover sm:mt-16 lg:mt-0 lg:max-w-none xl:row-span-2 xl:row-end-2 xl:mt-36"
+              class="mt-10 aspect-[6/5] w-full max-w-lg rounded-2xl object-cover sm:mt-16 lg:mt-0 lg:max-w-none xl:row-span-2 xl:row-end-2 xl:mt-36"
               loading="eager"
             />
           </div>
@@ -112,11 +125,92 @@ const loadCaseStudies = await getCollection('cases');
     </Hero> -->
     <!-- Note Widget ******************* -->
 
+    <WidgetWrapper containerClass={`relative mx-auto max-w-7xl px-4 md:px-6 py-12 md:py-16 lg:py-12 text-default  `}>
+      <div class="w-full flex-auto">
+        <FadeIn client:only>
+          <h2
+            class="block font-display tracking-tight [text-wrap:balance] text-4xl font-medium sm:text-5xl text-neutral-950"
+          >
+            Do you face these challenges?
+          </h2>
+        </FadeIn>
+
+        <p class="mt-6 text-xl text-neutral-600">
+          I've found that most business owners encounter these obstacles sooner or later.
+        </p>
+        <FadeInStagger client:only>
+          <ul role="list" class="mt-10 grid grid-cols-1 gap-x-8 gap-y-3 text-base leading-7 sm:grid-cols-2">
+            {
+              painpoints.map((painpoint) => (
+                <FadeIn client:only key={painpoint}>
+                  <li class="flex gap-x-3">
+                    <Icon name="tabler:clock" class="w-7 h-7 inline-block -mt-0.5 dark:text-gray-400" />
+                    {painpoint}
+                  </li>
+                </FadeIn>
+              ))
+            }
+          </ul>
+        </FadeInStagger>
+      </div>
+    </WidgetWrapper>
+
+    <ContentAstro
+      title="About"
+      items={[
+        {
+          title: 'Holistic Sales Funnels',
+          description:
+            'Specializing in building and optimizing every step of the sales funnel for SaaS and Energy sectors, I ensure your leads not only convert but also become loyal customers.',
+        },
+        {
+          title: 'Customized Strategies for Unique Business Needs',
+          description:
+            'With a deep understanding of your industry, I tailor solutions specifically for your business, ensuring that your digital presence resonates with your target audience and aligns with your goals.',
+        },
+        {
+          title: 'Results-Driven Approach with a Money-Back Guarantee',
+          description:
+            "I'm committed to delivering real results. With a focus on measurable outcomes and a money-back guarantee, you can trust in a partnership that’s fully invested in your business growth.",
+        },
+      ]}
+      image={{
+        src: '~/assets/images/venger.jpeg',
+        alt: 'Colorful Image',
+      }}
+    >
+      <Fragment slot="content">
+        <!-- <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+          Building on modern foundations
+        </h3> -->
+
+         My name is Eugene Venger. My expertise lies in crafting high-converting sales funnels for SaaS and Energy businesses,
+        focusing on lead generation, conversion optimization, and revenue growth. I ensure that every aspect of your sales
+        funnel is crafted to drive your business forward, from detailed analysis to strategic implementation.
+      </Fragment>
+
+      <!-- <Fragment slot="bg">
+        <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+      </Fragment> -->
+    </ContentAstro>
+
     <!-- <Note /> -->
+    <Clients client:load />
+
+    <div id="process">
+      <Process client:load />
+    </div>
+
+    <SimpleCalendly
+      title="Excited By The Process?"
+      subtitle="  Let's delve deeper into your business's potential together. "
+      buttonText="Schedule Free Consultation"
+      id="contact"
+    />
 
     <>
       <SectionIntro client:load title="Case Studies" className="mt-24 sm:mt-32 lg:mt-40">
-        <p>Projects I've been happy to work with. You can read about each project in detail.</p>
+        <p>Projects I've been happy to work with. You can read about each project in detail by clicking on it.</p>
       </SectionIntro>
       <Container className="mt-16">
         <FadeInStagger client:load className="grid grid-cols-1 gap-8 lg:grid-cols-3">
@@ -146,16 +240,6 @@ const loadCaseStudies = await getCollection('cases');
       </Container>
     </>
 
-    <div id="process">
-      <Process client:load />
-    </div>
-
-    <TallyForm
-      title="Excited By The Process?"
-      subtitle="Let's delve deeper into your business's potential together. Contact me to get started!"
-      id="contact"
-    />
-
     <div id="projects">
       <Content client:load />
     </div>
@@ -175,8 +259,6 @@ const loadCaseStudies = await getCollection('cases');
     </WidgetWrapper> -->
 
     <!-- Features Widget *************** -->
-
-    <!-- <TallyForm title="Geared Up to Elevate Your Success?" subtitle="Let's chat about how we can help you grow" /> -->
 
     <BlogLatestPosts
       title="Find out more content in my blog"
@@ -239,9 +321,11 @@ const loadCaseStudies = await getCollection('cases');
       buttonText="Book Discovery Call"
       client:load
     /> -->
-    <TallyForm
+
+    <SimpleCalendly
       title="Scrolled all the way here?"
-      subtitle="Let's delve deeper into your business's potential together and arrange a discovery call."
+      subtitle="  Let's delve deeper into your business's potential together. "
+      buttonText="Book Free Discovery Call"
     />
 
     <!-- CallToAction Widget *********** -->

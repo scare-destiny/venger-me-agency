@@ -2,10 +2,29 @@ import React from 'react';
 import { FadeIn, FadeInStagger } from '../Animations/FadeIn';
 import { Border } from './Border';
 import { Container } from './Container';
+import amazeowlImage from '~/assets/images/logos/amazeowl.png';
+import impactersGroupImage from '~/assets/images/logos/impacters-group.webp';
+import interwebsLogo from '~/assets/images/logos/interwebs.png';
+import masterfulImage from '~/assets/images/logos/masterful.png';
+import jvgtechnologyImage from '~/assets/images/logos/jvgtechnology.png';
+import pyrashyutImage from '~/assets/images/logos/pyrashyut.png';
+import blossomecomImage from '~/assets/images/logos/blossomecom.png';
+import bluelamaImage from '~/assets/images/logos/bluelama.png';
 
-export function Clients({ clients }) {
+const clients = [
+  ['Pyrashyut', pyrashyutImage.src],
+  ['Westernsattel', jvgtechnologyImage.src],
+  ['Impacters Group', impactersGroupImage.src],
+  ['Masterful', masterfulImage.src],
+  ['Interwebs', interwebsLogo.src],
+  ['Iberosattel', blossomecomImage.src],
+  ['Blue Lama', bluelamaImage.src],
+  ['Amazeowl', amazeowlImage.src],
+];
+
+export function Clients() {
   return (
-    <Container className="my-24 sm:my-32 lg:my-40">
+    <Container className="relative mx-auto max-w-7xl px-4 md:px-6 py-12 md:py-16 lg:py-12 text-default ">
       <FadeIn>
         <h2 className="font-display text-2xl font-semibold text-neutral-950">You’re in good company</h2>
       </FadeIn>

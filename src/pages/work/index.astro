@@ -5,25 +5,7 @@ import { Testimonial } from '~/components/react/Tailwind/Testimonial';
 import { Clients } from '~/components/react/Tailwind/Clients';
 import { CaseStudies } from '~/components/react/Tailwind/CaseStudies';
 import Layout from '~/layouts/CaseLayout.astro';
-import amazeowlImage from '~/assets/images/logos/amazeowl.png';
-import impactersGroupImage from '~/assets/images/logos/impacters-group.webp';
-import interwebsLogo from '~/assets/images/logos/interwebs.png';
-import masterfulImage from '~/assets/images/logos/masterful.png';
-import jvgtechnologyImage from '~/assets/images/logos/jvgtechnology.png';
 import pyrashyutImage from '~/assets/images/logos/pyrashyut.png';
-import blossomecomImage from '~/assets/images/logos/blossomecom.png';
-import bluelamaImage from '~/assets/images/logos/bluelama.png';
-
-const clients = [
-  ['Pyrashyut', pyrashyutImage.src],
-  ['Westernsattel', jvgtechnologyImage.src],
-  ['Impacters Group', impactersGroupImage.src],
-  ['Masterful', masterfulImage.src],
-  ['Interwebs', interwebsLogo.src],
-  ['Iberosattel', blossomecomImage.src],
-  ['Blue Lama', bluelamaImage.src],
-  ['Amazeowl', amazeowlImage.src],
-];
 
 const loadCaseStudies = await getCollection('cases');
 
@@ -50,7 +32,7 @@ const metadata = {
     Highly recommended and would hope to work together again in the future.
   </Testimonial>
 
-  <Clients client:load clients={clients} />
+  <Clients client:load />
 
   <!-- <ContactSection /> -->
 </Layout>

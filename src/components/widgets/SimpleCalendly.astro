@@ -7,16 +7,15 @@ import type { Widget } from '~/types';
 interface Props extends Widget {
   title?: string;
   subtitle?: string;
-  buttonText?: string;
   calendlyUrl?: string;
+  buttonText?: string;
 }
 
 const {
   title = await Astro.slots.render('title'),
   subtitle = await Astro.slots.render('subtitle'),
   calendlyUrl = 'https://calendly.com/eugene-venger',
-  buttonText = ' Schedule Free Meeting!',
-
+  buttonText = 'Schedule Meeting',
   id,
   isDark = false,
   classes = {},
@@ -28,19 +27,8 @@ const onClick = `Calendly.initPopupWidget({url: '${calendlyUrl}'});return false;
 
 <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
 <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
-<script type="text/javascript">
-  window.onload = function () {
-    Calendly.initBadgeWidget({
-      url: 'https://calendly.com/eugene-venger',
-      text: 'Schedule time with me',
-      color: '#0069ff',
-      textColor: '#ffffff',
-      branding: true,
-    });
-  };
-</script>
 
-<WidgetWrapper id={id} isDark={isDark} containerClass={`max-w-5xl mx-auto ${classes?.container ?? ''}`} bg={bg}>
+<WidgetWrapper id={id} isDark={isDark} containerClass={`max-w-6xl mx-auto ${classes?.container ?? ''}`} bg={bg}>
   <div
     class="max-w-3xl mx-auto text-center p-6 rounded-md shadow-xl dark:shadow-none dark:border dark:border-slate-600"
   >
@@ -54,7 +42,7 @@ const onClick = `Calendly.initPopupWidget({url: '${calendlyUrl}'});return false;
       }}
     />
     <div class="mt-6 max-w-xs mx-auto">
-      <a href="#" class="btn btn-primary w-full sm:w-auto calendlyBtn" onclick={onClick}>
+      <a href="#" class="btn btn-primary w-full sm:w-auto" onclick={onClick}>
         <Icon name="tabler:rocket" class="w-5 h-5 mr-1 -ml-1.5 rtl:-mr-1.5 rtl:ml-1" />
         {buttonText}
       </a>
