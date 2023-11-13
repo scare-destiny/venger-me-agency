@@ -21,7 +21,7 @@ function Section({
   children: React.ReactNode;
 }) {
   return (
-    <Container className="group/section [counter-increment:section]">
+    <Container className="group/section [counter-increment:section] overflow-hidden">
       <div className="lg:flex lg:items-center lg:justify-end lg:gap-x-8 lg:group-even/section:justify-start xl:gap-x-20">
         <div className="flex justify-center">
           <FadeIn className="w-[25.75rem] flex-none lg:w-[40rem]">
@@ -50,7 +50,7 @@ function Section({
 function Consultation() {
   return (
     <Section title="Discovery Phase" image={{ src: imageWhiteboard.src }}>
-      <div className="space-y-6 text-base text-neutral-600 ">
+      <div className="space-y-6 text-base text-neutral-600  ">
         <p>
           Let's hop on a quick call to understand your
           <strong> goals</strong> and see how I can help. It’s all about discovering if we're the right fit to turn your
@@ -179,7 +179,6 @@ export default function Process() {
 
       <div className="mt-24 space-y-24 [counter-reset:section] sm:mt-32 sm:space-y-32 lg:mt-40 lg:space-y-40">
         <Consultation />
-        {/* <Discovery /> */}
         <Analysis />
         <Execute />
       </div>
