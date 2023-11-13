@@ -8,7 +8,7 @@ interface Props extends Widget {
   title?: string;
   subtitle?: string;
   buttonText?: string;
-  calendlyUrl: string;
+  calendlyUrl?: string;
 }
 
 const {
@@ -27,6 +27,18 @@ const onClick = `Calendly.initPopupWidget({url: '${calendlyUrl}'});return false;
 ---
 
 <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
+<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+<script type="text/javascript">
+  window.onload = function () {
+    Calendly.initBadgeWidget({
+      url: 'https://calendly.com/eugene-venger',
+      text: 'Schedule time with me',
+      color: '#0069ff',
+      textColor: '#ffffff',
+      branding: true,
+    });
+  };
+</script>
 
 <WidgetWrapper id={id} isDark={isDark} containerClass={`max-w-5xl mx-auto ${classes?.container ?? ''}`} bg={bg}>
   <div
@@ -49,24 +61,3 @@ const onClick = `Calendly.initPopupWidget({url: '${calendlyUrl}'});return false;
     </div>
   </div>
 </WidgetWrapper>
-
-<script>
-  function loadCalendly() {
-    const calendlyScript = document.createElement('script');
-    calendlyScript.id = 'calendlyScript';
-    calendlyScript.src = 'https://assets.calendly.com/assets/external/widget.js';
-    calendlyScript.type = 'text/javascript';
-    calendlyScript.async = true;
-    document.head.appendChild(calendlyScript);
-  }
-
-  document.addEventListener(
-    'astro:page-load',
-    () => {
-      // This only runs once.
-      loadCalendly();
-      console.log('test');
-    },
-    { once: false }
-  );
-</script>
