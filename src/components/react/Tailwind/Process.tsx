@@ -136,13 +136,13 @@ function Execute() {
         </p>
       </div>
 
-      <Blockquote
+      {/* <Blockquote
         author={{ name: 'Andreas Lange', role: 'Online Marketing Manager / Iberosattel Reitsport GmbH' }}
         className="mt-12"
       >
         We have been working successfully with Eugene for many years. He always finds a quick and suitable solution for
         all problems.
-      </Blockquote>
+      </Blockquote> */}
 
       <h3 className="mt-12 font-display text-base font-semibold text-primary font-semibold">Included in this phase</h3>
       <TagList className="mt-4">
