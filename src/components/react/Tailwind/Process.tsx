@@ -7,6 +7,8 @@ import { PageIntro } from '~/components/react/Tailwind/PageIntro';
 import { StylizedImage } from '~/components/react/Tailwind/StylizedImage';
 import { TagList, TagListItem } from '~/components/react/Tailwind/TagList';
 import imageLaptop from '../../../assets/images/laptop.webp';
+import process from '../../../assets/images/process.jpeg';
+import process2 from '../../../assets/images/process2.jpeg';
 import imageMeeting from '~/assets/images/meeting.webp';
 import imageWhiteboard from '~/assets/images/whiteboard.webp';
 import imageRocket from '~/assets/images/rocket.webp';
@@ -24,7 +26,7 @@ function Section({
     <Container className="group/section [counter-increment:section] overflow-hidden">
       <div className="lg:flex lg:items-center lg:justify-end lg:gap-x-8 lg:group-even/section:justify-start xl:gap-x-20">
         <div className="flex justify-center">
-          <FadeIn className="w-[25.75rem] flex-none lg:w-[40rem]">
+          <FadeIn className="w-[25.75rem] flex-none lg:w-[4http://localhost:4321/@fs/Users/zhenavenger/Programming%20and%20TCCC/Projects/venger-me-agency/src/assets/images/process.jpeg?origWidth=1600&origHeight=2400&origFormat=jpg0rem]">
             <StylizedImage
               {...image}
               sizes="(min-width: 1024px) 41rem, 31rem"
@@ -49,22 +51,13 @@ function Section({
 
 function Consultation() {
   return (
-    <Section title="Discovery Phase" image={{ src: imageWhiteboard.src }}>
+    <Section title="Discovery Phase" image={{ src: process.src }}>
       <div className="space-y-6 text-base text-neutral-600  ">
         <p>
           Let's hop on a quick call to understand your
-          <strong> goals</strong> and see how I can help. It’s all about discovering if we're the right fit to turn your
-          goals and ambitions into reality. Together, we’ll explore the potential of creating something great.
+          <strong> goals</strong> and see how I can help.
         </p>
-        <p>
-          During this phase, we talk about <strong>your business</strong> in more detail. We'll look at where you are
-          now, and where you want to go. This call will help us see how we can work together to get you more clients and
-          make your business seen.
-        </p>
-        <p>
-          We'll discuss the challenges you face in attracting new clients and being seen, along with the goals you aim
-          to achieve
-        </p>
+        <p>It’s all about discovering if we're the right fit to turn your goals and ambitions into reality.</p>
       </div>
       <h3 className="mt-12 font-display text-base font-semibold text-primary  ">Included in this phase</h3>
       <TagList className="mt-4">
@@ -78,7 +71,7 @@ function Consultation() {
 
 function Discovery() {
   return (
-    <Section title="Discovery Call" image={{ src: imageLaptop.src, shape: 1 }}>
+    <Section title="Discovery Call" image={{ src: process.src, shape: 1 }}>
       <div className="space-y-6 text-base text-neutral-600">
         <p>
           In the Discovery Call, we talk about your business in more detail. We'll look at where you are now, and where
@@ -107,24 +100,23 @@ function Discovery() {
 
 function Analysis() {
   return (
-    <Section title="Analysis Phase: Mapping Your Path to Growth" image={{ src: imageMeeting.src, shape: 2 }}>
+    <Section title="Analysis Phase: Mapping Your Path to Growth" image={{ src: process2.src, shape: 2 }}>
       <div className="space-y-6 text-base text-neutral-600">
         <p>
-          Following our Discovery Call, we transition into the Analysis Phase. This is where I dig deeper to understand
-          your <strong>priorities</strong> and devise a clear, actionable plan to achieve them.
+          This is the stage where I dig deeper to understand your <strong>priorities</strong> and devise a clear,
+          actionable plan to achieve them.
         </p>
-        <p>
+        {/* <p>
           We keep the touchbase before, during and after the project to ensure we are on the same page and working on
           the most important things.
-        </p>
+        </p> */}
       </div>
 
       <h3 className="mt-12 font-display text-base font-semibold text-primary font-semibold ">Included in this phase</h3>
       <List className="mt-8">
         <ListItem title="Priority Identification">Understanding what matters most to you and your business.</ListItem>
         <ListItem title="Analysis">
-          It’s about delving deeper into your business dynamics, pinpointing what's pivotal for your growth, and
-          charting the course to get you there.
+          Finding what's pivotal for your growth, and charting the course to get you there.
         </ListItem>
         <ListItem title="Regular Check-ins">
           Regular check-ins for updates and adjustments, keeping you in the loop and the project on track.
@@ -140,7 +132,7 @@ function Execute() {
       <div className="space-y-6 text-base text-neutral-600">
         <p>
           This pivotal stage is all about bringing the well-laid plans to life, ensuring each step is in harmony with
-          the <strong>overarching goal</strong> of boosting your clientele and market visibility.
+          the <strong>overarching goal</strong> of reaching your goals and market visibility.
         </p>
       </div>
 
@@ -171,10 +163,7 @@ export default function Process() {
   return (
     <>
       <PageIntro eyebrow="My process" title="How I work">
-        <p>
-          I believe in efficiency and maximizing resources to provide the best value to my clients. The primary way I do
-          that is by finding and focusing on what moves your business forward. Here is how it works.
-        </p>
+        <p>The whole process is divided into three stages.</p>
       </PageIntro>
 
       <div className="mt-24 space-y-24 [counter-reset:section] sm:mt-32 sm:space-y-32 lg:mt-40 lg:space-y-40">

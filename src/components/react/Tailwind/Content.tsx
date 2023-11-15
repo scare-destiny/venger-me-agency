@@ -20,10 +20,10 @@ export default function Example() {
         <div className="mx-auto max-w-2xl lg:mx-0">
           <p className="text-lg font-semibold leading-8 tracking-tight text-primary">Things I'm proud of</p>
           <h1 className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Projects</h1>
-          <p className="mt-6 text-xl leading-8 text-gray-700">
+          {/* <p className="mt-6 text-xl leading-8 text-gray-700">
             As a growth marketer with a dual skill set in software development, I have a knack for technical marketing,
             a penchant for coding and a relentless desire to help my clients grow.
-          </p>
+          </p> */}
         </div>
         <div className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 lg:mx-0 lg:mt-10 lg:max-w-none lg:grid-cols-12">
           <div className="relative lg:order-last lg:col-span-5">
@@ -84,8 +84,7 @@ export default function Example() {
                       <strong className="font-semibold text-gray-900">
                         Slack Bot for Email Deliverability Audits.
                       </strong>{' '}
-                      This bot provided email deliverability audits for potential agency clients by swiftly checking
-                      SPF, DKIM, and DMARC records. It evolved into the{' '}
+                      This tool evolved into the{' '}
                       <a className="text-primary" href="/email-marketing-checklist" target="_blank">
                         Email Marketing Checklist
                       </a>
@@ -107,16 +106,15 @@ export default function Example() {
                     <ServerIcon className="mt-1 h-5 w-5 flex-none text-primary" aria-hidden="true" />
                     <span>
                       <strong className="font-semibold text-gray-900">Lead Management for Paid Channels.</strong>{' '}
-                      Created a cost-effective pipeline to transfer leads from Google Ads to ActiveCampaign using
-                      Integromat, reducing costs by 10x.
+                      Cost-effective pipeline to transfer leads from Google Ads to ActiveCampaign using Integromat,
+                      reducing costs by 10x.
                     </span>
                   </li>
                 </FadeIn>
               </ul>
             </FadeInStagger>
             <p className="mt-8">
-              Shortly, I plan to write blog posts and case studies to showcase each of those in more detail. You can
-              read more about me{' '}
+              You can read more about me and my work{' '}
               <a className="text-primary" href="/about" target="_blank">
                 {' '}
                 here.
