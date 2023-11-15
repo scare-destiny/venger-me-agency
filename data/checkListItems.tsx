@@ -611,13 +611,13 @@ const checklistItems: ChecklistItem[] = [
             type: 'text',
             data: "Avoid using spammy words in your emails as they can trigger spam filters. Below is an image listing words that, if used in your subject line or body, could activate spam filters. If an email needs to contain any of these terms (like in a promotion), try to find synonyms. Modern spam filters are quite advanced, and using a phrase or two won't be detrimental as long as you adhere to email marketing best practices and use these terms in the right context.",
           },
-          {
-            type: 'image',
-            data: {
-              src: 'src/assets/images/email-spam-trigger-words.png',
-              alt: 'Image depicting spam trigger words',
-            },
-          },
+          // {
+          //   type: 'image',
+          //   data: {
+          //     src: 'src/assets/images/email-spam-trigger-words.png',
+          //     alt: 'Image depicting spam trigger words',
+          //   },
+          // },
         ],
       },
 
