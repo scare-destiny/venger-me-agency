@@ -6,11 +6,8 @@ import { List, ListItem } from '~/components/react/Tailwind/List';
 import { PageIntro } from '~/components/react/Tailwind/PageIntro';
 import { StylizedImage } from '~/components/react/Tailwind/StylizedImage';
 import { TagList, TagListItem } from '~/components/react/Tailwind/TagList';
-import imageLaptop from '../../../assets/images/laptop.webp';
 import process from '../../../assets/images/process.webp';
-import process2 from '../../../assets/images/process2.webphop';
-import imageMeeting from '~/assets/images/meeting.webp';
-import imageWhiteboard from '~/assets/images/whiteboard.webp';
+import process2 from '../../../assets/images/process2.webp';
 import imageRocket from '~/assets/images/rocket.webp';
 
 function Section({
