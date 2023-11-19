@@ -1,0 +1,21 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Header from '~/components/widgets/Header.astro';
+import { headerData } from '~/navigation';
+import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
+import Form from '~/components/react/ICP/Form';
+
+const metadata = {
+  title: 'Contact',
+};
+---
+
+<Layout metadata={metadata}>
+  <Fragment slot="header">
+    <Header {...headerData} showToggleTheme />
+
+    <WidgetWrapper containerClass={`relative mx-auto max-w-7xl px-4 md:px-6 py-12 md:py-16 lg:py-12 text-default  `}>
+      <Form client:only />
+    </WidgetWrapper>
+  </Fragment>
+</Layout>

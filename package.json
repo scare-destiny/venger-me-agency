@@ -56,9 +56,11 @@
     "@fontsource-variable/inconsolata": "^5.0.8",
     "@heroicons/react": "^2.0.18",
     "@nanostores/react": "^0.7.1",
+    "@tailwindcss/forms": "^0.5.7",
     "@tailwindcss/nesting": "^0.0.0-insiders.565cd3e",
     "framer-motion": "^10.16.4",
     "nanostores": "^0.9.3",
+    "openai": "^4.19.0",
     "react-hot-toast": "^2.4.1",
     "react-move": "^6.5.0",
     "tailwindcss-border-gradients": "^2.0.3"
