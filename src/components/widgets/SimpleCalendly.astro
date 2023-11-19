@@ -28,7 +28,12 @@ const onClick = `Calendly.initPopupWidget({url: '${calendlyUrl}'});return false;
 <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
 <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
 
-<WidgetWrapper id={id} isDark={isDark} containerClass={`max-w-6xl mx-auto ${classes?.container ?? ''}`} bg={bg}>
+<WidgetWrapper
+  id={id}
+  isDark={isDark}
+  containerClass={`max-w-7xl mx-auto py-12 md:py-20 lg:py-24 ${classes?.container ?? ''}`}
+  bg={bg}
+>
   <div
     class="max-w-3xl mx-auto text-center p-6 rounded-md shadow-xl dark:shadow-none dark:border dark:border-slate-600"
   >

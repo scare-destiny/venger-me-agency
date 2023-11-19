@@ -104,7 +104,7 @@ function classNames(...classes) {
 
 export default function GridTestimonials() {
   return (
-    <div className="relative isolate bg-white pb-32 pt-24 sm:pt-32">
+    <div className="relative isolate bg-white py-12 md:py-20 lg:py-24">
       <div
         className="absolute inset-x-0 top-1/2 -z-10 -translate-y-1/2 transform-gpu overflow-hidden opacity-30 blur-3xl"
         aria-hidden="true"
@@ -129,7 +129,7 @@ export default function GridTestimonials() {
           }}
         />
       </div>
-      <div className="mx-auto max-w-6xl px-6 lg:px-8">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-xl text-center">
           <h2 className="text-lg font-semibold leading-8 tracking-tight text-primary">Testimonials</h2>
           <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">

@@ -24,7 +24,7 @@ const clients = [
 
 export function Clients() {
   return (
-    <Container className="relative mx-auto max-w-7xl px-4 md:px-6 py-12 md:py-16 lg:py-12 text-default ">
+    <Container className="relative mx-auto max-w-7xl px-4 md:px-6 py-12 md:py-20 lg:py-24 text-default ">
       <FadeIn>
         <h2 className="font-display text-2xl font-semibold text-neutral-950">You’re in good company</h2>
       </FadeIn>

@@ -3,7 +3,7 @@ import { CircleStackIcon, BoltIcon, ServerIcon, RocketLaunchIcon } from '@heroic
 import { FadeIn, FadeInStagger } from '../Animations/FadeIn';
 export default function Example() {
   return (
-    <div className="relative isolate overflow-hidden bg-white py-24 sm:py-32 relative mx-auto  px-4 md:px-6 py-12 md:py-16 lg:py-12 text-default">
+    <div className="relative isolate overflow-hidden bg-white py-24 sm:py-32 relative mx-auto  px-4 md:px-6 py-12 md:py-20 lg:py-24 text-default">
       <div
         className="absolute -top-80 left-[max(6rem,33%)] -z-10 transform-gpu blur-3xl sm:left-1/2 md:top-20 lg:ml-20 xl:top-3 xl:ml-56"
         aria-hidden="true"
@@ -16,7 +16,7 @@ export default function Example() {
           }}
         />
       </div>
-      <div className="mx-auto max-w-6xl px-6 lg:px-8">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl lg:mx-0">
           <p className="text-lg font-semibold leading-8 tracking-tight text-primary">Things I'm proud of</p>
           <h1 className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Projects</h1>

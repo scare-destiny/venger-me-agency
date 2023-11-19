@@ -158,16 +158,16 @@ export const metadata: Metadata = {
 
 export default function Process() {
   return (
-    <>
+    <div className="max-w-7xl mx-auto pb-12 md:pb-20 lg:pb-24">
       <PageIntro eyebrow="My process" title="How I work">
         <p>The whole process is divided into three stages.</p>
       </PageIntro>
 
-      <div className="mt-24 space-y-24 [counter-reset:section] sm:mt-32 sm:space-y-32 lg:mt-40 lg:space-y-40">
+      <div className="mt-24 space-y-24 [counter-reset:section] sm:mt-32 sm:space-y-32 lg:mt-24 lg:space-y-40">
         <Consultation />
         <Analysis />
         <Execute />
       </div>
-    </>
+    </div>
   );
 }
