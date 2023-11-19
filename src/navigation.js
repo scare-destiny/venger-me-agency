@@ -9,30 +9,16 @@ export const headerData = {
     { text: 'Work', href: '/work' },
     { text: 'About', href: '/about' },
     { text: 'Blog', href: '/blog' },
+    {
+      text: 'Tools',
+      links: [
+        {
+          text: 'Email Marketing Checklist',
+          href: getPermalink('/email-marketing-checklist'),
+        },
+      ],
+    },
     { text: 'Contact', href: '/contact' },
-    { text: 'Maximize Your Open Rates ', href: '/email-marketing-checklist' },
-
-    // {
-    //   text: 'Homes',
-    //   links: [
-    //     {
-    //       text: 'Sass',
-    //       href: getPermalink('/homes/saas'),
-    //     },
-    //     {
-    //       text: 'Startup',
-    //       href: getPermalink('/homes/startup'),
-    //     },
-    //     {
-    //       text: 'Mobile App',
-    //       href: getPermalink('/homes/mobile-app'),
-    //     },
-    //     {
-    //       text: 'Personal',
-    //       href: getPermalink('/homes/personal'),
-    //     },
-    //   ],
-    // },
     // {
     //   text: 'Pages',
     //   links: [
@@ -125,7 +111,7 @@ export const headerData = {
     //   href: '#',
     // },
   ],
-  actions: [{ type: 'button', text: 'Free Strategy Session', href: '/contact' }],
+  actions: [{ type: 'button', text: 'Free Consultation', href: '/contact' }],
 };
 
 export const footerData = {
