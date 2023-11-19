@@ -7,7 +7,7 @@ export default function Form() {
 
     const apiUrl = import.meta.env.PUBLIC_API_BASE_URL || 'http://localhost:4321'; // Default to localhost if the env var is not set
 
-    const response = await fetch(`http://localhost:4321/api/icp`, {
+    const response = await fetch(`${apiUrl}/api/icp`, {
       method: 'POST',
       body: JSON.stringify({}),
     }).then((result) => result.json());
