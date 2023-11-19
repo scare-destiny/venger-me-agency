@@ -10,7 +10,7 @@ export const headerData = {
     { text: 'About', href: '/about' },
     { text: 'Blog', href: '/blog' },
     { text: 'Contact', href: '/contact' },
-    { text: 'Maximize Your Open Rates 🚀', href: '/email-marketing-checklist' },
+    { text: 'Maximize Your Open Rates ', href: '/email-marketing-checklist' },
 
     // {
     //   text: 'Homes',
@@ -125,7 +125,7 @@ export const headerData = {
     //   href: '#',
     // },
   ],
-  // actions: [{ type: 'button', text: 'Maximize Your Open Rates 🚀', href: '/email-marketing-checklist' }],
+  actions: [{ type: 'button', text: 'Free Strategy Session', href: '/contact' }],
 };
 
 export const footerData = {

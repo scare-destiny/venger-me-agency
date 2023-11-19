@@ -5,15 +5,33 @@ import About from '~/components/react/Tailwind/About';
 import SimpleCalendly from '~/components/widgets/SimpleCalendly.astro';
 import Header from '~/components/widgets/Header.astro';
 import { headerData } from '~/navigation';
-import { FadeIn } from '~/components/react/Animations/FadeIn';
+import { Icon } from 'astro-icon/components';
 import Stats from '~/components/widgets/Stats.astro';
+import { FadeIn, FadeInStagger } from '~/components/react/Animations/FadeIn';
 // import CTA from '~/components/ui/CTA.astro';
-import CallToAction from '~/components/widgets/CallToAction.astro';
 import Layout from '~/layouts/PageLayout.astro';
 
 const metadata = {
   title: 'About us',
 };
+
+const painpoints = [
+  "Struggle with getting quality leads? Let's solve that.",
+  "Overwhelmed with growth? I'll help",
+  "Uncertain about driving traffic and revenue? I'll clarify and explain.",
+  "Struggle to get leads consistently and systematically? We'll sort it out",
+  "Had a bad experience with freelancers or employees? I'll show the better way.",
+  "Unclear about what drives traffic to your site? We'll analyze it. ",
+];
+
+const solutions = [
+  'Tailored sales funnels sectors, with proven results.',
+  'Expertise in lead generation and conversion to boost your revenue.',
+  'Personalized attention to your unique business needs.',
+  'Money-back guarantee, no questions asked.',
+  'Industry-leading best practices, ensuring cutting-edge solutions for your business.',
+  "Guaranteed results tailored to your industry's specific challenges and opportunities.",
+];
 ---
 
 <Layout metadata={metadata}>
@@ -90,6 +108,60 @@ const metadata = {
             </figure>
           </div>
         </div>
+      </div>
+    </WidgetWrapper>
+
+    <WidgetWrapper containerClass={`relative mx-auto max-w-5xl px-4 md:px-6 py-12 md:py-20 lg:py-24 text-default  `}>
+      <div class="w-full flex-auto">
+        <FadeIn client:only>
+          <h2
+            class="block font-display tracking-tight [text-wrap:balance] text-4xl font-medium sm:text-5xl text-neutral-950"
+          >
+            Need help with your business?
+          </h2>
+        </FadeIn>
+
+        <p class="mt-6 text-xl text-neutral-600">Act now to increase your revenue and get ahead of the competition.</p>
+        <FadeInStagger client:only>
+          <ul role="list" class="mt-10 grid grid-cols-1 gap-x-8 gap-y-3 text-base leading-7 sm:grid-cols-2">
+            {
+              painpoints.map((painpoint) => (
+                <FadeIn client:only key={painpoint}>
+                  <li class="flex gap-x-3">
+                    <Icon name="tabler:alert-circle" class="w-7 h-7 inline-block -mt-0.5 dark:text-gray-400" />
+                    {painpoint}
+                  </li>
+                </FadeIn>
+              ))
+            }
+          </ul>
+        </FadeInStagger>
+      </div>
+
+      <div class="w-full flex-auto mt-12 lg:mt-16">
+        <FadeIn client:only>
+          <h2
+            class="block font-display tracking-tight [text-wrap:balance] text-4xl font-medium sm:text-5xl text-neutral-950"
+          >
+            What I Offer
+          </h2>
+        </FadeIn>
+
+        <!-- <p class="mt-6 text-xl text-neutral-600">Act now to increase your revenue and get ahead of competition.</p> -->
+        <FadeInStagger client:only>
+          <ul role="list" class="mt-10 grid grid-cols-1 gap-x-8 gap-y-3 text-base leading-7 sm:grid-cols-2">
+            {
+              solutions.map((solution) => (
+                <FadeIn client:only key={solution}>
+                  <li class="flex gap-x-3">
+                    <Icon name="tabler:alert-circle" class="w-7 h-7 inline-block -mt-0.5 dark:text-gray-400" />
+                    {solution}
+                  </li>
+                </FadeIn>
+              ))
+            }
+          </ul>
+        </FadeInStagger>
       </div>
     </WidgetWrapper>
 

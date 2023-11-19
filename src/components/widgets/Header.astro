@@ -151,7 +151,10 @@ const currentPath = `${trimSlash(new URL(Astro.url).pathname)}`;
               {actions.map(({ text, href, class: className }) => (
                 <a
                   transition:animate="none"
-                  class:list={['btn ml-2 py-2.5 px-5.5 md:px-6 font-semibold shadow-none text-sm', className]}
+                  class:list={[
+                    'btn btn-primary ml-2 py-2.5 px-5.5 md:px-6 font-semibold shadow-md text-sm bg-primary text-white ',
+                    className,
+                  ]}
                   href={href}
                 >
                   <Fragment transition:animate="none" set:html={text} />

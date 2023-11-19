@@ -4,8 +4,7 @@ import Header from '~/components/widgets/Header.astro';
 import HeroText from '~/components/widgets/HeroText.astro';
 import { headerData } from '~/navigation';
 // import ContactUs from '~/components/widgets/Contact.astro';
-// import SimpleCalendly from '~/components/widgets/SimpleCalendly.astro';
-import TallyForm from '~/components/widgets/TallyForm.astro';
+import SimpleCalendly from '~/components/widgets/SimpleCalendly.astro';
 // import Features2 from '~/components/widgets/Features2.astro';
 
 const metadata = {
@@ -18,47 +17,15 @@ const metadata = {
     <Header {...headerData} showToggleTheme />
     <!-- HeroText Widget ******************* -->
 
-    <HeroText tagline="Contact" title="Let's Connect!" />
-
-    <!--     
-       <ContactUs
-      title="Drop us a message today!"
-      subtitle="Contact us today to find out how we can help you achieve your business goals."
-      inputs={[
-        {
-          type: 'text',
-          name: 'name',
-          label: 'Name',
-        },
-        {
-          type: 'email',
-          name: 'email',
-          label: 'Email',
-        },
-      ]}
-      textarea={{
-        label: 'Message',
-      }}
-      disclaimer={{
-        label:
-          'By submitting this contact form, you acknowledge and agree to the collection of your personal information.',
-      }}
-      description="Our support team typically responds within 24 business hours."
-    /> 
- 
-
+    <HeroText tagline="Get in Touch" title="Contact" />
 
     <SimpleCalendly
-      title="Ready for a Virtual Coffee?"
-      subtitle="Let's chat about how we can help you grow."
+      title="Ready to elevate your business?"
+      subtitle="Struggle with getting quality leads? Let's solve that. Overwhelmed with growth? I've got your back. Uncertain about driving traffic and revenue? I'll clarify and help."
+      buttonText="Book Free Session"
       calendlyUrl="https://calendly.com/eugene-venger"
       id="calendlyWidget"
       isDark={false}
-    /> -->
-
-    <TallyForm
-      title="Get in touch"
-      subtitle="Let's discuss how I can transform your digital presence. Reach out now."
     />
 
     <!-- Features2 Widget ************** -->
