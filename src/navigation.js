@@ -116,51 +116,32 @@ export const headerData = {
 
 export const footerData = {
   links: [
-    // {
-    //   title: 'Product',
-    //   links: [
-    //     { text: 'Features', href: '#' },
-    //     { text: 'Security', href: '#' },
-    //     { text: 'Team', href: '#' },
-    //     { text: 'Enterprise', href: '#' },
-    //     { text: 'Customer stories', href: '#' },
-    //     { text: 'Pricing', href: '#' },
-    //     { text: 'Resources', href: '#' },
-    //   ],
-    // },
-    // {
-    //   title: 'Platform',
-    //   links: [
-    //     { text: 'Developer API', href: '#' },
-    //     { text: 'Partners', href: '#' },
-    //     { text: 'Atom', href: '#' },
-    //     { text: 'Electron', href: '#' },
-    //     { text: 'AstroWind Desktop', href: '#' },
-    //   ],
-    // },
-    // {
-    //   title: 'Support',
-    //   links: [
-    //     { text: 'Docs', href: '#' },
-    //     { text: 'Community Forum', href: '#' },
-    //     { text: 'Professional Services', href: '#' },
-    //     { text: 'Skills', href: '#' },
-    //     { text: 'Status', href: '#' },
-    //   ],
-    // },
     {
-      // title: 'Company',
+      title: 'Pages',
       links: [
         { text: 'Main', href: '/' },
         { text: 'Work', href: '/work' },
         { text: 'About', href: '/about' },
         { text: 'Blog', href: '/blog' },
         { text: 'Contact', href: '/contact' },
-        // { text: 'Inclusion', href: '#' },
-        // { text: 'Social Impact', href: '#' },
-        // { text: 'Shop', href: '#' },
-        { text: 'Maximize Your Open Rates 🚀', href: '/email-marketing-checklist' },
       ],
+    },
+
+    {
+      title: 'Case Studies',
+      links: [
+        { text: 'AmazeOwl Case Study', href: '/work/amazeowl' },
+        { text: 'J. v. G. technology GmbH Case Study', href: '/work/jvg-technology' },
+        { text: 'J. v. G. Saddle Innovations UG Case Study', href: '/work/saddle-innovations' },
+        // { text: 'Enterprise', href: '#' },
+        // { text: 'Customer stories', href: '#' },
+        // { text: 'Pricing', href: '#' },
+        // { text: 'Resources', href: '#' },
+      ],
+    },
+    {
+      title: 'Tools',
+      links: [{ text: 'Email Marketing Checklist 🚀', href: '/email-marketing-checklist' }],
     },
   ],
   secondaryLinks: [
