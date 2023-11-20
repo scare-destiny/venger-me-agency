@@ -1,6 +1,6 @@
 site:
   name: Web Developer and Technical Marketer - Venger.me
-  site: 'https://www.venger.me/'
+  site: 'https://venger.me/'
   base: '/'
   trailingSlash: false
 
