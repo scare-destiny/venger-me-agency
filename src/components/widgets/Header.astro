@@ -150,7 +150,7 @@ const currentPath = `${trimSlash(new URL(Astro.url).pathname)}`;
             <span transition:animate="none" class="ml-4 rtl:ml-0 rtl:mr-4">
               {actions.map(({ text, href, class: className }) => (
                 <a href={href} target="_blank" rel="noopener noreferrer" class="relative inline-block ">
-                  <button class="  inline-flex items-center justify-center font-medium disabled:pointer-events-none disabled:opacity-50 h-12  text-white hover:bg-black hover:text-white relative z-10 bg-[#171717e6] transition duration-150 cursor-pointer appearance-button bg-none normal-case text-base m-0 p-4 shadow-lg hover:shadow-[0_0_20px_rgba(14,165,233,0.7)] btn btn-primary">
+                  <button class="  inline-flex items-center justify-center font-medium disabled:pointer-events-none disabled:opacity-50 h-12  text-white hover:bg-black hover:text-white relative z-10 transition duration-150 cursor-pointer appearance-button bg-none normal-case text-base m-0 p-4 shadow-lg hover:shadow-[0_0_20px_rgba(14,165,233,0.7)] btn btn-primary">
                     {text}
                   </button>
                   <div class="absolute -z-10 -inset-1 bg-gradient-to-r from-primary to-secondary  blur opacity-60 dark:opacity-70 dark:-inset-0.5 group-hover:opacity-80 dark:group-hover:opacity-70 transition-all duration-1000 group-hover:duration-3000 group-hover:-inset-2 animate-tilt" />
