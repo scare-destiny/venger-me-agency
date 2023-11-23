@@ -1,0 +1,21 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import { List } from '~/components/wishlist/List';
+
+const metadata = {
+  title: 'venger.me - Wishlist',
+  noindex: true,
+};
+---
+
+<Layout metadata={metadata}>
+  <meta name="robots" content="noindex,nofollow" />
+  <h1 class="text-4xl font-black mb-3 mt-6 text-center">My Wishlist</h1>
+  <h2 class="text-2xl font-light mb-12 text-center">Need ideas about what to get me?</h2>
+
+  <div class="flex-grow my-12 lg:my-24 mx:auto flex flex-col justify-center items-center">
+    <div class="list">
+      <List client:only />
+    </div>
+  </div>
+</Layout>
