@@ -28,6 +28,7 @@ function Section({
               {...image}
               // sizes="(min-width: 1024px) 41rem, 31rem"
               className="justify-center lg:justify-end lg:group-even/section:justify-start"
+              loading="lazy"
             />
           </FadeIn>
         </div>

@@ -93,7 +93,7 @@ const solutions = [
             />
             <figure>
               <blockquote class="mt-6 text-lg font-semibold text-white sm:text-xl sm:leading-8">
-                <FadeIn client:only>
+                <FadeIn client:only="react">
                   <p>
                     “Eugene is very knowledgable. We work on a project that was not easy or straightforward but he
                     really took the time to find solutions. He is very enthusiastic and eager to do the job well. Great
@@ -113,7 +113,7 @@ const solutions = [
 
     <WidgetWrapper containerClass={`relative mx-auto max-w-5xl px-4 md:px-6 py-12 md:py-20 lg:py-24 text-default  `}>
       <div class="w-full flex-auto">
-        <FadeIn client:only>
+        <FadeIn client:only="react">
           <h2
             class="block font-display tracking-tight [text-wrap:balance] text-4xl font-medium sm:text-5xl text-neutral-950"
           >
@@ -122,11 +122,11 @@ const solutions = [
         </FadeIn>
 
         <p class="mt-6 text-xl text-neutral-600">Act now to increase your revenue and get ahead of the competition.</p>
-        <FadeInStagger client:only>
+        <FadeInStagger client:only="react">
           <ul role="list" class="mt-10 grid grid-cols-1 gap-x-8 gap-y-3 text-base leading-7 sm:grid-cols-2">
             {
               painpoints.map((painpoint) => (
-                <FadeIn client:only key={painpoint}>
+                <FadeIn client:only="react" key={painpoint}>
                   <li class="flex gap-x-3">
                     <Icon name="tabler:alert-circle" class="w-7 h-7 inline-block -mt-0.5 dark:text-gray-400" />
                     {painpoint}
@@ -139,7 +139,7 @@ const solutions = [
       </div>
 
       <div class="w-full flex-auto mt-12 lg:mt-16">
-        <FadeIn client:only>
+        <FadeIn client:only="react">
           <h2
             class="block font-display tracking-tight [text-wrap:balance] text-4xl font-medium sm:text-5xl text-neutral-950"
           >
@@ -148,11 +148,11 @@ const solutions = [
         </FadeIn>
 
         <!-- <p class="mt-6 text-xl text-neutral-600">Act now to increase your revenue and get ahead of competition.</p> -->
-        <FadeInStagger client:only>
+        <FadeInStagger client:only="react">
           <ul role="list" class="mt-10 grid grid-cols-1 gap-x-8 gap-y-3 text-base leading-7 sm:grid-cols-2">
             {
               solutions.map((solution) => (
-                <FadeIn client:only key={solution}>
+                <FadeIn client:only="react" key={solution}>
                   <li class="flex gap-x-3">
                     <Icon name="tabler:alert-circle" class="w-7 h-7 inline-block -mt-0.5 dark:text-gray-400" />
                     {solution}
@@ -164,7 +164,6 @@ const solutions = [
         </FadeInStagger>
       </div>
     </WidgetWrapper>
-
 
     <SimpleCalendly
       title="Have a project in mind? 🚀"

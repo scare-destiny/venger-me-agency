@@ -52,6 +52,7 @@
   },
   "dependencies": {
     "@astrojs/react": "^3.0.2",
+    "@astrojs/svelte": "^4.0.4",
     "@astrojs/vercel": "^5.0.1",
     "@fontsource-variable/inconsolata": "^5.0.8",
     "@heroicons/react": "^2.0.18",

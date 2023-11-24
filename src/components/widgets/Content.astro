@@ -47,7 +47,7 @@ const {
       <div class="md:basis-1/2 self-center">
         {
           content && (
-            <FadeIn client:only>
+            <FadeIn client:only="react">
               <div class="mb-12 text-lg dark:text-slate-400" set:html={content} />
             </FadeIn>
           )
@@ -77,7 +77,7 @@ const {
         {
           image && (
             <div class="relative m-auto max-w-4xl">
-              {typeof image === 'string' ? (     
+              {typeof image === 'string' ? (
                 <Fragment set:html={image} />
               ) : (
                 <Image

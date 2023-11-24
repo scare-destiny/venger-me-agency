@@ -60,7 +60,7 @@ const posts = APP_BLOG_CONFIG.isEnabled ? await findLatestPosts({ count }) : [];
         )}
 
         {information && (
-          <FadeIn client:only direction="up">
+          <FadeIn client:only="react" direction="up">
             <p class="text-muted dark:text-slate-400 lg:text-sm lg:max-w-md" set:html={information} />
           </FadeIn>
         )}

@@ -40,7 +40,7 @@ const Task: React.FC<TaskItemProps> = ({ task, onCheckboxToggle }) => {
         ))}
       {task.id === '1.1' && !checked && (
         <>
-          <SPFRecordGenerator client:only />
+          <SPFRecordGenerator client:only="react" />
           {/* Add your additional content here */}
           <div pt-2>
             <p>
@@ -69,9 +69,9 @@ const Task: React.FC<TaskItemProps> = ({ task, onCheckboxToggle }) => {
       )}
       {task.id === '1.2' && !checked && (
         <>
-          <ObtainDKIMKey client:only />
-          <CreateDKIMRecord client:only />
-          <SetupDKIMForESPs client:only />
+          <ObtainDKIMKey client:only="react" />
+          <CreateDKIMRecord client:only="react" />
+          <SetupDKIMForESPs client:only="react" />
         </>
       )}
       {task.id === '1.3' && !checked && (

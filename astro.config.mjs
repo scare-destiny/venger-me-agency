@@ -2,7 +2,7 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import vercel from '@astrojs/vercel/serverless';
 import react from '@astrojs/react';
-
+import svelte from '@astrojs/svelte';
 import { defineConfig } from 'astro/config';
 
 import sitemap from '@astrojs/sitemap';
@@ -37,6 +37,7 @@ export default defineConfig({
 
   integrations: [
     react(),
+    svelte(),
     tailwind({
       applyBaseStyles: false,
       plugins: {

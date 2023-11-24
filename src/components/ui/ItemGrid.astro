@@ -48,7 +48,7 @@ const {
               <h3 class={twMerge('text-xl font-bold', titleClass, itemClasses?.title)}>{title}</h3>
 
               {description && (
-                <FadeIn client:only threshold={0.1}>
+                <FadeIn client:only="react" threshold={0.1}>
                   <p
                     class={twMerge(`${title ? 'mt-3' : ''} text-muted`, descriptionClass, itemClasses?.description)}
                     set:html={description}

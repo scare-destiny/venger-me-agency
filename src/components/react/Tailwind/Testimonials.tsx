@@ -146,13 +146,14 @@ export default function GridTestimonials() {
               <img
                 className="h-10 w-10 flex-none rounded-full bg-gray-50"
                 src={featuredTestimonial.author.imageUrl}
+                loading="lazy"
                 alt=""
               />
               <div className="flex-auto">
                 <div className="font-semibold">{featuredTestimonial.author.name}</div>
                 <div className="text-gray-600">{`@${featuredTestimonial.author.handle}`}</div>
               </div>
-              <img className="h-10 w-auto flex-none" src={featuredTestimonial.author.logoUrl} alt="" />
+              <img className="h-10 w-auto flex-none" src={featuredTestimonial.author.logoUrl} alt="" loading="lazy" />
             </figcaption>
           </figure>
 
@@ -178,7 +179,12 @@ export default function GridTestimonials() {
                         <p>{`“${testimonial.body}”`}</p>
                       </blockquote>
                       <figcaption className="mt-6 flex items-center gap-x-4">
-                        <img className="h-10 w-10 rounded-full bg-gray-50" src={testimonial.author.imageUrl} alt="" />
+                        <img
+                          className="h-10 w-10 rounded-full bg-gray-50"
+                          src={testimonial.author.imageUrl}
+                          alt=""
+                          loading="lazy"
+                        />
                         <div>
                           <div className="font-semibold">{testimonial.author.name}</div>
                           <div className="text-gray-600">{`@${testimonial.author.handle}`}</div>

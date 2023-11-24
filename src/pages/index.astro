@@ -111,13 +111,13 @@ const painpoints = [
       </Fragment>
 
       <Fragment slot="subtitle">
-        <FadeIn client:only>
+        <FadeIn client:only="react">
           <span class="hidden sm:inline">
             <span class="font-semibold">I tackle</span> complex marketing challenges that other marketers can't solve,
             all while fueling your consistent growth.
           </span>
         </FadeIn>
-        <FadeIn client:only direction="right" threshold={0}>
+        <FadeIn client:only="react" direction="right" threshold={0}>
           <span class="block mb-1 sm:hidden font-bold text-blue-600">Your catalyst for unstoppable growth.</span>
         </FadeIn>
       </Fragment>
@@ -129,7 +129,7 @@ const painpoints = [
       containerClass={`relative mx-auto max-w-7xl px-4 md:px-6 py-12 md:py-20 lg:py-24 text-default  `}
     >
       <div class="w-full flex-auto">
-        <FadeIn client:only>
+        <FadeIn client:only="react">
           <h2
             class="block font-display tracking-tight [text-wrap:balance] text-4xl font-medium sm:text-5xl text-neutral-950"
           >
@@ -140,11 +140,11 @@ const painpoints = [
         <p class="mt-6 text-xl text-neutral-600">
           I've found that most business owners encounter these obstacles sooner or later.
         </p>
-        <FadeInStagger client:only>
+        <FadeInStagger client:only="react">
           <ul role="list" class="mt-10 grid grid-cols-1 gap-x-8 gap-y-3 text-base leading-7 sm:grid-cols-2">
             {
               painpoints.map((painpoint) => (
-                <FadeIn client:only key={painpoint}>
+                <FadeIn client:only="react" key={painpoint}>
                   <li class="flex gap-x-3">
                     <Icon name="tabler:clock" class="w-7 h-7 inline-block -mt-0.5 dark:text-gray-400" />
                     {painpoint}
@@ -223,7 +223,7 @@ const painpoints = [
                   <h3>
                     <a href={`/work/${caseStudy.slug}`}>
                       <span class="absolute inset-0 rounded-3xl" />
-                      <img src={caseStudy.data.logo} alt={caseStudy.data.client} class="h-16 w-16" />
+                      <img src={caseStudy.data.logo} alt={caseStudy.data.client} class="h-16 w-16 " loading="lazy" />
                     </a>
                   </h3>
                   <p class="mt-6 flex gap-x-2 text-sm text-neutral-950">

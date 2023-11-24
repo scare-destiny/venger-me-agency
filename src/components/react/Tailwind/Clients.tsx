@@ -35,7 +35,7 @@ export function Clients() {
             <li key={client} className="group">
               <FadeIn className="overflow-hidden">
                 <Border className="pt-12 group-[&:nth-child(-n+2)]:-mt-px sm:group-[&:nth-child(3)]:-mt-px lg:group-[&:nth-child(4)]:-mt-px">
-                  <img src={logo} alt={client} unoptimized />
+                  <img src={logo} alt={client} unoptimized loading="lazy" />
                 </Border>
               </FadeIn>
             </li>

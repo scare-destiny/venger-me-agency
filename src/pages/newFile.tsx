@@ -25,7 +25,7 @@ import { metadata } from './email-marketing-checklist.astro';
     <Layout class="bg-page-white" metadata={metadata}>
       <Fragment slot="header">
         {/** <Header class="bg-white" \\{...headerData\\} showToggleTheme /> */}
-        <EmailHero client:only />
+        <EmailHero client:only="react" />
 
         <ContactUs
           id="checklist"
