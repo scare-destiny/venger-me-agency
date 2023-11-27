@@ -145,10 +145,7 @@ const painpoints = [
             {
               painpoints.map((painpoint) => (
                 <FadeIn client:only="react" key={painpoint}>
-                  <li class="flex gap-x-3">
-                    <Icon name="tabler:clock" class="w-7 h-7 inline-block -mt-0.5 dark:text-gray-400" />
-                    {painpoint}
-                  </li>
+                  <li class="before:content-['❓'] flex gap-x-3">{painpoint}</li>
                 </FadeIn>
               ))
             }
