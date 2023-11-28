@@ -1,37 +1,27 @@
 ---
-import { Icon } from "astro-icon/components";
-import type { CallToAction } from "~/types";
-
+import { Icon } from 'astro-icon/components';
+import type { CallToAction } from '~/types';
 
 interface Props {
   callToAction: CallToAction;
   onClick?: string;
 }
-const { callToAction, onClick = "" } = Astro.props as Props;
+const { callToAction, onClick = '' } = Astro.props as Props;
 
-const {
-  targetBlank,
-  text = "",
-  icon = "",
-  href = "",
-} = callToAction as CallToAction;
+const { targetBlank, text = '', icon = '', href = '' } = callToAction as CallToAction;
 ---
 
-<div class="flex w-auto">
+<div class="flex w-auto btn">
   {
     targetBlank ? (
-    <a class="inline-flex items-center justify-center" href={callToAction.href} onclick={onClick}>
-    {callToAction.text}
-    {callToAction.icon && (
-      <Icon name={callToAction.icon} class="w-5 h-5 ml-1 -mr-1.5 rtl:mr-1 rtl:-ml-1.5" />
-    )}
-  </a>
+      <a class="inline-flex items-center justify-center" href={callToAction.href} onclick={onClick}>
+        {callToAction.text}
+        {callToAction.icon && <Icon name={callToAction.icon} class="w-5 h-5 ml-1 -mr-1.5 rtl:mr-1 rtl:-ml-1.5" />}
+      </a>
     ) : (
-      <a class="inline-flex items-center justify-center" href={href}>
+      <a class="inline-flex w-80 md:w-96 h-auto items-center justify-center" href={href}>
         {text}
-        {icon && (
-          <Icon name={icon} class="w-5 h-5 ml-1 -mr-1.5 rtl:mr-1 rtl:-ml-1.5" />
-        )}
+        {icon && <Icon name={icon} class="w-5 h-5 ml-1 -mr-1.5 rtl:mr-1 rtl:-ml-1.5" />}
       </a>
     )
   }
