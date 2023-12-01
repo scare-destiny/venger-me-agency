@@ -59,6 +59,8 @@
     "@nanostores/react": "^0.7.1",
     "@tailwindcss/forms": "^0.5.7",
     "@tailwindcss/nesting": "^0.0.0-insiders.565cd3e",
+    "@vercel/analytics": "^1.1.1",
+    "@vercel/speed-insights": "^0.0.6",
     "ai": "^2.2.24",
     "framer-motion": "^10.16.4",
     "nanostores": "^0.9.3",
