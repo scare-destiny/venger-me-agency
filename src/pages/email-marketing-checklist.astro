@@ -1,4 +1,7 @@
 ---
+import favIcon from '~/assets/favicons/favicon.ico';
+import favIconSvg from '~/assets/favicons/favicon.svg';
+import appleTouchIcon from '~/assets/favicons/apple-touch-icon.png';
 import Layout from '~/layouts/PageLayout.astro';
 import Header from '~/components/widgets/Header.astro';
 import WidgetWrapper from '~/components/ui/WidgetWrapper.astro'; // Import WidgetWrapper
@@ -11,7 +14,6 @@ import GridTestimonials from '~/components/react/Tailwind/Testimonials';
 import Prices from '~/components/widgets/Pricing.astro';
 // import { FadeIn } from '~/components/react/Animations/FadeIn';
 import { headerData } from '~/navigation';
-import TallyForm from '~/components/widgets/TallyForm.astro';
 
 const metadata = {
   title: 'Boost Email Deliverability | Hit Inbox Every Time | Venger.me',
@@ -32,6 +34,11 @@ const metadata = {
     });
   });
 </script>
+<link rel="shortcut icon" href={favIcon} />
+<link rel="icon" type="image/svg+xml" href={favIconSvg.src} />
+<link rel="mask-icon" href={favIconSvg.src} color="#8D46E7" />
+<link rel="apple-touch-icon" sizes="180x180" href={appleTouchIcon.src} />
+
 <div transition:none class="bg-white">
   <Layout class="bg-page-white" metadata={metadata}>
     <Fragment slot="header">
