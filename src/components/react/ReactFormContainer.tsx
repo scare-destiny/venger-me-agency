@@ -1,4 +1,4 @@
-import React, { FormEvent, useState } from 'react';
+import React, { type FormEvent, useState } from 'react';
 import ResultsList from './ResultsList';
 import Loader from './UI/Loader';
 import { domainStorage } from '~/stores/domainStore';
