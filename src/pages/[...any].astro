@@ -1,5 +1,8 @@
 ---
+export const prerender = false;
 import Layout from '~/layouts/Layout.astro';
+const { any } = Astro.params;
+Astro.response.status = 404;
 import { getHomePermalink } from '~/utils/permalinks';
 
 const title = `Error 404`;
