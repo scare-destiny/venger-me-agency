@@ -3,7 +3,6 @@ export const prerender = false;
 import Layout from '~/layouts/Layout.astro';
 const { any } = Astro.params;
 Astro.response.status = 404;
-import { getHomePermalink } from '~/utils/permalinks';
 
 const title = `Error 404`;
 ---
@@ -20,7 +19,7 @@ const title = `Error 404`;
         <p class="mt-4 mb-8 text-lg text-muted dark:text-slate-400">
           But dont worry, you can find plenty of other things on our homepage.
         </p>
-        <a rel="noopener noreferrer" href={getHomePermalink()} class="btn ml-4">Back to homepage</a>
+        <a rel="noopener noreferrer" href="/" class="btn ml-4">Back to homepage</a>
       </div>
     </div>
   </section>
