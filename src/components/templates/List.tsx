@@ -19,7 +19,7 @@ console.log(templates);
 
 export const List = () => {
   return (
-    <ul className=" list list-decimal text-center  ">
+    <ul className=" list list-none text-center  ">
       {templates.map((item: any) => (
         <li key={item.name} className="text-xl  py-2 ">
           <a href={item.url} target="_blank" className="text-blue-700 underline">
