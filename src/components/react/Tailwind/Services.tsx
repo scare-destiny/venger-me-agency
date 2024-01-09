@@ -163,11 +163,7 @@ export function Services() {
           </h2> */}
           <p className="mt-4 text-lg text-slate-400">
             Here you can{' '}
-            <a
-              className="text-primary"
-              href="https://www.notion.so/scaredestiny/Landing-Page-Website-Templates-9351c54160b94a04a10b6aa79d489de1"
-              target="_blank"
-            >
+            <a className="text-primary" href="/templates" target="_blank">
               browse&nbsp;
             </a>
             a list of ready-to-use landing page and website templates.

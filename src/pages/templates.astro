@@ -1,0 +1,25 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import { List } from '~/components/templates/List';
+import TallyForm from '~/components/widgets/TallyForm.astro';
+
+const metadata = {
+  title: 'venger.me - Wishlist',
+  noindex: true,
+};
+---
+
+<Layout metadata={metadata}>
+  <meta name="robots" content="noindex,nofollow" />
+  <div class="flex flex-col justify-center p-4">
+    <h1 class="text-4xl text-center font-black mb-3 mt-6">Landing Page + Website Templates</h1>
+    <h2 class="text-md text-center font-light mb-4">
+      Blazingly fast, SEO-friendly and quickly built. I use Next.js, Tailwind and Astro.
+    </h2>
+    <List client:only="react" />
+    <!-- <p class="text-md text-center font-light mt-4">
+      For details, please contact eugene@venger.me or visit my website: venger.me
+    </p> -->
+    <TallyForm title="Get in touch" />
+  </div>
+</Layout>
