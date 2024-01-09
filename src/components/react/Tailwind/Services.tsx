@@ -169,8 +169,8 @@ export function Services() {
               target="_blank"
             >
               browse
-            </a>{' '}
-            a list of ready-to-use landing page and website templates.
+            </a>
+            {'  '}a list of ready-to-use landing page and website templates.
           </p>
           <p className="mt-4 text-lg text-slate-400">
             Need something else? I've built a network of trusted partners over the years, specializing in Google Ads,
