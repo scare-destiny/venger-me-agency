@@ -9,19 +9,20 @@ import Image from '~/components/common/Image.astro';
 import { headerData } from '~/navigation';
 import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
 import Stats from '~/components/widgets/Stats.astro';
-import { StatList, StatListItem } from '~/components/react/Tailwind/StatList';
+// import { StatList, StatListItem } from '~/components/react/Tailwind/StatList';
 import { getCollection } from 'astro:content';
 import ContentAstro from '~/components/widgets/Content.astro';
 // import CallToAction from '~/components/widgets/CallToAction.astro';
-import Technoloiges from '~/components/react/Tailwind/Technologies';
+// import Technoloiges from '~/components/react/Tailwind/Technologies';
 import Content from '~/components/react/Tailwind/Content';
 import TailwindTestimonials from '~/components/react/Tailwind/Testimonials';
-import TallyForm from '~/components/widgets/TallyForm.astro';
+// import TallyForm from '~/components/widgets/TallyForm.astro';
 import SimpleCalendly from '~/components/widgets/SimpleCalendly.astro';
 import { SectionIntro } from '~/components/react/Tailwind/SectionIntro';
 import { Clients } from '~/components/react/Tailwind/Clients';
+import { Services } from '~/components/react/Tailwind/Services';
 import { Container } from '~/components/react/Tailwind/Container';
-import { Icon } from 'astro-icon/components';
+// import { Icon } from 'astro-icon/components';
 
 const metadata = {
   title: 'venger.me - Your catalyst for unstoppable growth',
@@ -204,6 +205,8 @@ const painpoints = [
         ]}
       />
     </WidgetWrapper>
+
+    <Services />
 
     <!-- <Note /> -->
 
