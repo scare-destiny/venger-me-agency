@@ -172,7 +172,7 @@ export const footerData = {
     Made with ❤️ by Eugene Venger. All rights reserved.
 </p>
 <p class='pt-2'>
-    Operating in 🇩🇪 Berlin, Germany
+Operating Remotely Worldwide
 </p>
   
   `,
