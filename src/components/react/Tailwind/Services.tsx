@@ -168,9 +168,9 @@ export function Services() {
               href="https://www.notion.so/scaredestiny/Landing-Page-Website-Templates-9351c54160b94a04a10b6aa79d489de1"
               target="_blank"
             >
-              browse
+              browse&nbsp;
             </a>
-            {'  '} a list of ready-to-use landing page and website templates.
+            a list of ready-to-use landing page and website templates.
           </p>
           <p className="mt-4 text-lg text-slate-400">
             Need something else? I've built a network of trusted partners over the years, specializing in Google Ads,
