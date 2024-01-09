@@ -53,7 +53,7 @@ function Plan({
       <h3 className="mt-5 font-display text-lg text-white">{name}</h3>
       <p className={clsx('mt-2 text-base', featured ? 'text-white' : 'text-slate-400')}>{description} </p>
 
-      <p className="order-first font-display text-5xl font-light tracking-tight text-white ">{price}</p>
+      <p className="order-first font-display text-4xl font-light tracking-tight text-white ">{price}</p>
       <ul
         role="list"
         className={clsx('order-last mt-10 flex flex-col gap-y-3 text-sm', featured ? 'text-white' : 'text-slate-200')}
@@ -83,7 +83,7 @@ export function Services() {
     <section id="pricing" aria-label="Pricing" className="bg-default py-14 sm:py-20 ">
       <Container>
         <div className="md:text-center">
-          <h2 className="font-display text-3xl tracking-tight text-white sm:text-4xl">
+          <h2 className="font-display text-2xl tracking-tight text-white sm:text-4xl">
             <span className="relative whitespace-nowrap">
               <SwirlyDoodle className="absolute left-0 top-[60%] h-[0.9em] w-[80%] fill-primary     " />
               <span className="relative">Grow, Optimize, Excel: </span>
