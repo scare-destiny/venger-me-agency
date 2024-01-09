@@ -158,12 +158,22 @@ export const footerData = {
     { ariaLabel: 'Telegram', icon: 'tabler:brand-telegram', href: 'https://t.me/scare_destiny' },
   ],
   footNote: `
-    Made by Eugene Venger. All rights reserved.
-    <p class="pt-2">
-    <a href="mailto:eugene@venger.me" class="text-current no-underline hover:underline">
-      eugene@venger.me
-    </a>
-  </p>
+  <p class="pt-2">
+  <a href="mailto:eugene@venger.me" class="  no-underline hover:underline">
+    eugene@venger.me
+  </a>
+</p>
+<p class="pt-2">
+<a href="tel:+16317422233" class="  no-underline hover:underline">
++1 631 742 2233
+</a>
+</p>
+<p class='pt-4'>
+    Made with ❤️ by Eugene Venger. All rights reserved.
+</p>
+<p class='pt-2'>
+    Operating in 🇩🇪 Berlin, Germany
+</p>
   
   `,
 };
