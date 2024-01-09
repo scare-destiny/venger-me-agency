@@ -47,24 +47,25 @@ function Plan({
     <section
       className={clsx(
         'flex flex-col rounded-3xl px-6 sm:px-8',
-        featured ? 'order-first bg-blue-600 py-8 lg:order-none' : 'lg:py-8'
+        featured ? ' bg-primary py-8 lg:order-none' : 'lg:py-8'
       )}
     >
       <h3 className="mt-5 font-display text-lg text-white">{name}</h3>
-      <p className={clsx('mt-2 text-base', featured ? 'text-white' : 'text-slate-400')}>{description}</p>
-      <p className="order-first font-display text-5xl font-light tracking-tight text-white">{price}</p>
+      <p className={clsx('mt-2 text-base', featured ? 'text-white' : 'text-slate-400')}>{description} </p>
+
+      <p className="order-first font-display text-5xl font-light tracking-tight text-white ">{price}</p>
       <ul
         role="list"
         className={clsx('order-last mt-10 flex flex-col gap-y-3 text-sm', featured ? 'text-white' : 'text-slate-200')}
       >
         {features.map((feature) => (
           <li key={feature} className="flex">
-            <CheckIcon className={featured ? 'text-white' : 'text-slate-400'} />
+            <CheckIcon className={featured ? 'text-white' : 'text-slate-400 '} />
             <span className="ml-4">{feature}</span>
           </li>
         ))}
       </ul>
-      <Button
+      {/* <Button
         href={href}
         variant={featured ? 'solid' : 'outline'}
         color="white"
@@ -72,70 +73,109 @@ function Plan({
         aria-label={`Get started with the ${name} plan for ${price}`}
       >
         Get started
-      </Button>
+      </Button> */}
     </section>
   );
 }
 
 export function Services() {
   return (
-    <section id="pricing" aria-label="Pricing" className="bg-slate-900 py-20 sm:py-32">
+    <section id="pricing" aria-label="Pricing" className="bg-default py-14 sm:py-20 ">
       <Container>
         <div className="md:text-center">
           <h2 className="font-display text-3xl tracking-tight text-white sm:text-4xl">
             <span className="relative whitespace-nowrap">
-              <SwirlyDoodle className="absolute left-0 top-1/2 h-[1em] w-full fill-blue-400" />
-              <span className="relative">Simple pricing,</span>
+              <SwirlyDoodle className="absolute left-0 top-[60%] h-[0.9em] w-[80%] fill-primary     " />
+              <span className="relative">Grow, Optimize, Excel: </span>
             </span>{' '}
-            for everyone.
+            Your Business Journey Ignited at Every Stage
           </h2>
           <p className="mt-4 text-lg text-slate-400">
-            It doesn’t matter what size your business is, our software won’t work well for you.
+            What I offer. Simple, effective, and tailored solutions to your needs.
           </p>
         </div>
         <div className="-mx-4 mt-16 grid max-w-2xl grid-cols-1 gap-y-10 sm:mx-auto lg:-mx-8 lg:max-w-none lg:grid-cols-3 xl:mx-0 xl:gap-x-8">
           <Plan
             name="Starter"
-            price="$9"
-            description="Good for anyone who is self-employed and just getting started."
+            price="Cold Email + Deliverability"
+            description="Connect with your audience and show them the sparkle to make your business uniquely irresistible.   "
             href="/register"
             features={[
-              'Send 10 quotes and invoices',
-              'Connect up to 2 bank accounts',
-              'Track up to 15 expenses per month',
-              'Manual payroll support',
-              'Export up to 3 reports',
+              'Multi-Channel Sequences',
+              'Copywriting',
+              'Data Enrichment and Verification',
+              'Ideal Customer Profile and Pain Points',
+              'Spam Monitoring and Testing',
+              'Blacklist Monitoring and Removal',
+              'DNS Records (SPF, DKIM, DMARC, BIMI)',
+              'Email Infrastructure (Servers, SMTP)',
+              'Email Templating (Liquid, Spintax, Conditionals)',
+              'Domain Management',
+              'Sender Reputation',
             ]}
           />
           <Plan
-            featured
+            // featured
             name="Small business"
-            price="$15"
-            description="Perfect for small / medium sized businesses."
+            price="Landing Page + Email Funnel"
+            description="Capture curiosity, clinch the deal. Convert potential leads into loyal paying customers who love your product.  "
             href="/register"
             features={[
-              'Send 25 quotes and invoices',
-              'Connect up to 5 bank accounts',
-              'Track up to 50 expenses per month',
-              'Automated payroll support',
-              'Export up to 12 reports',
-              'Bulk reconcile transactions',
-              'Track in multiple currencies',
+              'Fast and SEO-friendly Landing Pages',
+              'Page Speed Optimization',
+              'List Management and Cleanup',
+              'CRM Management',
+              'Customer Feedback Platforms Integration',
+              'Third Party Integrations',
+              'Feedback Loop',
+              'Email Segmentation',
+              'Split testing',
+              'Monitoring and Reporting',
+              'Data Pipelines',
             ]}
           />
           <Plan
             name="Enterprise"
-            price="$39"
-            description="For even the biggest enterprise companies."
+            price="Tracking + Automation"
+            description="Collect reliable data, streamline your processes with automation and extract meaningful insights to get the highest ROI. "
             href="/register"
             features={[
-              'Send unlimited quotes and invoices',
-              'Connect up to 15 bank accounts',
-              'Track up to 200 expenses per month',
-              'Automated payroll support',
-              'Export up to 25 reports, including TPS',
+              'Google Analytics',
+              'Google Tag Manager',
+              'Forms Tracking',
+              'Scripts Optimization',
+              'Facebook Pixel',
+              'Marketing Attribution',
+              'Looker (former Data Studio)',
+              'A/B and Multivariate Testing',
+              'Retargeting and Lookalikes',
+              'Data privacy and compliance (GDPR, cookies, user consent) ',
+              'Automation and Workflow',
+              'API and Webhook Integrations',
             ]}
           />
+        </div>
+        <div className="md:text-center  pt-14 sm:pt-14">
+          {/* <h2 className="font-display text-3xl tracking-tight text-white sm:text-4xl">
+            <span className="relative whitespace-nowrap">
+              <span className="relative">Need something else?</span>
+            </span>{' '}
+          </h2> */}
+          <p className="mt-4 text-lg text-slate-400">
+            Here you can{' '}
+            <a
+              className="text-primary"
+              href="https://www.notion.so/scaredestiny/Landing-Page-Website-Templates-9351c54160b94a04a10b6aa79d489de1"
+              target="_blank"
+            >
+              browse
+            </a>{' '}
+            a list of ready-to-use landing page and website templates.
+          </p>
+          <p className="mt-4 text-lg text-slate-400">
+            Need something else? I've built a network of trusted partners over the years, specializing in Google Ads,
+            Facebook Ads, and web design. If you need expert assistance in these areas, feel free to reach out to me.
+          </p>
         </div>
       </Container>
     </section>
