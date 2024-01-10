@@ -1,7 +1,7 @@
 import React from 'react';
 import clsx from 'clsx';
 
-import { Button } from '~/components/react/Tailwind/Button';
+import { Button } from '~/components/react/Tailwind/Services/Button';
 import { Container } from '~/components/react/Tailwind/Container';
 
 function SwirlyDoodle(props: React.ComponentPropsWithoutRef<'svg'>) {
@@ -36,7 +36,7 @@ function Plan({
   features,
   featured = false,
 }: {
-  name: string;
+  name?: string;
   price: string;
   description: string;
   href: string;
@@ -65,15 +65,15 @@ function Plan({
           </li>
         ))}
       </ul>
-      {/* <Button
+      <Button
         href={href}
         variant={featured ? 'solid' : 'outline'}
         color="white"
         className="mt-8"
         aria-label={`Get started with the ${name} plan for ${price}`}
       >
-        Get started
-      </Button> */}
+        Learn More
+      </Button>
     </section>
   );
 }
@@ -96,10 +96,10 @@ export function Services() {
         </div>
         <div className="-mx-4 mt-16 grid max-w-2xl grid-cols-1 gap-y-10 sm:mx-auto lg:-mx-8 lg:max-w-none lg:grid-cols-3 xl:mx-0 xl:gap-x-8">
           <Plan
-            name="Starter"
+            // name="Starter"
             price="Cold Email + Deliverability"
             description="Connect with your audience and show them the sparkle to make your business uniquely irresistible.   "
-            href="/register"
+            href="#contact"
             features={[
               'Multi-Channel Sequences',
               'Copywriting',
@@ -116,10 +116,10 @@ export function Services() {
           />
           <Plan
             // featured
-            name="Small business"
+            // name="Small business"
             price="Landing Page + Email Funnel"
             description="Capture curiosity, clinch the deal. Convert potential leads into loyal paying customers who love your product.  "
-            href="/register"
+            href="#contact"
             features={[
               'Fast and SEO-friendly Landing Pages',
               'Page Speed Optimization',
@@ -135,10 +135,10 @@ export function Services() {
             ]}
           />
           <Plan
-            name="Enterprise"
+            // name="Enterprise"
             price="Tracking + Automation"
-            description="Collect reliable data, streamline your processes with automation and extract meaningful insights to get the highest ROI. "
-            href="/register"
+            description="Collect reliable data, streamline your processes with automation and extract meaningful insights. "
+            href="#contact"
             features={[
               'Google Analytics',
               'Google Tag Manager',
