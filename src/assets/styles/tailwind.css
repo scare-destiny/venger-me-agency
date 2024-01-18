@@ -6,6 +6,12 @@
   margin-top: 0;
 }
 
+@layer base {
+  html {
+    text-wrap: balance;
+  }
+}
+
 @layer utilities {
   .bg-page {
     background-color: var(--aw-color-bg-page);
