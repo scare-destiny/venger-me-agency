@@ -6,6 +6,7 @@ import SimpleCalendly from '~/components/widgets/SimpleCalendly.astro';
 import Header from '~/components/widgets/Header.astro';
 import { headerData } from '~/navigation';
 import { Icon } from 'astro-icon/components';
+import Process from '~/components/react/Tailwind/Process';
 import Stats from '~/components/widgets/Stats.astro';
 import { FadeIn, FadeInStagger } from '~/components/react/Animations/FadeIn';
 // import CTA from '~/components/ui/CTA.astro';
@@ -39,7 +40,7 @@ const solutions = [
     <Header showToggleTheme {...headerData} />
     <!-- Hero Widget ******************* -->
 
-    <WidgetWrapper containerClass={`max-w-5xl `}>
+    <WidgetWrapper containerClass={`max-w-7xl `}>
       <About client:visible />
     </WidgetWrapper>
     <Stats
@@ -48,10 +49,10 @@ const solutions = [
         { title: 'Happy clients', amount: '50+' },
         { title: 'Generated revenue', amount: '~$10.000.000' },
         { title: 'Tasks automated', amount: '120.000+' },
-        { title: 'Cups of coffee consumed', amount: '5000+' },
+        // { title: 'Cups of coffee consumed', amount: '5000+' },
       ]}
     />
-    <WidgetWrapper containerClass={`max-w-5xl `}>
+    <WidgetWrapper containerClass={`max-w-7xl `}>
       <div class="">
         <div
           class="relative overflow-hidden bg-gray-900 px-6 py-20 shadow-xl sm:rounded-3xl sm:px-10 sm:py-24 md:px-12 lg:px-20"
@@ -111,11 +112,11 @@ const solutions = [
       </div>
     </WidgetWrapper>
 
-    <WidgetWrapper containerClass={`relative mx-auto max-w-5xl px-4 md:px-6 py-12 md:py-20 lg:py-24 text-default  `}>
+    <WidgetWrapper containerClass={`relative mx-auto max-w-7xl px-4 md:px-6 py-12 md:py-20 lg:py-24 text-default  `}>
       <div class="w-full flex-auto">
         <FadeIn client:only="react">
           <h2
-            class="block font-display tracking-tight [text-wrap:balance] text-4xl font-medium sm:text-5xl text-neutral-950"
+            class="block font-display tracking-tight [text-wrap:balance] text-4xl font-medium sm:text-7xl text-neutral-950"
           >
             Need help with your business?
           </h2>
@@ -138,7 +139,7 @@ const solutions = [
       <div class="w-full flex-auto mt-12 lg:mt-16">
         <FadeIn client:only="react">
           <h2
-            class="block font-display tracking-tight [text-wrap:balance] text-4xl font-medium sm:text-5xl text-neutral-950"
+            class="block font-display tracking-tight [text-wrap:balance] text-4xl font-medium sm:text-7xl text-neutral-950"
           >
             What I Offer
           </h2>
@@ -159,7 +160,16 @@ const solutions = [
       </div>
     </WidgetWrapper>
 
+    <div id="process">
+      <Process client:load />
+    </div>
+
     <SimpleCalendly
+      title="Excited By The Process?"
+      subtitle="  Let's delve deeper into your business's potential together. "
+      buttonText="Schedule Free Consultation"
+      id="contact"
+      <SimpleCalendly
       title="Have a project in mind? 🚀"
       subtitle="  Schedule a free consultation and let's discuss it. "
     />

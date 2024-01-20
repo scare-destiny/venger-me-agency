@@ -155,24 +155,24 @@ const painpoints = [
       </div>
     </WidgetWrapper>
 
-    <ContentAstro
+    <!-- <ContentAstro
       isReversed
       title=""
       items={[
         {
           title: 'Holistic Sales Funnels',
-          // description:
-          //   'Specializing in building and optimizing every step of the sales funnel for SaaS and Energy sectors, I ensure your leads not only convert but also become loyal customers.',
+          description:
+            'Specializing in building and optimizing every step of the sales funnel for SaaS and Energy sectors, I ensure your leads not only convert but also become loyal customers.',
         },
         {
           title: 'Customized Strategies for Unique Business Needs',
-          // description:
-          //   'With a deep understanding of your industry, I tailor solutions specifically for your business, ensuring that your digital presence resonates with your target audience and aligns with your goals.',
+          description:
+            'With a deep understanding of your industry, I tailor solutions specifically for your business, ensuring that your digital presence resonates with your target audience and aligns with your goals.',
         },
         {
           title: 'Results-Driven Approach with a Money-Back Guarantee',
-          // description:
-          //   "I'm committed to delivering real results. With a focus on measurable outcomes and a money-back guarantee, you can trust in a partnership that’s fully invested in your business growth.",
+          description:
+            "I'm committed to delivering real results. With a focus on measurable outcomes and a money-back guarantee, you can trust in a partnership that’s fully invested in your business growth.",
         },
       ]}
       image={{
@@ -181,19 +181,23 @@ const painpoints = [
       }}
     >
       <Fragment slot="content">
-        <!-- <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+        <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
           Building on modern foundations
-        </h3> -->
+        </h3>
 
          I'm Eugene Venger, I create profitable sales funnels for SaaS and Energy businesses. I focus on lead generation
         and conversion to drive revenue growth, ensuring every step of your sales funnel works towards business success.
         Occasionally, I also work with agencies.
       </Fragment>
 
-      <!-- <Fragment slot="bg">
+      <Fragment slot="bg">
         <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-      </Fragment> -->
-    </ContentAstro>
+      </Fragment>
+    </ContentAstro> -->
+
+    <Services />
+
+    <!-- <Note /> -->
 
     <WidgetWrapper containerClass={`relative mx-auto max-w-7xl px-4 md:px-6 py-6 md:py-10 lg:py-18 text-default  `}>
       <Stats
@@ -205,10 +209,6 @@ const painpoints = [
         ]}
       />
     </WidgetWrapper>
-
-    <Services />
-
-    <!-- <Note /> -->
 
     <div class={`   py-12 md:py-20 lg:py-24 text-default  `}>
       <SectionIntro client:load title="Case Studies" className="">
@@ -251,16 +251,16 @@ const painpoints = [
       id="contact"
     />
 
-    <div id="process">
+    <!-- <div id="process">
       <Process client:load />
-    </div>
+    </div> -->
 
-    <SimpleCalendly
+    <!-- <SimpleCalendly
       title="Excited By The Process?"
       subtitle="  Let's delve deeper into your business's potential together. "
       buttonText="Schedule Free Consultation"
       id="contact"
-    />
+    /> -->
 
     <div id="projects">
       <Content client:load />
