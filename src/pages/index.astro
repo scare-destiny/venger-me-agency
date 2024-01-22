@@ -5,6 +5,7 @@ import Process from '~/components/react/Tailwind/Process';
 // import Hero from '~/components/widgets/Hero.astro';
 import { FadeIn, FadeInStagger } from '~/components/react/Animations/FadeIn';
 import Header from '~/components/widgets/Header.astro';
+import { TextGenerateEffect } from '~/components/react/UI/text-generate-effect';
 import Image from '~/components/common/Image.astro';
 import { headerData } from '~/navigation';
 import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
@@ -22,7 +23,6 @@ import { SectionIntro } from '~/components/react/Tailwind/SectionIntro';
 import { Clients } from '~/components/react/Tailwind/Clients';
 import { Services } from '~/components/react/Tailwind/Services';
 import { Container } from '~/components/react/Tailwind/Container';
-import Test from '~/components/Test.astro';
 // import { Icon } from 'astro-icon/components';
 
 const metadata = {
@@ -76,10 +76,15 @@ const painpoints = [
               </h1>
             </FadeIn>
             <div class="mt-6 max-w-xl lg:mt-0 xl:col-end-1 xl:row-start-1">
-              <p class="text-lg leading-8 text-gray-600">
+              <!-- <p class="text-lg leading-8 text-gray-600">
                 Get qualified leads, convert them into customers, and then boost your revenue with upselling. Simple,
                 effective, and tailored solutions to your needs.
-              </p>
+              </p> -->
+              <TextGenerateEffect
+                client:load
+                words={'Get qualified leads, convert them into customers, and then boost your revenue with upselling. Simple,effective, and tailored solutions to your needs.'}
+                className="text-sm leading-8 text-blue-600"
+              />
               <div class="mt-10 flex items-center gap-x-6">
                 <a
                   href="#contact"
