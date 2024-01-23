@@ -4,31 +4,29 @@ import { motion, stagger, useAnimate } from 'framer-motion';
 import { cn } from '~/utils/cn';
 
 export const TextGenerateEffect = ({ words, className }: { words: string; className?: string }) => {
-  const [scope, animate] = useAnimate();
   let wordsArray = words.split(' ');
-  useEffect(() => {
-    animate(
-      'span',
-      {
-        opacity: 1,
-      },
-      {
-        duration: 2,
-        delay: stagger(0.2),
-      }
-    );
-  }, [scope.current]);
+
+  const variants = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1 },
+  };
 
   const renderWords = () => {
     return (
-      <motion.div ref={scope}>
-        {wordsArray.map((word, idx) => {
-          return (
-            <motion.span key={word + idx} className=" opacity-0">
-              {word}{' '}
-            </motion.span>
-          );
-        })}
+      <motion.div className="overflow-hidden">
+        {wordsArray.map((word, i) => (
+          <motion.span
+            key={word + i}
+            className="dark:text-white text-black"
+            variants={variants}
+            initial="hidden"
+            whileInView="visible"
+            transition={{ duration: 2, delay: i * 0.2 }}
+            viewport={{ once: true, margin: '0px 0px -200px' }}
+          >
+            {word}{' '}
+          </motion.span>
+        ))}
       </motion.div>
     );
   };
@@ -36,9 +34,7 @@ export const TextGenerateEffect = ({ words, className }: { words: string; classN
   return (
     <div className={cn('font-bold', className)}>
       <div className="mt-4">
-        <div className=" dark:text-white text-black text-lg leading-snug tracking-wide text-balance">
-          {renderWords()}
-        </div>
+        <div className="dark:text-white text-black  leading-snug tracking-wide">{renderWords()}</div>
       </div>
     </div>
   );
