@@ -1,5 +1,5 @@
 import React from 'react';
-import image from '../../../assets/images/eugene-venger.jpeg';
+import image from '../../../assets/images/output-onlinepngtools.png';
 import { FadeIn, FadeInStagger } from '~/components/react/Animations/FadeIn';
 
 export default function About() {
