@@ -1,5 +1,5 @@
 import React from 'react';
-import image from '../../../assets/images/venger-updated.png';
+import image from '../../../assets/images/venger-updated-optimized.jpg';
 import { FadeIn, FadeInStagger } from '~/components/react/Animations/FadeIn';
 
 export default function About() {
