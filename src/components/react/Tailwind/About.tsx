@@ -6,7 +6,7 @@ export default function About() {
   return (
     <div className="grid grid-cols-1 gap-y-16 lg:grid-cols-2 lg:grid-rows-[auto_1fr] lg:gap-y-12">
       <div className="lg:pl-20">
-        <div className="max-w-xs px-2.5 lg:max-w-none">
+        <div className="max-w-xs px-2.5 lg:max-w-none animate-in slide-in-from-right  duration-1000 repeat-1">
           <img
             src={image.src}
             alt=""
