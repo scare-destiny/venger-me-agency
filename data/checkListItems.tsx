@@ -90,7 +90,7 @@ const checklistItems: ChecklistItem[] = [
               // emoji: '🔨',
               // title: 'In Progress',
               subtitle:
-                "If you're setting up DMARC for the first time, we recommend setting a policy of p=none and collecting aggregate data with a DMARC monitoring service. You can then monitor reports and slowly bring your domain into compliance over time.",
+                "Starting 2024 Gmail require senders to have a DMARC policy of at least p=none. If you're setting up DMARC for the first time, we recommend setting a policy of p=none and collecting aggregate data with a DMARC monitoring service. You can then monitor reports and slowly bring your domain into compliance over time. ",
             },
           },
           {
