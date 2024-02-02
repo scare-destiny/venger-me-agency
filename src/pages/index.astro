@@ -1,7 +1,8 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
 import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
-import Process from '~/components/react/Tailwind/Process';
+// import Process from '~/components/react/Tailwind/Process';
+import { TracingBeam } from '~/components/react/Tailwind/TracingBeam.tsx';
 // import Hero from '~/components/widgets/Hero.astro';
 import { FadeIn, FadeInStagger } from '~/components/react/Animations/FadeIn';
 import Header from '~/components/widgets/Header.astro';
@@ -12,7 +13,7 @@ import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
 import Stats from '~/components/widgets/Stats.astro';
 // import { StatList, StatListItem } from '~/components/react/Tailwind/StatList';
 import { getCollection } from 'astro:content';
-import ContentAstro from '~/components/widgets/Content.astro';
+// import ContentAstro from '~/components/widgets/Content.astro';
 // import CallToAction from '~/components/widgets/CallToAction.astro';
 // import Technoloiges from '~/components/react/Tailwind/Technologies';
 import Content from '~/components/react/Tailwind/Content';
@@ -57,6 +58,7 @@ const painpoints = [
   <!-- Hero Widget ******************* -->
   <Fragment slot="header">
     <Header {...headerData} showToggleTheme />
+
     <div class="bg-white">
       <div class="relative isolate overflow-hidden bg-gradient-to-b from-pink-100/30">
         <div
@@ -219,32 +221,34 @@ const painpoints = [
       <SectionIntro client:load title="Case Studies" className="">
         <p>Projects I've been happy to work with. You can read about each project in detail by clicking on it.</p>
       </SectionIntro>
-      <Container className="mt-16">
-        <FadeInStagger client:load className="grid grid-cols-1 gap-8 lg:grid-cols-3">
-          {
-            loadCaseStudies.map((caseStudy) => (
-              <FadeIn client:load key={caseStudy.slug} className="flex">
-                <article class="relative flex w-full flex-col rounded-3xl p-6 ring-1 ring-neutral-950/5 transition hover:bg-neutral-50 sm:p-8">
-                  <h3>
-                    <a href={`/work/${caseStudy.slug}`}>
-                      <span class="absolute inset-0 rounded-3xl" />
-                      <img src={caseStudy.data.logo} alt={caseStudy.data.client} class="h-16 w-16 " loading="lazy" />
-                    </a>
-                  </h3>
-                  <p class="mt-6 flex gap-x-2 text-sm text-neutral-950">
-                    <span class="text-neutral-300" aria-hidden="true">
-                      /
-                    </span>
-                    <span>Case study</span>
-                  </p>
-                  <p class="mt-6 font-display text-2xl font-semibold text-neutral-950">{caseStudy.data.title}</p>
-                  <p class="mt-4 text-base text-neutral-600">{caseStudy.data.description}</p>
-                </article>
-              </FadeIn>
-            ))
-          }
-        </FadeInStagger>
-      </Container>
+      <TracingBeam className="max-w-7xl" client:load>
+        <Container className="mt-16">
+          <FadeInStagger client:load className="grid grid-cols-1 gap-8 lg:grid-cols-3">
+            {
+              loadCaseStudies.map((caseStudy) => (
+                <FadeIn client:load key={caseStudy.slug} className="flex">
+                  <article class="relative flex w-full flex-col rounded-3xl p-6 ring-1 ring-neutral-950/5 transition hover:bg-neutral-50 sm:p-8">
+                    <h3>
+                      <a href={`/work/${caseStudy.slug}`}>
+                        <span class="absolute inset-0 rounded-3xl" />
+                        <img src={caseStudy.data.logo} alt={caseStudy.data.client} class="h-16 w-16 " loading="lazy" />
+                      </a>
+                    </h3>
+                    <p class="mt-6 flex gap-x-2 text-sm text-neutral-950">
+                      <span class="text-neutral-300" aria-hidden="true">
+                        /
+                      </span>
+                      <span>Case study</span>
+                    </p>
+                    <p class="mt-6 font-display text-2xl font-semibold text-neutral-950">{caseStudy.data.title}</p>
+                    <p class="mt-4 text-base text-neutral-600">{caseStudy.data.description}</p>
+                  </article>
+                </FadeIn>
+              ))
+            }
+          </FadeInStagger>
+        </Container>
+      </TracingBeam>
     </div>
 
     <Clients client:load />
