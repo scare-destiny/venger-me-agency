@@ -111,7 +111,7 @@ export const headerData = {
     //   href: '#',
     // },
   ],
-  actions: [{ type: 'button', text: 'Free Consultation', href: '/contact' }],
+  actions: [{ type: 'button', text: 'Contact me', href: '/contact' }],
 };
 
 export const footerData = {

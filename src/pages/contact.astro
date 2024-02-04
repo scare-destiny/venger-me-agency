@@ -4,7 +4,8 @@ import Header from '~/components/widgets/Header.astro';
 import HeroText from '~/components/widgets/HeroText.astro';
 import { headerData } from '~/navigation';
 // import ContactUs from '~/components/widgets/Contact.astro';
-import SimpleCalendly from '~/components/widgets/SimpleCalendly.astro';
+// import SimpleCalendly from '~/components/widgets/SimpleCalendly.astro';
+import TallyForm from '~/components/widgets/TallyForm.astro';
 // import Features2 from '~/components/widgets/Features2.astro';
 
 const metadata = {
@@ -19,11 +20,9 @@ const metadata = {
 
     <HeroText tagline="Get in Touch" title="Contact" />
 
-    <SimpleCalendly
+    <TallyForm
       title="Ready to elevate your business?"
       subtitle="Struggle with getting quality leads? Let's solve that. Overwhelmed with growth? I've got your back. Uncertain about driving traffic and revenue? I'll clarify and help."
-      buttonText="Book Free Session"
-      calendlyUrl="https://calendly.com/eugene-venger"
       id="calendlyWidget"
       isDark={false}
     />

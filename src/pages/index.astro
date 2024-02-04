@@ -217,11 +217,11 @@ const painpoints = [
       />
     </WidgetWrapper>
 
-    <div class={`   py-12 md:py-20 lg:py-24 text-default  `}>
-      <SectionIntro client:load title="Case Studies" className="">
-        <p>Projects I've been happy to work with. You can read about each project in detail by clicking on it.</p>
-      </SectionIntro>
-      <TracingBeam className="max-w-7xl" client:load>
+    <TracingBeam className="max-w-7xl" client:load>
+      <div class={`   py-12 md:py-20 lg:py-24 text-default  `}>
+        <SectionIntro client:load title="Case Studies" className="">
+          <p>Projects I've been happy to work with. You can read about each project in detail by clicking on it.</p>
+        </SectionIntro>
         <Container className="mt-16">
           <FadeInStagger client:load className="grid grid-cols-1 gap-8 lg:grid-cols-3">
             {
@@ -248,8 +248,8 @@ const painpoints = [
             }
           </FadeInStagger>
         </Container>
-      </TracingBeam>
-    </div>
+      </div>
+    </TracingBeam>
 
     <Clients client:load />
 
