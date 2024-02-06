@@ -3,6 +3,7 @@ import clsx from 'clsx';
 
 import { Button } from '~/components/react/Tailwind/Services/Button';
 import { Container } from '~/components/react/Tailwind/Container';
+import { Meteors } from '~/components/react/Tailwind/Meteors.tsx';
 
 function SwirlyDoodle(props: React.ComponentPropsWithoutRef<'svg'>) {
   return (
@@ -80,8 +81,9 @@ function Plan({
 
 export function Services() {
   return (
-    <section id="pricing" aria-label="Pricing" className="bg-default py-14 sm:py-20 ">
-      <Container>
+    <section id="pricing" aria-label="Pricing" className="bg-default py-14 sm:py-20 relative overflow-hidden">
+      <Meteors className="z-0 opacity-50" number={40} />
+      <Container className="relative z-10">
         <div className="md:text-center">
           <h2 className="font-display text-2xl tracking-tight text-white sm:text-4xl">
             <span className="relative whitespace-nowrap">
