@@ -20,11 +20,20 @@ module.exports = {
       },
       animation: {
         bounce: 'bounce 2s infinite',
+        'meteor-effect': 'meteor 5s linear infinite',
       },
       keyframes: {
         bounce: {
           '0%, 100%': { transform: 'translateY(0)' },
           '50%': { transform: 'translateY(-20px)' },
+        },
+        meteor: {
+          '0%': { transform: 'rotate(215deg) translateX(0)', opacity: '1' },
+          '70%': { opacity: '1' },
+          '100%': {
+            transform: 'rotate(215deg) translateX(-500px)',
+            opacity: '0',
+          },
         },
       },
     },
