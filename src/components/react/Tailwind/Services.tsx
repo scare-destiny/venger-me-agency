@@ -82,7 +82,7 @@ function Plan({
 export function Services() {
   return (
     <section id="pricing" aria-label="Pricing" className="bg-default py-14 sm:py-20 relative overflow-hidden">
-      <Meteors className="z-0 opacity-50" number={40} />
+      <Meteors className="z-0 opacity-50 " number={35} />
       <Container className="relative z-10">
         <div className="md:text-center">
           <h2 className="font-display text-2xl tracking-tight text-white sm:text-4xl">
