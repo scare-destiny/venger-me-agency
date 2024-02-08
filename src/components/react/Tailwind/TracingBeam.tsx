@@ -1,7 +1,7 @@
 'use client';
 import React, { useEffect, useRef, useState } from 'react';
 import { motion, useTransform, useScroll, useVelocity, useSpring } from 'framer-motion';
-import { cn } from '@/utils/cn';
+import { cn } from '~/utils/cn';
 
 export const TracingBeam = ({ children, className }: { children: React.ReactNode; className?: string }) => {
   const { scrollYProgress } = useScroll({});
