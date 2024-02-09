@@ -31,7 +31,7 @@ export function ContactSection() {
                 Let's discuss your project and see if we are a good fit for each other.
               </GridListItem>
               <GridListItem title="Gain clarity" invert>
-                I will help you understand what you need and how to you achieve it, step by step.
+                I will help you understand what you need and how to achieve it, step by step.
               </GridListItem>
               <GridListItem title="Stop feeling uncertain" invert>
                 Get a clear, actionable plan to achieve your goals.
