@@ -1,4 +1,5 @@
 .typography {
+  text-wrap: initial;
   color: theme(colors.neutral.950);
   font-size: theme(fontSize.xl);
   line-height: theme(fontSize.xl[1].lineHeight);
