@@ -141,7 +141,13 @@ export const footerData = {
     },
     {
       title: 'Tools',
-      links: [{ text: 'Email Marketing Checklist 🚀', href: '/email-marketing-checklist' }],
+      links: [
+        { text: 'Email Marketing Checklist 🚀', href: '/email-marketing-checklist' },
+        {
+          text: 'URL Shortener 🌐',
+          href: 'https://link.venger.me',
+        },
+      ],
     },
   ],
   secondaryLinks: [
