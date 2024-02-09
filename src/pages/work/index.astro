@@ -4,8 +4,10 @@ import { PageIntro } from '~/components/react/Tailwind/PageIntro';
 import { Testimonial } from '~/components/react/Tailwind/Testimonial';
 import { Clients } from '~/components/react/Tailwind/Clients';
 import { CaseStudies } from '~/components/react/Tailwind/CaseStudies';
+import { ContactSection } from '~/components/react/Contact/ContactSection';
 import Layout from '~/layouts/CaseLayout.astro';
 import pyrashyutImage from '~/assets/images/logos/pyrashyut.png';
+import Contact from '../contact.astro';
 
 const loadCaseStudies = await getCollection('cases');
 
@@ -31,8 +33,9 @@ const metadata = {
     Eugene was a <em>HUGE</em> asset to the team. Always responsive, professional and creative. He will be missed!
     Highly recommended and would hope to work together again in the future.
   </Testimonial>
-
   <Clients client:load />
+
+  <ContactSection client:load />
 
   <!-- <ContactSection /> -->
 </Layout>

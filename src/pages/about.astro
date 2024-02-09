@@ -2,7 +2,8 @@
 // import Features2 from '~/components/widgets/Features2.astro';
 import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
 import About from '~/components/react/Tailwind/About';
-import SimpleCalendly from '~/components/widgets/SimpleCalendly.astro';
+import { ContactSection } from '~/components/react/Contact/ContactSection';
+// import SimpleCalendly from '~/components/widgets/SimpleCalendly.astro';
 import Header from '~/components/widgets/Header.astro';
 import { headerData } from '~/navigation';
 // import { Icon } from 'astro-icon/components';
@@ -164,13 +165,15 @@ const solutions = [
       <Process client:load />
     </div>
 
-    <SimpleCalendly
+    <ContactSection client:load />
+    <!--
+      <SimpleCalendly
       title="Excited By The Process?"
       subtitle="  Let's delve deeper into your business's potential together. "
       buttonText="Schedule Free Consultation"
       id="contact"
       title="Have a project in mind? 🚀"
       subtitle="  Schedule a free consultation and let's discuss it. "
-    />
+    /> -->
   </Fragment>
 </Layout>

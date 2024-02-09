@@ -12,6 +12,7 @@ import { GridPattern } from '~/components/react/Tailwind/GridPattern';
 import { SectionIntro } from '~/components/react/Tailwind/SectionIntro';
 import { Border } from '~/components/react/Tailwind/Border';
 import { ArrowIcon } from '~/components/react/Tailwind/ArrowIcon';
+import { ContactSection } from '~/components/react/Contact/ContactSection';
 
 import '~/styles/workTypography.css';
 // Fetch all case studies
@@ -152,6 +153,9 @@ console.log(moreCaseStudies[1].data);
           ))
         }
       </FadeInStagger>
+      <div class="mx-auto px-6 lg:px-8 mt-24 sm:mt-32 lg:mt-40">
+        <ContactSection client:load />
+      </div>
     </Container>
   </div>
 </Layout>
