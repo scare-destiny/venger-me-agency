@@ -23,6 +23,7 @@
     "@fontsource-variable/inconsolata": "^5.0.16",
     "@heroicons/react": "^2.0.18",
     "@nanostores/react": "^0.7.1",
+    "@tailwindcss/aspect-ratio": "^0.4.2",
     "ai": "^2.2.29",
     "astro": "^4.0.3",
     "astro-icon": "^1.0.0-next.2",

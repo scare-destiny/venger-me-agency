@@ -37,7 +37,7 @@ module.exports = {
       },
     },
   },
-  plugins: [addVariablesForColors, require('@tailwindcss/typography'), require('tailwindcss-animate')],
+  plugins: [addVariablesForColors, require("@tailwindcss/aspect-ratio"), require('@tailwindcss/typography'), require('tailwindcss-animate')],
 
   darkMode: 'class',
 };
