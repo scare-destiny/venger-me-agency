@@ -19,11 +19,12 @@ import { getCollection } from 'astro:content';
 import Content from '~/components/react/Tailwind/Content';
 import TailwindTestimonials from '~/components/react/Tailwind/Testimonials';
 // import TallyForm from '~/components/widgets/TallyForm.astro';
-import SimpleCalendly from '~/components/widgets/SimpleCalendly.astro';
+// import SimpleCalendly from '~/components/widgets/SimpleCalendly.astro';
 import { SectionIntro } from '~/components/react/Tailwind/SectionIntro';
 import { Clients } from '~/components/react/Tailwind/Clients';
 import { Services } from '~/components/react/Tailwind/Services';
 import { Container } from '~/components/react/Tailwind/Container';
+import { ContactSection } from '~/components/react/Contact/ContactSection';
 // import { Icon } from 'astro-icon/components';
 
 const metadata = {
@@ -88,12 +89,12 @@ const painpoints = [
                 className="text-lg leading-8 text-gray-600 font-normal"
               />
               <div class="mt-4 lg:mt-6 flex items-center gap-x-6">
-                <a
+                <!-- <a
                   href="#contact"
                   class="btn-primary rounded-2xl bg-primary px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-                  >Free Consultation</a
-                >
-                <a href="#more" class="text-sm font-semibold leading-6 text-gray-900"
+                  >Contact</a
+                > -->
+                <a href="#more" class="text-lg font-bold leading-8 text-gray-900"
                   >Read more <span aria-hidden="true">→</span></a
                 >
               </div>
@@ -251,14 +252,14 @@ const painpoints = [
       </div>
     </TracingBeam>
 
-    <Clients client:load />
-
+    <!-- <Clients client:load /> -->
+    <!-- 
     <SimpleCalendly
       title="Want to find out how I helped dozens of businesses achieve stellar growth and revenue?"
       subtitle="  Let's schedule a free consultation, no strings attached.  "
       buttonText="Book Now"
       id="contact"
-    />
+    /> -->
 
     <!-- <div id="process">
       <Process client:load />
@@ -277,12 +278,12 @@ const painpoints = [
 
     <TailwindTestimonials />
 
-    <SimpleCalendly
+    <!-- <SimpleCalendly
       title="Feeling Overwhelmed And Need Help?"
       subtitle="  Let's discuss how we can get you high-quality leads and help you grow. "
       buttonText="Schedule Call"
       id="contact"
-    />
+    /> -->
 
     <!-- <WidgetWrapper containerClass={`relative mx-auto max-w-5xl px-4 md:px-6 py-12 md:py-20 lg:py-24 text-default  `}>
       <Technoloiges client:visible />
@@ -290,12 +291,12 @@ const painpoints = [
 
     <!-- Features Widget *************** -->
 
-    <BlogLatestPosts
+    <!-- <BlogLatestPosts
       title="Find out more content in my blog"
       information={`I try to write about things I'm personally interested in. Stay tuned! 
 
                 `}
-    />
+    /> -->
 
     <!-- Testimonials Widget *********** -->
     <!-- <Testimonials
@@ -352,11 +353,11 @@ const painpoints = [
       client:load
     /> -->
 
-    <SimpleCalendly
+    <!-- <SimpleCalendly
       title="Scrolled all the way here?"
       subtitle="  Let's delve deeper into your business's potential together. "
       buttonText="Book Free Discovery Call"
-    />
+    /> -->
 
     <!-- CallToAction Widget *********** -->
 
@@ -376,5 +377,6 @@ const painpoints = [
       waste more time! :P
     </Fragment>
   </CallToAction> -->
+    <ContactSection client:load />
   </Fragment>
 </Layout>
