@@ -16,6 +16,10 @@ export const headerData = {
           text: 'Email Marketing Checklist',
           href: getPermalink('/email-marketing-checklist'),
         },
+        {
+          text: 'URL Shortener',
+          href: 'https://link.venger.me',
+        },
       ],
     },
     { text: 'Contact', href: '/contact' },
