@@ -1,10 +1,10 @@
 import React from 'react';
-import { useEffect } from 'react';
-import { motion, stagger, useAnimate } from 'framer-motion';
+
+import { motion } from 'framer-motion';
 import { cn } from '~/utils/cn';
 
 export const TextGenerateEffect = ({ words, className }: { words: string; className?: string }) => {
-  let wordsArray = words.split(' ');
+  const wordsArray = words.split(' ');
 
   const variants = {
     hidden: { opacity: 0 },

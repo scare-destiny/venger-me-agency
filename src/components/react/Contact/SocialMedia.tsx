@@ -45,24 +45,18 @@ function GitHubIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
   );
 }
 
-function DribbbleIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
-  return (
-    <svg viewBox="0 0 24 24" aria-hidden="true" {...props}>
-      <path
-        fillRule="evenodd"
-        clipRule="evenodd"
-        d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10c5.51 0 10-4.48 10-10S17.51 2 12 2Zm6.605 4.61a8.502 8.502 0 0 1 1.93 5.314c-.281-.054-3.101-.629-5.943-.271-.065-.141-.12-.293-.184-.445a25.42 25.42 0 0 0-.564-1.236c3.145-1.28 4.577-3.124 4.761-3.362ZM12 3.475c2.17 0 4.154.813 5.662 2.148-.152.216-1.443 1.941-4.48 3.08-1.399-2.57-2.95-4.675-3.189-5A8.688 8.688 0 0 1 12 3.475Zm-3.633.803a53.889 53.889 0 0 1 3.167 4.935c-3.992 1.063-7.517 1.04-7.896 1.04a8.581 8.581 0 0 1 4.729-5.975ZM3.453 12.01v-.26c.37.01 4.512.065 8.775-1.215.25.477.477.965.694 1.453-.109.033-.228.065-.336.098-4.404 1.42-6.747 5.303-6.942 5.629a8.523 8.523 0 0 1-2.191-5.705ZM12 20.547a8.482 8.482 0 0 1-5.239-1.8c.152-.315 1.888-3.656 6.703-5.337.022-.01.033-.01.054-.022a35.32 35.32 0 0 1 1.823 6.475 8.402 8.402 0 0 1-3.341.684Zm4.761-1.465c-.086-.52-.542-3.015-1.659-6.084 2.679-.423 5.022.271 5.314.369a8.468 8.468 0 0 1-3.655 5.715Z"
-      />
-    </svg>
-  );
-}
+const LinkedInIcon = (props: React.ComponentPropsWithoutRef<'svg'>) => (
+  <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 50 50" {...props}>
+    <path d="M41,4H9C6.24,4,4,6.24,4,9v32c0,2.76,2.24,5,5,5h32c2.76,0,5-2.24,5-5V9C46,6.24,43.76,4,41,4z M17,20v19h-6V20H17z M11,14.47c0-1.4,1.2-2.47,3-2.47s2.93,1.07,3,2.47c0,1.4-1.12,2.53-3,2.53C12.2,17,11,15.87,11,14.47z M39,39h-6c0,0,0-9.26,0-10 c0-2-1-4-3.5-4.04h-0.08C27,24.96,26,27.02,26,29c0,0.91,0,10,0,10h-6V20h6v2.56c0,0,1.93-2.56,5.81-2.56 c3.97,0,7.19,2.73,7.19,8.26V39z"></path>
+  </svg>
+);
 
 export const socialMediaProfiles = [
-  { title: 'Facebook', href: 'https://facebook.com', icon: FacebookIcon },
-  { title: 'Instagram', href: 'https://instagram.com', icon: InstagramIcon },
-  { title: 'Twitter', href: 'https://twitter.com', icon: TwitterIcon },
-  { title: 'GitHub', href: 'https://github.com', icon: GitHubIcon },
-  { title: 'Dribbble', href: 'https://dribbble.com', icon: DribbbleIcon },
+  { title: 'Linkedin', href: 'https://www.linkedin.com/in/eugenevenger/', icon: LinkedInIcon },
+  { title: 'Instagram', href: 'https://www.instagram.com/eugene.venger/', icon: InstagramIcon },
+  { title: 'Facebook', href: 'https://www.facebook.com/eugene.venger', icon: FacebookIcon },
+  { title: 'GitHub', href: 'https://github.com/scare-destiny/', icon: GitHubIcon },
+  { title: 'Twitter', href: 'https://twitter.com/VengerJenya', icon: TwitterIcon },
 ];
 
 export function SocialMedia({ className, invert = false }: { className?: string; invert?: boolean }) {

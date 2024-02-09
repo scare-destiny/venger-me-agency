@@ -1,11 +1,13 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
 import Header from '~/components/widgets/Header.astro';
-import HeroText from '~/components/widgets/HeroText.astro';
+// import HeroText from '~/components/widgets/HeroText.astro';
 import { headerData } from '~/navigation';
+import { GridPattern } from '~/components/react/Tailwind/GridPattern';
+import Contact from '~/components/react/Contact/Contact';
 // import ContactUs from '~/components/widgets/Contact.astro';
 // import SimpleCalendly from '~/components/widgets/SimpleCalendly.astro';
-import TallyForm from '~/components/widgets/TallyForm.astro';
+// import TallyForm from '~/components/widgets/TallyForm.astro';
 // import Features2 from '~/components/widgets/Features2.astro';
 
 const metadata = {
@@ -18,50 +20,20 @@ const metadata = {
     <Header {...headerData} showToggleTheme />
     <!-- HeroText Widget ******************* -->
 
-    <HeroText tagline="Get in Touch" title="Contact" />
+    <!-- <HeroText tagline="Get in Touch" title="Contact" />
 
     <TallyForm
       title="Have a question or inquiry?"
       subtitle="Fill out the form below and I will get back to you as soon as possible."
       id="calendlyWidget"
       isDark={false}
+    /> -->
+
+    <GridPattern
+      className="absolute inset-0 h-full w-full fill-neutral-100 stroke-neutral-950/5 [mask-image:linear-gradient(to_bottom_left,white_40%,transparent_50%)]"
+      yOffset={-270}
+      client:load
     />
-
-    <!-- Features2 Widget ************** -->
-
-    <!-- <Features2
-    title="We are here to help!"
-    items={[
-      {
-        title: 'General support',
-        description: `Chat with us for inquiries related to account management, website navigation, payment issues, accessing purchased templates or general questions about the website's functionality.`,
-      },
-      {
-        title: 'Contact sales',
-        description:
-          'Chat with us for questions about purchases, customization options, licensing for commercial use, inquiries about specific template, etc.',
-      },
-      {
-        title: 'Technical support',
-        description:
-          'Chat with us when facing issues like template installation, problems editing difficulties, compatibility issues with software or download errors, or other technical challenges related to using the templates.',
-      },
-      {
-        title: 'Phone',
-        description: '+1 (234) 567-890',
-        icon: 'tabler:headset',
-      },
-      {
-        title: 'Email',
-        description: 'eu',
-        icon: 'tabler:mail',
-      },
-      {
-        title: 'Location',
-        description: '1234 Lorem Ipsum St, 12345, Miami, EEUU',
-        icon: 'tabler:map-pin',
-      },
-    ]}
-  /> -->
+    <Contact client:load />
   </Fragment>
 </Layout>
