@@ -1,7 +1,8 @@
 ---
 import { Icon } from 'astro-icon/components';
 import Logo from '~/components/Logo.astro';
-import ToggleTheme from '~/components/common/ToggleTheme.astro';
+// import ToggleTheme from '~/components/common/ToggleTheme.astro';
+import { Button } from '../react/Tailwind/Services/Button';
 import ToggleMenu from '~/components/common/ToggleMenu.astro';
 
 import { getHomePermalink } from '~/utils/permalinks';
@@ -42,7 +43,7 @@ const {
   isSticky = false,
   isDark = false,
   isFullWidth = false,
-  showToggleTheme = true,
+  // showToggleTheme = true,
   showRssFeed = false,
   position = 'center',
 } = Astro.props;
@@ -149,12 +150,15 @@ const currentPath = `${trimSlash(new URL(Astro.url).pathname)}`;
           actions?.length ? (
             <span transition:animate="none" class="ml-4 rtl:ml-0 rtl:mr-4">
               {actions.map(({ text, href, class: className }) => (
-                <a href={href} target="_blank" rel="noopener noreferrer" class="relative inline-block ">
-                  <button class="  inline-flex items-center justify-center font-medium disabled:pointer-events-none disabled:opacity-50 h-12  text-white hover:bg-black hover:text-white relative z-10 transition duration-150 cursor-pointer appearance-button bg-none normal-case text-base m-0 p-4 shadow-lg hover:shadow-[0_0_20px_rgba(14,165,233,0.7)] btn btn-primary">
-                    {text}
-                  </button>
-                  <div class="absolute -z-10 -inset-1 bg-gradient-to-r from-primary to-secondary  blur opacity-60 dark:opacity-70 dark:-inset-0.5 group-hover:opacity-80 dark:group-hover:opacity-70 transition-all duration-1000 group-hover:duration-3000 group-hover:-inset-2 animate-tilt" />
-                </a>
+                // <a href={href} target="_blank" rel="noopener noreferrer" class="relative inline-block ">
+                //   <button class="  inline-flex items-center justify-center font-medium disabled:pointer-events-none disabled:opacity-50 h-12  text-white hover:bg-black hover:text-white relative z-10 transition duration-150 cursor-pointer appearance-button bg-none normal-case text-base m-0 p-4 shadow-lg hover:shadow-[0_0_20px_rgba(14,165,233,0.7)] btn btn-primary">
+                //     {text}
+                //   </button>
+                //   <div class="absolute -z-10 -inset-1 bg-gradient-to-r from-primary to-secondary  blur opacity-60 dark:opacity-70 dark:-inset-0.5 group-hover:opacity-80 dark:group-hover:opacity-70 transition-all duration-1000 group-hover:duration-3000 group-hover:-inset-2 animate-tilt" />
+                // </a>
+                <Button href={href} invert class:list={className}>
+                  {text}
+                </Button>
 
                 // <a
                 //   transition:animate="none"
