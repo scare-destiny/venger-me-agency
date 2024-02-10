@@ -1,53 +1,30 @@
 import React from 'react';
 import clsx from 'clsx';
 
-const baseStyles = {
-  solid:
-    ' group inline-flex items-center justify-center rounded-2xl py-2 px-4 text-sm font-semibold focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 btn-primary',
-  outline: 'group inline-flex ring-1 items-center justify-center rounded-2xl py-2 px-4 text-sm focus:outline-none',
-};
+type ButtonProps = {
+  invert?: boolean;
+} & (React.ComponentPropsWithoutRef<'a'> | (React.ComponentPropsWithoutRef<'button'> & { href?: undefined }));
 
-const variantStyles = {
-  solid: {
-    slate:
-      'bg-slate-900 text-white hover:bg-slate-700 hover:text-slate-100 active:bg-slate-800 active:text-slate-300 focus-visible:outline-slate-900',
-    blue: 'bg-blue-600 text-white hover:text-slate-100 hover:bg-blue-500 active:bg-blue-800 active:text-blue-100 focus-visible:outline-blue-600',
-    white: 'bg-white text-slate-900 bg-white text-neutral-950 hover:bg-neutral-500',
-  },
-  outline: {
-    slate:
-      'ring-slate-200 text-slate-700  active:bg-slate-100 active:text-slate-600 focus-visible:outline-blue-600 focus-visible:ring-slate-300',
-    white: 'ring-slate-700 text-white  active:ring-slate-700 active:text-slate-400 focus-visible:outline-white',
-  },
-};
+export function Button({ invert = false, className, children, ...props }: ButtonProps) {
+  className = clsx(
+    className,
+    'inline-flex rounded-full px-4 py-1.5 text-sm font-semibold transition',
+    invert ? 'bg-white text-neutral-950 hover:bg-neutral-200' : 'bg-neutral-950 text-white hover:bg-neutral-800'
+  );
 
-type VariantKey = keyof typeof variantStyles;
-type ColorKey<Variant extends VariantKey> = keyof (typeof variantStyles)[Variant];
+  const inner = <span className="relative top-px">{children}</span>;
 
-type ButtonProps<Variant extends VariantKey, Color extends ColorKey<Variant>> = {
-  variant?: Variant;
-  color?: Color;
-} & (
-  | Omit<React.ComponentPropsWithoutRef<typeof Link>, 'color'>
-  | (Omit<React.ComponentPropsWithoutRef<'button'>, 'color'> & {
-      href?: undefined;
-    })
-);
+  if (typeof props.href === 'undefined') {
+    return (
+      <button className={className} {...props}>
+        {inner}
+      </button>
+    );
+  }
 
-export function Button<Color extends ColorKey<Variant>, Variant extends VariantKey = 'solid'>({
-  variant,
-  color,
-  className,
-  ...props
-}: ButtonProps<Variant, Color>) {
-  variant = variant ?? ('solid' as Variant);
-  color = color ?? ('slate' as Color);
-
-  className = clsx(baseStyles[variant], variantStyles[variant][color], className);
-
-  return typeof props.href === 'undefined' ? (
-    <button className={className} {...props} />
-  ) : (
-    <a className={className} {...props} />
+  return (
+    <a className={className} {...props}>
+      {inner}
+    </a>
   );
 }
