@@ -1,4 +1,4 @@
 User-agent: *
 Disallow: /
 
-Sitemap: https://venger.me/sitemap-index.xml
+Sitemap: https://agency.venger.me/sitemap-index.xml
