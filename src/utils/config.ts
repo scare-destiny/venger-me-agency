@@ -140,7 +140,7 @@ const getAppBlog = () => {
       isEnabled: true,
       permalink: '/blog/%slug%',
       robots: {
-        index: true,
+        index: false,
         follow: true,
       },
     },
@@ -148,7 +148,7 @@ const getAppBlog = () => {
       isEnabled: true,
       pathname: 'blog',
       robots: {
-        index: true,
+        index: false,
         follow: true,
       },
     },
@@ -156,7 +156,7 @@ const getAppBlog = () => {
       isEnabled: true,
       pathname: 'category',
       robots: {
-        index: true,
+        index: false,
         follow: true,
       },
     },
