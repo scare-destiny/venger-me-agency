@@ -141,7 +141,7 @@ const getAppBlog = () => {
       permalink: '/blog/%slug%',
       robots: {
         index: false,
-        follow: true,
+        follow: false,
       },
     },
     list: {
@@ -149,7 +149,7 @@ const getAppBlog = () => {
       pathname: 'blog',
       robots: {
         index: false,
-        follow: true,
+        follow: false,
       },
     },
     category: {
@@ -157,7 +157,7 @@ const getAppBlog = () => {
       pathname: 'category',
       robots: {
         index: false,
-        follow: true,
+        follow: false,
       },
     },
     tag: {
@@ -165,7 +165,7 @@ const getAppBlog = () => {
       pathname: 'tag',
       robots: {
         index: false,
-        follow: true,
+        follow: false,
       },
     },
   };

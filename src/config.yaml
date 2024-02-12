@@ -13,8 +13,8 @@ metadata:
     template: '%s — Venger.me'
   description: "Marketing funnels, automation and reporting for your business"
   robots:
-    index: true
-    follow: true
+    index: false
+    follow: false
   openGraph:
     site_name: venger.me
     images:
