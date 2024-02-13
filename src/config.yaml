@@ -18,9 +18,9 @@ metadata:
   openGraph:
     site_name: venger.me
     images:
-      - url: '~/assets/images/screenshot.png'
-        width: 1200
-        height: 628
+      - url: ''
+        width: 
+        height: 
     type: website
   twitter:
     handle: '@onwidget'
