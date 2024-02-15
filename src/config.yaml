@@ -9,7 +9,7 @@ site:
 # Default SEO metadata
 metadata:
   title:
-    default: Venger.me
+    default: Venger.me - legacy
     template: '%s — Venger.me'
   description: "Marketing funnels, automation and reporting for your business"
   robots:
