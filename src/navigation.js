@@ -121,42 +121,42 @@ export const headerData = {
 export const footerData = {
   links: [
     {
-      title: 'Pages',
+      title: 'Main Website',
       links: [
-        { text: 'Main', href: '/' },
-        { text: 'Work', href: '/work' },
-        { text: 'About', href: '/about' },
-        { text: 'Blog', href: '/blog' },
-        { text: 'Contact', href: '/contact' },
+        { text: 'Visit', href: 'https://venger.me', target: '_blank' },
+        // { text: 'Work', href: '/work' },
+        // { text: 'About', href: '/about' },
+        // { text: 'Blog', href: '/blog' },
+        // { text: 'Contact', href: '/contact' },
       ],
     },
 
     {
-      title: 'Case Studies',
+      // title: 'Case Studies',
       links: [
-        { text: 'AmazeOwl Case Study', href: '/work/amazeowl' },
-        { text: 'J. v. G. technology GmbH Case Study', href: '/work/jvg-technology' },
-        { text: 'J. v. G. Saddle Innovations UG Case Study', href: '/work/saddle-innovations' },
+        // { text: 'AmazeOwl Case Study', href: '/work/amazeowl' },
+        // { text: 'J. v. G. technology GmbH Case Study', href: '/work/jvg-technology' },
+        // { text: 'J. v. G. Saddle Innovations UG Case Study', href: '/work/saddle-innovations' },
         // { text: 'Enterprise', href: '#' },
         // { text: 'Customer stories', href: '#' },
         // { text: 'Pricing', href: '#' },
         // { text: 'Resources', href: '#' },
       ],
     },
-    {
-      title: 'Tools',
-      links: [
-        { text: 'Email Marketing Checklist 🚀', href: '/email-marketing-checklist' },
-        {
-          text: 'URL Shortener 🌐',
-          href: 'https://link.venger.me',
-        },
-      ],
-    },
+    // {
+    //   title: 'Tools',
+    //   links: [
+    //     { text: 'Email Marketing Checklist 🚀', href: '/email-marketing-checklist' },
+    //     {
+    //       text: 'URL Shortener 🌐',
+    //       href: 'https://link.venger.me',
+    //     },
+    //   ],
+    // },
   ],
   secondaryLinks: [
-    { text: 'Terms', href: getPermalink('/terms') },
-    { text: 'Privacy Policy', href: getPermalink('/privacy') },
+    // { text: 'Terms', href: getPermalink('/terms') },
+    // { text: 'Privacy Policy', href: getPermalink('/privacy') },
   ],
   socialLinks: [
     { ariaLabel: 'X', icon: 'tabler:brand-linkedin', href: 'https://www.linkedin.com/in/eugenevenger/' },
