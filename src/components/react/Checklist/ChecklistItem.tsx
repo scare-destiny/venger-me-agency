@@ -8,7 +8,7 @@ interface ChecklistItemProps {
   onCheckboxToggle: (isChecked: boolean) => void;
 }
 
-const ChecklistItem: React.FC<ChecklistItemProps> = ({ item, onCheckboxToggle }) => {
+const  ChecklistItem: React.FC<ChecklistItemProps> = ({ item, onCheckboxToggle }) => {
   const generateSlug = (str) => {
     return str
       .toLowerCase()

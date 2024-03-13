@@ -1,48 +1,26 @@
 ---
+import favIcon from '~/assets/favicons/favicon.ico';
+import favIconSvg from '~/assets/favicons/favicon.svg';
+import appleTouchIcon from '~/assets/favicons/apple-touch-icon.png';
 import Layout from '~/layouts/PageLayout.astro';
-import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
-// import Process from '~/components/react/Tailwind/Process';
-import { TracingBeam } from '~/components/react/Tailwind/TracingBeam.tsx';
-// import Hero from '~/components/widgets/Hero.astro';
-import { FadeIn, FadeInStagger } from '~/components/react/Animations/FadeIn';
 import Header from '~/components/widgets/Header.astro';
-import { TextGenerateEffect } from '~/components/react/UI/text-generate-effect';
-// import { BackgroundBeams } from '~/components/react/Tailwind/BackgroundBeams';
-import Image from '~/components/common/Image.astro';
+import WidgetWrapper from '~/components/ui/WidgetWrapper.astro'; // Import WidgetWrapper
+// import Hero from '~/components/widgets/Hero.astro';
+import EmailHero from '~/components/react/Tailwind/Hero';
+import ContactUs from '~/components/widgets/Contact.astro';
+import Checklist from '~/components/react/Checklist/Checklist';
+import SimpleCalendly from '~/components/widgets/SimpleCalendly.astro';
+import GridTestimonials from '~/components/react/Tailwind/Testimonials';
+import Prices from '~/components/widgets/Pricing.astro';
+// import { FadeIn } from '~/components/react/Animations/FadeIn';
 import { headerData } from '~/navigation';
-// import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
-import Stats from '~/components/widgets/Stats.astro';
-// import { StatList, StatListItem } from '~/components/react/Tailwind/StatList';
-import { getCollection } from 'astro:content';
-// import ContentAstro from '~/components/widgets/Content.astro';
-// import CallToAction from '~/components/widgets/CallToAction.astro';
-// import Technoloiges from '~/components/react/Tailwind/Technologies';
-// import Content from '~/components/react/Tailwind/Content';
-import TailwindTestimonials from '~/components/react/Tailwind/Testimonials';
-// import TallyForm from '~/components/widgets/TallyForm.astro';
-// import SimpleCalendly from '~/components/widgets/SimpleCalendly.astro';
-import { SectionIntro } from '~/components/react/Tailwind/SectionIntro';
-// import { Clients } from '~/components/react/Tailwind/Clients';
-import { Services } from '~/components/react/Tailwind/Services';
-import { Container } from '~/components/react/Tailwind/Container';
-import { ContactSection } from '~/components/react/Contact/ContactSection';
-// import { Icon } from 'astro-icon/components';
 
 const metadata = {
-  title: 'venger.me - Your catalyst for unstoppable growth',
+  title: 'Boost Email Deliverability | Hit Inbox Every Time | Venger.me',
+  description:
+    'Struggling with low open rates or emails landing in spam? Our email deliverability tool helps ensure your emails hit the inbox every time, elevating your open rate to 65-80% or higher. DIY or let our experts assist you.',
   ignoreTitleTemplate: true,
 };
-
-const loadCaseStudies = await getCollection('cases');
-
-const painpoints = [
-  'Struggling to get high-quality leads?',
-  'Too busy managing and growing your business?',
-  'Finding it hard to generate enough leads for growth?',
-  'Unsure how to increase revenue with your services?',
-  'Unclear about what drives traffic to your site?',
-  'Need help converting website visitors into paying customers?',
-];
 ---
 
 <script type="module">
@@ -56,327 +34,242 @@ const painpoints = [
     });
   });
 </script>
-<Layout metadata={metadata}>
-  <!-- Hero Widget ******************* -->
-  <Fragment slot="header">
-    <Header {...headerData} showToggleTheme />
+<link rel="shortcut icon" href={favIcon} />
+<link rel="icon" type="image/svg+xml" href={favIconSvg.src} />
+<link rel="mask-icon" href={favIconSvg.src} color="#8D46E7" />
+<link rel="apple-touch-icon" sizes="180x180" href={appleTouchIcon.src} />
 
-    <div class="bg-white">
-      <div class="relative isolate overflow-hidden bg-gradient-to-b from-pink-100/30">
-        <div
-          class="absolute inset-y-0 right-1/2 -z-10 -mr-96 w-[200%] origin-top-right skew-x-[-30deg] bg-white shadow-xl shadow-pink-600/10 ring-1 ring-pink-50 sm:-mr-80 lg:-mr-96"
-          aria-hidden="true"
-        >
-        </div>
-        <div class="mx-auto sm:py-40 lg:px-8 relative max-w-7xl px-4 md:px-6 py-12 md:py-20 lg:py-24 text-default">
-          <div class="mx-auto max-w-2xl lg:mx-0 xl:grid xl:max-w-none xl:grid-cols-1 xl:grid-rows-1 xl:gap-x-8">
-            <FadeIn client:load>
-              <h1
-                class="max-w-2xl text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl lg:col-span-2 xl:col-auto"
-              >
-                <span class="from-primary to-muted inline leading-[0] bg-gradient-to-br bg-clip-text text-transparent"
-                  >Unlock Continuous Growth:</span
-                > Turn Your Business Into 24/7 Lead Generation Machine
-              </h1>
-            </FadeIn>
-            <div class="mt-6 max-w-xl lg:mt-0 xl:col-end-1 xl:row-start-1">
-              <!-- <p class="text-lg leading-8 text-gray-600">
-                Get qualified leads, convert them into customers, and then boost your revenue with upselling. Simple,
-                effective, and tailored solutions to your needs.
-              </p> -->
-              <TextGenerateEffect
-                client:load
-                words={'Get qualified leads, convert them into customers, and then boost your revenue with upselling. Simple,effective, and tailored solutions to your needs.'}
-                className="text-lg leading-8 text-gray-600 font-normal"
-              />
-              <div class="mt-4 lg:mt-6 flex items-center gap-x-6">
-                <!-- <a
-                  href="#contact"
-                  class="btn-primary rounded-2xl bg-primary px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-                  >Contact</a
-                > -->
-                <a href="#more" class="text-lg font-bold leading-8 text-gray-900"
-                  >Read more <span aria-hidden="true">→</span></a
-                >
-              </div>
-            </div>
-            <Image
-              src="~/assets/images/hero.png"
-              alt=""
-              class="mt-10 aspect-[6/5] w-full max-w-lg rounded-2xl object-cover sm:mt-16 lg:mt-0 lg:max-w-none xl:row-span-2 xl:row-end-2 xl:mt-36"
-              loading="eager"
-            />
-          </div>
-        </div>
-        <div class="absolute inset-x-0 bottom-0 -z-10 h-24 bg-gradient-to-t from-white sm:h-32"></div>
-      </div>
-    </div>
-
-    <!-- <Hero
-      image={{ src: '~/assets/images/eugene-venger.jpeg', alt: 'Astronaut floating in space', class: 'bg-blue' }}
-    >
-      <Fragment slot="title">
-        Marketing funnels, <span class="hidden xl:inline"> </span>
-        <span class="text-accent dark:text-white highlight"> automation and reporting</span> for your business
-      </Fragment>
-
-      <Fragment slot="subtitle">
-        <FadeIn client:only="react">
-          <span class="hidden sm:inline">
-            <span class="font-semibold">I tackle</span> complex marketing challenges that other marketers can't solve,
-            all while fueling your consistent growth.
-          </span>
-        </FadeIn>
-        <FadeIn client:only="react" direction="right" threshold={0}>
-          <span class="block mb-1 sm:hidden font-bold text-blue-600">Your catalyst for unstoppable growth.</span>
-        </FadeIn>
-      </Fragment>
-    </Hero> -->
-    <!-- Note Widget ******************* -->
-
-    <WidgetWrapper
-      id="more"
-      containerClass={`relative mx-auto max-w-7xl px-4 md:px-6 py-12 md:py-20 lg:py-24 text-default  `}
-    >
-      <div class="w-full flex-auto">
-        <FadeIn client:only="react">
-          <h2
-            class="block font-display tracking-tight [text-wrap:balance] text-4xl font-medium sm:text-5xl text-neutral-950"
+<div transition:none class="bg-white">
+  <Layout class="bg-page-white" metadata={metadata}>
+    <meta name="robots" content="index, follow" />
+    <Fragment slot="header">
+      <!-- <Header class="bg-white" showToggleTheme {...headerData} /> -->
+      <EmailHero client:load />
+      <section class="isolate overflow-hidden bg-white px-6 lg:px-8">
+        <div class="relative mx-auto max-w-2xl py-24 sm:py-32 lg:max-w-4xl">
+          <div
+            class="absolute left-1/2 top-0 -z-10 h-[50rem] w-[90rem] -translate-x-1/2 bg-[radial-gradient(50%_100%_at_top,theme(colors.indigo.100),white)] opacity-20 lg:left-36"
           >
-            Do you face these challenges?
-          </h2>
-        </FadeIn>
+          </div>
+          <div
+            class="absolute inset-y-0 right-1/2 -z-10 mr-12 w-[150vw] origin-bottom-left skew-x-[-30deg] bg-white shadow-xl shadow-indigo-600/10 ring-1 ring-indigo-50 sm:mr-20 md:mr-0 lg:right-full lg:-mr-36 lg:origin-center"
+          >
+          </div>
+          <figure class="grid grid-cols-1 items-center gap-x-6 gap-y-8 lg:gap-x-10">
+            <div class="relative col-span-2 lg:col-start-1 lg:row-start-2">
+              <svg
+                viewBox="0 0 162 128"
+                fill="none"
+                aria-hidden="true"
+                class="absolute -top-12 left-0 -z-10 h-32 stroke-gray-900/10"
+              >
+                <path
+                  id="b56e9dab-6ccb-4d32-ad02-6b4bb5d9bbeb"
+                  d="M65.5697 118.507L65.8918 118.89C68.9503 116.314 71.367 113.253 73.1386 109.71C74.9162 106.155 75.8027 102.28 75.8027 98.0919C75.8027 94.237 75.16 90.6155 73.8708 87.2314C72.5851 83.8565 70.8137 80.9533 68.553 78.5292C66.4529 76.1079 63.9476 74.2482 61.0407 72.9536C58.2795 71.4949 55.276 70.767 52.0386 70.767C48.9935 70.767 46.4686 71.1668 44.4872 71.9924L44.4799 71.9955L44.4726 71.9988C42.7101 72.7999 41.1035 73.6831 39.6544 74.6492C38.2407 75.5916 36.8279 76.455 35.4159 77.2394L35.4047 77.2457L35.3938 77.2525C34.2318 77.9787 32.6713 78.3634 30.6736 78.3634C29.0405 78.3634 27.5131 77.2868 26.1274 74.8257C24.7483 72.2185 24.0519 69.2166 24.0519 65.8071C24.0519 60.0311 25.3782 54.4081 28.0373 48.9335C30.703 43.4454 34.3114 38.345 38.8667 33.6325C43.5812 28.761 49.0045 24.5159 55.1389 20.8979C60.1667 18.0071 65.4966 15.6179 71.1291 13.7305C73.8626 12.8145 75.8027 10.2968 75.8027 7.38572C75.8027 3.6497 72.6341 0.62247 68.8814 1.1527C61.1635 2.2432 53.7398 4.41426 46.6119 7.66522C37.5369 11.6459 29.5729 17.0612 22.7236 23.9105C16.0322 30.6019 10.618 38.4859 6.47981 47.558L6.47976 47.558L6.47682 47.5647C2.4901 56.6544 0.5 66.6148 0.5 77.4391C0.5 84.2996 1.61702 90.7679 3.85425 96.8404L3.8558 96.8445C6.08991 102.749 9.12394 108.02 12.959 112.654L12.959 112.654L12.9646 112.661C16.8027 117.138 21.2829 120.739 26.4034 123.459L26.4033 123.459L26.4144 123.465C31.5505 126.033 37.0873 127.316 43.0178 127.316C47.5035 127.316 51.6783 126.595 55.5376 125.148L55.5376 125.148L55.5477 125.144C59.5516 123.542 63.0052 121.456 65.9019 118.881L65.5697 118.507Z"
+                ></path>
+                <use href="#b56e9dab-6ccb-4d32-ad02-6b4bb5d9bbeb" x="86"></use>
+              </svg>
+              <blockquote class="text-xl font-semibold leading-8 text-gray-900 sm:text-2xl sm:leading-9">
+                <p>
+                  I hired Eugene to help me diagnose my email marketing agency's deliverability problems. He not only
+                  walked me through the test results patiently, he helped me understand the core issues of why
+                  deliverability issues were occurring. I highly recommend hiring Eugene – he's extremely knowledgeable!
+                </p>
+              </blockquote>
+            </div>
+            <div class="col-end-1 w-16 lg:row-span-4 lg:w-72">
+              <img
+                class="rounded-xl bg-indigo-50 lg:rounded-3xl"
+                src="https://media.licdn.com/dms/image/D4E03AQH_GBm31ikHCQ/profile-displayphoto-shrink_400_400/0/1664567762240?e=1704326400&v=beta&t=g2Rmdf-i2u1red5f8QC2030jJJkjsdfyEsEGvYwxLeg"
+                alt=""
+              />
+            </div>
+            <figcaption class="text-base lg:col-start-1 lg:row-start-3">
+              <div class="font-semibold text-gray-900">Andres Ocampo</div>
+              <div class="mt-1 text-gray-500">
+                CEO of <a class="text-primary" href="https://blossomecom.com/" target="_blank">Blossom Ecom</a>
+              </div>
+            </figcaption>
+          </figure>
+        </div>
+      </section>
 
-        <p class="mt-6 text-xl text-neutral-600">
-          I've found that most business owners encounter these obstacles sooner or later.
-        </p>
-        <FadeInStagger client:only="react">
-          <ul role="list" class="mt-10 grid grid-cols-1 gap-x-8 gap-y-3 text-base leading-7 sm:grid-cols-2">
-            {
-              painpoints.map((painpoint) => (
-                <FadeIn client:only="react" key={painpoint}>
-                  <li class="before:content-['❓'] flex gap-x-3">{painpoint}</li>
-                </FadeIn>
-              ))
-            }
-          </ul>
-        </FadeInStagger>
-      </div>
-    </WidgetWrapper>
+      <ContactUs
+        id="checklist"
+        inputs={[
+          {
+            type: 'text',
+            name: 'name',
+            label: 'Name',
+          },
+          {
+            type: 'email',
+            name: 'email',
+            label: 'Your work email address',
+          },
+          {
+            type: 'text',
+            name: 'domain',
+            label: 'Enter the domain or subdomain',
+          },
+        ]}
+        button="Check My Domain"
+      />
+      <WidgetWrapper>
+        <Checklist client:visible />
+      </WidgetWrapper>
 
-    <!-- <ContentAstro
-      isReversed
-      title=""
-      items={[
-        {
-          title: 'Holistic Sales Funnels',
-          description:
-            'Specializing in building and optimizing every step of the sales funnel for SaaS and Energy sectors, I ensure your leads not only convert but also become loyal customers.',
-        },
-        {
-          title: 'Customized Strategies for Unique Business Needs',
-          description:
-            'With a deep understanding of your industry, I tailor solutions specifically for your business, ensuring that your digital presence resonates with your target audience and aligns with your goals.',
-        },
-        {
-          title: 'Results-Driven Approach with a Money-Back Guarantee',
-          description:
-            "I'm committed to delivering real results. With a focus on measurable outcomes and a money-back guarantee, you can trust in a partnership that’s fully invested in your business growth.",
-        },
-      ]}
-      image={{
-        src: '~/assets/images/venger.jpeg',
-        alt: 'Colorful Image',
-      }}
-    >
-      <Fragment slot="content">
-        <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
-          Building on modern foundations
-        </h3>
+      <SimpleCalendly
+        title="Don't want to do it all by yourself?"
+        subtitle="I'm here to ramp up your deliverability and iron out all kinks. Let's connect!"
+        id="form"
+      />
+      <GridTestimonials />
+      <!-- Pricing Widget ******************* -->
 
-         I'm Eugene Venger, I create profitable sales funnels for SaaS and Energy businesses. I focus on lead generation
-        and conversion to drive revenue growth, ensuring every step of your sales funnel works towards business success.
-        Occasionally, I also work with agencies.
-      </Fragment>
-
-      <Fragment slot="bg">
-        <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-      </Fragment>
-    </ContentAstro> -->
-
-    <Services client:load />
-
-    <!-- <Note /> -->
-
-    <WidgetWrapper containerClass={`relative mx-auto max-w-7xl px-4 md:px-6 py-6 md:py-10 lg:py-18 text-default  `}>
-      <Stats
-        stats={[
-          { title: 'Happy clients', amount: '50+' },
-          { title: 'GENERATED REVENUE', amount: '~$10.000.000' },
-          { title: 'Tasks automated', amount: '120.000+' },
-          // { title: 'Cups of coffee consumed', amount: '5000+' },
+      <Prices
+        title="Services"
+        subtitle="For those who need help or don't want to DIY."
+        prices={[
+          {
+            title: 'Consultation',
+            subtitle: 'Guidance to maximize deliverability & open rates and profit from your email campaigns.',
+            price: 100,
+            period: 'One-time fee, in USD',
+            items: [
+              {
+                description: '1hr Zoom / Google Meet meetings',
+              },
+              {
+                description: 'List of recommendations',
+              },
+              {
+                description: 'Step-by-step instructions',
+              },
+              {
+                description: 'Answers to your questions',
+              },
+              {
+                description: '14-days priority chat support',
+              },
+            ],
+            callToAction: {
+              text: 'Get started',
+              href: '#pricing',
+            },
+          },
+          {
+            title: 'Authentication Setup',
+            subtitle: 'We setup your domain authentication to land in the inbox & protect your reputation.',
+            price: 130,
+            period: 'One-time fee per domain or subdomain',
+            items: [
+              {
+                description: 'Create & setup SPF, DKIM & DMARC',
+              },
+              {
+                description: 'Setup DKIM ',
+              },
+              {
+                description: 'Check reverse DNS & SSL',
+              },
+              {
+                description: 'Setup DMARC monitoring',
+              },
+              {
+                description: 'Perform email spam test',
+              },
+            ],
+            callToAction: {
+              text: 'Get started',
+              href: '#pricing',
+            },
+            // hasRibbon: true,
+            // ribbonTitle: 'best option',
+          },
+          {
+            title: 'Infrastructure Setup',
+            subtitle: 'We setup your authentication & infrastructure for cold outreach or newsletter campaigns.',
+            price: 400,
+            period: 'One-time fee per setup, in USD',
+            items: [
+              {
+                description: '30min intro Zoom meeting (optional)',
+              },
+              {
+                description: 'Create & setup SPF, DKIM & DMARC',
+              },
+              {
+                description: 'Check reverse DNS & SSL',
+              },
+              {
+                description: 'Create and setup email accounts with ESP',
+              },
+              {
+                description: 'Plan and setup warmup process',
+              },
+              {
+                description: 'Validate email addresses (extra costs apply)',
+              },
+              {
+                description: 'Perform email spam & inbox placement tests',
+              },
+              {
+                description: 'Create, configure & schedule 1st campaign',
+              },
+              {
+                description: '30-days priority support',
+              },
+            ],
+            callToAction: {
+              text: 'Get started',
+              href: '#pricing',
+            },
+          },
+          {
+            title: 'Deliverability Audit',
+            subtitle:
+              'We perform an in-depth audit of your sending infrastructure, identify issues and fix them for you.',
+            price: 800,
+            period: "Includes 2 domains or subdomains and 2 ESP's",
+            items: [
+              {
+                description: 'Check all authentication records',
+              },
+              {
+                description: 'Set up DMARC monitoring',
+              },
+              {
+                description: 'Perform inbox placement tests',
+              },
+              {
+                description: 'Perform email spam tests',
+              },
+              {
+                description: 'A/B test subject lines and email copy',
+              },
+              {
+                description: 'Fix all deliverability issues',
+              },
+              {
+                description: 'Provide recommendations and tools',
+              },
+              {
+                description: 'Written report upon completion',
+              },
+              {
+                description: '30-days priority support',
+              },
+            ],
+            callToAction: {
+              text: 'Get started',
+              href: '#pricing',
+            },
+          },
         ]}
       />
-    </WidgetWrapper>
 
-    <TracingBeam className="max-w-7xl" client:load>
-      <div class={`   py-12 md:py-20 lg:py-24 text-default  `}>
-        <SectionIntro client:load title="Case Studies" className="">
-          <p>Projects I've been happy to work with. You can read about each project in detail by clicking on it.</p>
-        </SectionIntro>
-        <Container className="mt-16">
-          <FadeInStagger client:load className="grid grid-cols-1 gap-8 lg:grid-cols-3">
-            {
-              loadCaseStudies.map((caseStudy) => (
-                <FadeIn client:load key={caseStudy.slug} className="flex">
-                  <article class="relative flex w-full flex-col rounded-3xl p-6 ring-1 ring-neutral-950/5 transition hover:bg-neutral-50 sm:p-8">
-                    <h3>
-                      <a href={`/work/${caseStudy.slug}`}>
-                        <span class="absolute inset-0 rounded-3xl" />
-                        <img src={caseStudy.data.logo} alt={caseStudy.data.client} class="h-16 w-16 " loading="lazy" />
-                      </a>
-                    </h3>
-                    <p class="mt-6 flex gap-x-2 text-sm text-neutral-950">
-                      <span class="text-neutral-300" aria-hidden="true">
-                        /
-                      </span>
-                      <span>Case study</span>
-                    </p>
-                    <p class="mt-6 font-display text-2xl font-semibold text-neutral-950">{caseStudy.data.title}</p>
-                    <p class="mt-4 text-base text-neutral-600">{caseStudy.data.description}</p>
-                  </article>
-                </FadeIn>
-              ))
-            }
-          </FadeInStagger>
-        </Container>
-      </div>
-    </TracingBeam>
-
-    <!-- <Clients client:load /> -->
-    <!-- 
-    <SimpleCalendly
-      title="Want to find out how I helped dozens of businesses achieve stellar growth and revenue?"
-      subtitle="  Let's schedule a free consultation, no strings attached.  "
-      buttonText="Book Now"
-      id="contact"
-    /> -->
-
-    <!-- <div id="process">
-      <Process client:load />
-    </div> -->
-
-    <!-- <SimpleCalendly
-      title="Excited By The Process?"
-      subtitle="  Let's delve deeper into your business's potential together. "
-      buttonText="Schedule Free Consultation"
-      id="contact"
-    /> -->
-
-   
-    <TailwindTestimonials />
-
-    <!-- <SimpleCalendly
-      title="Feeling Overwhelmed And Need Help?"
-      subtitle="  Let's discuss how we can get you high-quality leads and help you grow. "
-      buttonText="Schedule Call"
-      id="contact"
-    /> -->
-
-    <!-- <WidgetWrapper containerClass={`relative mx-auto max-w-5xl px-4 md:px-6 py-12 md:py-20 lg:py-24 text-default  `}>
-      <Technoloiges client:visible />
-    </WidgetWrapper> -->
-
-    <!-- Features Widget *************** -->
-
-    <!-- <BlogLatestPosts
-      title="Find out more content in my blog"
-      information={`I try to write about things I'm personally interested in. Stay tuned! 
-
-                `}
-    /> -->
-
-    <!-- Testimonials Widget *********** -->
-    <!-- <Testimonials
-      title="Words from clients"
-      testimonials={[
-        {
-          testimonial: `Eugene was a HUGE asset to the team. Always responsive, professional and creative. He will be missed! Highly recommended and would hope to work together again in the future.`,
-          name: 'Jared Burke',
-          job: 'Founder & Director at Pyrashyut',
-          businessURL: 'https://www.linkedin.com/in/jared123/',
-          image: {
-            src: 'https://media.licdn.com/dms/image/D4E03AQFebTG2tqWERA/profile-displayphoto-shrink_400_400/0/1668627316809?e=1698883200&v=beta&t=xH92LZYAPmGFmDURhG1wLr5bim3yXFkT9Vqha_u6qhU',
-            alt: 'Jared Burke Image',
-          },
-        },
-        {
-          testimonial: `We have been working successfully with Eugene for many years. He always finds a quick and suitable solution for all problems. We appreciate his good communication, availability, flexibility and professional work. Eugene has become a very important part of our team. Much appreciated, Eugene.`,
-          name: 'Andreas Lange',
-          job: 'Online Marketing Manager / Iberosattel Reitsport GmbH ',
-          businessURL: 'https://www.linkedin.com/in/andreas-lange-264795a2/',
-          image: {
-            src: 'https://media.licdn.com/dms/image/C4E03AQGsUtMSlQm88A/profile-displayphoto-shrink_200_200/0/1517079041148?e=1702512000&v=beta&t=m4STBLixXLrCpoYfX5in6r3N98hGC_jIeBopgG8CWwI',
-            alt: 'Andreas Lange Image',
-          },
-        },
-        {
-          testimonial: `Eugene is very knowledgable. We work on a project that was not easy or straightforward but he really took the time to find solutions. He is very enthusiastic and eager to do the job well. Great communication, flexibility and availability. We had some hiccups but he was really on the case and solved them very quickly. Very professional and has integrity. Thank you Eugene!`,
-          name: 'Ioana Hardy',
-          job: 'Managing Director at Impacters Group',
-          businessURL: 'https://uk.linkedin.com/in/ioana-hardy',
-          image: {
-            src: 'data:image/jpeg;base64,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',
-            alt: 'Ioana Hardy Image Image',
-          },
-        },
-        {
-          testimonial: `I recommend Eugene to anyone who wants to take their business to the next level of success and profitability. He has a keen eye for seeking out ways to increase profits and implementing a strategy to achieve that. Would definitely recommend him to others. Thank you!`,
-          name: 'Oleg Zaidiner',
-          job: 'CEO & Co-Founder at aNavigator',
-          businessURL: 'https://www.linkedin.com/in/oleg-zaidiner',
-          image: {
-            src: 'data:image/jpeg;base64,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',
-            alt: 'Oleg Zaidiner Image',
-          },
-        },
-      ]}
-    /> -->
-
-    <!-- <SimpleCalendly
-      title="Scrolled all the way here?"
-      subtitle="Let's delve deeper into your business's potential together."
-      calendlyUrl="https://calendly.com/eugene-venger"
-      buttonText="Book Discovery Call"
-      client:load
-    /> -->
-
-    <!-- <SimpleCalendly
-      title="Scrolled all the way here?"
-      subtitle="  Let's delve deeper into your business's potential together. "
-      buttonText="Book Free Discovery Call"
-    /> -->
-
-    <!-- CallToAction Widget *********** -->
-
-    <!-- <CallToAction
-    callToAction={{
-      text: 'Get template',
-      href: 'https://github.com/onwidget/astrowind',
-      icon: 'tabler:download',
-    }}
-  >
-    <Fragment slot="title">
-      Astro&nbsp;+&nbsp;<br class="block sm:hidden" /><span class="sm:whitespace-nowrap">Tailwind CSS</span>
+      <SimpleCalendly title="Ready to work on your deliverability?" subtitle="Let's get into it." id="pricing" />
     </Fragment>
-
-    <Fragment slot="subtitle">
-      Be very surprised by these huge fake numbers you are seeing on this page. <br class="hidden md:inline" />Don't
-      waste more time! :P
-    </Fragment>
-  </CallToAction> -->
-    <div id="contact">
-      <ContactSection client:load />
-    </div>
-  </Fragment>
-</Layout>
+  </Layout>
+</div>
