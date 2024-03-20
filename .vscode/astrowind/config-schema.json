@@ -52,7 +52,7 @@
               "type": "boolean"
             }
           },
-          "required": ["noindex", "nofollow"]
+          "required": ["index", "follow"]
         },
         "openGraph": {
           "type": "object",

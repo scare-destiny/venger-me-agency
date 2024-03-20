@@ -12051,7 +12051,7 @@
                       (0, m.jsxs)(m.Fragment, {
                         children: [
                           (0, m.jsx)('meta', { property: 'og:site_name', content: 'ChatGPT' }),
-                          (0, m.jsx)('meta', { name: 'robots', content: 'noindex, nofollow' }, 'robots'),
+                          (0, m.jsx)('meta', { name: 'robots', content: 'index, follow' }, 'robots'),
                           (0, m.jsx)(
                             'meta',
                             { property: 'og:title', content: null != tg ? tg : 'Shared Chat on ChatGPT' },

@@ -103,8 +103,8 @@ const getMetadata = () => {
     },
     description: '',
     robots: {
-      index: false,
-      follow: false,
+      index: true,
+      follow: true,
     },
     openGraph: {
       type: 'website',
