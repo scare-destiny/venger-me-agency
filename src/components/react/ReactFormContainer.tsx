@@ -63,7 +63,7 @@ const ReactFormContainer: React.FC<FormProps> = ({
     console.log(`domain storage is ${domainStorage}`);
 
     try {
-      if (formState['email'] !== 'zhenya.venger@gmail.com') {
+      if (formState['email'] !== 'zhenya.venger@gmail.com' || formState['email'] !== 'eugene@venger.me') {
         const webhookUrl = 'https://hook.eu1.make.com/gaq3bvpvynajg42k76rs5opele48aut7';
         const response = await fetch(webhookUrl, {
           method: 'POST',
